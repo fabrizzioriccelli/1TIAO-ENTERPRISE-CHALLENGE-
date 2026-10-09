@@ -288,7 +288,7 @@ Na interface, a pergunta aparece com o ganho em linguagem simples: "Enviar a ap�
 | Janelas de 2026, premissa genérica (120) | 97,5% | 0,0% | 2,5% | 24,1% |
 | Janelas de 2026, premissa calibrada em jul-dez/2025 (120) | 95,8% | 3,3% | 0,8% | 8,8% |
 
-A cobertura total de 76,1% parece próxima dos 80% esperados, mas os erros estão quase todos acima do P90: é **viés** da premissa genérica, não boa calibração. Calibrar com histórico reduziu o erro mediano de 24,1% para 8,8% nas mesmas janelas. Os ensaios compartilham veículos e meses, portanto não são independentes, e o gerador e o estimador usam a mesma família de hipóteses. O resultado demonstra o **procedimento**; a evidência estatística virá do mesmo teste com dados reais (critério de aceite na Sprint 3).
+A cobertura total de 76,1% parece próxima dos 80% esperados, mas os erros estão quase todos acima do P90: é **viés** da premissa genérica, não boa calibração. Calibrar com histórico reduziu o erro mediano de 24,1% para 8,8% nas mesmas janelas. Nas janelas de 2026, porém, a cobertura de 95,8% passa dos cerca de 80% esperados: a faixa ficou **larga demais**. É um erro mais seguro do que uma faixa estreita demais, mas desperdiça informação, e o critério de aceite da Sprint 3 (cobertura entre 70% e 90%, com erros nas duas caudas) reprovaria esse resultado. Os ensaios compartilham veículos e meses, portanto não são independentes, e o gerador e o estimador usam a mesma família de hipóteses. O resultado demonstra o **procedimento**; a evidência estatística virá do mesmo teste com dados reais (critério de aceite na Sprint 3).
 
 ## 6. Índice de confiabilidade
 

@@ -49,7 +49,7 @@ origens_dados,registros_extraidos,Quantidade de despesas extraídas,inteiro,regi
 despesas,despesa_id,Identificador da despesa (fato central),texto,-,Sim,Único,pk,Sistema,Interno,DSP-B-000123,Não se aplica,S
 despesas,empresa_id,Empresa,texto,-,Sim,Deve existir em empresas,fk:empresas.empresa_id,Sistema,Interno,EMP-B,-,S
 despesas,frota_id,Frota,texto,-,Sim,Deve existir em frotas,fk:frotas.frota_id,Sistema,Interno,FRO-B1,Assume a frota principal,S
-despesas,veiculo_id,"Veículo; vazio para custos de frota (apólice coletiva, telemetria)",texto,-,Não,"Se preenchido, deve existir em veiculos (R-VEIC-DESC)",,Documento ou cadastro,Interno,B-V05,Custo tratado como de frota e rateado por veículo·mês,S
+despesas,veiculo_id,"Veículo; vazio para custos de frota (apólice coletiva, telemetria)",texto,-,Não,"Se preenchido, deve existir em veiculos (R-VEIC-DESC)",fk:veiculos.veiculo_id,Documento ou cadastro,Interno,B-V05,Custo tratado como de frota e rateado por veículo·mês,S
 despesas,origem_id,Documento de origem,texto,-,Sim,Deve existir em origens_dados,fk:origens_dados.origem_id,Sistema,Interno,ORG-B-0003,Bloqueia o registro (sem origem não há rastreabilidade),S
 despesas,referencia_na_origem,"Localizador dentro do documento (linha, página, item)",texto,-,Sim,1 a 40 caracteres,naovazio,Sistema,Interno,linha 37,Usa 'documento inteiro',S
 despesas,categoria_custo,Categoria de custo,categoria,-,Sim,Lista fechada,enum:COMBUSTIVEL|MANUTENCAO|PEDAGIO|MULTA|TRIBUTO|SEGURO|OUTROS,Classificador (regras e modelo),Interno,PEDAGIO,Classificação pendente; registro vai para revisão,S
