@@ -240,7 +240,7 @@ Cada integrante é responsável por um papel nas próximas Sprints. O vídeo é 
 | Arquitetura e segurança | Backend, banco de dados, autenticação, LGPD, infraestrutura | Fabio Guntovitch |
 | UX, interface e comunicação | Telas, relatório executivo, testes de usabilidade, vídeo | Bruna Collavite |
 
-**Kanban.** Colunas Backlog, A fazer, Em andamento, Em revisão e Concluído, com 46 cartões. A lista com critério de aceite e evidência de cada cartão está em [docs/anexos/kanban.csv](docs/anexos/kanban.csv), pronta para importar no Trello. Plano completo, riscos e matriz de responsabilidades: [docs/roadmap.md](docs/roadmap.md).
+**Kanban.** Colunas Backlog, A fazer, Em andamento, Em revisão e Concluído, com 47 cartões. A lista com critério de aceite e evidência de cada cartão está em [docs/anexos/kanban.csv](docs/anexos/kanban.csv), pronta para importar no Trello. Plano completo, riscos e matriz de responsabilidades: [docs/roadmap.md](docs/roadmap.md).
 
 ### 14. Documentação detalhada
 
@@ -305,7 +305,11 @@ Abaixo encontra-se a descrição da organização da raiz do projeto e a finalid
 
 ### 📢 Observações Gerais
 
-* Projeto acadêmico. "Sem Parar Empresas", "Corpay" e os nomes de produtos citados pertencem aos seus titulares; o Frota Pulse não é produto oficial e não usa seus logotipos. A produção contou com apoio de IA generativa, declarado em [docs/uso-de-ia.md](docs/uso-de-ia.md). Itens pendentes de ação do grupo estão na [matriz de conclusão](docs/validacao.md#5-matriz-de-critérios-de-conclusão).
+*Indique obrigatoriamente no campo abaixo a decisão da equipe quanto à participação no festival FIAP NEXT:*
+
+* **Participação na Competição:** [x] Sim, aceitamos participar / [ ] Não vamos participar.
+* **Integrantes:** Bruna Collavite (RM 576285), Fabio Guntovitch (RM 575582), Fabrizzio Riccelli (RM 576083), Gabriel Tamais (RM 574503) e Natasha Zonta (RM 574230).
+* *Outras observações gerais (opcional):* projeto acadêmico. "Sem Parar Empresas", "Corpay" e os nomes de produtos citados pertencem aos seus titulares; o Frota Pulse não é produto oficial e não usa seus logotipos. A produção contou com apoio de IA generativa, declarado em [docs/uso-de-ia.md](docs/uso-de-ia.md). Itens pendentes de ação do grupo estão na [matriz de conclusão](docs/validacao.md#5-matriz-de-critérios-de-conclusão).
 
 ## 🔧 Como executar o código
 
@@ -323,6 +327,7 @@ python src/exemplos_calculados.py      # data/resultados/ e docs/anexos/exemplos
 python src/gerar_graficos.py           # gráficos SVG em assets/graficos/
 python src/gerar_visuais.py            # capa e wireframes (HTML) em assets/fontes/
 python src/gerar_slides.py             # slides do vídeo (HTML) em assets/fontes/
+python src/gerar_video.py              # animação do vídeo, narração com tempos e legendas
 python src/validar_entregaveis.py      # verificações automáticas da entrega
 ```
 
@@ -334,6 +339,8 @@ chromium --headless --no-sandbox --hide-scrollbars --window-size=1600,640 \
 chromium --headless --no-sandbox --no-pdf-header-footer \
   --print-to-pdf=docs/video/slides-apoio.pdf "file://$PWD/assets/fontes/slides.html"
 ```
+
+O vídeo animado (sem voz) é gravado quadro a quadro com Node.js, o pacote `puppeteer` e o `ffmpeg`: `node src/gravar_video.js --saida video.mp4` (acrescente `--guia` para a versão com o texto da narração na tela).
 
 Tamanhos de janela dos wireframes: `wf-01` 1440×900, `wf-02` 1440×1180 e `wf-03` 1100×1200.
 

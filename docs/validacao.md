@@ -27,7 +27,7 @@ Execução de 9 out. 2026, com mermaid-cli e regeneração da massa sintética. 
 | Números | Valores-chave do README, do roteiro e dos documentos contra o JSON calculado; valores com centavos dos documentos procurados no anexo | Aprovado |
 | Dados sensíveis | CPF, CNPJ, placa real, e-mail, chaves e senhas em todos os arquivos de texto | Aprovado. Único e-mail é o endereço técnico de autoria dos commits, citado na declaração de uso de IA |
 | Arquivos | Duplicados, codificação UTF-8, emojis fora dos títulos do template | Aprovado |
-| Template e entrega | Seções do README, observação do tutor removida, itens do enunciado, pastas, arquivo de links | Aprovado; vídeo como **pendente** |
+| Template e entrega | Seções do README, observação do tutor removida, itens do enunciado, campo FIAP NEXT, pastas, arquivo de links | Aprovado; vídeo como **pendente** |
 | Reprodutibilidade | Massa regenerada idêntica byte a byte à versionada | Aprovado |
 
 **O validador também foi testado.** Em uma cópia do repositório, foram injetados seis tipos de erro: link e âncora inexistentes, tabela com célula a mais, CPF, e-mail e placa no texto, categoria inválida em uma despesa fora do gabarito, número divergente no README e emoji em um documento. **Os seis foram detectados.**
@@ -101,10 +101,10 @@ Status: **Atendido**, **Parcialmente atendido**, **Pendente** ou **Não aplicáv
 | 17 | Arquitetura modular e pelo menos cinco diagramas | Atendido | [arquitetura.md](arquitetura.md); 9 diagramas Mermaid (um deles no README) e 7 SVG |
 | 18 | Segurança e LGPD | Parcialmente atendido | [seguranca-lgpd.md](seguranca-lgpd.md); validação jurídica pendente (AUD-19) |
 | 19 | UX e identidade visual sem emojis, gradientes ou logos alterados | Atendido | [ux-identidade-visual.md](ux-identidade-visual.md) |
-| 20 | Repositório organizado conforme o template | Parcialmente atendido | Estrutura, seções, integrantes e tutor completos; o grupo optou por retirar o campo sobre o festival FIAP NEXT |
+| 20 | Repositório organizado conforme o template | Atendido | Estrutura, seções, integrantes, tutor e decisão sobre o FIAP NEXT completos; o grupo não adotou nome |
 | 21 | Roadmap, papéis, RACI e Kanban sem itens concluídos sem evidência | Atendido | [roadmap.md](roadmap.md), [kanban.csv](anexos/kanban.csv) |
-| 22 | Roteiro, storyboard e checklist do vídeo de até 5 minutos | Atendido | [roteiro](video/roteiro.md), [slides](video/slides-apoio.pdf) |
-| 23 | Vídeo gravado e publicado | Pendente | Gravação pelo grupo (K-022, K-023) |
+| 22 | Roteiro, animação e checklist do vídeo de até 5 minutos | Atendido | [roteiro](video/roteiro.md), [narração](video/narracao.md); animação de 4:42 sem voz, gerada por script |
+| 23 | Vídeo gravado e publicado | Pendente | Falta a narração humana sobre a animação e a publicação (K-022, K-023) |
 | 24 | Arquivo .txt com os links do repositório e do vídeo | Parcialmente atendido | [arquivo](../ENTREGA_SPRINT1_LINKS.txt) com o repositório; vídeo marcado como pendente |
 | 25 | Entrega do .txt no portal | Pendente | Ação do grupo (K-025) |
 | 26 | Revisão técnica em cinco perspectivas | Atendido | Seção 4 deste documento |
@@ -114,7 +114,7 @@ Status: **Atendido**, **Parcialmente atendido**, **Pendente** ou **Não aplicáv
 | 30 | Repositório privado, sem dados reais nem credenciais | Atendido | Varredura sem ocorrências; visibilidade conferida no GitHub |
 | 31 | Acesso do perfil `fiap-tutoria` | Pendente | Concessão pelo dono do repositório (K-020) |
 | 32 | Nome do grupo, integrantes e tutor | Atendido | Integrantes com RM e GitHub, tutora e coordenador no README; o grupo não adotou nome e retirou a seção "Nome do grupo" (K-018) |
-| 33 | Decisão sobre o FIAP NEXT | Não aplicável | Campo retirado do README por decisão do grupo |
+| 33 | Decisão sobre o FIAP NEXT | Atendido | "Sim, aceitamos participar", com nome e RM dos integrantes (K-019) |
 | 34 | Conferência com o enunciado oficial do portal | Atendido | Seção 6 deste documento (K-024) |
 | 35 | Aplicação funcional | Não aplicável | Fora do escopo da Sprint 1 (especificação); prevista nas Sprints 2 a 4 |
 | 36 | Testes com gestores reais | Não aplicável | Previstos para a Sprint 4 |
