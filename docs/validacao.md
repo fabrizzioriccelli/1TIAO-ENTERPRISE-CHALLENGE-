@@ -38,7 +38,7 @@ Execução de 9 out. 2026, com mermaid-cli e regeneração da massa sintética. 
 
 | Verificação | Situação | Observação |
 |---|---|---|
-| Links externos | **Manual** | 11 endereços distintos (inclui os perfis do GitHub dos integrantes); a rede do ambiente bloqueava a maioria. Abrir cada um antes da entrega |
+| Links externos | **Manual** | 12 endereços distintos (inclui os perfis do GitHub dos integrantes); a rede do ambiente bloqueava a maioria. Abrir cada um antes da entrega |
 | Referências legais e bibliográficas | **Parcial** | Conferidas por busca; nível indicado em [referências](referencias.md). Itens marcados como pendentes precisam do texto original |
 | Ortografia e clareza | **Parcial** | Revisão assistida durante a escrita; falta leitura humana completa (K-021) |
 | Visual dos wireframes, gráficos e slides | **Verificado** | Imagens geradas e inspecionadas; problemas encontrados corrigidos (ver auditoria) |

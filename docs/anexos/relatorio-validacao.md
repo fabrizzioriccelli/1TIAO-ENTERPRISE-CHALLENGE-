@@ -28,7 +28,7 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 3. Gabarito | Cenários com registros marcados | **OK** | todos |
 | 3. Gabarito | Contagens de metadados.json iguais às dos CSVs | **OK** | 14 tabelas |
 | 4. Links e âncoras | Links internos e âncoras | **OK** | 264 links internos em 23 arquivos |
-| 4. Links e âncoras | Links externos | **MANUAL** | 11 endereços distintos; acesso não testado neste ambiente (rede restrita) |
+| 4. Links e âncoras | Links externos | **MANUAL** | 12 endereços distintos; acesso não testado neste ambiente (rede restrita) |
 | 5. Tabelas Markdown | Mesma quantidade de células em cada linha | **OK** | todas as tabelas |
 | 6. Mermaid | Sintaxe dos diagramas (renderização com mermaid-cli) | **OK** | 9 diagramas renderizados sem erro |
 | 7. Números citados | Valores-chave da documentação iguais aos calculados | **OK** | 11 afirmações conferidas |

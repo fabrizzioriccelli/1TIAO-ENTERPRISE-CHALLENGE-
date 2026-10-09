@@ -19,7 +19,7 @@ Enterprise Challenge FIAP e Sem Parar Empresas · Sprint 1 · Turma 1TIAO
 - <a href="https://github.com/Guntooo">Fabio Guntovitch</a> - RM 575582
 - <a href="https://github.com/fabrizzioriccelli">Fabrizzio Riccelli</a> - RM 576083
 - <a href="https://github.com/GabrielTamaisFischer">Gabriel Tamais</a> - RM 574503
-- Natasha Zonta - RM 574230
+- <a href="https://github.com/natashazont">Natasha Zonta</a> - RM 574230
 
 ## 👩‍🏫 Professores:
 
