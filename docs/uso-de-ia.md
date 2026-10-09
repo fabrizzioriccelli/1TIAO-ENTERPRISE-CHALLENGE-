@@ -1,6 +1,8 @@
 # Declaração de uso de inteligência artificial
 
-Este documento registra, de forma transparente, como uma ferramenta de IA generativa foi usada na produção desta entrega. Ele deve ser mantido atualizado pelo grupo e conferido com as regras acadêmicas da FIAP sobre uso de IA **[Pendência: o grupo deve confirmar a política vigente e ajustar esta declaração ao formato exigido, se houver]**.
+Este documento registra, de forma transparente, como uma ferramenta de IA generativa foi usada na produção desta entrega. Ele deve ser mantido atualizado pelo grupo.
+
+**O que o enunciado diz.** "Nesta etapa inicial, o grupo pode utilizar ferramentas de IA para apoiar pesquisas, brainstorming e levantamento de alternativas técnicas. As escolhas poderão ser revistas ao longo das próximas Sprints, desde que as mudanças sejam justificadas e mantenham coerência com o problema." O uso registrado abaixo vai além desses três propósitos, porque a ferramenta também redigiu a primeira versão dos documentos, dos dados e dos scripts. Por isso o grupo deve apresentar esta declaração à tutoria e confirmar como o uso será considerado antes da entrega **[Pendência]**.
 
 ## 1. Ferramenta
 
@@ -8,7 +10,7 @@ Este documento registra, de forma transparente, como uma ferramenta de IA genera
 |---|---|
 | Ferramenta | Claude Code (assistente de programação da Anthropic), em sessão na nuvem |
 | Período | Outubro de 2026 |
-| Quem operou | Integrante do grupo responsável pelo repositório, conta GitHub `fabrizzioriccelli` |
+| Quem operou | Fabrizzio Riccelli, integrante do grupo responsável pelo repositório (conta GitHub `fabrizzioriccelli`) |
 | Identificação no histórico | Os commits feitos pela ferramenta têm o autor `Claude <noreply@anthropic.com>`. O histórico não foi reescrito, e a autoria não foi atribuída a integrantes |
 
 ## 2. O que foi feito com apoio da IA

@@ -18,7 +18,7 @@ Os dispositivos legais são citados para orientar requisitos de produto. **Não 
 |---|---|---|
 | SEM PARAR EMPRESAS. *Enterprise Challenge: Calculadora de Redução de Custos de Frota*. Briefing em PDF, 4 p. Fornecido pela FIAP, 2026. | Problema, números do negócio, portfólio, princípios e as 20 User Stories | Documento |
 | FIAP. *FIAP-PORTFOLIO-AI*: template de repositório. Disponível em: https://github.com/fiap-tutoria/FIAP-PORTFOLIO-AI. | Estrutura do repositório e do README | Documento |
-| FIAP. Página da atividade no portal (on.fiap.com.br, atividade 662294). | Enunciado oficial da Sprint 1 | **Pendente**: o portal exige login e não foi acessado; conferir o enunciado com a [matriz de conclusão](validacao.md#5-matriz-de-critérios-de-conclusão) |
+| FIAP. *Challenge Sem Parar: Sprint 1*. Enunciado da atividade no Portal do Aluno (on.fiap.com.br, atividade 662294). 2026. | Objetivos, requisitos técnicos e entregáveis da Sprint 1 | Documento: texto transcrito pelo grupo em 9 out. 2026 (o portal exige login) |
 | CORPAY. Comunicados sobre a mudança de nome de FleetCor Technologies para Corpay (2024) e sobre a aquisição da Sem Parar (2016). | Contexto institucional | Busca |
 
 ## 2. Legislação e regulação

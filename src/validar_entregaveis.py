@@ -472,12 +472,30 @@ def verificar_template() -> None:
     faltam = [s for s in secoes if s not in readme]
     registrar(g, "Seções do README do template", "FALHA" if faltam else "OK",
               f"faltam: {faltam}" if faltam else f"{len(secoes)} seções presentes")
+    itens_enunciado = ["O problema e o entendimento do desafio", "Usuários e necessidades", "Solução proposta",
+                       "User Stories selecionadas", "Estruturação dos dados", "Estratégia de entrada de dados",
+                       "Diagnóstico dos custos", "Recomendações e plano de ação", "Tratamento de dados incompletos",
+                       "Orientação ao usuário", "Arquitetura da solução", "Segurança e dados do cliente",
+                       "Planejamento das próximas etapas"]
+    faltam = [i for i in itens_enunciado if not re.search(r"^### \d+\. " + re.escape(i), readme, re.M)]
+    registrar(g, "README concentra os itens do enunciado (4.1)", "FALHA" if faltam else "OK",
+              f"faltam: {faltam}" if faltam else f"{len(itens_enunciado)} seções")
+    ids_us = set(re.findall(r"^\| (US-(?:GF|CF|SP)-\d{2}) \|", readme, re.M))
+    registrar(g, "README explica cada User Story selecionada", "OK" if len(ids_us) == 20 else "FALHA",
+              f"{len(ids_us)} de 20 User Stories na tabela")
+    fluxo = re.search(r"```mermaid\n(.*?)```", readme, re.S)
+    etapas = ["Entrada de dados", "Tratamento e organização", "Análise dos custos", "Diagnóstico", "Benchmark",
+              "Recomendações", "Visualização e relatório"]
+    ordem = [fluxo.group(1).find(e) for e in etapas] if fluxo else []
+    registrar(g, "Diagrama do fluxo do enunciado no README, na ordem pedida",
+              "OK" if ordem and -1 not in ordem and ordem == sorted(ordem) else "FALHA", " → ".join(etapas))
+    registrar(g, "Responsabilidades por integrante", "PENDENTE" if "[Pendência: definir]" in readme else "OK",
+              "depende do grupo")
     registrar(g, "Observação do tutor removida", "FALHA" if "OBSERVAÇÃO DO TUTOR" in readme else "OK")
     registrar(g, "Campo FIAP NEXT presente", "OK" if "Participação na Competição" in readme else "FALHA")
     marcado = re.search(r"\[[xX]\] (Sim, aceitamos|Não vamos)", readme)
     registrar(g, "Decisão FIAP NEXT marcada", "OK" if marcado else "PENDENTE", "depende do grupo")
-    registrar(g, "Nomes do grupo, integrantes e tutor",
-              "PENDENTE" if "[Pendência: nome" in readme else "OK", "depende do grupo")
+    registrar(g, "Integrantes e tutor", "PENDENTE" if "[Pendência: nome" in readme else "OK")
     registrar(g, "Logo do template", "OK" if (RAIZ / "assets" / "logo-fiap.png").exists() else "FALHA")
     pastas = [p for p in ("assets", "data", "docs", "notebooks", "src") if not (RAIZ / p).is_dir()]
     registrar(g, "Pastas do template", "FALHA" if pastas else "OK", f"faltam {pastas}" if pastas else "")

@@ -83,6 +83,7 @@ Nas próximas Sprints, vamos construir a ingestão e a primeira estimativa, depo
 
 **Gravação**
 - [ ] Resolução de 1920 × 1080; slides em tela cheia
+- [ ] Narração feita pelos próprios integrantes: o enunciado exige **narração humana**, então não usar voz sintética
 - [ ] Microfone testado; ambiente sem eco nem ruído
 - [ ] Câmera opcional; se houver, no canto, sem cobrir conteúdo
 - [ ] Duração final até 5:00
@@ -93,4 +94,4 @@ Nas próximas Sprints, vamos construir a ingestão e a primeira estimativa, depo
 - [ ] Descrição com o link do repositório e a observação "dados sintéticos; projeto acadêmico"
 - [ ] Link testado em janela anônima, sem login
 - [ ] Link inserido no README (seção "Links do Projeto") e no arquivo [`ENTREGA_SPRINT1_LINKS.txt`](../../ENTREGA_SPRINT1_LINKS.txt)
-- [ ] Commit com a mensagem "Adicionar link do vídeo da Sprint 1"
+- [ ] Commit com a mensagem "Adicionar link do vídeo da Sprint 1", **antes da data limite**: depois dela o repositório não pode ser alterado

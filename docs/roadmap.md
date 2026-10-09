@@ -88,14 +88,14 @@ Matriz RACI (R = executa, A = aprova, C = consultado, I = informado):
 
 ## 4. Kanban
 
-Colunas: **Backlog → A fazer → Em andamento → Em revisão → Concluído**. A lista completa, com critério de aceite e evidência de cada cartão, está em [`docs/anexos/kanban.csv`](anexos/kanban.csv), pronta para copiar para o Trello ou ferramenta equivalente.
+Colunas: **Backlog → A fazer → Em andamento → Em revisão → Concluído**. A lista completa, com critério de aceite e evidência de cada cartão, está em [`docs/anexos/kanban.csv`](anexos/kanban.csv), pronta para importar no Trello, ferramenta recomendada pelo enunciado. O quadro no Trello ainda precisa ser criado pelo grupo **[Pendência]**.
 
 | Coluna | Cartões | Conteúdo |
 |---|---|---|
 | Backlog | 22 | Sprints 2 a 4 (K-101 a K-306) |
-| A fazer | 7 | Ações externas da Sprint 1: decidir FIAP NEXT, dar acesso a `fiap-tutoria`, revisão do grupo, gravar e publicar o vídeo, conferir o enunciado, entregar o .txt |
+| A fazer | 6 | Ações externas da Sprint 1: decidir FIAP NEXT, dar acesso a `fiap-tutoria`, revisão do grupo, gravar e publicar o vídeo, entregar o .txt |
 | Em andamento | 0 | - |
-| Em revisão | 18 | Documentos e artefatos da Sprint 1 e identificação dos integrantes no README, aguardando a revisão do grupo |
+| Em revisão | 19 | Documentos e artefatos da Sprint 1, identificação dos integrantes e conferência com o enunciado, aguardando a revisão do grupo |
 | Concluído | 0 | Nenhum cartão sem revisão do grupo |
 
 **Definição de concluído.** Um cartão só vai para "Concluído" com: (1) evidência verificável (arquivo, commit ou link); (2) critério de aceite atendido; (3) revisão de pelo menos um integrante que não o produziu. Por isso nenhum artefato desta Sprint está marcado como concluído antes da revisão do grupo.

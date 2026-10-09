@@ -1,6 +1,6 @@
 # Problema, contexto e objetivos
 
-> Documento da Sprint 1. Cada afirmação indica a origem: **[Briefing]** é o material oficial do desafio (PDF de 4 páginas da Sem Parar Empresas), **[Template]** é o repositório modelo da FIAP, **[Decisão]** é escolha do grupo e **[Pendência]** depende de informação externa.
+> Documento da Sprint 1. Cada afirmação indica a origem: **[Briefing]** é o material oficial do desafio (PDF de 4 páginas da Sem Parar Empresas), **[Template]** é o repositório modelo da FIAP, **[Enunciado]** é o texto oficial da atividade no portal, **[Decisão]** é escolha do grupo e **[Pendência]** depende de informação externa.
 
 ## 1. Contexto
 
@@ -82,10 +82,13 @@ Os scripts em `src/` não são a aplicação. Eles existem para que cada número
 | Fluxo: entrada flexível, diagnóstico, plano de ação | [Briefing, p. 2] | Mapeado nas capacidades do produto |
 | Repositório no padrão do template, com README, `data/`, `docs/`, `notebooks/` e `src/` | [Template] | Atendido |
 | Decisão sobre participação no FIAP NEXT, campo obrigatório do README | [Template] | **[Pendência]** do grupo |
-| Repositório privado com acesso do perfil `fiap-tutoria` | Informado pelo grupo | Repositório privado; acesso de `fiap-tutoria` **[Pendência]** |
-| Vídeo de até 5 minutos no YouTube, não listado | Informado pelo grupo | Roteiro pronto; gravação **[Pendência]** |
-| Arquivo `.txt` com os links do repositório e do vídeo | Informado pelo grupo | Preparado; link do vídeo **[Pendência]** |
-| Enunciado oficial da Sprint 1 no portal da FIAP | Portal FIAP | **[Pendência]** — página inacessível neste ambiente (bloqueio de rede e login). O grupo deve confrontar o enunciado com a [matriz de conclusão](validacao.md#5-matriz-de-critérios-de-conclusão). |
+| Repositório privado, compartilhado apenas com o perfil `fiap-tutoria` | [Enunciado, 4.1] | Repositório privado; acesso de `fiap-tutoria` **[Pendência]** |
+| Vídeo de até 5 minutos, com narração humana, no YouTube como não listado, com link no README e no `.txt` | [Enunciado, 4.1] | Roteiro pronto; gravação **[Pendência]** |
+| Arquivo `.txt` com os links do repositório e do vídeo, único arquivo enviado no portal | [Enunciado, 4.1] | Preparado; link do vídeo **[Pendência]** |
+| Entregáveis do enunciado oficial da Sprint 1 (itens 3 e 4) | [Enunciado] | Conferidos item a item em [validação](validacao.md#6-conferência-com-o-enunciado-oficial) |
+| README concentrando todas as informações pedidas | [Enunciado, 4.1] | Atendido: seções 1 a 13 da descrição do [README](../README.md) |
+| Responsabilidades definidas para todos os integrantes | [Enunciado, 4.2] | Papéis definidos; distribuição por integrante **[Pendência]** do grupo |
+| Kanban, preferencialmente no Trello | [Enunciado, 3 e 4.1] | Cartões prontos para importar; quadro no Trello **[Pendência]** |
 
 ## 6. Premissas e restrições
 
