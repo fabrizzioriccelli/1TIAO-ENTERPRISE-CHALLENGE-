@@ -10,7 +10,7 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | AVISO | 1 |
 | PENDENTE | 3 |
 | MANUAL | 1 |
-| INFO | 1 |
+| INFO | 2 |
 
 | Grupo | Verificação | Status | Detalhe |
 |---|---|---|---|
@@ -46,7 +46,8 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 9. Arquivos | Codificação UTF-8 | **OK** | todos os textos |
 | 9. Arquivos | Sem emojis fora dos títulos do template | **OK** | nenhum |
 | 9. Arquivos | Pendências declaradas no texto | **INFO** | 24 marcações: README.md (7), docs/problema.md (7), docs/roadmap.md (3), docs/seguranca-lgpd.md (2), ENTREGA_SPRINT1_LINKS.txt (1), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1), docs/uso-de-ia.md (1) |
-| 10. Template e entrega | Seções do README do template | **OK** | 13 seções presentes |
+| 10. Template e entrega | Seção Nome do grupo | **INFO** | removida pelo grupo, que não adotou nome |
+| 10. Template e entrega | Seções do README do template | **OK** | 12 seções presentes |
 | 10. Template e entrega | README concentra os itens do enunciado (4.1) | **OK** | 13 seções |
 | 10. Template e entrega | README explica cada User Story selecionada | **OK** | 20 de 20 User Stories na tabela |
 | 10. Template e entrega | Diagrama do fluxo do enunciado no README, na ordem pedida | **OK** | Entrada de dados → Tratamento e organização → Análise dos custos → Diagnóstico → Benchmark → Recomendações → Visualização e relatório |

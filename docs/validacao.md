@@ -113,7 +113,7 @@ Status: **Atendido**, **Parcialmente atendido**, **Pendente** ou **Não aplicáv
 | 29 | Declaração de uso de IA | Atendido | [uso-de-ia.md](uso-de-ia.md); conferir o formato exigido pela FIAP |
 | 30 | Repositório privado, sem dados reais nem credenciais | Atendido | Varredura sem ocorrências; visibilidade conferida no GitHub |
 | 31 | Acesso do perfil `fiap-tutoria` | Pendente | Concessão pelo dono do repositório (K-020) |
-| 32 | Nome do grupo, integrantes e tutor | Atendido | Integrantes com RM e GitHub, tutora e coordenador no README; o grupo não adotou nome (K-018) |
+| 32 | Nome do grupo, integrantes e tutor | Atendido | Integrantes com RM e GitHub, tutora e coordenador no README; o grupo não adotou nome e retirou a seção "Nome do grupo" (K-018) |
 | 33 | Decisão sobre o FIAP NEXT | Pendente | K-019 |
 | 34 | Conferência com o enunciado oficial do portal | Atendido | Seção 6 deste documento (K-024) |
 | 35 | Aplicação funcional | Não aplicável | Fora do escopo da Sprint 1 (especificação); prevista nas Sprints 2 a 4 |

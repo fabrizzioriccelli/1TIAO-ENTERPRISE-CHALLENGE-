@@ -466,7 +466,10 @@ def verificar_arquivos() -> None:
 def verificar_template() -> None:
     g = "10. Template e entrega"
     readme = (RAIZ / "README.md").read_text(encoding="utf-8")
-    secoes = ["## Nome do grupo", "## 👨‍🎓 Integrantes", "## 👩‍🏫 Professores", "### Tutor(a)", "### Coordenador(a)",
+    # "Nome do grupo" é opcional: o grupo não adotou nome e removeu a seção do README
+    registrar(g, "Seção Nome do grupo", "INFO", "presente" if "## Nome do grupo" in readme
+              else "removida pelo grupo, que não adotou nome")
+    secoes = ["## 👨‍🎓 Integrantes", "## 👩‍🏫 Professores", "### Tutor(a)", "### Coordenador(a)",
               "## 📜 Descrição", "## 📁 Estrutura de pastas", "## 📎 Links e Observações", "### 🔗 Links do Projeto",
               "### 🧠 Decisões Técnicas", "### 📢 Observações Gerais", "## 🔧 Como executar o código", "## 📋 Licença"]
     faltam = [s for s in secoes if s not in readme]
