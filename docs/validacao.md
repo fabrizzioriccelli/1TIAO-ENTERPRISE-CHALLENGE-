@@ -119,7 +119,7 @@ Status: **Atendido**, **Parcialmente atendido**, **Pendente** ou **Não aplicáv
 | 35 | Aplicação funcional | Não aplicável | Fora do escopo da Sprint 1 (especificação); prevista nas Sprints 2 a 4 |
 | 36 | Testes com gestores reais | Não aplicável | Previstos para a Sprint 4 |
 | 37 | README concentrando todas as informações do enunciado | Atendido | Seções 1 a 14 da descrição do README |
-| 38 | Responsabilidades definidas para cada integrante | Pendente | Papéis prontos no README e no [roadmap](roadmap.md#3-equipe-e-responsabilidades); distribuição pelo grupo |
+| 38 | Responsabilidades definidas para cada integrante | Atendido | Um papel por integrante no README e no [roadmap](roadmap.md#3-equipe-e-responsabilidades), também usado na divisão do vídeo |
 | 39 | Kanban no Trello ou ferramenta semelhante | Parcialmente atendido | [kanban.csv](anexos/kanban.csv) pronto para importar; quadro a criar pelo grupo |
 
 ## 6. Conferência com o enunciado oficial
@@ -139,7 +139,7 @@ Enunciado da atividade transcrito pelo grupo em 9 out. 2026. Cada entregável do
 | Tratamento de dados incompletos | README, seção 9 | Atendido |
 | Orientação ao usuário sobre dados faltantes | README, seção 10 | Atendido |
 | Diagrama da arquitetura com o fluxo entrada → tratamento → análise → diagnóstico → benchmark → recomendações → visualização/relatório | README, seção 11; [arquitetura.md](arquitetura.md) | Atendido |
-| Planejamento: atividades, responsabilidades dos integrantes, etapas e Kanban | README, seção 13; [roadmap.md](roadmap.md) | Parcialmente atendido: falta o grupo distribuir os papéis entre os integrantes e criar o quadro no Trello |
+| Planejamento: atividades, responsabilidades dos integrantes, etapas e Kanban | README, seção 13; [roadmap.md](roadmap.md) | Parcialmente atendido: papéis distribuídos; falta criar o quadro no Trello |
 | Vídeo de até 5 minutos com narração humana, não listado, link no README | [Roteiro](video/roteiro.md) | Pendente: gravação pelo grupo |
 | README organizado com todas as informações | README | Atendido |
 
@@ -154,4 +154,4 @@ Requisitos técnicos dos itens 3.1 a 3.10, todos tratados nos documentos: format
 
 ## 7. Parecer
 
-A documentação técnica da Sprint 1 está completa e passou nas verificações automáticas. O que falta não é técnico: distribuição dos papéis entre os integrantes, quadro no Trello, decisão sobre o FIAP NEXT, acesso do `fiap-tutoria`, gravação e publicação do vídeo, uma conversa com a tutoria sobre o uso de IA e, principalmente, a **revisão do grupo**. Sem essa revisão, o grupo não terá domínio do conteúdo para responder à banca, e nenhum cartão deve sair de "Em revisão".
+A documentação técnica da Sprint 1 está completa e passou nas verificações automáticas. O que falta não é técnico: quadro no Trello, decisão sobre o FIAP NEXT, acesso do `fiap-tutoria`, gravação e publicação do vídeo, uma conversa com a tutoria sobre o uso de IA e, principalmente, a **revisão do grupo**. Sem essa revisão, o grupo não terá domínio do conteúdo para responder à banca, e nenhum cartão deve sair de "Em revisão".

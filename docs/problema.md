@@ -87,7 +87,7 @@ Os scripts em `src/` não são a aplicação. Eles existem para que cada número
 | Arquivo `.txt` com os links do repositório e do vídeo, único arquivo enviado no portal | [Enunciado, 4.1] | Preparado; link do vídeo **[Pendência]** |
 | Entregáveis do enunciado oficial da Sprint 1 (itens 3 e 4) | [Enunciado] | Conferidos item a item em [validação](validacao.md#6-conferência-com-o-enunciado-oficial) |
 | README concentrando todas as informações pedidas | [Enunciado, 4.1] | Atendido: seções 1 a 13 da descrição do [README](../README.md) |
-| Responsabilidades definidas para todos os integrantes | [Enunciado, 4.2] | Papéis definidos; distribuição por integrante **[Pendência]** do grupo |
+| Responsabilidades definidas para todos os integrantes | [Enunciado, 4.2] | Atendido: um papel por integrante em [roadmap](roadmap.md#3-equipe-e-responsabilidades) |
 | Kanban, preferencialmente no Trello | [Enunciado, 3 e 4.1] | Cartões prontos para importar; quadro no Trello **[Pendência]** |
 
 ## 6. Premissas e restrições

@@ -64,19 +64,19 @@ Grupos de referência entre clientes (US-SP-03), integrações por API, referên
 
 ## 3. Equipe e responsabilidades
 
-Papéis propostos para os 5 integrantes (Bruna Collavite, Fabio Guntovitch, Fabrizzio Riccelli, Gabriel Tamais e Natasha Zonta). A distribuição de cada pessoa por papel é decisão do grupo **[Pendência]**.
+Um papel por integrante, definido em 9 out. 2026 e revisável pelo grupo. O papel indica quem responde por cada frente nas Sprints 2 a 4; todos participam da revisão e do vídeo.
 
-| Papel | Responsabilidades principais |
-|---|---|
-| **R1 Produto e documentação** | User Stories, priorização, catálogo de recomendações com a Sem Parar Empresas, critérios de aceite, entregas no portal |
-| **R2 Engenharia de dados** | Ingestão, regras de qualidade, modelo de dados, massa sintética, atualização mensal |
-| **R3 Ciência de dados** | Indicadores, estimativa e calibração, desvios, benchmarks, economia e cenários |
-| **R4 Arquitetura e segurança** | Backend, banco, isolamento, autenticação, LGPD, infraestrutura e integração contínua |
-| **R5 UX, interface e comunicação** | Jornadas, wireframes, interface, relatório executivo, testes de usabilidade, vídeo |
+| Papel | Integrante | Responsabilidades principais |
+|---|---|---|
+| **R1 Produto e documentação** | Fabrizzio Riccelli | User Stories, priorização, catálogo de recomendações com a Sem Parar Empresas, critérios de aceite, repositório e entregas no portal |
+| **R2 Engenharia de dados** | Gabriel Tamais | Ingestão, regras de qualidade, modelo de dados, massa sintética, atualização mensal |
+| **R3 Ciência de dados** | Natasha Zonta | Indicadores, estimativa e calibração, desvios, benchmarks, economia e cenários |
+| **R4 Arquitetura e segurança** | Fabio Guntovitch | Backend, banco, isolamento, autenticação, LGPD, infraestrutura e integração contínua |
+| **R5 UX, interface e comunicação** | Bruna Collavite | Jornadas, wireframes, interface, relatório executivo, testes de usabilidade, edição e publicação do vídeo |
 
 Matriz RACI (R = executa, A = aprova, C = consultado, I = informado):
 
-| Entrega | R1 | R2 | R3 | R4 | R5 |
+| Entrega | R1 Fabrizzio | R2 Gabriel | R3 Natasha | R4 Fabio | R5 Bruna |
 |---|---|---|---|---|---|
 | Matriz de User Stories e priorização | R/A | C | C | C | C |
 | Ingestão e qualidade | C | R/A | C | C | I |

@@ -228,15 +228,17 @@ Login por provedor de identidade, perfis de acesso (gestor, CFO, analista da Sem
 
 A quantidade de Sprints é uma hipótese até a confirmação do calendário oficial.
 
+Cada integrante é responsável por um papel nas próximas Sprints e apresenta a parte correspondente no vídeo. A distribuição foi definida em 9 out. 2026 e pode ser revista pelo grupo.
+
 **Responsabilidades dos integrantes**
 
 | Papel | Responsabilidades | Integrante |
 |---|---|---|
-| Produto e documentação | User Stories, priorização, catálogo de recomendações, critérios de aceite, entregas no portal | **[Pendência: definir]** |
-| Engenharia de dados | Ingestão, regras de qualidade, modelo de dados, dados simulados | **[Pendência: definir]** |
-| Ciência de dados | Indicadores, estimativa, desvios, benchmarks, economia e cenários | **[Pendência: definir]** |
-| Arquitetura e segurança | Backend, banco de dados, autenticação, LGPD, infraestrutura | **[Pendência: definir]** |
-| UX, interface e comunicação | Telas, relatório executivo, testes de usabilidade, vídeo | **[Pendência: definir]** |
+| Produto e documentação | User Stories, priorização, catálogo de recomendações, critérios de aceite, entregas no portal | Fabrizzio Riccelli |
+| Engenharia de dados | Ingestão, regras de qualidade, modelo de dados, dados simulados | Gabriel Tamais |
+| Ciência de dados | Indicadores, estimativa, desvios, benchmarks, economia e cenários | Natasha Zonta |
+| Arquitetura e segurança | Backend, banco de dados, autenticação, LGPD, infraestrutura | Fabio Guntovitch |
+| UX, interface e comunicação | Telas, relatório executivo, testes de usabilidade, vídeo | Bruna Collavite |
 
 **Kanban.** Colunas Backlog, A fazer, Em andamento, Em revisão e Concluído, com 47 cartões. A lista com critério de aceite e evidência de cada cartão está em [docs/anexos/kanban.csv](docs/anexos/kanban.csv), pronta para importar no Trello. Plano completo, riscos e matriz de responsabilidades: [docs/roadmap.md](docs/roadmap.md).
 

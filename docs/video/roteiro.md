@@ -4,17 +4,17 @@
 
 ## 1. Distribuição do tempo
 
-| Bloco | Tempo | Slide | Conteúdo obrigatório coberto |
-|---|---|---|---|
-| 1. Abertura | 0:00 a 0:20 | 1 | Projeto e contexto |
-| 2. Problema | 0:20 a 0:50 | 2 | Problema e contexto |
-| 3. User Stories | 0:50 a 1:25 | 3 | User Stories escolhidas |
-| 4. Visão do produto | 1:25 a 1:55 | 4 | Visão do produto |
-| 5. Dados | 1:55 a 2:30 | 5 | Estrutura dos dados |
-| 6. Metodologia | 2:30 a 3:30 | 6 e 7 | Metodologia proposta |
-| 7. Economia | 3:30 a 3:55 | 8 | Metodologia (economia e recomendação) |
-| 8. Arquitetura | 3:55 a 4:20 | 9 | Arquitetura |
-| 9. Próximas etapas | 4:20 a 4:40 | 10 | Planejamento |
+| Bloco | Tempo | Slide | Conteúdo obrigatório coberto | Quem fala |
+|---|---|---|---|---|
+| 1. Abertura | 0:00 a 0:20 | 1 | Projeto e contexto | Fabrizzio |
+| 2. Problema | 0:20 a 0:50 | 2 | Problema e contexto | Fabrizzio |
+| 3. User Stories | 0:50 a 1:25 | 3 | User Stories escolhidas | Fabrizzio |
+| 4. Visão do produto | 1:25 a 1:55 | 4 | Visão do produto | Bruna |
+| 5. Dados | 1:55 a 2:30 | 5 | Estrutura dos dados | Gabriel |
+| 6. Metodologia | 2:30 a 3:30 | 6 e 7 | Metodologia proposta | Natasha |
+| 7. Economia | 3:30 a 3:55 | 8 | Metodologia (economia e recomendação) | Natasha |
+| 8. Arquitetura | 3:55 a 4:20 | 9 | Arquitetura | Fabio |
+| 9. Próximas etapas | 4:20 a 4:40 | 10 | Planejamento | Bruna |
 
 ## 2. Roteiro de narração
 
@@ -67,7 +67,7 @@ Nas próximas Sprints, vamos construir a ingestão e a primeira estimativa, depo
 
 ## 4. Recomendações para a apresentação
 
-- **Dividir a fala** entre os integrantes por bloco (sugestão: R1 nos blocos 1 a 3, R2 no 5, R3 nos 6 a 8, R4 no 9, R5 no 4 e no 10). Quem fala precisa dominar o conteúdo; a banca pode perguntar qualquer número.
+- **Divisão da fala** por bloco, de acordo com o papel de cada um ([roadmap](../roadmap.md#3-equipe-e-responsabilidades)): Fabrizzio Riccelli nos blocos 1 a 3 (abertura, problema e User Stories); Bruna Collavite nos blocos 4 e 9 (visão do produto e próximas etapas); Gabriel Tamais no bloco 5 (dados); Natasha Zonta nos blocos 6 e 7 (metodologia e economia); Fabio Guntovitch no bloco 8 (arquitetura). Quem fala precisa dominar o conteúdo; a banca pode perguntar qualquer número.
 - **Ensaiar com cronômetro** duas vezes. Se passar de 4:45, cortar exemplos, não pressa na fala.
 - **Falar com as próprias palavras.** O roteiro é guia; leitura monótona prejudica a avaliação.
 - **Mostrar, não descrever:** quando citar um número, ele deve estar visível no slide.
