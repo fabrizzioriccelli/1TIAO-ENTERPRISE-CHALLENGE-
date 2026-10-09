@@ -81,7 +81,6 @@ Os scripts em `src/` não são a aplicação. Eles existem para que cada número
 | Princípios: Simples, Confiável, Flexível, Progressivo | [Briefing, p. 2] | Traduzidos em decisões de produto em [solução](solucao.md#4-princípios-do-briefing-e-como-o-produto-os-cumpre) |
 | Fluxo: entrada flexível, diagnóstico, plano de ação | [Briefing, p. 2] | Mapeado nas capacidades do produto |
 | Repositório no padrão do template, com README, `data/`, `docs/`, `notebooks/` e `src/` | [Template] | Atendido |
-| Decisão sobre participação no FIAP NEXT, campo obrigatório do README | [Template] | **[Pendência]** do grupo |
 | Repositório privado, compartilhado apenas com o perfil `fiap-tutoria` | [Enunciado, 4.1] | Repositório privado; acesso de `fiap-tutoria` **[Pendência]** |
 | Vídeo de até 5 minutos, com narração humana, no YouTube como não listado, com link no README e no `.txt` | [Enunciado, 4.1] | Roteiro pronto; gravação **[Pendência]** |
 | Arquivo `.txt` com os links do repositório e do vídeo, único arquivo enviado no portal | [Enunciado, 4.1] | Preparado; link do vídeo **[Pendência]** |

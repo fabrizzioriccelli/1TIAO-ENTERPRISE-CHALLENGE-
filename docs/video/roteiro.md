@@ -4,21 +4,21 @@
 
 ## 1. Distribuição do tempo
 
-| Bloco | Tempo | Slide | Conteúdo obrigatório coberto | Quem fala |
-|---|---|---|---|---|
-| 1. Abertura | 0:00 a 0:20 | 1 | Projeto e contexto | Fabrizzio |
-| 2. Problema | 0:20 a 0:50 | 2 | Problema e contexto | Fabrizzio |
-| 3. User Stories | 0:50 a 1:25 | 3 | User Stories escolhidas | Fabrizzio |
-| 4. Visão do produto | 1:25 a 1:55 | 4 | Visão do produto | Bruna |
-| 5. Dados | 1:55 a 2:30 | 5 | Estrutura dos dados | Gabriel |
-| 6. Metodologia | 2:30 a 3:30 | 6 e 7 | Metodologia proposta | Natasha |
-| 7. Economia | 3:30 a 3:55 | 8 | Metodologia (economia e recomendação) | Natasha |
-| 8. Arquitetura | 3:55 a 4:20 | 9 | Arquitetura | Fabio |
-| 9. Próximas etapas | 4:20 a 4:40 | 10 | Planejamento | Bruna |
+| Bloco | Tempo | Slide | Conteúdo obrigatório coberto |
+|---|---|---|---|
+| 1. Abertura | 0:00 a 0:20 | 1 | Projeto e contexto |
+| 2. Problema | 0:20 a 0:50 | 2 | Problema e contexto |
+| 3. User Stories | 0:50 a 1:25 | 3 | User Stories escolhidas |
+| 4. Visão do produto | 1:25 a 1:55 | 4 | Visão do produto |
+| 5. Dados | 1:55 a 2:30 | 5 | Estrutura dos dados |
+| 6. Metodologia | 2:30 a 3:30 | 6 e 7 | Metodologia proposta |
+| 7. Economia | 3:30 a 3:55 | 8 | Metodologia (economia e recomendação) |
+| 8. Arquitetura | 3:55 a 4:20 | 9 | Arquitetura |
+| 9. Próximas etapas | 4:20 a 4:40 | 10 | Planejamento |
 
 ## 2. Roteiro de narração
 
-Escrito para ser **falado**, não lido. Antes de gravar, cada integrante deve ler em voz alta o seu trecho e ajustar palavras que não soem naturais na sua fala. Os números citados estão no [anexo de exemplos](../anexos/exemplos-calculados.md).
+Escrito para ser **falado**, não lido. Antes de gravar, quem vai narrar deve ler o roteiro em voz alta e ajustar as palavras que não soem naturais na sua fala. Os números citados estão no [anexo de exemplos](../anexos/exemplos-calculados.md).
 
 **[Slide 1 · Abertura]**
 Olá. Este é o Frota Pulse, nossa proposta para a Calculadora de Redução de Custos de Frota, no Enterprise Challenge da FIAP com a Sem Parar Empresas. Nesta primeira Sprint, o objetivo foi planejar: o que construir, com quais dados e como provar que funciona.
@@ -67,7 +67,7 @@ Nas próximas Sprints, vamos construir a ingestão e a primeira estimativa, depo
 
 ## 4. Recomendações para a apresentação
 
-- **Divisão da fala** por bloco, de acordo com o papel de cada um ([roadmap](../roadmap.md#3-equipe-e-responsabilidades)): Fabrizzio Riccelli nos blocos 1 a 3 (abertura, problema e User Stories); Bruna Collavite nos blocos 4 e 9 (visão do produto e próximas etapas); Gabriel Tamais no bloco 5 (dados); Natasha Zonta nos blocos 6 e 7 (metodologia e economia); Fabio Guntovitch no bloco 8 (arquitetura). Quem fala precisa dominar o conteúdo; a banca pode perguntar qualquer número.
+- **Um narrador.** Um único integrante grava a narração do roteiro inteiro. Ele precisa dominar todo o conteúdo, e os demais revisam o roteiro e os slides antes da gravação; a banca pode perguntar qualquer número a qualquer integrante.
 - **Ensaiar com cronômetro** duas vezes. Se passar de 4:45, cortar exemplos, não pressa na fala.
 - **Falar com as próprias palavras.** O roteiro é guia; leitura monótona prejudica a avaliação.
 - **Mostrar, não descrever:** quando citar um número, ele deve estar visível no slide.
@@ -83,7 +83,7 @@ Nas próximas Sprints, vamos construir a ingestão e a primeira estimativa, depo
 
 **Gravação**
 - [ ] Resolução de 1920 × 1080; slides em tela cheia
-- [ ] Narração feita pelos próprios integrantes: o enunciado exige **narração humana**, então não usar voz sintética
+- [ ] Narração feita por um integrante do grupo: o enunciado exige **narração humana**, então não usar voz sintética
 - [ ] Microfone testado; ambiente sem eco nem ruído
 - [ ] Câmera opcional; se houver, no canto, sem cobrir conteúdo
 - [ ] Duração final até 5:00

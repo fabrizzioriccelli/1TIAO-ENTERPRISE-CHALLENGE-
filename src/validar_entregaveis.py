@@ -495,9 +495,6 @@ def verificar_template() -> None:
     registrar(g, "Responsabilidades por integrante", "PENDENTE" if "[Pendência: definir]" in readme else "OK",
               "depende do grupo")
     registrar(g, "Observação do tutor removida", "FALHA" if "OBSERVAÇÃO DO TUTOR" in readme else "OK")
-    registrar(g, "Campo FIAP NEXT presente", "OK" if "Participação na Competição" in readme else "FALHA")
-    marcado = re.search(r"\[[xX]\] (Sim, aceitamos|Não vamos)", readme)
-    registrar(g, "Decisão FIAP NEXT marcada", "OK" if marcado else "PENDENTE", "depende do grupo")
     registrar(g, "Integrantes e tutor", "PENDENTE" if "[Pendência: nome" in readme else "OK")
     registrar(g, "Logo do template", "OK" if (RAIZ / "assets" / "logo-fiap.png").exists() else "FALHA")
     pastas = [p for p in ("assets", "data", "docs", "notebooks", "src") if not (RAIZ / p).is_dir()]

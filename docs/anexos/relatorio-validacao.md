@@ -6,9 +6,9 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 
 | Status | Quantidade |
 |---|---|
-| OK | 41 |
+| OK | 40 |
 | AVISO | 1 |
-| PENDENTE | 2 |
+| PENDENTE | 1 |
 | MANUAL | 1 |
 | INFO | 2 |
 
@@ -27,7 +27,7 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 3. Gabarito | Registros do gabarito existem nos dados | **OK** | 848 referências |
 | 3. Gabarito | Cenários com registros marcados | **OK** | todos |
 | 3. Gabarito | Contagens de metadados.json iguais às dos CSVs | **OK** | 14 tabelas |
-| 4. Links e âncoras | Links internos e âncoras | **OK** | 262 links internos em 22 arquivos |
+| 4. Links e âncoras | Links internos e âncoras | **OK** | 261 links internos em 22 arquivos |
 | 4. Links e âncoras | Links externos | **MANUAL** | 11 endereços distintos; acesso não testado neste ambiente (rede restrita) |
 | 5. Tabelas Markdown | Mesma quantidade de células em cada linha | **OK** | todas as tabelas |
 | 6. Mermaid | Sintaxe dos diagramas (renderização com mermaid-cli) | **OK** | 9 diagramas renderizados sem erro |
@@ -45,7 +45,7 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 9. Arquivos | Arquivos duplicados (mesmo conteúdo) | **OK** | 78 arquivos |
 | 9. Arquivos | Codificação UTF-8 | **OK** | todos os textos |
 | 9. Arquivos | Sem emojis fora dos títulos do template | **OK** | nenhum |
-| 9. Arquivos | Pendências declaradas no texto | **INFO** | 17 marcações: docs/problema.md (6), README.md (2), docs/roadmap.md (2), docs/seguranca-lgpd.md (2), ENTREGA_SPRINT1_LINKS.txt (1), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1), docs/uso-de-ia.md (1) |
+| 9. Arquivos | Pendências declaradas no texto | **INFO** | 15 marcações: docs/problema.md (5), docs/roadmap.md (2), docs/seguranca-lgpd.md (2), ENTREGA_SPRINT1_LINKS.txt (1), README.md (1), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1), docs/uso-de-ia.md (1) |
 | 10. Template e entrega | Seção Nome do grupo | **INFO** | removida pelo grupo, que não adotou nome |
 | 10. Template e entrega | Seções do README do template | **OK** | 12 seções presentes |
 | 10. Template e entrega | README concentra os itens do enunciado (4.1) | **OK** | 13 seções |
@@ -53,8 +53,6 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 10. Template e entrega | Diagrama do fluxo do enunciado no README, na ordem pedida | **OK** | Entrada de dados → Tratamento e organização → Análise dos custos → Diagnóstico → Benchmark → Recomendações → Visualização e relatório |
 | 10. Template e entrega | Responsabilidades por integrante | **OK** | depende do grupo |
 | 10. Template e entrega | Observação do tutor removida | **OK** |  |
-| 10. Template e entrega | Campo FIAP NEXT presente | **OK** |  |
-| 10. Template e entrega | Decisão FIAP NEXT marcada | **PENDENTE** | depende do grupo |
 | 10. Template e entrega | Integrantes e tutor | **OK** |  |
 | 10. Template e entrega | Logo do template | **OK** |  |
 | 10. Template e entrega | Pastas do template | **OK** |  |

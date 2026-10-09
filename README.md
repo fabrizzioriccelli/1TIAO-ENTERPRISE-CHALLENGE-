@@ -228,7 +228,7 @@ Login por provedor de identidade, perfis de acesso (gestor, CFO, analista da Sem
 
 A quantidade de Sprints é uma hipótese até a confirmação do calendário oficial.
 
-Cada integrante é responsável por um papel nas próximas Sprints e apresenta a parte correspondente no vídeo. A distribuição foi definida em 9 out. 2026 e pode ser revista pelo grupo.
+Cada integrante é responsável por um papel nas próximas Sprints. O vídeo é gravado por um integrante, que narra o roteiro inteiro. A distribuição foi definida em 9 out. 2026 e pode ser revista pelo grupo.
 
 **Responsabilidades dos integrantes**
 
@@ -240,7 +240,7 @@ Cada integrante é responsável por um papel nas próximas Sprints e apresenta a
 | Arquitetura e segurança | Backend, banco de dados, autenticação, LGPD, infraestrutura | Fabio Guntovitch |
 | UX, interface e comunicação | Telas, relatório executivo, testes de usabilidade, vídeo | Bruna Collavite |
 
-**Kanban.** Colunas Backlog, A fazer, Em andamento, Em revisão e Concluído, com 47 cartões. A lista com critério de aceite e evidência de cada cartão está em [docs/anexos/kanban.csv](docs/anexos/kanban.csv), pronta para importar no Trello. Plano completo, riscos e matriz de responsabilidades: [docs/roadmap.md](docs/roadmap.md).
+**Kanban.** Colunas Backlog, A fazer, Em andamento, Em revisão e Concluído, com 46 cartões. A lista com critério de aceite e evidência de cada cartão está em [docs/anexos/kanban.csv](docs/anexos/kanban.csv), pronta para importar no Trello. Plano completo, riscos e matriz de responsabilidades: [docs/roadmap.md](docs/roadmap.md).
 
 ### 14. Documentação detalhada
 
@@ -305,10 +305,7 @@ Abaixo encontra-se a descrição da organização da raiz do projeto e a finalid
 
 ### 📢 Observações Gerais
 
-*Indique obrigatoriamente no campo abaixo a decisão da equipe quanto à participação no festival FIAP NEXT:*
-
-* **Participação na Competição:** [ ] Sim, aceitamos participar / [ ] Não vamos participar. **[Pendência: decisão da equipe]**
-* *Outras observações gerais (opcional):* projeto acadêmico. "Sem Parar Empresas", "Corpay" e os nomes de produtos citados pertencem aos seus titulares; o Frota Pulse não é produto oficial e não usa seus logotipos. A produção contou com apoio de IA generativa, declarado em [docs/uso-de-ia.md](docs/uso-de-ia.md). Itens pendentes de ação do grupo estão na [matriz de conclusão](docs/validacao.md#5-matriz-de-critérios-de-conclusão).
+* Projeto acadêmico. "Sem Parar Empresas", "Corpay" e os nomes de produtos citados pertencem aos seus titulares; o Frota Pulse não é produto oficial e não usa seus logotipos. A produção contou com apoio de IA generativa, declarado em [docs/uso-de-ia.md](docs/uso-de-ia.md). Itens pendentes de ação do grupo estão na [matriz de conclusão](docs/validacao.md#5-matriz-de-critérios-de-conclusão).
 
 ## 🔧 Como executar o código
 

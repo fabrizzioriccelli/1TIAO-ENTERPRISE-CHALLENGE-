@@ -64,7 +64,7 @@ Grupos de referência entre clientes (US-SP-03), integrações por API, referên
 
 ## 3. Equipe e responsabilidades
 
-Um papel por integrante, definido em 9 out. 2026 e revisável pelo grupo. O papel indica quem responde por cada frente nas Sprints 2 a 4; todos participam da revisão e do vídeo.
+Um papel por integrante, definido em 9 out. 2026 e revisável pelo grupo. O papel indica quem responde por cada frente nas Sprints 2 a 4; todos participam da revisão. O vídeo da Sprint 1 é narrado por um único integrante.
 
 | Papel | Integrante | Responsabilidades principais |
 |---|---|---|
@@ -93,7 +93,7 @@ Colunas: **Backlog → A fazer → Em andamento → Em revisão → Concluído**
 | Coluna | Cartões | Conteúdo |
 |---|---|---|
 | Backlog | 22 | Sprints 2 a 4 (K-101 a K-306) |
-| A fazer | 6 | Ações externas da Sprint 1: decidir FIAP NEXT, dar acesso a `fiap-tutoria`, revisão do grupo, gravar e publicar o vídeo, entregar o .txt |
+| A fazer | 5 | Ações externas da Sprint 1: dar acesso a `fiap-tutoria`, revisão do grupo, gravar e publicar o vídeo, entregar o .txt |
 | Em andamento | 0 | - |
 | Em revisão | 19 | Documentos e artefatos da Sprint 1, identificação dos integrantes e conferência com o enunciado, aguardando a revisão do grupo |
 | Concluído | 0 | Nenhum cartão sem revisão do grupo |
