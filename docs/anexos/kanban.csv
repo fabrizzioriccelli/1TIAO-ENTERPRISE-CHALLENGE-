@@ -1,0 +1,48 @@
+id,titulo,coluna,sprint,papel,user_stories,criterio_de_aceite,evidencia
+K-001,"Ler briefing e template; separar requisitos, decisões e pendências",Em revisão,S1,R1,todas,Requisitos com origem identificada,docs/problema.md
+K-002,Matriz de rastreabilidade das 20 User Stories oficiais,Em revisão,S1,R1,todas,"20 US com funcionalidade, critério, sprint e evidência",docs/user-stories.md
+K-003,Personas hipotéticas e roteiro de entrevista,Em revisão,S1,R5,todas,Personas marcadas como hipotéticas,docs/personas.md
+K-004,"Proposta de produto, capacidades e diferenciais avaliados",Em revisão,S1,R1,todas,Diferenciais com decisão justificada,docs/solucao.md
+K-005,Modelo conceitual e dicionário de dados,Em revisão,S1,R2,"GF-01, GF-02",Colunas do dicionário iguais às dos CSVs (validador),docs/modelagem-dados.md; data/dicionario-dados.csv
+K-006,Massa sintética com cenários e gabarito,Em revisão,S1,R2,GF-01 a GF-09,Gerador determinístico; 34 cenários documentados,src/gerar_dados_sinteticos.py; data/sintetico/
+K-007,Metodologia de ingestão e qualidade (regras R-*),Em revisão,S1,R2,GF-01,Regras testadas contra o gabarito,docs/ingestao-qualidade.md
+K-008,"Indicadores, estimativa progressiva e confiabilidade",Em revisão,S1,R3,"GF-02, GF-03, GF-09, GF-10",Exemplos reproduzidos por script,docs/diagnostico.md; docs/anexos/exemplos-calculados.md
+K-009,Benchmarks e regras de comparabilidade,Em revisão,S1,R3,"GF-04, SP-03",Regras BEN e decomposição documentadas,docs/benchmarks.md
+K-010,"Economia, cenários, priorização e catálogo REC",Em revisão,S1,R3,"GF-05 a GF-07, CF-01, CF-02, SP-01","Fórmulas, dupla contagem e sensibilidade",docs/economia-recomendacoes.md
+K-011,Estratégia de IA por componente,Em revisão,S1,R3,"GF-01, GF-03, GF-09",Componentes com métrica e momento,docs/estrategia-ia.md
+K-012,"Arquitetura, decisões e diagramas",Em revisão,S1,R4,todas,Cinco diagramas validados pelo parser do Mermaid,docs/arquitetura.md; assets/diagramas/
+K-013,"Segurança, LGPD e governança",Em revisão,S1,R4,"SP-02, SP-03, SP-06",Bases legais por finalidade; pendência jurídica registrada,docs/seguranca-lgpd.md
+K-014,"Identidade visual, wireframes e gráficos",Em revisão,S1,R5,"GF-09, GF-10, CF-01",Contraste medido; wireframes rotulados como conceituais,docs/ux-identidade-visual.md; assets/
+K-015,"Roadmap, papéis e Kanban",Em revisão,S1,R1,todas,Nenhuma tarefa concluída sem evidência,docs/roadmap.md
+K-016,"Validação automática, auditoria e teste adversarial",Em revisão,S1,R4,todas,Relatório do validador sem falhas,docs/validacao.md; docs/teste-adversarial.md
+K-017,"Roteiro, storyboard e slides do vídeo",Em revisão,S1,R5,todas,Roteiro com até 5 minutos em ritmo de fala real,docs/video/
+K-018,"Preencher nome do grupo, integrantes e tutor no README",A fazer,S1,R1,-,Campos sem marcador de pendência,README.md
+K-019,Decidir participação no FIAP NEXT e marcar no README,A fazer,S1,R1,-,Uma opção marcada,README.md
+K-020,Conceder acesso de leitura ao perfil fiap-tutoria,A fazer,S1,R4,-,Convite aceito; repositório continua privado,Configurações do GitHub
+K-021,"Revisão do grupo: ler, entender e aprovar cada documento",A fazer,S1,Todos,todas,Cada integrante revisa ao menos 3 documentos e registra dúvidas,Comentários ou commits do grupo
+K-022,Gravar o vídeo de até 5 minutos,A fazer,S1,R5,todas,Duração até 5:00; áudio claro,Arquivo do vídeo
+K-023,Publicar o vídeo no YouTube como não listado e inserir o link,A fazer,S1,R5,-,Link aberto em janela anônima; inserido no README e no .txt,README.md; ENTREGA_SPRINT1_LINKS.txt
+K-024,Conferir o enunciado oficial no portal com a matriz de conclusão,A fazer,S1,R1,-,Divergências corrigidas ou registradas,docs/validacao.md
+K-025,Entregar o arquivo .txt no portal da FIAP,A fazer,S1,R1,-,Arquivo com os dois links verificados,Comprovante do portal
+K-101,"Repositório de código, integração contínua e contêineres",Backlog,S2,R4,-,Pipeline com testes e validação de dados,-
+K-102,Esquema PostgreSQL com segurança em nível de linha e migrações,Backlog,S2,R4,GF-02,Teste de vazamento entre clientes aprovado,-
+K-103,"Ingestão de CSV, XLSX e extratos com hash e detecção de reenvio",Backlog,S2,R2,GF-01,Cenário G01 tratado sem alterar totais,-
+K-104,Regras R-* com testes sobre o gabarito,Backlog,S2,R2,GF-01,Cobertura total nos cenários; controles limpos,-
+K-105,Motor de cálculo IND-01 a IND-05 com rateio por competência,Backlog,S2,R3,"GF-02, CF-03",Totais iguais à soma dos registros,-
+K-106,Estimativa progressiva N0 a N2 e perguntas guiadas,Backlog,S2,R3,"GF-09, GF-10, SP-04",Largura da faixa diminui a cada nível,-
+K-107,"Cadastro, autenticação, perfis e consentimento",Backlog,S2,R4,SP-06,MFA para perfis administrativos; preferências por finalidade,-
+K-108,"Interface: envio, fila de revisão e painel consolidado",Backlog,S2,R5,"GF-01, GF-02",Fluxo completo em teste interno,-
+K-201,Extração de PDF e imagem: comparar três alternativas,Backlog,S3,R3,GF-01,Precisão de 98% em campos monetários aceitos sem revisão,-
+K-202,Indicadores IND-06 a IND-12,Backlog,S3,R3,GF-03,Exemplos do anexo reproduzidos,-
+K-203,"Desvios: z modificado, CUSUM e decomposição LMDI",Backlog,S3,R3,"GF-03, CF-04",Achados esperados detectados; justificáveis não,-
+K-204,Benchmarks com regras BEN,Backlog,S3,R3,GF-04,Comparação bloqueada sem equivalência,-
+K-205,Catálogo REC v1 revisado com a Sem Parar Empresas,Backlog,S3,R1,"GF-05, SP-01",Regras de associação aprovadas,-
+K-206,Economia por cenário e priorização,Backlog,S3,R3,"GF-06, GF-07, CF-02",Teste de dupla contagem aprovado,-
+K-207,Calibração das premissas por backtest,Backlog,S3,R3,"GF-09, SP-03",Cobertura P10-P90 entre 70% e 90%,-
+K-208,Painel de diagnóstico do gestor,Backlog,S3,R5,GF-02 a GF-07,Teste com usuários internos,-
+K-301,Relatório executivo em PDF,Backlog,S4,R5,CF-01,Gerado em até 10 s para 100 veículos e 12 meses,-
+K-302,"Atualização mensal, lembretes e economia realizada",Backlog,S4,R2,"GF-08, SP-05",Medição contra linha de base ajustada,-
+K-303,Painel interno da Sem Parar Empresas com autorização e auditoria,Backlog,S4,R4,"SP-02, SP-03",Cliente sem autorização não aparece,-
+K-304,Segurança: checklist OWASP ASVS nível 2 e teste de intrusão,Backlog,S4,R4,-,Sem vulnerabilidade alta aberta,-
+K-305,Testes de usabilidade com 5 a 8 gestores e 2 a 3 financeiros,Backlog,S4,R5,todas,SUS igual ou maior que 70 (meta),-
+K-306,Vídeo final e relatório de resultados,Backlog,S4,R5,todas,"Resultados medidos, não estimados",-
