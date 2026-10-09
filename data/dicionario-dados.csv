@@ -1,0 +1,182 @@
+tabela,campo,descricao,tipo,unidade,obrigatorio,regra_validacao,regra_maquina,origem,sensibilidade,exemplo,politica_ausencia,presente_na_massa_sintetica
+empresas,empresa_id,Identificador interno da empresa cliente,texto,-,Sim,Único; formato EMP-<código>,pk;regex:^EMP-[A-Z0-9]+$,Sistema,Interno,EMP-B,Não se aplica (gerado),S
+empresas,razao_social,Razão social da empresa (fictícia na massa sintética),texto,-,Sim,2 a 150 caracteres,naovazio,Cadastro,Confidencial-cliente,Empresa Sintética B - Distribuição (fictícia),Bloqueia o cadastro,S
+empresas,cnpj,CNPJ da empresa (dado de pessoa jurídica),texto(14),-,Sim (produção),14 dígitos com dígitos verificadores válidos,regex:^[0-9]{14}$,Cadastro,Confidencial-cliente,(omitido na massa sintética),Bloqueia o cadastro,N
+empresas,segmento,Segmento de atuação declarado,categoria,-,Sim,Lista fechada,enum:servicos_tecnicos|distribuicao|transporte_carga|outros,Cadastro (pergunta de onboarding),Confidencial-cliente,distribuicao,Pergunta guiada no primeiro acesso,S
+empresas,porte_frota,"Classe de porte: pequena (até 10 veículos), média (11 a 50), grande (acima de 50)",categoria,-,Derivado,Derivado da contagem de veículos ativos,enum:pequena|media|grande,Derivado,Interno,media,Recalculado a cada atualização,S
+empresas,uf_sede,UF da sede,categoria,-,Sim,Sigla de UF,enum:AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO,Cadastro,Confidencial-cliente,SP,Pergunta guiada,S
+empresas,data_cadastro,Data de criação da conta,data,AAAA-MM-DD,Sim,Não posterior à data atual,data,Sistema,Interno,2025-07-01,Não se aplica (gerado),S
+frotas,frota_id,Identificador da frota ou operação (uma empresa pode ter várias),texto,-,Sim,Único,pk;regex:^FRO-[A-Z0-9]+$,Sistema,Interno,FRO-B1,Não se aplica (gerado),S
+frotas,empresa_id,Empresa dona da frota,texto,-,Sim,Deve existir em empresas,fk:empresas.empresa_id,Sistema,Interno,EMP-B,Bloqueia o registro,S
+frotas,nome,Nome da operação dado pelo gestor,texto,-,Sim,1 a 80 caracteres,naovazio,Cadastro,Confidencial-cliente,Distribuição regional,Usa 'Frota principal',S
+frotas,modalidade_operacional,"Modalidade predominante, usada para escolher pares e premissas",categoria,-,Sim,Lista fechada,enum:urbana_servicos|distribuicao_regional|rodoviario_longa_distancia|outra,Cadastro (pergunta de onboarding),Confidencial-cliente,distribuicao_regional,Pergunta guiada; sem ela não há comparação entre empresas,S
+frotas,uf_operacao_principal,UF onde a frota mais opera,categoria,-,Sim,Sigla de UF,enum:AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO,Cadastro,Confidencial-cliente,SP,"Assume a UF da sede, marcado como ESTIMADO",S
+frotas,ativa,Indica se a frota está em operação,booleano,-,Sim,true/false,bool,Cadastro,Interno,True,Assume true,S
+categorias_veiculo,categoria_id,Categoria operacional do veículo,categoria,-,Sim,Catálogo do produto,pk;enum:LEVE_PASSEIO|UTIL_LEVE|VUC|CAM_TOCO|CAM_TRUCK|CAV_SEMI,Catálogo,Público,CAM_TOCO,Pergunta guiada; sem categoria não há comparação,S
+categorias_veiculo,descricao,Descrição da categoria,texto,-,Sim,-,naovazio,Catálogo,Público,Caminhão toco (2 eixos),-,S
+categorias_veiculo,combustivel_padrao,Combustível esperado para a categoria,categoria,-,Sim,Lista fechada,enum:gasolina|etanol|flex|diesel_s10|diesel_s500|gnv|eletrico,Catálogo,Público,diesel_s10,-,S
+categorias_veiculo,eixos,Número de eixos do veículo ou conjunto,inteiro,eixos,Sim,2 a 9,int;min:2;max:9,Catálogo,Público,2,-,S
+categorias_veiculo,eixos_suspensiveis,Eixos que podem ser suspensos quando vazio,inteiro,eixos,Sim,"0 a 3, menor que eixos",int;min:0;max:3,Catálogo,Público,0,Assume 0,S
+categorias_veiculo,capacidade_tanque_l,Capacidade nominal do(s) tanque(s),decimal,L,Sim,20 a 1.500,num;min:20;max:1500,Catálogo (hipótese na simulação),Público,275,"Usa o valor típico da categoria, marcado como ESTIMADO",S
+categorias_veiculo,classe_peso,Classe de peso usada na tarifa de pedágio,categoria,-,Sim,Lista fechada,enum:leve|medio|pesado,Catálogo,Público,medio,-,S
+veiculos,veiculo_id,Identificador interno do veículo,texto,-,Sim,Único,pk,Sistema,Interno,B-V05,Não se aplica (gerado),S
+veiculos,frota_id,Frota à qual o veículo pertence,texto,-,Sim,Deve existir em frotas,fk:frotas.frota_id,Cadastro,Interno,FRO-B1,Bloqueia o registro,S
+veiculos,categoria_id,Categoria operacional,categoria,-,Sim,Deve existir em categorias_veiculo,fk:categorias_veiculo.categoria_id,Cadastro ou inferida de documento,Confidencial-cliente,VUC,Pergunta guiada,S
+veiculos,placa,Placa (padrão antigo ou Mercosul),texto(7),-,Sim (produção),Regex ^[A-Z]{3}[0-9][A-Z0-9][0-9]{2}$; armazenada cifrada,regex:^[A-Z]{3}[0-9][A-Z0-9][0-9]{2}$,Documentos e cadastro,Confidencial-cliente; pode identificar indiretamente uma pessoa,(não gerada na massa sintética),Registro fica pendente de vínculo,N
+veiculos,placa_token,Pseudônimo da placa (HMAC com chave do cliente) usado nas análises,texto,-,Sim,Formato PT-<8 hex>,regex:^PT-[0-9A-F]{8}$,Derivado,Pessoal-pseudonimizado,PT-CF4C5547,Derivado da placa,S
+veiculos,ano_fabricacao,Ano de fabricação,inteiro,ano,Sim,1980 até o ano seguinte ao atual,int;min:1980;max:2027,Cadastro ou documento,Confidencial-cliente,2019,Pergunta guiada; sem ele não há análise por idade,S
+veiculos,propriedade,Regime de posse,categoria,-,Sim,Lista fechada,enum:propria|locada|agregado,Cadastro,Confidencial-cliente,propria,Pergunta guiada; define quais custos são comparáveis,S
+veiculos,valor_referencia_brl,Valor de referência do veículo (base de IPVA e seguro),decimal,R$,Não,Maior ou igual a zero,num;min:0,Cadastro ou tabela de mercado,Confidencial-cliente,95243.71,"Estimado pela categoria, marcado como ESTIMADO",S
+veiculos,data_entrada_frota,Data de entrada na frota,data,AAAA-MM-DD,Não,Não posterior à data atual,data,Cadastro,Confidencial-cliente,2022-03-01,Assume o início do período analisado,S
+veiculos,status,Situação do veículo,categoria,-,Sim,Lista fechada,enum:ativo|inativo|vendido,Cadastro,Interno,ativo,Assume ativo enquanto houver despesas,S
+veiculos,possui_tag_pedagio,Indica se o veículo tem tag de pagamento eletrônico,booleano,-,Não,true/false,bool,Cadastro ou extrato,Confidencial-cliente,True,"Inferido do extrato de pedágio, marcado como ESTIMADO",S
+uso_veiculo_mensal,uso_id,Identificador do registro mensal de uso,texto,-,Sim,Único,pk,Sistema,Interno,USO-B-00001,Não se aplica,S
+uso_veiculo_mensal,veiculo_id,Veículo,texto,-,Sim,Deve existir em veiculos,fk:veiculos.veiculo_id,Sistema,Interno,B-V08,Bloqueia o registro,S
+uso_veiculo_mensal,competencia,Mês de referência,mês,AAAA-MM,Sim,Mês válido,mes,Sistema,Interno,2025-12,-,S
+uso_veiculo_mensal,km_rodados,Quilômetros rodados no mês,decimal,km,Não,0 a 25.000,num;min:0;max:25000,"Odômetro, telemetria ou declaração",Confidencial-cliente,3105.4,NAO_DISPONIVEL; nunca preenchido silenciosamente; gera pergunta sobre odômetro,S
+uso_veiculo_mensal,fonte_km,Origem da quilometragem,categoria,-,Condicional,Obrigatório quando km_rodados existe,enum:odometro_abastecimento|telemetria|declarado_usuario|estimado,Sistema,Interno,telemetria,Vazio quando km não disponível,S
+uso_veiculo_mensal,status_valor,Natureza do valor de km,categoria,-,Sim,Lista fechada,enum:OBSERVADO|CORRIGIDO|IMPUTADO|ESTIMADO|NAO_DISPONIVEL,Sistema,Interno,OBSERVADO,-,S
+uso_veiculo_mensal,dias_em_operacao,Dias com operação no mês,inteiro,dias,Não,0 a 31,int;min:0;max:31,"Telemetria, escala ou declaração",Confidencial-cliente,22,"Assume todos os dias úteis, marcado como ESTIMADO",S
+origens_dados,origem_id,Identificador do documento ou carga recebida,texto,-,Sim,Único,pk,Sistema,Interno,ORG-C-0012,Não se aplica,S
+origens_dados,empresa_id,Empresa que enviou,texto,-,Sim,Deve existir em empresas,fk:empresas.empresa_id,Sistema,Interno,EMP-C,-,S
+origens_dados,tipo_origem,Formato e natureza da fonte,categoria,-,Sim,Lista fechada,enum:csv|xlsx|pdf_texto|pdf_imagem|imagem|texto_livre|extrato_pedagio|extrato_cartao_combustivel|api|digitacao_manual,Sistema (detecção de tipo),Interno,extrato_pedagio,-,S
+origens_dados,descricao,Nome do arquivo ou descrição da carga,texto,-,Sim,1 a 200 caracteres,naovazio,Usuário,Confidencial-cliente,extrato_tag_2025-08.csv,Usa o nome técnico gerado,S
+origens_dados,hash_sha256,"Hash SHA-256 do arquivo, usado para integridade e detecção de reenvio",texto(64),-,Sim,64 caracteres hexadecimais,regex:^[0-9a-f]{64}$,Sistema,Interno,b5dc82a5...,Não se aplica (calculado),S
+origens_dados,data_recebimento,Data e hora do recebimento,data e hora,ISO 8601,Sim,Não posterior ao processamento,datahora,Sistema,Interno,2025-11-05T10:00,-,S
+origens_dados,metodo_extracao,Como os registros foram extraídos,categoria,-,Sim,Lista fechada,enum:leitura_estruturada|ocr|llm_multimodal|regra_texto|manual,Sistema,Interno,ocr,-,S
+origens_dados,confianca_extracao_media,"Confiança média da extração (só para OCR, IA ou texto)",decimal,0 a 1,Condicional,0 a 1,num;min:0;max:1,Serviço de extração,Interno,0.87,Vazio para leitura estruturada,S
+origens_dados,registros_extraidos,Quantidade de despesas extraídas,inteiro,registros,Sim,Maior ou igual a zero,int;min:0,Sistema,Interno,44,-,S
+despesas,despesa_id,Identificador da despesa (fato central),texto,-,Sim,Único,pk,Sistema,Interno,DSP-B-000123,Não se aplica,S
+despesas,empresa_id,Empresa,texto,-,Sim,Deve existir em empresas,fk:empresas.empresa_id,Sistema,Interno,EMP-B,-,S
+despesas,frota_id,Frota,texto,-,Sim,Deve existir em frotas,fk:frotas.frota_id,Sistema,Interno,FRO-B1,Assume a frota principal,S
+despesas,veiculo_id,"Veículo; vazio para custos de frota (apólice coletiva, telemetria)",texto,-,Não,"Se preenchido, deve existir em veiculos (R-VEIC-DESC)",,Documento ou cadastro,Interno,B-V05,Custo tratado como de frota e rateado por veículo·mês,S
+despesas,origem_id,Documento de origem,texto,-,Sim,Deve existir em origens_dados,fk:origens_dados.origem_id,Sistema,Interno,ORG-B-0003,Bloqueia o registro (sem origem não há rastreabilidade),S
+despesas,referencia_na_origem,"Localizador dentro do documento (linha, página, item)",texto,-,Sim,1 a 40 caracteres,naovazio,Sistema,Interno,linha 37,Usa 'documento inteiro',S
+despesas,categoria_custo,Categoria de custo,categoria,-,Sim,Lista fechada,enum:COMBUSTIVEL|MANUTENCAO|PEDAGIO|MULTA|TRIBUTO|SEGURO|OUTROS,Classificador (regras e modelo),Interno,PEDAGIO,Classificação pendente; registro vai para revisão,S
+despesas,subcategoria,Subcategoria do catálogo,texto,-,Sim,Catálogo controlado,naovazio,Classificador,Interno,passagem_tag,Usa 'nao_classificado',S
+despesas,data_evento,"Data do fato gerador (abastecimento, passagem, infração, pagamento)",data,AAAA-MM-DD,Sim,Não posterior ao recebimento (R-DATA-FUT),data,Documento,Confidencial-cliente,2025-11-14,Bloqueia o registro,S
+despesas,competencia_inicio,Primeiro mês de competência do custo,mês,AAAA-MM,Sim,Mês válido,mes,Derivado (regra de competência),Interno,2025-04,Igual ao mês do evento,S
+despesas,competencia_fim,Último mês de competência (custos plurimensais são rateados),mês,AAAA-MM,Sim,Maior ou igual a competencia_inicio,mes,Derivado (regra de competência),Interno,2026-03,Igual ao mês do evento,S
+despesas,valor_brl,Valor da despesa,decimal,R$,Sim,Diferente de zero; negativo só para estorno (R-VALOR-NEG),num,Documento,Confidencial-cliente,156.18,Bloqueia o registro,S
+despesas,natureza_custo,Quem suporta o custo,categoria,-,Sim,Lista fechada,enum:proprio|custeado_terceiro|reembolsavel,Regra de negócio,Confidencial-cliente,custeado_terceiro,Assume proprio,S
+despesas,status_valor,Natureza do valor,categoria,-,Sim,Lista fechada,enum:OBSERVADO|CORRIGIDO|IMPUTADO|ESTIMADO|NAO_DISPONIVEL,Sistema,Interno,OBSERVADO,-,S
+despesas,valor_extraido_original,Valor lido pela extração antes da correção humana,decimal,R$,Condicional,Obrigatório quando status_valor = CORRIGIDO,num,Sistema,Confidencial-cliente,10420.50,Vazio quando não houve correção,S
+despesas,confianca_extracao,"Confiança da extração do registro (OCR, IA ou texto)",decimal,0 a 1,Condicional,0 a 1,num;min:0;max:1,Serviço de extração,Interno,0.71,Vazio para leitura estruturada,S
+despesas,requer_revisao,"Registro aguardando revisão humana (confiança abaixo de 0,80)",booleano,-,Sim,true/false,bool,Sistema,Interno,True,-,S
+despesas,descricao_original,Texto como veio da fonte; pode conter dado pessoal e é mascarado na exibição,texto,-,Não,Até 500 caracteres,,Documento,Confidencial-cliente; pode conter dado pessoal,PEDAGIO PRACA-B07,Vazio,S
+despesas,uf,UF do fato gerador,categoria,-,Não,Sigla de UF,enum:AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO,Documento,Confidencial-cliente,SP,"Assume a UF de operação, marcado como ESTIMADO",S
+abastecimentos,despesa_id,Despesa correspondente,texto,-,Sim,Deve existir em despesas com categoria COMBUSTIVEL,fk:despesas.despesa_id,Sistema,Interno,DSP-C-000045,-,S
+abastecimentos,data_hora,Data e hora do abastecimento,data e hora,ISO 8601,Sim,Ordem compatível com o odômetro,datahora,Extrato ou nota fiscal,Confidencial-cliente,2025-10-03T14:05,"Usa a data da despesa às 12h, marcado como IMPUTADO",S
+abastecimentos,litros,Volume abastecido,decimal,L,Sim,Maior que zero e até 105% do tanque (R-ABS-TANQUE),num;min:0,Extrato ou nota fiscal,Confidencial-cliente,44.19,"IMP-01: valor/preço, marcado como IMPUTADO",S
+abastecimentos,preco_litro,Preço unitário pago,decimal,R$/L,Sim,Dentro da faixa plausível do combustível (R-PRECO-FAIXA),num;min:0,Extrato ou nota fiscal,Confidencial-cliente,6.149,"IMP-02: valor/litros, marcado como IMPUTADO",S
+abastecimentos,combustivel,Combustível abastecido,categoria,-,Sim,Compatível com a categoria (R-COMB-INCOMP),enum:gasolina|etanol|diesel_s10|diesel_s500|gnv,Nota fiscal (código de produto ANP) ou extrato,Confidencial-cliente,diesel_s10,Inferido da descrição; pendente de revisão,S
+abastecimentos,odometro_km,Leitura do odômetro no abastecimento,inteiro,km,Não,Não regressivo (R-ODO-REG),num;min:0,Digitado pelo motorista ou telemetria,Confidencial-cliente,198012,Vazio; km do mês vem de outra fonte ou fica NAO_DISPONIVEL,S
+abastecimentos,posto_codigo,Identificador do posto (CNPJ em produção; código fictício na simulação),texto,-,Sim,-,naovazio,Extrato ou nota fiscal,Confidencial-cliente,POSTO-C017,Usa 'posto_nao_identificado',S
+abastecimentos,posto_rede_negociada,Posto pertence à rede com preço negociado,booleano,-,Não,true/false,bool,Cadastro da rede,Confidencial-cliente,True,Assume false,S
+abastecimentos,meio_pagamento,Forma de pagamento,categoria,-,Não,Lista fechada,enum:cartao_frota|cartao_corporativo|reembolso|faturado,Extrato,Confidencial-cliente,cartao_frota,Vazio,S
+manutencoes,despesa_id,Despesa correspondente,texto,-,Sim,Deve existir em despesas com categoria MANUTENCAO,fk:despesas.despesa_id,Sistema,Interno,DSP-B-001234,-,S
+manutencoes,tipo,Natureza da manutenção,categoria,-,Sim,Lista fechada,enum:preventiva|corretiva|pneus|funilaria_sinistro,Nota da oficina ou classificador,Confidencial-cliente,corretiva,"Classificador; se incerto, revisão humana",S
+manutencoes,programada,Serviço previsto no plano de manutenção,booleano,-,Não,true/false,bool,Plano de manutenção ou nota,Confidencial-cliente,True,Assume false,S
+manutencoes,sistema,Sistema do veículo atendido,categoria,-,Não,Lista fechada,enum:motor|transmissao|freios|suspensao|eletrica|pneus|carroceria|arrefecimento|outros,Nota da oficina,Confidencial-cliente,freios,Usa 'outros',S
+manutencoes,odometro_km,Odômetro no serviço,inteiro,km,Não,Não regressivo,num;min:0,Nota da oficina,Confidencial-cliente,206564,Vazio,S
+manutencoes,oficina_codigo,Identificador da oficina (CNPJ em produção),texto,-,Não,-,,Nota da oficina,Confidencial-cliente,OFIC-B03,Vazio,S
+manutencoes,dias_parado,Dias de indisponibilidade do veículo,inteiro,dias,Não,0 a 90,int;min:0;max:90,Nota ou controle interno,Confidencial-cliente,2,Vazio,S
+pedagios,despesa_id,Despesa correspondente,texto,-,Sim,Deve existir em despesas com categoria PEDAGIO,fk:despesas.despesa_id,Sistema,Interno,DSP-B-004567,-,S
+pedagios,data_hora,Data e hora da passagem ou início da viagem,data e hora,ISO 8601,Sim,-,datahora,Extrato da tag ou comprovante,Confidencial-cliente,2025-10-18T15:13,Usa a data da despesa,S
+pedagios,concessionaria_codigo,Concessionária (VARIAS quando consolidado por viagem),texto,-,Sim,-,naovazio,Extrato,Confidencial-cliente,CONC-02,Usa 'nao_identificada',S
+pedagios,praca_codigo,Praça (CONSOLIDADO_VIAGEM quando agregado),texto,-,Sim,-,naovazio,Extrato,Confidencial-cliente,PRACA-B07,Usa 'nao_identificada',S
+pedagios,qtd_passagens,Número de passagens no registro,inteiro,passagens,Sim,Maior ou igual a 1,int;min:1,Extrato,Confidencial-cliente,1,Assume 1,S
+pedagios,eixos_cobrados,Eixos considerados na tarifa,inteiro,eixos,Sim,2 a 9,int;min:2;max:9,Extrato,Confidencial-cliente,6,"Usa os eixos da categoria, marcado como ESTIMADO",S
+pedagios,meio_pagamento,Forma de pagamento,categoria,-,Sim,Lista fechada,enum:tag|vale_pedagio|manual,Extrato ou comprovante,Confidencial-cliente,tag,Inferido da fonte,S
+pedagios,viagem_id,Viagem associada (quando há dados de viagem),texto,-,Não,"Se preenchido, deve existir em viagens",fk:viagens.viagem_id,Sistema de transporte (TMS),Confidencial-cliente,VGM-C-00045,Vazio,S
+multas,despesa_id,Despesa correspondente,texto,-,Sim,Deve existir em despesas com categoria MULTA,fk:despesas.despesa_id,Sistema,Interno,DSP-B-000920,-,S
+multas,auto_infracao_token,Pseudônimo do número do auto de infração,texto,-,Sim,Formato AIT-<8 hex>,regex:^AIT-[0-9A-F]{8}$,Derivado,Confidencial-cliente,AIT-A907836F,-,S
+multas,tipo_multa,Multa original ou multa por não indicação do condutor (NIC),categoria,-,Sim,Lista fechada,enum:original|nic,Notificação,Confidencial-cliente,nic,-,S
+multas,multa_origem_despesa_id,Para NIC: despesa da multa original,texto,-,Condicional,Obrigatório quando tipo_multa = nic,fk:despesas.despesa_id,Sistema,Interno,DSP-B-000920,-,S
+multas,gravidade,"Natureza da infração (CTB, art. 258)",categoria,-,Sim,Lista fechada,enum:leve|media|grave|gravissima,Notificação,Confidencial-cliente,grave,Pendente de revisão,S
+multas,valor_original,Valor nominal da multa,decimal,R$,Sim,Coerente com a gravidade e o fator multiplicador; NIC = 2x a originária,num;min:0,Notificação,Confidencial-cliente,195.23,-,S
+multas,data_notificacao,Data da notificação da autuação,data,AAAA-MM-DD,Sim,Posterior à infração,data,Notificação,Confidencial-cliente,2025-08-15,-,S
+multas,prazo_indicacao_condutor,"Limite para indicar o condutor (notificação + 30 dias, CTB art. 257, § 7º)",data,AAAA-MM-DD,Condicional,Só para multas originais,data,Derivado,Confidencial-cliente,2025-09-14,Calculado,S
+multas,condutor_identificado,Condutor indicado no prazo,booleano,-,Condicional,Só para multas originais,bool,Controle interno,Confidencial-cliente,True,Pergunta guiada,S
+multas,condutor_token,Pseudônimo do condutor indicado,texto,-,Não,Formato MOT-<6 hex>,regex:^MOT-[0-9A-F]{6}$,Derivado,Pessoal-pseudonimizado,MOT-8DD4A6,Vazio,S
+multas,data_vencimento,Vencimento da multa,data,AAAA-MM-DD,Sim,-,data,Notificação,Confidencial-cliente,2025-09-23,-,S
+multas,data_pagamento,Data do pagamento,data,AAAA-MM-DD,Não,-,data,Comprovante,Confidencial-cliente,2025-09-15,Vazio enquanto aberta,S
+multas,valor_pago,Valor efetivamente pago,decimal,R$,Não,Menor ou igual a valor_original,num;min:0,Comprovante,Confidencial-cliente,156.18,Vazio enquanto aberta,S
+multas,desconto_aplicado,"Desconto obtido (CTB, art. 284: 20% até o vencimento; 40% com SNE)",decimal,fração,Não,"0, 0,2 ou 0,4",num;min:0;max:0.4,Derivado,Confidencial-cliente,0.2,Calculado,S
+multas,situacao,Situação da multa,categoria,-,Sim,Lista fechada,enum:paga|aberta|em_recurso|cancelada,Controle interno,Confidencial-cliente,paga,Assume aberta,S
+tributos,despesa_id,Despesa correspondente,texto,-,Sim,Deve existir em despesas com categoria TRIBUTO,fk:despesas.despesa_id,Sistema,Interno,DSP-B-010538,-,S
+tributos,tipo,Tributo ou taxa,categoria,-,Sim,Lista fechada,enum:ipva|licenciamento|taxa_outros,Comprovante,Confidencial-cliente,ipva,-,S
+tributos,exercicio,Ano de referência,inteiro,ano,Sim,Ano válido,int;min:2000;max:2100,Comprovante,Confidencial-cliente,2026,-,S
+tributos,parcela,Número da parcela,inteiro,-,Sim,1 a total_parcelas,int;min:1,Comprovante,Confidencial-cliente,2,Assume 1,S
+tributos,total_parcelas,Total de parcelas,inteiro,-,Sim,Maior ou igual a 1,int;min:1,Comprovante,Confidencial-cliente,3,Assume 1,S
+tributos,base_calculo_brl,Base de cálculo,decimal,R$,Não,Maior ou igual a zero,num;min:0,Comprovante,Confidencial-cliente,235456.11,Vazio,S
+tributos,aliquota_hipotese,Alíquota usada na simulação (em produção: alíquota da legislação estadual),decimal,fração,Não,"0 a 0,06",num;min:0;max:0.06,Hipótese de simulação,Público,0.015,Vazio,S
+seguros,despesa_id,Despesa correspondente,texto,-,Sim,Deve existir em despesas com categoria SEGURO,fk:despesas.despesa_id,Sistema,Interno,DSP-B-010778,-,S
+seguros,apolice_token,Pseudônimo do número da apólice,texto,-,Sim,Formato APL-<8 hex>,regex:^APL-[0-9A-F]{8}$,Derivado,Confidencial-cliente,APL-BFE6608F,-,S
+seguros,tipo_cobertura,Tipo de apólice,categoria,-,Sim,Lista fechada,enum:frota_coletiva|individual|rcf,Apólice,Confidencial-cliente,frota_coletiva,-,S
+seguros,vigencia_inicio,Início da vigência,data,AAAA-MM-DD,Sim,-,data,Apólice,Confidencial-cliente,2025-04-01,-,S
+seguros,vigencia_fim,Fim da vigência,data,AAAA-MM-DD,Sim,Posterior ao início,data,Apólice,Confidencial-cliente,2026-03-31,-,S
+seguros,premio_total_brl,Prêmio total da apólice,decimal,R$,Sim,Maior que zero,num;min:0,Apólice,Confidencial-cliente,194608.00,-,S
+seguros,parcela,Número da parcela,inteiro,-,Sim,1 a total_parcelas,int;min:1,Boleto,Confidencial-cliente,1,Assume 1,S
+seguros,total_parcelas,Total de parcelas,inteiro,-,Sim,Maior ou igual a 1,int;min:1,Apólice,Confidencial-cliente,12,Assume 1,S
+seguros,veiculos_cobertos,Veículos cobertos pela apólice,inteiro,veículos,Não,Maior ou igual a 1,int;min:1,Apólice,Confidencial-cliente,30,Vazio,S
+viagens,viagem_id,Identificador da viagem,texto,-,Sim,Único,pk,TMS,Interno,VGM-C-00001,-,S
+viagens,veiculo_id,Veículo,texto,-,Sim,Deve existir em veiculos,fk:veiculos.veiculo_id,TMS,Interno,C-V01,-,S
+viagens,data_inicio,Início da viagem,data,AAAA-MM-DD,Sim,-,data,TMS,Confidencial-cliente,2025-07-01,-,S
+viagens,data_fim,Fim da viagem,data,AAAA-MM-DD,Sim,Maior ou igual ao início,data,TMS,Confidencial-cliente,2025-07-04,-,S
+viagens,uf_origem,UF de origem,categoria,-,Sim,Sigla de UF,enum:AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO,TMS,Confidencial-cliente,MG,-,S
+viagens,uf_destino,UF de destino,categoria,-,Sim,Sigla de UF,enum:AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO,TMS,Confidencial-cliente,GO,-,S
+viagens,km_percorrido,Distância da viagem,decimal,km,Sim,Maior que zero,num;min:0,TMS,Confidencial-cliente,1809.0,-,S
+viagens,tipo_viagem,Tipo de viagem,categoria,-,Sim,Lista fechada,enum:carregada_lotacao|carregada_fracionada|retorno_vazio,TMS,Confidencial-cliente,retorno_vazio,-,S
+viagens,vale_pedagio_recebido,Para lotação: Vale-Pedágio antecipado pelo contratante,booleano,-,Condicional,Só para carregada_lotacao,bool,TMS ou MDF-e,Confidencial-cliente,True,Vazio; viagem entra na regra REC-09 como pendente,S
+viagens,eixos_suspensos_declarados,Eixos suspensos declarados no retorno vazio,inteiro,eixos,Sim,0 até os eixos suspensíveis da categoria,int;min:0;max:3,TMS,Confidencial-cliente,2,Assume 0,S
+usuarios,usuario_id,Identificador do usuário,texto,-,Sim,Único,pk,Sistema,Interno,USR-0001,-,N
+usuarios,empresa_id,Empresa do usuário (nulo para equipe Sem Parar Empresas),texto,-,Condicional,Deve existir em empresas,fk:empresas.empresa_id,Sistema,Interno,EMP-B,-,N
+usuarios,nome,Nome do usuário,texto,-,Sim,2 a 120 caracteres,naovazio,Cadastro,Pessoal,(não gerado),Bloqueia o cadastro,N
+usuarios,email_corporativo,E-mail de acesso,texto,-,Sim,Formato de e-mail; verificado,naovazio,Cadastro,Pessoal,(não gerado),Bloqueia o cadastro,N
+usuarios,perfil,Perfil de acesso,categoria,-,Sim,Lista fechada,enum:gestor_frota|financeiro|admin_cliente|analista_spe|admin_plataforma,Cadastro,Interno,financeiro,Assume gestor_frota,N
+usuarios,mfa_ativo,Autenticação em dois fatores ativa,booleano,-,Sim,Obrigatório para perfis administrativos e da Sem Parar Empresas,bool,Sistema,Interno,True,-,N
+consentimentos,consentimento_id,Identificador do registro,texto,-,Sim,Único,pk,Sistema,Interno,CNS-0001,-,N
+consentimentos,usuario_id,Titular,texto,-,Sim,Deve existir em usuarios,fk:usuarios.usuario_id,Sistema,Interno,USR-0001,-,N
+consentimentos,finalidade,Finalidade do tratamento,categoria,-,Sim,Lista fechada,enum:contato_comercial|uso_agregado_benchmark|comunicacoes_produto,Usuário,Interno,contato_comercial,Sem registro = sem autorização,N
+consentimentos,base_legal,"Base legal adotada (LGPD, art. 7º)",categoria,-,Sim,Lista fechada,enum:consentimento|legitimo_interesse|execucao_contrato,Jurídico/DPO,Interno,consentimento,-,N
+consentimentos,status,Situação,categoria,-,Sim,Lista fechada,enum:concedido|revogado|negado,Usuário,Interno,concedido,Assume negado,N
+consentimentos,versao_termo,Versão do texto apresentado,texto,-,Sim,-,naovazio,Sistema,Interno,2026.1,-,N
+consentimentos,registrado_em,Data e hora da manifestação,data e hora,ISO 8601,Sim,-,datahora,Sistema,Interno,2026-07-01T10:00,-,N
+referencias_benchmark,referencia_id,Identificador da referência,texto,-,Sim,Único,pk,Motor de benchmark,Interno,REF-0001,-,N
+referencias_benchmark,tipo,Nível da hierarquia de referência,categoria,-,Sim,Lista fechada,enum:historico_proprio|pares_internos|grupo_operacional|externa|hipotetica,Motor de benchmark,Interno,pares_internos,-,N
+referencias_benchmark,indicador_id,Indicador comparado,texto,-,Sim,IND-01 a IND-12,naovazio,Motor de benchmark,Interno,IND-07,-,N
+referencias_benchmark,recorte,"Recorte de comparabilidade (categoria, modalidade, UF, período)",json,-,Sim,Campos mínimos do recorte preenchidos,naovazio,Motor de benchmark,Interno,"{categoria: CAV_SEMI, periodo: 2026-01/2026-06}",-,N
+referencias_benchmark,estatistica,Estatística usada,categoria,-,Sim,Lista fechada,enum:mediana|p25|p75|mad,Motor de benchmark,Interno,mediana,-,N
+referencias_benchmark,valor,Valor da referência,decimal,unidade do indicador,Sim,-,num,Motor de benchmark,Interno,2.38,-,N
+referencias_benchmark,n_veiculos,Veículos na referência,inteiro,veículos,Sim,Mínimo definido na regra de comparabilidade,int;min:0,Motor de benchmark,Interno,27,Comparação não exibida abaixo do mínimo,N
+referencias_benchmark,n_empresas,Empresas na referência (grupos entre clientes),inteiro,empresas,Condicional,Mínimo de 10 para grupos entre clientes,int;min:0,Motor de benchmark,Interno,1,-,N
+referencias_benchmark,fonte,"Fonte da referência (interna ou externa, com URL)",texto,-,Sim,-,naovazio,Motor de benchmark,Interno,frota própria,-,N
+referencias_benchmark,limitacoes,Limitações conhecidas,texto,-,Sim,-,naovazio,Motor de benchmark,Interno,pares da mesma frota,-,N
+diagnosticos,diagnostico_id,Identificador do diagnóstico,texto,-,Sim,Único,pk,Motor de diagnóstico,Interno,DIAG-EMP-C-2026-07,-,N
+diagnosticos,empresa_id,Empresa,texto,-,Sim,-,fk:empresas.empresa_id,Sistema,Interno,EMP-C,-,N
+diagnosticos,periodo_inicio,Primeiro mês analisado,mês,AAAA-MM,Sim,-,mes,Sistema,Interno,2025-07,-,N
+diagnosticos,periodo_fim,Último mês analisado,mês,AAAA-MM,Sim,-,mes,Sistema,Interno,2026-06,-,N
+diagnosticos,versao_metodologia,"Versão das regras, parâmetros e catálogo",texto,-,Sim,-,naovazio,Sistema,Interno,0.1,-,N
+diagnosticos,selo_confianca,Selo pela pior dimensão de confiabilidade,categoria,-,Sim,Lista fechada,enum:Alta|Moderada|Baixa|Insuficiente,Motor de diagnóstico,Interno,Alta,-,N
+achados,achado_id,Identificador do achado,texto,-,Sim,Único,pk,Motor de diagnóstico,Interno,ACH-C-01,-,N
+achados,diagnostico_id,Diagnóstico,texto,-,Sim,-,fk:diagnosticos.diagnostico_id,Sistema,Interno,DIAG-EMP-C-2026-07,-,N
+achados,estagio,Estágio de evidência,categoria,-,Sim,Lista fechada,enum:observacao|anomalia|hipotese|oportunidade_validada,Motor de diagnóstico ou validação humana,Interno,anomalia,-,N
+achados,evidencias,"Valores, método e registros que sustentam o achado",json,-,Sim,Contém ao menos um registro de origem,naovazio,Motor de diagnóstico,Confidencial-cliente,"{metodo: CUSUM, ...}",-,N
+achados,validado_por,Usuário que confirmou ou descartou o achado,texto,-,Não,-,fk:usuarios.usuario_id,Usuário,Interno,USR-0001,Vazio enquanto não validado,N
+recomendacoes,recomendacao_id,Identificador,texto,-,Sim,Único,pk,Motor de recomendação,Interno,OP-C1,-,N
+recomendacoes,achado_id,Achado de origem,texto,-,Sim,-,fk:achados.achado_id,Sistema,Interno,ACH-C-01,-,N
+recomendacoes,acao,Ação sugerida,texto,-,Sim,-,naovazio,Catálogo de regras,Interno,Inspeção mecânica dirigida,-,N
+recomendacoes,responsavel_sugerido,Papel responsável,categoria,-,Sim,-,naovazio,Catálogo de regras,Interno,gestor_frota,-,N
+recomendacoes,solucao_relacionada,"Solução do portfólio Sem Parar Empresas relacionada, quando houver justificativa",texto,-,Não,Só quando a regra de associação é satisfeita,,Catálogo de regras,Interno,Multiabastece,Vazio,N
+cenarios_economia,cenario_id,Identificador,texto,-,Sim,Único,pk,Motor de recomendação,Interno,CEN-EMP-C-BASE,-,N
+cenarios_economia,tipo,Cenário,categoria,-,Sim,Lista fechada,enum:conservador|base|otimista,Motor de recomendação,Interno,base,-,N
+cenarios_economia,economia_liquida_anual,Economia líquida anual estimada,decimal,R$/ano,Sim,-,num,Motor de recomendação,Confidencial-cliente,119594,-,N
+premissas,premissa_id,Identificador,texto,-,Sim,Único,pk,Curadoria,Interno,PRM-0001,-,N
+premissas,tipo,Natureza da premissa,categoria,-,Sim,Lista fechada,enum:hipotese|observado|legal,Curadoria,Interno,legal,-,N
+premissas,fonte,Fonte verificável ou justificativa,texto,-,Sim,-,naovazio,Curadoria,Público,"CTB, art. 258",-,N
+economias_realizadas,medicao_id,Identificador da medição,texto,-,Sim,Único,pk,Monitoramento,Interno,MED-0001,-,N
+economias_realizadas,recomendacao_id,Recomendação medida,texto,-,Sim,-,fk:recomendacoes.recomendacao_id,Sistema,Interno,OP-C1,-,N
+economias_realizadas,linha_base_ajustada,"Custo esperado sem a ação, ajustado às condições do período",decimal,R$,Sim,-,num,Monitoramento,Confidencial-cliente,98000,-,N
+economias_realizadas,custo_periodo_relato,Custo observado após a ação,decimal,R$,Sim,-,num,Monitoramento,Confidencial-cliente,92000,-,N
+economias_realizadas,economia_realizada,Linha de base ajustada menos custo observado,decimal,R$,Sim,-,num,Monitoramento,Confidencial-cliente,6000,-,N

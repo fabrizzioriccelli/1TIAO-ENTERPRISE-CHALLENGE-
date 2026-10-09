@@ -276,6 +276,19 @@ def main():
     obs_a = est["niveis"][2]["parcela_observada"] * est["niveis"][2]["p50"]
     lacuna_a = est["niveis"][2]["p50"] - obs_a
 
+    # 9b. Calibração da faixa de manutenção (backtest com meses mascarados)
+    cal = C.calibrar_manutencao(b, base, "EMP-B", "UTIL_LEVE", H2_2025)
+    R["backtest_manutencao"] = {
+        "todas_as_janelas_priori_generica": C.backtest_manutencao(b, base),
+        "janelas_2026_priori_generica": C.backtest_manutencao(b, base, inicio_minimo=6, n_subconjuntos=120),
+        "janelas_2026_calibrada_jul_dez_2025": C.backtest_manutencao(b, base, inicio_minimo=6, n_subconjuntos=120,
+                                                                      parametros=cal),
+        "parametros_calibrados": cal,
+        "priori_generica": {"eventos_por_10mil_km": C.PRIORI["manut_eventos_por_10mil_km"]["UTIL_LEVE"],
+                            "severidade_mediana": C.PRIORI["manut_severidade_mediana"]["UTIL_LEVE"],
+                            "severidade_sigma": C.PRIORI["manut_severidade_sigma"]},
+    }
+
     # 10. Confiabilidade
     lac_c = R["pedagio_EMP-C"]["lacuna_fev_estimada"] + R["pedagio_EMP-C"]["lacuna_manual_estimada"]
     R["confiabilidade"] = {
@@ -522,6 +535,33 @@ def anexo(R: dict) -> str:
     L += ["", f"Respostas simuladas no N1: km médio declarado {num(dec['km_medio_mensal_declarado'])} km/mês "
           f"(média observada nos veículos com odômetro: {num(dec['km_medio_mensal_real_veiculos_com_odometro'])}); "
           f"combustível declarado {brl(dec['combustivel_mensal_declarado'], 0)}/mês.", ""]
+    bt = R["backtest_manutencao"]
+    L += ["### Teste de calibração da faixa de manutenção (EMP-B, utilitários)", "",
+          "Janelas de 6 meses: 3 meses observados e 3 mascarados; subconjuntos aleatórios de 3 a 8 veículos. "
+          "Em uma faixa P10-P90 calibrada, espera-se cobertura perto de 80%, com erros divididos entre as caudas.", ""]
+    L.append(tabela(["Ensaio", "Parâmetros", "Ensaios", "Cobertura P10-P90", "Acima do P90", "Abaixo do P10",
+                     "Erro mediano do P50"],
+                    [["Todas as janelas", "premissa genérica", bt["todas_as_janelas_priori_generica"]["ensaios"],
+                      pct(bt["todas_as_janelas_priori_generica"]["cobertura_p10_p90"]),
+                      pct(bt["todas_as_janelas_priori_generica"]["fracao_acima_p90"]),
+                      pct(bt["todas_as_janelas_priori_generica"]["fracao_abaixo_p10"]),
+                      pct(bt["todas_as_janelas_priori_generica"]["erro_mediano_p50"])],
+                     ["Janelas de 2026", "premissa genérica", bt["janelas_2026_priori_generica"]["ensaios"],
+                      pct(bt["janelas_2026_priori_generica"]["cobertura_p10_p90"]),
+                      pct(bt["janelas_2026_priori_generica"]["fracao_acima_p90"]),
+                      pct(bt["janelas_2026_priori_generica"]["fracao_abaixo_p10"]),
+                      pct(bt["janelas_2026_priori_generica"]["erro_mediano_p50"])],
+                     ["Janelas de 2026", "calibrada em jul-dez/2025", bt["janelas_2026_calibrada_jul_dez_2025"]["ensaios"],
+                      pct(bt["janelas_2026_calibrada_jul_dez_2025"]["cobertura_p10_p90"]),
+                      pct(bt["janelas_2026_calibrada_jul_dez_2025"]["fracao_acima_p90"]),
+                      pct(bt["janelas_2026_calibrada_jul_dez_2025"]["fracao_abaixo_p10"]),
+                      pct(bt["janelas_2026_calibrada_jul_dez_2025"]["erro_mediano_p50"])]]))
+    pc_, pg = bt["parametros_calibrados"], bt["priori_generica"]
+    L += ["", f"Premissa genérica: {num(pg['eventos_por_10mil_km'], 2)} eventos por 10 mil km, severidade mediana "
+          f"{brl(pg['severidade_mediana'], 0)} (sigma {num(pg['severidade_sigma'], 2)}). Calibrada: "
+          f"{num(pc_['eventos_por_10mil_km'], 2)} eventos por 10 mil km, severidade mediana "
+          f"{brl(pc_['severidade_mediana'], 0)} (sigma {num(pc_['severidade_sigma'], 2)}), a partir de "
+          f"{pc_['eventos']} eventos em {num(pc_['km'])} km.", ""]
     # Confiabilidade
     L += ["## 7. Confiabilidade do diagnóstico", ""]
     dims = ["C_completude", "A_atualidade", "K_consistencia", "R_rastreabilidade", "X_contexto"]

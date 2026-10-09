@@ -424,6 +424,10 @@ PRIORI = {  # triangular (mínimo, moda, máximo) por veículo·mês; hipóteses
     "rendimento_km_l": {"LEVE_PASSEIO": (9.0, 11.5, 13.5), "UTIL_LEVE": (7.5, 9.5, 11.5)},
     "preco_gasolina": (5.8, 6.3, 6.9),
     "manutencao_por_km": {"LEVE_PASSEIO": (0.08, 0.15, 0.30), "UTIL_LEVE": (0.10, 0.18, 0.35)},
+    "manut_eventos_por_10mil_km": {"LEVE_PASSEIO": 1.5, "UTIL_LEVE": 1.6},
+    "manut_alfa0": 4.0,
+    "manut_severidade_mediana": {"LEVE_PASSEIO": 600.0, "UTIL_LEVE": 700.0},
+    "manut_severidade_sigma": 0.9,
     "pedagio_por_km_urbano": (0.0, 0.01, 0.05),
     "multas_veiculo_mes": (0.0, 15.0, 60.0),
     "valor_veiculo": {"LEVE_PASSEIO": (55_000, 80_000, 110_000), "UTIL_LEVE": (70_000, 100_000, 140_000)},
@@ -457,7 +461,10 @@ def estimativa_progressiva(b: Base, base: pd.DataFrame, semente: int = 7) -> dic
     obs = rat.groupby("subcategoria").valor_competencia.sum()
     obs_cat = rat.groupby("categoria_custo").valor_competencia.sum()
     manut_obs = float(obs_cat.get("MANUTENCAO", 0.0))
-    meses_manut = sorted(set(rat.loc[rat.categoria_custo == "MANUTENCAO", "competencia"]))
+    # cobertura declarada pelo gestor ao enviar as notas: um mês coberto sem nota vale zero, não lacuna
+    meses_manut = ["2025-12", "2026-01", "2026-02"]
+    eventos_obs = (d[(d.categoria_custo == "MANUTENCAO") & ~d.excluida]
+                   .merge(veic[["veiculo_id", "categoria_id"]], on="veiculo_id").categoria_id.value_counts().to_dict())
     verdade = float(obs_cat.sum()) + float(b.lacunas["G29"])
     km_real = b.uso_veiculo_mensal[b.uso_veiculo_mensal.veiculo_id.isin(veic.veiculo_id)
                                    & b.uso_veiculo_mensal.competencia.isin(meses)]
@@ -496,14 +503,28 @@ def estimativa_progressiva(b: Base, base: pd.DataFrame, semente: int = 7) -> dic
             comp["pedagio"] = sum(n_cat.get(c, 0) * km[c] for c in km) * _tri(rng, PRIORI["pedagio_por_km_urbano"], n) * n_meses
             comp["outros"] = len(veic) * _tri(rng, PRIORI["outros_veiculo_mes"], n) * n_meses
             comp["locacao"] = len(locados) * _tri(rng, PRIORI["locacao_mes"], n) * n_meses
-        # manutenção (só veículos próprios; locação inclui manutenção)
-        if nivel >= 2:
-            faltam = n_meses - len(meses_manut)
-            media = manut_obs / max(len(meses_manut), 1)
-            comp["manutencao"] = manut_obs + media * faltam * rng.triangular(0.6, 1.0, 1.6, n)
-        else:
-            comp["manutencao"] = sum(n_prop.get(c, 0) * km[c] * _tri(rng, PRIORI["manutencao_por_km"][c], n)
-                                     for c in km) * n_meses
+        # manutenção (só veículos próprios; a locação inclui manutenção). Custo de eventos raros e caros:
+        # modelo de frequência x severidade. Eventos ~ Poisson(lambda x exposição em 10 mil km), com lambda
+        # ~ Gamma(alfa0, beta0) atualizada pelos eventos observados (conjugada Gamma-Poisson), e custo de
+        # cada evento ~ lognormal(mediana, sigma).
+        comp["manutencao"] = np.full(n, manut_obs if nivel >= 2 else 0.0)
+        meses_estimar = (n_meses - len(meses_manut)) if nivel >= 2 else n_meses
+        for c in km:
+            if not n_prop.get(c, 0):
+                continue
+            lam0, alfa0 = PRIORI["manut_eventos_por_10mil_km"][c], PRIORI["manut_alfa0"]
+            beta0 = alfa0 / lam0
+            exp_obs = n_prop[c] * km_medio_declarado * len(meses_manut) / 10_000 if nivel >= 2 else 0.0
+            k_obs = eventos_obs.get(c, 0) if nivel >= 2 else 0
+            lam = rng.gamma(alfa0 + k_obs, 1 / (beta0 + exp_obs), n)
+            exposicao = n_prop[c] * km[c] * meses_estimar / 10_000
+            eventos = rng.poisson(lam * exposicao)
+            med, sig = PRIORI["manut_severidade_mediana"][c], PRIORI["manut_severidade_sigma"]
+            custos = rng.lognormal(np.log(med), sig, int(eventos.sum()))
+            acum = np.concatenate([[0.0], np.cumsum(custos)])
+            fim = np.cumsum(eventos)
+            soma = acum[fim] - acum[fim - eventos]
+            comp["manutencao"] = comp["manutencao"] + soma
         # multas, tributos e seguro (próprios)
         if nivel >= 3:
             comp["multas"] = np.full(n, float(b.lacunas["G29.multas"]))
@@ -664,3 +685,64 @@ def combinar_alavancas(custo: float, reducoes: list[float]) -> dict:
     combinada = custo - restante
     return {"custo": custo, "reducoes": reducoes, "soma_ingenua": soma_ingenua, "combinada": combinada,
             "dupla_contagem_evitada": soma_ingenua - combinada}
+
+
+def calibrar_manutencao(b: Base, base: pd.DataFrame, emp: str, cat: str, meses: list[str]) -> dict:
+    """Estima frequência (eventos por 10 mil km) e severidade (lognormal) a partir de um histórico."""
+    veics = b.veiculos[b.veiculos.categoria_id.eq(cat) & b.veiculos.frota_id.isin(
+        b.frotas.loc[b.frotas.empresa_id == emp, "frota_id"])].veiculo_id.tolist()
+    m = base[(base.empresa_id == emp) & (base.categoria_custo == "MANUTENCAO") & ~base.excluida
+             & base.veiculo_id.isin(veics) & base.data_evento.str[:7].isin(meses)]
+    km = b.uso_veiculo_mensal[b.uso_veiculo_mensal.veiculo_id.isin(veics)
+                              & b.uso_veiculo_mensal.competencia.isin(meses)].km_rodados.sum()
+    logs = np.log(m.valor_brl[m.valor_brl > 0])
+    return {"eventos_por_10mil_km": float(len(m) / (km / 10_000)), "severidade_mediana": float(np.exp(logs.median())),
+            "severidade_sigma": float(logs.std(ddof=1)), "eventos": int(len(m)), "km": float(km)}
+
+
+def backtest_manutencao(b: Base, base: pd.DataFrame, emp: str = "EMP-B", cat: str = "UTIL_LEVE",
+                        n_subconjuntos: int = 40, n_sim: int = 5_000, semente: int = 11,
+                        parametros: dict | None = None, inicio_minimo: int = 0) -> dict:
+    """Teste de calibração da faixa P10-P90 de manutenção (modelo frequência x severidade).
+
+    Para janelas deslizantes de 6 meses: observa 3 meses, estima os 3 seguintes para subconjuntos
+    aleatórios de veículos da categoria e verifica se o valor real cai na faixa. Em uma faixa P10-P90
+    calibrada, espera-se cobertura próxima de 80%."""
+    meses = janela(b, emp)
+    veics = b.veiculos[b.veiculos.categoria_id.eq(cat) & b.veiculos.frota_id.isin(
+        b.frotas.loc[b.frotas.empresa_id == emp, "frota_id"])].veiculo_id.tolist()
+    m = base[(base.empresa_id == emp) & (base.categoria_custo == "MANUTENCAO") & ~base.excluida
+             & base.veiculo_id.isin(veics)].assign(comp=lambda x: x.data_evento.str[:7])
+    custo = m.groupby(["veiculo_id", "comp"]).valor_brl.sum()
+    qtd = m.groupby(["veiculo_id", "comp"]).size()
+    km = b.uso_veiculo_mensal.set_index(["veiculo_id", "competencia"]).km_rodados
+    lam0, alfa0 = PRIORI["manut_eventos_por_10mil_km"][cat], PRIORI["manut_alfa0"]
+    med, sig = PRIORI["manut_severidade_mediana"][cat], PRIORI["manut_severidade_sigma"]
+    if parametros:
+        lam0, med, sig = (parametros["eventos_por_10mil_km"], parametros["severidade_mediana"],
+                          parametros["severidade_sigma"])
+    rng = np.random.default_rng(semente)
+    linhas = []
+    for ini in range(inicio_minimo, len(meses) - 5):
+        obs_m, alvo_m = meses[ini:ini + 3], meses[ini + 3:ini + 6]
+        for _ in range(n_subconjuntos):
+            sub = list(rng.choice(veics, int(rng.integers(3, len(veics) + 1)), replace=False))
+            chaves_obs = pd.MultiIndex.from_product([sub, obs_m])
+            chaves_alvo = pd.MultiIndex.from_product([sub, alvo_m])
+            k_obs = float(qtd.reindex(chaves_obs).fillna(0).sum())
+            exp_obs = float(km.reindex(chaves_obs).fillna(0).sum()) / 10_000
+            exp_alvo = float(km.reindex(chaves_alvo).fillna(0).sum()) / 10_000
+            real = float(custo.reindex(chaves_alvo).fillna(0).sum())
+            lam = rng.gamma(alfa0 + k_obs, 1 / (alfa0 / lam0 + exp_obs), n_sim)
+            ev = rng.poisson(lam * exp_alvo)
+            acum = np.concatenate([[0.0], np.cumsum(rng.lognormal(np.log(med), sig, int(ev.sum())))])
+            fim = np.cumsum(ev)
+            tot = acum[fim] - acum[fim - ev]
+            p10, p50, p90 = np.percentile(tot, [10, 50, 90])
+            linhas.append({"inicio_alvo": alvo_m[0], "veiculos": len(sub), "real": real, "p10": p10, "p50": p50,
+                           "p90": p90, "dentro": p10 <= real <= p90, "abaixo": real < p10, "acima": real > p90})
+    df = pd.DataFrame(linhas)
+    return {"categoria": cat, "empresa": emp, "ensaios": int(len(df)), "cobertura_p10_p90": float(df.dentro.mean()),
+            "fracao_abaixo_p10": float(df.abaixo.mean()), "fracao_acima_p90": float(df.acima.mean()),
+            "erro_mediano_p50": float(((df.p50 - df.real) / df.real.where(df.real > 0)).median()),
+            "largura_relativa_mediana": float(((df.p90 - df.p10) / df.p50).median())}

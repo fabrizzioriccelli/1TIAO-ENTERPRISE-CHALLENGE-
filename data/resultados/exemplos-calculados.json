@@ -915,12 +915,12 @@
   "niveis": {
    "0": {
     "descricao": "Composição da frota (8 veículos: 4 utilitários e 2 automóveis próprios, 2 automóveis locados), segmento e UF",
-    "p10": 119738.07439711863,
-    "p50": 137419.3733943352,
-    "p90": 157335.84421232698,
-    "largura_p10_p90": 37597.76981520835,
-    "min_simulado": 90634.45912858608,
-    "max_simulado": 193955.31667036947,
+    "p10": 116157.53860509217,
+    "p50": 134382.97161239345,
+    "p90": 155400.91455516088,
+    "largura_p10_p90": 39243.375950068716,
+    "min_simulado": 81834.49071194042,
+    "max_simulado": 213101.9796636302,
     "parcela_observada": 0.0,
     "contem_valor_real": true,
     "componentes_p50": {
@@ -928,20 +928,20 @@
      "pedagio": 1594.2224611657484,
      "outros": 2628.74062639772,
      "locacao": 41463.61648493996,
-     "manutencao": 13125.229720399868,
-     "multas": 833.9837054100551,
-     "tributos": 8242.281355486051,
-     "seguro": 14264.70755971051
+     "manutencao": 9420.598876547068,
+     "multas": 833.15693682145,
+     "tributos": 8271.097406110299,
+     "seguro": 14259.230047391366
     }
    },
    "1": {
     "descricao": "+ duas respostas: km médio mensal por veículo e gasto mensal com combustível",
-    "p10": 126191.20844488386,
-    "p50": 135424.76820375927,
-    "p90": 145064.38284340018,
-    "largura_p10_p90": 18873.17439851632,
-    "min_simulado": 110712.15311119951,
-    "max_simulado": 162650.7609295983,
+    "p10": 121473.34331862358,
+    "p50": 132194.91996900504,
+    "p90": 144766.62452049615,
+    "largura_p10_p90": 23293.281201872567,
+    "min_simulado": 106137.55072344813,
+    "max_simulado": 181102.55723325518,
     "parcela_observada": 0.0,
     "contem_valor_real": true,
     "componentes_p50": {
@@ -949,49 +949,49 @@
      "pedagio": 1597.6316412774663,
      "outros": 2631.3573056467394,
      "locacao": 41424.30364623784,
-     "manutencao": 12798.99131592037,
-     "multas": 840.4403605223707,
-     "tributos": 8239.973910744455,
-     "seguro": 14290.879550245128
+     "manutencao": 9097.721491393633,
+     "multas": 837.1848366264104,
+     "tributos": 8231.86703831224,
+     "seguro": 14262.825732654193
     }
    },
    "2": {
     "descricao": "+ extratos de combustível e pedágio, faturas de locação e 3 meses de notas de oficina (situação atual)",
-    "p10": 134597.49962571313,
-    "p50": 139938.40986333782,
-    "p90": 145661.1641680185,
-    "largura_p10_p90": 11063.66454230537,
-    "min_simulado": 126742.01612948928,
-    "max_simulado": 159078.5132934215,
-    "parcela_observada": 0.723354939496992,
-    "contem_valor_real": false,
-    "componentes_p50": {
-     "combustivel": 55653.82,
-     "pedagio": 3340.18,
-     "outros": 831.14,
-     "locacao": 41400.0,
-     "manutencao": 15221.75373431536,
-     "multas": 835.557140343594,
-     "tributos": 8262.92783045218,
-     "seguro": 14259.734810469598
-    }
-   },
-   "3": {
-    "descricao": "+ apólice de seguro, comprovantes de IPVA/licenciamento e relação de multas (simulação do próximo passo)",
-    "p10": 130765.73937646904,
-    "p50": 133232.25802826014,
-    "p90": 136207.62895808634,
-    "largura_p10_p90": 5441.889581617303,
-    "min_simulado": 128838.73964270917,
-    "max_simulado": 138500.63795440816,
-    "parcela_observada": 0.8857873592067135,
+    "p10": 128045.79066662185,
+    "p50": 133939.19991126822,
+    "p90": 141151.36138994814,
+    "largura_p10_p90": 13105.570723326295,
+    "min_simulado": 120138.45563247612,
+    "max_simulado": 212479.31104552036,
+    "parcela_observada": 0.7557544024979949,
     "contem_valor_real": true,
     "componentes_p50": {
      "combustivel": 55653.82,
      "pedagio": 3340.18,
      "outros": 831.14,
      "locacao": 41400.0,
-     "manutencao": 15216.808028260122,
+     "manutencao": 8852.364222529792,
+     "multas": 835.2240066107674,
+     "tributos": 8284.476225127095,
+     "seguro": 14276.33518552504
+    }
+   },
+   "3": {
+    "descricao": "+ apólice de seguro, comprovantes de IPVA/licenciamento e relação de multas (simulação do próximo passo)",
+    "p10": 123922.8837580351,
+    "p50": 126874.43336396877,
+    "p90": 132338.90462966886,
+    "largura_p10_p90": 8416.020871633766,
+    "min_simulado": 122916.22,
+    "max_simulado": 154904.41909075744,
+    "parcela_observada": 0.9301751887351905,
+    "contem_valor_real": false,
+    "componentes_p50": {
+     "combustivel": 55653.82,
+     "pedagio": 3340.18,
+     "outros": 831.14,
+     "locacao": 41400.0,
+     "manutencao": 8858.983363968768,
      "multas": 500.2,
      "tributos": 6173.66,
      "seguro": 10116.45
@@ -1003,33 +1003,33 @@
     "componente": "seguro",
     "pergunta": "Enviar a apólice de seguro (ou informar o prêmio anual)",
     "esforco": 1,
-    "reducao_largura_brl": 3826.7087080306082,
-    "reducao_pct": 0.3387732787674242,
-    "pontuacao": 3826.7087080306082
+    "reducao_largura_brl": 3056.239335705366,
+    "reducao_pct": 0.2346990347465827,
+    "pontuacao": 3056.239335705366
    },
    {
     "componente": "tributos",
     "pergunta": "Enviar comprovantes de IPVA e licenciamento (ou informar os valores pagos)",
     "esforco": 1,
-    "reducao_largura_brl": 2141.032569841598,
-    "reducao_pct": 0.1895426798781259,
-    "pontuacao": 2141.032569841598
+    "reducao_largura_brl": 1839.7419982929132,
+    "reducao_pct": 0.14128005818707973,
+    "pontuacao": 1839.7419982929132
    },
    {
     "componente": "manutencao",
     "pergunta": "Enviar as notas de oficina de out/2025, nov/2025 e mar/2026",
     "esforco": 2,
-    "reducao_largura_brl": 1361.869548664341,
-    "reducao_pct": 0.12056444518139704,
-    "pontuacao": 680.9347743321705
+    "reducao_largura_brl": 3136.392489768128,
+    "reducao_pct": 0.24085426862196987,
+    "pontuacao": 1568.196244884064
    },
    {
     "componente": "multas",
     "pergunta": "Informar se houve multas no período e o valor total pago",
     "esforco": 1,
-    "reducao_largura_brl": 139.44552045757882,
-    "reducao_pct": 0.012344920865208968,
-    "pontuacao": 139.44552045757882
+    "reducao_largura_brl": 119.12256270265789,
+    "reducao_pct": 0.009147827578889699,
+    "pontuacao": 119.12256270265789
    }
   ],
   "declaracoes_nivel_1": {
@@ -1079,6 +1079,16 @@
      0.35
     ]
    },
+   "manut_eventos_por_10mil_km": {
+    "LEVE_PASSEIO": 1.5,
+    "UTIL_LEVE": 1.6
+   },
+   "manut_alfa0": 4.0,
+   "manut_severidade_mediana": {
+    "LEVE_PASSEIO": 600.0,
+    "UTIL_LEVE": 700.0
+   },
+   "manut_severidade_sigma": 0.9,
    "pedagio_por_km_urbano": [
     0.0,
     0.01,
@@ -1128,10 +1138,54 @@
    ]
   }
  },
+ "backtest_manutencao": {
+  "todas_as_janelas_priori_generica": {
+   "categoria": "UTIL_LEVE",
+   "empresa": "EMP-B",
+   "ensaios": 280,
+   "cobertura_p10_p90": 0.7607142857142857,
+   "fracao_abaixo_p10": 0.007142857142857143,
+   "fracao_acima_p90": 0.23214285714285715,
+   "erro_mediano_p50": -0.4079677434765839,
+   "largura_relativa_mediana": 2.27066743839059
+  },
+  "janelas_2026_priori_generica": {
+   "categoria": "UTIL_LEVE",
+   "empresa": "EMP-B",
+   "ensaios": 120,
+   "cobertura_p10_p90": 0.975,
+   "fracao_abaixo_p10": 0.025,
+   "fracao_acima_p90": 0.0,
+   "erro_mediano_p50": 0.2409241891891134,
+   "largura_relativa_mediana": 1.8741169799032753
+  },
+  "janelas_2026_calibrada_jul_dez_2025": {
+   "categoria": "UTIL_LEVE",
+   "empresa": "EMP-B",
+   "ensaios": 120,
+   "cobertura_p10_p90": 0.9583333333333334,
+   "fracao_abaixo_p10": 0.008333333333333333,
+   "fracao_acima_p90": 0.03333333333333333,
+   "erro_mediano_p50": 0.08803423403686346,
+   "largura_relativa_mediana": 1.5299960537938748
+  },
+  "parametros_calibrados": {
+   "eventos_por_10mil_km": 1.3026692877951729,
+   "severidade_mediana": 818.8100000000001,
+   "severidade_sigma": 0.5522303251988481,
+   "eventos": 11,
+   "km": 84442.0
+  },
+  "priori_generica": {
+   "eventos_por_10mil_km": 1.6,
+   "severidade_mediana": 700.0,
+   "severidade_sigma": 0.9
+  }
+ },
  "confiabilidade": {
   "EMP-A": {
    "dimensoes": {
-    "C_completude": 73.3,
+    "C_completude": 76.4,
     "A_atualidade": 58.5,
     "K_consistencia": 96.9,
     "R_rastreabilidade": 97.9,
@@ -1141,7 +1195,7 @@
    "selo": "Baixa",
    "dias_desde_ultimo_dado": 101,
    "custo_observado_brl": 106125.91,
-   "custo_estimado_lacunas_brl": 38713.27,
+   "custo_estimado_lacunas_brl": 32714.06,
    "valor_pendente_ponderado_brl": 3313.84
   },
   "EMP-B": {

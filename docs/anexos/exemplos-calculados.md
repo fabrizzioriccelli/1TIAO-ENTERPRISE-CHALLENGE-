@@ -154,27 +154,39 @@ Valor real do período (observado + lacunas do gabarito): **R$ 133.176,48**. Fai
 
 | Nível | Informação disponível | P10 | P50 | P90 | Largura | Parcela observada | Contém o real? |
 |---|---|---|---|---|---|---|---|
-| N0 | Composição da frota (8 veículos: 4 utilitários e 2 automóveis próprios, 2 automóveis locados), segmento e UF | R$ 119.738 | R$ 137.419 | R$ 157.336 | R$ 37.598 | 0% | sim |
-| N1 | + duas respostas: km médio mensal por veículo e gasto mensal com combustível | R$ 126.191 | R$ 135.425 | R$ 145.064 | R$ 18.873 | 0% | sim |
-| N2 | + extratos de combustível e pedágio, faturas de locação e 3 meses de notas de oficina (situação atual) | R$ 134.597 | R$ 139.938 | R$ 145.661 | R$ 11.064 | 72% | não |
-| N3 | + apólice de seguro, comprovantes de IPVA/licenciamento e relação de multas (simulação do próximo passo) | R$ 130.766 | R$ 133.232 | R$ 136.208 | R$ 5.442 | 89% | sim |
+| N0 | Composição da frota (8 veículos: 4 utilitários e 2 automóveis próprios, 2 automóveis locados), segmento e UF | R$ 116.158 | R$ 134.383 | R$ 155.401 | R$ 39.243 | 0% | sim |
+| N1 | + duas respostas: km médio mensal por veículo e gasto mensal com combustível | R$ 121.473 | R$ 132.195 | R$ 144.767 | R$ 23.293 | 0% | sim |
+| N2 | + extratos de combustível e pedágio, faturas de locação e 3 meses de notas de oficina (situação atual) | R$ 128.046 | R$ 133.939 | R$ 141.151 | R$ 13.106 | 76% | sim |
+| N3 | + apólice de seguro, comprovantes de IPVA/licenciamento e relação de multas (simulação do próximo passo) | R$ 123.923 | R$ 126.874 | R$ 132.339 | R$ 8.416 | 93% | não |
 
 Próximas perguntas no nível N2, ordenadas por redução da faixa por unidade de esforço:
 
 | Ordem | Pergunta | Esforço | Redução da largura | Redução % |
 |---|---|---|---|---|
-| 1 | Enviar a apólice de seguro (ou informar o prêmio anual) | 1 | R$ 3.827 | 33,9% |
-| 2 | Enviar comprovantes de IPVA e licenciamento (ou informar os valores pagos) | 1 | R$ 2.141 | 19,0% |
-| 3 | Enviar as notas de oficina de out/2025, nov/2025 e mar/2026 | 2 | R$ 1.362 | 12,1% |
-| 4 | Informar se houve multas no período e o valor total pago | 1 | R$ 139 | 1,2% |
+| 1 | Enviar a apólice de seguro (ou informar o prêmio anual) | 1 | R$ 3.056 | 23,5% |
+| 2 | Enviar comprovantes de IPVA e licenciamento (ou informar os valores pagos) | 1 | R$ 1.840 | 14,1% |
+| 3 | Enviar as notas de oficina de out/2025, nov/2025 e mar/2026 | 2 | R$ 3.136 | 24,1% |
+| 4 | Informar se houve multas no período e o valor total pago | 1 | R$ 119 | 0,9% |
 
 Respostas simuladas no N1: km médio declarado 1.810 km/mês (média observada nos veículos com odômetro: 1.679); combustível declarado R$ 8.800/mês.
+
+### Teste de calibração da faixa de manutenção (EMP-B, utilitários)
+
+Janelas de 6 meses: 3 meses observados e 3 mascarados; subconjuntos aleatórios de 3 a 8 veículos. Em uma faixa P10-P90 calibrada, espera-se cobertura perto de 80%, com erros divididos entre as caudas.
+
+| Ensaio | Parâmetros | Ensaios | Cobertura P10-P90 | Acima do P90 | Abaixo do P10 | Erro mediano do P50 |
+|---|---|---|---|---|---|---|
+| Todas as janelas | premissa genérica | 280 | 76,1% | 23,2% | 0,7% | -40,8% |
+| Janelas de 2026 | premissa genérica | 120 | 97,5% | 0,0% | 2,5% | 24,1% |
+| Janelas de 2026 | calibrada em jul-dez/2025 | 120 | 95,8% | 3,3% | 0,8% | 8,8% |
+
+Premissa genérica: 1,60 eventos por 10 mil km, severidade mediana R$ 700 (sigma 0,90). Calibrada: 1,30 eventos por 10 mil km, severidade mediana R$ 819 (sigma 0,55), a partir de 11 eventos em 84.442 km.
 
 ## 7. Confiabilidade do diagnóstico
 
 | Empresa | C | A | K | R | X | Mínimo | Selo |
 |---|---|---|---|---|---|---|---|
-| EMP-A | 73,3 | 58,5 | 96,9 | 97,9 | 87,5 | 58,5 | Baixa |
+| EMP-A | 76,4 | 58,5 | 96,9 | 97,9 | 87,5 | 58,5 | Baixa |
 | EMP-B | 100,0 | 100,0 | 100,0 | 99,7 | 100,0 | 99,7 | Alta |
 | EMP-C | 99,5 | 100,0 | 99,8 | 99,9 | 100,0 | 99,5 | Alta |
 
