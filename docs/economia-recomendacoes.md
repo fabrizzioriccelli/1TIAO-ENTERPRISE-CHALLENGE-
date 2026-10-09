@@ -54,6 +54,8 @@ Fatores de captura adotados (hipóteses do grupo, a substituir por resultados me
 | Subutilização (REC-11) | 0 de 3 veículos | 1 de 3 | 2 de 3 | Depende de validação operacional |
 | Corretiva elevada (REC-10) | 20% | 35% | 50% | Plano preventivo reduz parte da corretiva, com custo recorrente maior |
 
+O fator de captura e a escada de evidência atuam juntos. Uma hipótese, como a lotação sem Vale-Pedágio (OP-C4), tem fator "base" de 30% para exibir sua economia individual e calcular a prioridade, mas **só entra na soma do cenário otimista**, porque depende de validação contratual e jurídica. Por isso o cenário-base da EMP-C não inclui OP-C4.
+
 Custos de ação usados no exemplo (hipóteses): diagnóstico mecânico R$ 1.500 por veículo; política de abastecimento R$ 2.000 de implantação e R$ 4.800/ano de monitoramento; rotina de conferência de eixos R$ 1.000; plano preventivo R$ 2.000 por veículo e R$ 300/mês de preventiva adicional por veículo; custo de operar o plano de R$ 12.000/ano (EMP-B) e R$ 30.000/ano (EMP-C), equivalente a dedicar parte do tempo de um analista.
 
 ## 4. Dupla contagem
