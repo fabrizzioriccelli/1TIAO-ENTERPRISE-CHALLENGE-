@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frota Pulse — capa</title><link rel="stylesheet" href="estilo.css">
+<style>body { width: 1600px; position: relative; } 
+.capa { width: 1600px; height: 640px; padding: 72px 80px; position: relative; overflow: hidden; display: grid;
+  grid-template-columns: 1fr 560px; gap: 64px; background: var(--pagina); }
+.fundo { position: absolute; inset: 0; width: 100%; height: 100%; }
+.esq, .caps, .rodape { position: relative; }
+.capa .marca { font-size: 28px; }
+.capa h1 { font-size: 54px; line-height: 1.08; margin-top: 56px; }
+.sub { font-size: 18px; color: var(--tinta-2); max-width: 620px; margin-top: 24px; }
+.caps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; align-self: center; }
+.caps li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; background: var(--superficie);
+  border: 1px solid var(--linha); border-radius: 10px; padding: 14px 18px; }
+.caps .n { font-family: var(--fonte-titulo); font-weight: 600; color: var(--pulso); font-size: 18px; }
+.caps strong { font-size: 16px; } .caps .pt { color: var(--tinta-2); font-size: 14px; }
+.caps p { margin: 2px 0 0; font-size: 13px; color: var(--tinta-2); }
+.rodape { position: absolute; left: 80px; bottom: 28px; font-size: 13px; color: var(--mudo); margin: 0; }
+</style></head>
+<body>
+<div class="capa">
+  <svg class="fundo" viewBox="0 0 1600 640" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 520 H520 L580 420 L640 565 L700 480 H1600" fill="none" stroke="#cde2fb" stroke-width="3"
+      stroke-linejoin="round"/></svg>
+  <div class="esq">
+    <div class="marca"><svg width="46" height="28" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 16 H12 L16 7 L20 19 L24 12 H38" fill="none" stroke="#2a78d6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>frota <b>pulse</b></span></div>
+    <h1>Inteligência de custos que<br>transforma dados em decisões</h1>
+    <p class="sub">Calculadora de Redução de Custos de Frota. Proposta acadêmica para o Enterprise Challenge
+    FIAP e Sem Parar Empresas, Sprint 1.</p>
+  </div>
+  <ol class="caps"><li><span class="n">01</span><div><strong>Understand</strong> <span class="pt">Entender</span>
+      <p>Documentos em qualquer formato, com origem e status de cada valor</p></div></li><li><span class="n">02</span><div><strong>Diagnose</strong> <span class="pt">Diagnosticar</span>
+      <p>Custo total, indicadores normalizados e desvios com evidência</p></div></li><li><span class="n">03</span><div><strong>Compare</strong> <span class="pt">Comparar</span>
+      <p>Histórico, pares e referências, só quando há equivalência</p></div></li><li><span class="n">04</span><div><strong>Optimize</strong> <span class="pt">Otimizar</span>
+      <p>Ações com economia em R$ por cenário e um próximo passo</p></div></li><li><span class="n">05</span><div><strong>Monitor</strong> <span class="pt">Acompanhar</span>
+      <p>Atualização mensal e economia realizada medida</p></div></li></ol>
+  <p class="rodape">Conceito acadêmico. Não é produto oficial da Sem Parar Empresas, da Corpay nem da FIAP.</p>
+</div></body></html>

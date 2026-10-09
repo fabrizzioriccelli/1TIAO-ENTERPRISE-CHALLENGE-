@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframe — relatório executivo</title><link rel="stylesheet" href="estilo.css">
+<style>body { width: 1100px; position: relative; } 
+body { height: 1200px; padding-top: 30px; }
+.folha { width: 1000px; margin: 30px auto; background: var(--superficie); border: 1px solid var(--linha);
+  border-radius: 6px; padding: 48px 56px; }
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
+h1 { font-size: 34px; } h2 { font-size: 18px; margin: 32px 0 8px; }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; padding: 20px 0;
+  border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); }
+.kpis p { margin: 2px 0; } .valor { font-size: 26px; }
+.nota { font-size: 13px; color: var(--tinta-2); }
+ul { color: var(--tinta-2); font-size: 14px; padding-left: 18px; }
+footer { margin-top: 36px; font-size: 12px; }
+</style></head>
+<body>
+<div class="aviso">Wireframe conceitual · dados sintéticos · não é relatório real</div>
+<div class="folha">
+<header><div class="marca"><svg width="34" height="20" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 16 H12 L16 7 L20 19 L24 12 H38" fill="none" stroke="#2a78d6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>frota <b>pulse</b></span></div>
+  <div class="dir mudo">Relatório executivo · versão da metodologia 0.1</div></header>
+<h1>Custos da frota e oportunidades</h1>
+<p class="sec">Empresa Sintética C (fictícia) · jul/2025 a jun/2026 · 40 veículos ·
+  <span class="selo"><svg width="16" height="16" viewBox="-8 -8 16 16"><circle r="7" fill="none" stroke="#0ca30c" stroke-width="1.6"/><path d="M-3.5 0 L-1 2.6 L3.6 -2.6" stroke="#0ca30c" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg> Confiança alta</span></p>
+<section class="kpis">
+  <div><p class="rotulo">Custo total</p><p class="valor">R$ 16,58 mi</p></div>
+  <div><p class="rotulo">Custo por km</p><p class="valor">R$ 3,44</p></div>
+  <div><p class="rotulo">Economia líquida/ano (base)</p><p class="valor">R$ 119,6 mil</p></div>
+  <div><p class="rotulo">Recuperação pontual</p><p class="valor">R$ 30,7 mil</p></div>
+</section>
+<h2>Principais oportunidades</h2>
+<table><thead><tr><th>#</th><th>Oportunidade</th><th>Estágio</th><th class="num">Líquida/ano (base)</th><th>Confiança</th></tr></thead>
+<tbody><tr><td>1</td><td>Queda de rendimento em 3 cavalos mecânicos</td><td>Anomalia</td><td class="num">R$ 64,8 mil</td><td>Moderada</td></tr><tr><td>2</td><td>Abastecimento acima da referência de preço da própria frota</td><td>Oportunidade validada</td><td class="num">R$ 62,8 mil</td><td>Alta</td></tr><tr><td>3</td><td>Cobrança de eixo suspenso em retornos vazios</td><td>Oportunidade validada</td><td class="num">R$ 21,5 mil</td><td>Moderada</td></tr></tbody></table>
+<h2>Cenários</h2>
+<table><thead><tr><th>Cenário</th><th class="num">Economia líquida/ano</th><th class="num">Implantação</th>
+<th class="num">Payback</th><th class="num">ROI 12 meses</th></tr></thead><tbody><tr><td>Conservador</td><td class="num">R$ 21,5 mil</td><td class="num">R$ 3,0 mil</td><td class="num">1,7 mês</td><td class="num">49%</td></tr><tr><td>Base</td><td class="num">R$ 119,6 mil</td><td class="num">R$ 7,5 mil</td><td class="num">0,8 mês</td><td class="num">265%</td></tr><tr><td>Otimista</td><td class="num">R$ 257,2 mil</td><td class="num">R$ 7,5 mil</td><td class="num">0,3 mês</td><td class="num">590%</td></tr></tbody></table>
+<p class="nota">Conservador: só oportunidades validadas. Base: inclui anomalias com evidência estatística. Otimista:
+inclui hipóteses. Fora do cenário-base: OP-C4, Viagens de lotação sem registro de Vale-Pedágio (R$ 137,9 mil brutos por ano),
+que depende de validação contratual e jurídica.</p>
+<h2>Premissas e limites</h2>
+<ul><li>Fatores de captura e custos de ação são hipóteses de simulação, não promessa de economia.</li>
+<li>Custos recorrentes incluem o custo de operar o plano de ação.</li>
+<li>Economia realizada será medida contra linha de base ajustada após cada ação.</li></ul>
+<footer class="mudo">Gerado a partir do diagnóstico DIAG-EMP-C-2026-07 · trilha de cálculo disponível no painel</footer>
+</div></body></html>

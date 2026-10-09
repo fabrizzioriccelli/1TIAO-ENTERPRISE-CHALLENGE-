@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframe — primeira estimativa</title><link rel="stylesheet" href="estilo.css">
+<style>body { width: 1440px; position: relative; } 
+body { height: 900px; padding-top: 30px; }
+.topo { display: flex; justify-content: space-between; align-items: center; padding: 18px 32px;
+  border-bottom: 1px solid var(--linha); background: var(--superficie); }
+.grade { display: grid; grid-template-columns: 260px 1fr 360px; gap: 20px; padding: 24px 32px; }
+dl { display: grid; grid-template-columns: 1fr auto; gap: 8px 12px; margin: 16px 0; font-size: 14px; }
+dt { color: var(--tinta-2); } dd { margin: 0; text-align: right; font-weight: 500; }
+.pequeno { font-size: 12px; }
+.heroi { font-family: var(--fonte-titulo); font-weight: 600; font-size: 56px; letter-spacing: -0.02em; margin: 4px 0; }
+.faixa { position: relative; height: 28px; margin: 20px 0 6px; }
+.trilho { position: absolute; top: 12px; left: 0; right: 0; height: 4px; border-radius: 2px; background: var(--linha); }
+.banda { position: absolute; top: 8px; height: 12px; border-radius: 6px; background: #6da7ec; }
+.ponto { position: absolute; top: 4px; width: 20px; height: 20px; margin-left: -10px; border-radius: 50%;
+  background: var(--pulso-escuro); border: 3px solid var(--superficie); }
+.escala { display: flex; justify-content: space-between; font-size: 12px; color: var(--mudo); }
+.linha-selo { display: flex; gap: 12px; align-items: center; margin: 18px 0 8px; }
+.pergunta h3 { font-size: 17px; margin: 10px 0; } .pergunta .seg { margin-top: 20px; }
+.ganho { font-size: 14px; color: var(--tinta-2); margin: 20px 0; padding: 12px; border-radius: 8px;
+  background: var(--pagina); border: 1px solid var(--linha); }
+</style></head>
+<body>
+<div class="aviso">Wireframe conceitual · dados sintéticos · não é interface implementada</div>
+<header class="topo"><div class="marca"><svg width="34" height="20" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 16 H12 L16 7 L20 19 L24 12 H38" fill="none" stroke="#2a78d6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>frota <b>pulse</b></span></div>
+  <span class="sec">Empresa Sintética A (fictícia)</span></header>
+<main class="grade">
+  <aside class="cartao">
+    <h3>Sua frota</h3>
+    <dl><dt>Veículos</dt><dd>8</dd><dt>Utilitários próprios</dt><dd>4</dd><dt>Automóveis próprios</dt><dd>2</dd>
+    <dt>Automóveis locados</dt><dd>2</dd><dt>Operação</dt><dd>Serviços técnicos urbanos</dd><dt>UF</dt><dd>SP</dd></dl>
+    <p class="mudo pequeno">3 perguntas respondidas · nenhum documento enviado</p>
+  </aside>
+  <section class="cartao principal">
+    <p class="rotulo">Custo total estimado · out/2025 a mar/2026</p>
+    <p class="heroi">R$ 134 mil</p>
+    <p class="sec">Provavelmente entre <strong>R$ 116 mil</strong> e <strong>R$ 155 mil</strong>.
+       Ainda é uma estimativa só com premissas.</p>
+    <div class="faixa" role="img" aria-label="Faixa de R$ 116 mil a R$ 155 mil">
+      <div class="trilho"></div>
+      <div class="banda" style="left:23.1%; width:56.1%"></div>
+      <div class="ponto" style="left:49.1%"></div>
+    </div>
+    <div class="escala tab"><span>R$ 100 mil</span><span>R$ 135 mil</span><span>R$ 170 mil</span></div>
+    <div class="linha-selo">
+      <span class="selo"><svg width="16" height="16" viewBox="-8 -8 16 16"><circle r="7" fill="none" stroke="#d03b3b" stroke-width="1.6"/><path d="M-2.8 -2.8 L2.8 2.8 M2.8 -2.8 L-2.8 2.8" stroke="#d03b3b" stroke-width="1.8" stroke-linecap="round"/></svg> Confiança: insuficiente</span>
+      <span class="chip">0% do valor vem de documentos</span>
+    </div>
+    <table><thead><tr><th>Categoria</th><th>Situação</th><th class="num">Valor central</th></tr></thead>
+    <tbody><tr><td>Combustível</td><td><span class="chip">estimado</span></td><td class="num">R$ 54.144</td></tr><tr><td>Locação de 2 automóveis</td><td><span class="chip">estimado</span></td><td class="num">R$ 41.464</td></tr><tr><td>Manutenção</td><td><span class="chip">estimado</span></td><td class="num">R$ 9.421</td></tr><tr><td>Seguro</td><td><span class="chip">estimado</span></td><td class="num">R$ 14.259</td></tr><tr><td>IPVA e licenciamento</td><td><span class="chip">estimado</span></td><td class="num">R$ 8.271</td></tr><tr><td>Pedágio</td><td><span class="chip">estimado</span></td><td class="num">R$ 1.594</td></tr><tr><td>Multas</td><td><span class="chip">estimado</span></td><td class="num">R$ 833</td></tr><tr><td>Outros</td><td><span class="chip">estimado</span></td><td class="num">R$ 2.629</td></tr></tbody></table>
+  </section>
+  <aside class="cartao pergunta">
+    <p class="rotulo">Próximas perguntas</p>
+    <h3>Quanto a frota gasta com combustível por mês?</h3>
+    <div class="campo">R$ por mês</div>
+    <h3 class="seg">Quantos km cada veículo roda por mês, em média?</h3>
+    <div class="campo">km por mês</div>
+    <p class="ganho">Responder às duas reduz a largura da faixa de <strong>R$ 39,2 mil</strong>
+       para <strong>R$ 23,3 mil</strong>.</p>
+    <span class="botao">Responder</span> <span class="botao sec">Enviar extratos</span>
+  </aside>
+</main></body></html>
