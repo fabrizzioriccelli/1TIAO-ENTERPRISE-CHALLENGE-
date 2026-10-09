@@ -14,10 +14,6 @@
 
 Enterprise Challenge FIAP e Sem Parar Empresas · Sprint 1 · Turma 1TIAO
 
-## Nome do grupo
-
-Grupo sem nome definido · Turma 1TIAO
-
 ## 👨‍🎓 Integrantes: 
 - <a href="https://github.com/brunacollavite">Bruna Collavite</a> - RM 576285
 - <a href="https://github.com/Guntooo">Fabio Guntovitch</a> - RM 575582
