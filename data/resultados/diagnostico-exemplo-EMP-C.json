@@ -1,0 +1,369 @@
+{
+ "aviso": "Exemplo gerado a partir de dados SINTÉTICOS para ilustrar a estrutura de saída. Não é resultado real.",
+ "diagnostico_id": "DIAG-EMP-C-2026-07",
+ "empresa_id": "EMP-C",
+ "periodo": [
+  "2025-07",
+  "2026-06"
+ ],
+ "data_referencia": "2026-07-10",
+ "versao_metodologia": "0.1 (Sprint 1, especificação)",
+ "confiabilidade": {
+  "dimensoes": {
+   "C_completude": 99.5,
+   "A_atualidade": 100.0,
+   "K_consistencia": 99.8,
+   "R_rastreabilidade": 99.9,
+   "X_contexto": 100.0
+  },
+  "minimo": 99.5,
+  "selo": "Alta",
+  "dias_desde_ultimo_dado": 10,
+  "custo_observado_brl": 16599464.33,
+  "custo_estimado_lacunas_brl": 80735.49,
+  "valor_pendente_ponderado_brl": 39536.86
+ },
+ "indicadores": {
+  "IND-01_custo_total_brl": 16583488.629999997,
+  "IND-02_custo_por_veiculo_mes_brl": 34548.934645833324,
+  "veiculos_mes": 480,
+  "IND-03_custo_por_km_brl": 3.4367873233680557,
+  "IND-03_cobertura_km": 1.0,
+  "km_observado": 4825288.0,
+  "IND-04_participacao": {
+   "COMBUSTIVEL": 0.6937,
+   "MANUTENCAO": 0.2032,
+   "PEDAGIO": 0.0468,
+   "MULTA": 0.0003,
+   "TRIBUTO": 0.0162,
+   "SEGURO": 0.0363,
+   "OUTROS": 0.0034
+  }
+ },
+ "achados": [
+  {
+   "achado_id": "ACH-C-01",
+   "estagio": "anomalia",
+   "indicador": "IND-07",
+   "regra": "REC-05",
+   "titulo": "Queda persistente de rendimento (km/L) em relação aos pares",
+   "metodo": "CUSUM unilateral sobre razão km/L do veículo / mediana dos pares (k=0,5; h=5)",
+   "evidencias": [
+    {
+     "veiculo_id": "C-V07",
+     "alarme": "2026-02",
+     "km_l_base": 2.350518598746275,
+     "km_l_recente": 2.015443005569067,
+     "litros_excesso_h1": 4538.246543023023,
+     "custo_excesso_h1": 27843.766579584077
+    },
+    {
+     "veiculo_id": "C-V15",
+     "alarme": "2026-02",
+     "km_l_base": 2.5146520545862243,
+     "km_l_recente": 2.2478757489663184,
+     "litros_excesso_h1": 2383.660399470521,
+     "custo_excesso_h1": 14475.030178881694
+    },
+    {
+     "veiculo_id": "C-V22",
+     "alarme": "2026-03",
+     "km_l_base": 2.269554792031066,
+     "km_l_recente": 2.0923638233529633,
+     "litros_excesso_h1": 1928.2777251738498,
+     "custo_excesso_h1": 11721.321723624204
+    }
+   ],
+   "oportunidade_id": "OP-C1",
+   "registros_amostra": [
+    {
+     "despesa_id": "DSP-C-005058",
+     "origem_id": "ORG-C-0037",
+     "referencia_na_origem": "linha 5101"
+    },
+    {
+     "despesa_id": "DSP-C-005059",
+     "origem_id": "ORG-C-0037",
+     "referencia_na_origem": "linha 5102"
+    },
+    {
+     "despesa_id": "DSP-C-005060",
+     "origem_id": "ORG-C-0037",
+     "referencia_na_origem": "linha 5103"
+    },
+    {
+     "despesa_id": "DSP-C-005061",
+     "origem_id": "ORG-C-0037",
+     "referencia_na_origem": "linha 5104"
+    },
+    {
+     "despesa_id": "DSP-C-005062",
+     "origem_id": "ORG-C-0037",
+     "referencia_na_origem": "linha 5105"
+    }
+   ],
+   "proxima_acao": "Inspeção mecânica dirigida (injeção, filtros, pneus) e conversa com o condutor; revalidar o indicador após 30 dias."
+  },
+  {
+   "achado_id": "ACH-C-02",
+   "estagio": "oportunidade_validada",
+   "indicador": "IND-08",
+   "regra": "REC-04",
+   "titulo": "Preço pago acima da mediana mensal da frota (+2% de tolerância)",
+   "evidencias": {
+    "premio_total": 135163.67012499995,
+    "veiculos_destaque": [
+     "C-V27",
+     "C-V03",
+     "C-V09",
+     "C-V18",
+     "C-V02",
+     "C-V24"
+    ]
+   },
+   "oportunidade_id": "OP-C2",
+   "registros_amostra": [
+    {
+     "despesa_id": "DSP-C-000001",
+     "origem_id": "ORG-C-0001",
+     "referencia_na_origem": "linha 2255"
+    },
+    {
+     "despesa_id": "DSP-C-000002",
+     "origem_id": "ORG-C-0001",
+     "referencia_na_origem": "linha 2256"
+    },
+    {
+     "despesa_id": "DSP-C-000003",
+     "origem_id": "ORG-C-0001",
+     "referencia_na_origem": "linha 2257"
+    },
+    {
+     "despesa_id": "DSP-C-000004",
+     "origem_id": "ORG-C-0001",
+     "referencia_na_origem": "linha 2258"
+    },
+    {
+     "despesa_id": "DSP-C-000005",
+     "origem_id": "ORG-C-0001",
+     "referencia_na_origem": "linha 2259"
+    }
+   ],
+   "proxima_acao": "Definir postos preferenciais por rota e regra de bloqueio/alerta acima da referência."
+  },
+  {
+   "achado_id": "ACH-C-03",
+   "estagio": "oportunidade_validada",
+   "indicador": "IND-10",
+   "regra": "REC-08",
+   "titulo": "Eixo suspenso cobrado em retorno vazio",
+   "evidencias": {
+    "viagens": 176,
+    "sobrecobranca": 30662.590000000004
+   },
+   "oportunidade_id": "OP-C3",
+   "registros_amostra": [
+    {
+     "despesa_id": "DSP-C-000018",
+     "origem_id": "ORG-C-0004",
+     "referencia_na_origem": "linha 8575"
+    },
+    {
+     "despesa_id": "DSP-C-000019",
+     "origem_id": "ORG-C-0004",
+     "referencia_na_origem": "linha 8576"
+    },
+    {
+     "despesa_id": "DSP-C-000020",
+     "origem_id": "ORG-C-0004",
+     "referencia_na_origem": "linha 8577"
+    },
+    {
+     "despesa_id": "DSP-C-000021",
+     "origem_id": "ORG-C-0004",
+     "referencia_na_origem": "linha 8578"
+    },
+    {
+     "despesa_id": "DSP-C-000022",
+     "origem_id": "ORG-C-0004",
+     "referencia_na_origem": "linha 8579"
+    }
+   ],
+   "proxima_acao": "Contestar as cobranças dentro do prazo do emissor e conferir a declaração de eixos."
+  }
+ ],
+ "priorizacao": [
+  {
+   "id": "OP-C1",
+   "titulo": "Queda de rendimento em 3 cavalos mecânicos",
+   "estagio": "anomalia",
+   "bruta_anual": 108080.23696417995,
+   "liquida_conservador": 43232.09478567198,
+   "liquida_base": 64848.142178507966,
+   "liquida_otimista": 86464.18957134396,
+   "implantacao": 4500.0,
+   "confianca": "Moderada",
+   "urgencia": 1.0,
+   "esforco": 1.5,
+   "risco": "baixo",
+   "prioridade": 32424.071089253983,
+   "recuperacao_pontual": 0.0,
+   "ordem": 1
+  },
+  {
+   "id": "OP-C2",
+   "titulo": "Abastecimento acima da referência de preço da própria frota",
+   "estagio": "oportunidade_validada",
+   "bruta_anual": 135163.67012499995,
+   "liquida_conservador": 35749.10103749998,
+   "liquida_base": 62781.83506249997,
+   "liquida_otimista": 89814.56908749996,
+   "implantacao": 2000.0,
+   "confianca": "Alta",
+   "urgencia": 1.0,
+   "esforco": 2.0,
+   "risco": "baixo",
+   "prioridade": 31390.917531249986,
+   "recuperacao_pontual": 0.0,
+   "ordem": 2
+  },
+  {
+   "id": "OP-C3",
+   "titulo": "Cobrança de eixo suspenso em retornos vazios",
+   "estagio": "oportunidade_validada",
+   "bruta_anual": 30662.590000000004,
+   "liquida_conservador": 15331.295000000002,
+   "liquida_base": 21463.813000000002,
+   "liquida_otimista": 27596.331000000006,
+   "implantacao": 1000.0,
+   "confianca": "Moderada",
+   "urgencia": 1.25,
+   "esforco": 1.0,
+   "risco": "baixo",
+   "prioridade": 20122.3246875,
+   "recuperacao_pontual": 30662.590000000004,
+   "ordem": 3
+  },
+  {
+   "id": "OP-C4",
+   "titulo": "Viagens de lotação sem registro de Vale-Pedágio",
+   "estagio": "hipotese",
+   "bruta_anual": 137933.94,
+   "liquida_conservador": 0.0,
+   "liquida_base": 41380.182,
+   "liquida_otimista": 82760.364,
+   "implantacao": 0.0,
+   "confianca": "Baixa",
+   "urgencia": 1.0,
+   "esforco": 2.0,
+   "risco": "medio",
+   "prioridade": 10345.0455,
+   "recuperacao_pontual": 0.0,
+   "ordem": 4
+  },
+  {
+   "id": "OP-C5",
+   "titulo": "Multas NIC (não indicação do condutor)",
+   "estagio": "oportunidade_validada",
+   "bruta_anual": 520.63,
+   "liquida_conservador": 364.441,
+   "liquida_base": 468.567,
+   "liquida_otimista": 520.63,
+   "implantacao": 0.0,
+   "confianca": "Alta",
+   "urgencia": 1.25,
+   "esforco": 0.5,
+   "risco": "baixo",
+   "prioridade": 1171.4175,
+   "recuperacao_pontual": 0.0,
+   "ordem": 5
+  },
+  {
+   "id": "OP-C6",
+   "titulo": "Multas pagas sem o desconto de 20%",
+   "estagio": "oportunidade_validada",
+   "bruta_anual": 39.046,
+   "liquida_conservador": 19.523,
+   "liquida_base": 31.236800000000002,
+   "liquida_otimista": 39.046,
+   "implantacao": 0.0,
+   "confianca": "Alta",
+   "urgencia": 1.0,
+   "esforco": 0.25,
+   "risco": "baixo",
+   "prioridade": 124.94720000000001,
+   "recuperacao_pontual": 0.0,
+   "ordem": 6
+  }
+ ],
+ "cenarios": {
+  "conservador": {
+   "itens": [
+    "OP-C2",
+    "OP-C3",
+    "OP-C5",
+    "OP-C6"
+   ],
+   "bruta_capturada": 56264.36003749999,
+   "custos_recorrentes": 34800.0,
+   "implantacao": 3000.0,
+   "economia_liquida_anual": 21464.360037499988,
+   "payback_meses": 1.6771988513566238,
+   "roi_12m": 0.48847513326719544,
+   "recuperacao_pontual": 30662.590000000004
+  },
+  "base": {
+   "itens": [
+    "OP-C1",
+    "OP-C2",
+    "OP-C3",
+    "OP-C5",
+    "OP-C6"
+   ],
+   "bruta_capturada": 154393.59404100795,
+   "custos_recorrentes": 34800.0,
+   "implantacao": 7500.0,
+   "economia_liquida_anual": 119593.59404100795,
+   "payback_meses": 0.7525486688621426,
+   "roi_12m": 2.6499667621987695,
+   "recuperacao_pontual": 30662.590000000004
+  },
+  "otimista": {
+   "itens": [
+    "OP-C1",
+    "OP-C2",
+    "OP-C3",
+    "OP-C4",
+    "OP-C5",
+    "OP-C6"
+   ],
+   "bruta_capturada": 291995.1296588439,
+   "custos_recorrentes": 34800.0,
+   "implantacao": 7500.0,
+   "economia_liquida_anual": 257195.1296588439,
+   "payback_meses": 0.34992886575799614,
+   "roi_12m": 5.902958147963213,
+   "recuperacao_pontual": 30662.590000000004
+  }
+ },
+ "proximo_passo": {
+  "id": "OP-C1",
+  "titulo": "Queda de rendimento em 3 cavalos mecânicos"
+ },
+ "premissas": {
+  "fatores_de_captura": "hipóteses de simulação por cenário (conservador, base, otimista)",
+  "hipoteses_de_acao": {
+   "diagnostico_mecanico_por_veiculo": 1500.0,
+   "politica_abastecimento_implantacao": 2000.0,
+   "monitoramento_preco_anual": 4800.0,
+   "rotina_conferencia_eixos_implantacao": 1000.0,
+   "plano_preventivo_por_veiculo_implantacao": 2000.0,
+   "preventiva_adicional_mensal_por_veiculo": 300.0,
+   "custo_programa_anual": {
+    "EMP-B": 12000.0,
+    "EMP-C": 30000.0
+   }
+  },
+  "anualizacao": "OP-C1 anualizada a partir de jan-jun/2026 (x2), supondo persistência do desvio"
+ }
+}

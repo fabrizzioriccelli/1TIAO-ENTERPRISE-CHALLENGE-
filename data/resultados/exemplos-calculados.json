@@ -1,0 +1,1802 @@
+{
+ "data_referencia_analise": "2026-07-10",
+ "hipoteses_de_acao": {
+  "diagnostico_mecanico_por_veiculo": 1500.0,
+  "politica_abastecimento_implantacao": 2000.0,
+  "monitoramento_preco_anual": 4800.0,
+  "rotina_conferencia_eixos_implantacao": 1000.0,
+  "plano_preventivo_por_veiculo_implantacao": 2000.0,
+  "preventiva_adicional_mensal_por_veiculo": 300.0,
+  "custo_programa_anual": {
+   "EMP-B": 12000.0,
+   "EMP-C": 30000.0
+  }
+ },
+ "qualidade": {
+  "marcacoes_por_regra": {
+   "R-ABS-TANQUE": 5,
+   "R-CAMPO-AUSENTE": 20,
+   "R-COMB-INCOMP": 2,
+   "R-CONC-VALOR": 9,
+   "R-CONF-EXTRACAO": 52,
+   "R-DATA-FUT": 2,
+   "R-DUP-ARQ": 161,
+   "R-DUP-REG": 40,
+   "R-ODO-REG": 8,
+   "R-PED-DUP": 15,
+   "R-PRECO-FAIXA": 3,
+   "R-VALOR-NEG": 1,
+   "R-VEIC-DESC": 4
+  },
+  "avaliacao": [
+   {
+    "cenario_id": "G01",
+    "regras": "R-DUP-ARQ",
+    "injetados": 161,
+    "detectados": 161,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G02",
+    "regras": "R-PED-DUP",
+    "injetados": 15,
+    "detectados": 15,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G10",
+    "regras": "R-CAMPO-AUSENTE",
+    "injetados": 20,
+    "detectados": 20,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G11",
+    "regras": "R-DUP-REG",
+    "injetados": 40,
+    "detectados": 40,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G14",
+    "regras": "R-ABS-TANQUE+R-CONC-VALOR",
+    "injetados": 5,
+    "detectados": 5,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G15",
+    "regras": "R-ODO-REG",
+    "injetados": 6,
+    "detectados": 6,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G16",
+    "regras": "R-DATA-FUT",
+    "injetados": 2,
+    "detectados": 2,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G17",
+    "regras": "R-PRECO-FAIXA+R-CONC-VALOR",
+    "injetados": 3,
+    "detectados": 3,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G18",
+    "regras": "R-VEIC-DESC",
+    "injetados": 4,
+    "detectados": 4,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G19",
+    "regras": "R-COMB-INCOMP",
+    "injetados": 2,
+    "detectados": 2,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G20",
+    "regras": "R-VALOR-NEG",
+    "injetados": 1,
+    "detectados": 1,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G32",
+    "regras": "R-CONF-EXTRACAO",
+    "injetados": 50,
+    "detectados": 50,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G28",
+    "regras": "R-CONF-EXTRACAO",
+    "injetados": 2,
+    "detectados": 2,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G33",
+    "regras": "controle negativo",
+    "injetados": 2,
+    "detectados": 0,
+    "cobertura": 1.0
+   },
+   {
+    "cenario_id": "G34",
+    "regras": "controle negativo",
+    "injetados": 2,
+    "detectados": 0,
+    "cobertura": 1.0
+   }
+  ],
+  "marcacoes_fora_do_gabarito": {},
+  "valor_excluido_duplicidade": {
+   "EMP-A": 0.0,
+   "EMP-B": 110539.04000000001,
+   "EMP-C": 82171.57
+  },
+  "valor_em_quarentena": {
+   "EMP-A": 3313.84,
+   "EMP-B": 0.0,
+   "EMP-C": 25156.490000000005
+  }
+ },
+ "indicadores": {
+  "EMP-A": {
+   "IND-01_custo_total_brl": 102812.07,
+   "IND-02_custo_por_veiculo_mes_brl": 2141.918125,
+   "veiculos_mes": 48,
+   "IND-03_custo_por_km_brl": 1.4911901244569405,
+   "IND-03_cobertura_km": 0.625,
+   "km_observado": 50362.8,
+   "IND-04_participacao": {
+    "COMBUSTIVEL": 0.5413,
+    "MANUTENCAO": 0.0154,
+    "PEDAGIO": 0.0325,
+    "MULTA": 0.0,
+    "TRIBUTO": 0.0,
+    "SEGURO": 0.0,
+    "OUTROS": 0.4108
+   },
+   "IND-05_custo_mensal": {
+    "2025-10": 17856.25,
+    "2025-11": 17255.64,
+    "2025-12": 16042.0,
+    "2026-01": 17148.26,
+    "2026-02": 17634.78,
+    "2026-03": 16875.14
+   },
+   "IND-05_variacao_mensal": {
+    "2025-10": null,
+    "2025-11": -0.0336,
+    "2025-12": -0.0703,
+    "2026-01": 0.069,
+    "2026-02": 0.0284,
+    "2026-03": -0.0431
+   },
+   "IND-05_desvio_vs_mediana_3m": {
+    "2025-10": null,
+    "2025-11": null,
+    "2025-12": null,
+    "2026-01": -0.0062,
+    "2026-02": 0.0284,
+    "2026-03": -0.0159
+   }
+  },
+  "EMP-B": {
+   "IND-01_custo_total_brl": 2334087.68,
+   "IND-02_custo_por_veiculo_mes_brl": 6483.57688888889,
+   "veiculos_mes": 360,
+   "IND-03_custo_por_km_brl": 1.9735395351662801,
+   "IND-03_cobertura_km": 0.9916666666666667,
+   "km_observado": 1168719.0,
+   "IND-04_participacao": {
+    "COMBUSTIVEL": 0.5788,
+    "MANUTENCAO": 0.2068,
+    "PEDAGIO": 0.0833,
+    "MULTA": 0.003,
+    "TRIBUTO": 0.0336,
+    "SEGURO": 0.0846,
+    "OUTROS": 0.0099
+   },
+   "IND-05_custo_mensal": {
+    "2025-07": 189621.48,
+    "2025-08": 201619.88,
+    "2025-09": 176777.44,
+    "2025-10": 198844.39,
+    "2025-11": 216850.52,
+    "2025-12": 199169.58,
+    "2026-01": 168459.43,
+    "2026-02": 185661.2,
+    "2026-03": 177270.58,
+    "2026-04": 182167.09,
+    "2026-05": 212879.48,
+    "2026-06": 224766.57
+   },
+   "IND-05_variacao_mensal": {
+    "2025-07": null,
+    "2025-08": 0.0633,
+    "2025-09": -0.1232,
+    "2025-10": 0.1248,
+    "2025-11": 0.0906,
+    "2025-12": -0.0815,
+    "2026-01": -0.1542,
+    "2026-02": 0.1021,
+    "2026-03": -0.0452,
+    "2026-04": 0.0276,
+    "2026-05": 0.1686,
+    "2026-06": 0.0558
+   },
+   "IND-05_desvio_vs_mediana_3m": {
+    "2025-07": null,
+    "2025-08": null,
+    "2025-09": null,
+    "2025-10": 0.0486,
+    "2025-11": 0.0906,
+    "2025-12": 0.0016,
+    "2026-01": -0.1542,
+    "2026-02": -0.0678,
+    "2026-03": -0.0452,
+    "2026-04": 0.0276,
+    "2026-05": 0.1686,
+    "2026-06": 0.2338
+   }
+  },
+  "EMP-C": {
+   "IND-01_custo_total_brl": 16583488.629999997,
+   "IND-02_custo_por_veiculo_mes_brl": 34548.934645833324,
+   "veiculos_mes": 480,
+   "IND-03_custo_por_km_brl": 3.4367873233680557,
+   "IND-03_cobertura_km": 1.0,
+   "km_observado": 4825288.0,
+   "IND-04_participacao": {
+    "COMBUSTIVEL": 0.6937,
+    "MANUTENCAO": 0.2032,
+    "PEDAGIO": 0.0468,
+    "MULTA": 0.0003,
+    "TRIBUTO": 0.0162,
+    "SEGURO": 0.0363,
+    "OUTROS": 0.0034
+   },
+   "IND-05_custo_mensal": {
+    "2025-07": 1283921.19,
+    "2025-08": 1336769.87,
+    "2025-09": 1398668.32,
+    "2025-10": 1576336.93,
+    "2025-11": 1649771.84,
+    "2025-12": 1292444.76,
+    "2026-01": 1347207.94,
+    "2026-02": 1249992.15,
+    "2026-03": 1363735.14,
+    "2026-04": 1448395.77,
+    "2026-05": 1322149.03,
+    "2026-06": 1314095.68
+   },
+   "IND-05_variacao_mensal": {
+    "2025-07": null,
+    "2025-08": 0.0412,
+    "2025-09": 0.0463,
+    "2025-10": 0.127,
+    "2025-11": 0.0466,
+    "2025-12": -0.2166,
+    "2026-01": 0.0424,
+    "2026-02": -0.0722,
+    "2026-03": 0.091,
+    "2026-04": 0.0621,
+    "2026-05": -0.0872,
+    "2026-06": -0.0061
+   },
+   "IND-05_desvio_vs_mediana_3m": {
+    "2025-07": null,
+    "2025-08": null,
+    "2025-09": null,
+    "2025-10": 0.1792,
+    "2025-11": 0.1795,
+    "2025-12": -0.1801,
+    "2026-01": -0.1454,
+    "2026-02": -0.0722,
+    "2026-03": 0.0552,
+    "2026-04": 0.0751,
+    "2026-05": -0.0305,
+    "2026-06": -0.0364
+   }
+  }
+ },
+ "efeito_deduplicacao_EMP-B": {
+  "duplicado_excluido": 110539.04000000001,
+  "combustivel_valido": 1350894.04,
+  "inflacao_que_seria_reportada": 0.08182658056585992
+ },
+ "caixa_vs_competencia_EMP-B": {
+  "caixa": {
+   "2025-07": 166652.97,
+   "2025-08": 178651.37,
+   "2025-09": 153808.93,
+   "2025-10": 175875.88,
+   "2025-11": 193882.01,
+   "2025-12": 176201.07,
+   "2026-01": 169649.17,
+   "2026-02": 186850.94,
+   "2026-03": 178460.32,
+   "2026-04": 369725.51,
+   "2026-05": 189353.42,
+   "2026-06": 201240.51
+  },
+  "competencia": {
+   "2025-07": 189621.48333333334,
+   "2025-08": 201619.88333333333,
+   "2025-09": 176777.44333333333,
+   "2025-10": 198844.39333333334,
+   "2025-11": 216850.52333333335,
+   "2025-12": 199169.58333333334,
+   "2026-01": 168459.43333333332,
+   "2026-02": 185661.20333333334,
+   "2026-03": 177270.58333333334,
+   "2026-04": 182167.09333333332,
+   "2026-05": 212879.48333333334,
+   "2026-06": 224766.57333333333
+  }
+ },
+ "consumo_EMP-C": {
+  "sigma_intra_veiculo": {
+   "CAM_TRUCK": 0.029069630214954487,
+   "CAV_SEMI": 0.028974410279618317
+  },
+  "cusum_k": 0.5,
+  "cusum_h": 5.0,
+  "alarmes": {
+   "C-V07": "2026-02",
+   "C-V15": "2026-02",
+   "C-V22": "2026-03"
+  },
+  "excesso": [
+   {
+    "veiculo_id": "C-V07",
+    "alarme": "2026-02",
+    "km_l_base": 2.350518598746275,
+    "km_l_recente": 2.015443005569067,
+    "litros_excesso_h1": 4538.246543023023,
+    "custo_excesso_h1": 27843.766579584077
+   },
+   {
+    "veiculo_id": "C-V15",
+    "alarme": "2026-02",
+    "km_l_base": 2.5146520545862243,
+    "km_l_recente": 2.2478757489663184,
+    "litros_excesso_h1": 2383.660399470521,
+    "custo_excesso_h1": 14475.030178881694
+   },
+   {
+    "veiculo_id": "C-V22",
+    "alarme": "2026-03",
+    "km_l_base": 2.269554792031066,
+    "km_l_recente": 2.0923638233529633,
+    "litros_excesso_h1": 1928.2777251738498,
+    "custo_excesso_h1": 11721.321723624204
+   }
+  ],
+  "series": {
+   "C-V05": {
+    "razao_pares": {
+     "2025-07": 0.95,
+     "2025-08": 0.8945,
+     "2025-09": 0.9329,
+     "2025-10": 0.9366,
+     "2025-11": 0.9029,
+     "2025-12": 0.8577,
+     "2026-01": 0.9424,
+     "2026-02": 0.964,
+     "2026-03": 0.9778,
+     "2026-04": 0.9512,
+     "2026-05": 0.9925,
+     "2026-06": 0.966
+    },
+    "cusum": {
+     "2025-07": 0.0,
+     "2025-08": 0.12,
+     "2025-09": 0.0,
+     "2025-10": 0.0,
+     "2025-11": 0.0,
+     "2025-12": 1.39,
+     "2026-01": 0.0,
+     "2026-02": 0.0,
+     "2026-03": 0.0,
+     "2026-04": 0.0,
+     "2026-05": 0.0,
+     "2026-06": 0.0
+    }
+   },
+   "C-V07": {
+    "razao_pares": {
+     "2025-07": 0.9272,
+     "2025-08": 0.9905,
+     "2025-09": 0.9301,
+     "2025-10": 0.9769,
+     "2025-11": 0.9692,
+     "2025-12": 0.9893,
+     "2026-01": 0.841,
+     "2026-02": 0.8415,
+     "2026-03": 0.9132,
+     "2026-04": 0.8801,
+     "2026-05": 0.8218,
+     "2026-06": 0.8057
+    },
+    "cusum": {
+     "2025-07": 0.76,
+     "2025-08": 0.0,
+     "2025-09": 0.66,
+     "2025-10": 0.0,
+     "2025-11": 0.0,
+     "2025-12": 0.0,
+     "2026-01": 3.74,
+     "2026-02": 7.46,
+     "2026-03": 8.71,
+     "2026-04": 11.1,
+     "2026-05": 15.51,
+     "2026-06": 20.46
+    }
+   },
+   "C-V15": {
+    "razao_pares": {
+     "2025-07": 1.0295,
+     "2025-08": 1.0582,
+     "2025-09": 1.0652,
+     "2025-10": 1.049,
+     "2025-11": 1.028,
+     "2025-12": 1.0103,
+     "2026-01": 0.9397,
+     "2026-02": 0.9596,
+     "2026-03": 0.9707,
+     "2026-04": 0.9509,
+     "2026-05": 0.9147,
+     "2026-06": 0.9593
+    },
+    "cusum": {
+     "2025-07": 0.0,
+     "2025-08": 0.0,
+     "2025-09": 0.0,
+     "2025-10": 0.0,
+     "2025-11": 0.0,
+     "2025-12": 0.53,
+     "2026-01": 3.49,
+     "2026-02": 5.77,
+     "2026-03": 7.66,
+     "2026-04": 10.24,
+     "2026-05": 14.06,
+     "2026-06": 16.35
+    }
+   },
+   "C-V22": {
+    "razao_pares": {
+     "2025-07": 0.9372,
+     "2025-08": 1.0238,
+     "2025-09": 0.9129,
+     "2025-10": 0.9238,
+     "2025-11": 0.9394,
+     "2025-12": 1.0023,
+     "2026-01": 0.8653,
+     "2026-02": 0.9241,
+     "2026-03": 0.8828,
+     "2026-04": 0.8828,
+     "2026-05": 0.8565,
+     "2026-06": 0.8906
+    },
+    "cusum": {
+     "2025-07": 0.17,
+     "2025-08": 0.0,
+     "2025-09": 1.01,
+     "2025-10": 1.64,
+     "2025-11": 1.73,
+     "2025-12": 0.0,
+     "2026-01": 2.65,
+     "2026-02": 3.27,
+     "2026-03": 5.31,
+     "2026-04": 7.36,
+     "2026-05": 10.31,
+     "2026-06": 12.09
+    }
+   }
+  }
+ },
+ "lmdi": {
+  "temporal_C-V07": {
+   "custo_veiculo": 221348.86,
+   "custo_referencia": 199582.78999999998,
+   "diferenca": 21766.070000000007,
+   "atividade": -10726.055404612718,
+   "intensidade": 31011.884074633,
+   "preco": 1480.2413299796315,
+   "residuo": 9.458744898438454e-11,
+   "veiculo_id": "C-V07",
+   "km_0": 76384.79999999999,
+   "km_1": 72586.2,
+   "km_l_0": 2.3357180337413292,
+   "km_l_1": 2.015443005569067,
+   "preco_0": 6.10290426665264,
+   "preco_1": 6.146016896843843
+  },
+  "temporal_C-V01": {
+   "custo_veiculo": 204386.09999999998,
+   "custo_referencia": 211240.80000000002,
+   "diferenca": -6854.700000000041,
+   "atividade": -4936.981884272526,
+   "intensidade": -5172.221840698866,
+   "preco": 3254.50372497157,
+   "residuo": -2.1827872842550278e-10,
+   "veiculo_id": "C-V01",
+   "km_0": 98624.59999999999,
+   "km_1": 96309.00000000001,
+   "km_l_0": 2.8269176970208396,
+   "km_l_1": 2.8981656295834437,
+   "preco_0": 6.054882411212212,
+   "preco_1": 6.1504612256861195
+  },
+  "pares_C-V01": {
+   "custo_veiculo": 204386.1,
+   "custo_referencia": 167392.32294223865,
+   "diferenca": 36993.777057761356,
+   "atividade": 73378.82883865485,
+   "intensidade": -36319.409960297875,
+   "preco": -65.64182059554756,
+   "residuo": -7.275957614183426e-11,
+   "veiculo_id": "C-V01",
+   "km_veiculo": 96309.0,
+   "km_ref": 64813.0,
+   "km_l_veiculo": 2.8981656295834437,
+   "km_l_ref": 2.3822544206407557,
+   "preco_veiculo": 6.150461225686122,
+   "preco_ref": 6.152640694158162,
+   "n_pares": 27
+  },
+  "pares_C-V03": {
+   "custo_veiculo": 201810.32,
+   "custo_referencia": 167192.9055024005,
+   "diferenca": 34617.4144975995,
+   "atividade": 12292.744840290301,
+   "intensidade": 15635.498735933592,
+   "preco": 6689.170921375611,
+   "residuo": 0.0,
+   "veiculo_id": "C-V03",
+   "km_veiculo": 69292.0,
+   "km_ref": 64813.0,
+   "km_l_veiculo": 2.1899759580512717,
+   "km_l_ref": 2.384250947864957,
+   "preco_veiculo": 6.378221856587106,
+   "preco_ref": 6.150461225686122,
+   "n_pares": 27
+  },
+  "pares_C-V07": {
+   "custo_veiculo": 221348.86,
+   "custo_referencia": 167252.1517366129,
+   "diferenca": 54096.70826338709,
+   "atividade": 21865.24192665147,
+   "intensidade": 32439.39963251903,
+   "preco": -207.93329578345012,
+   "residuo": 3.637978807091713e-11,
+   "veiculo_id": "C-V07",
+   "km_veiculo": 72586.2,
+   "km_ref": 64813.0,
+   "km_l_veiculo": 2.015443005569067,
+   "km_l_ref": 2.384250947864957,
+   "preco_veiculo": 6.146016896843843,
+   "preco_ref": 6.152640694158162,
+   "n_pares": 27
+  }
+ },
+ "preco_EMP-B": {
+  "premio_total": 2954.26968,
+  "veiculos_z_acima_limiar": [
+   {
+    "veiculo_id": "B-V19",
+    "premio": 643.4866,
+    "litros": 15388.6913,
+    "pct_acima": 0.2308,
+    "premio_por_litro": 0.0418,
+    "z": 4.2027
+   },
+   {
+    "veiculo_id": "B-V10",
+    "premio": 257.7008,
+    "litros": 7084.17,
+    "pct_acima": 0.2237,
+    "premio_por_litro": 0.0364,
+    "z": 3.557
+   }
+  ],
+  "top8": [
+   {
+    "veiculo_id": "B-V19",
+    "premio": 643.4866,
+    "litros": 15388.6913,
+    "pct_acima": 0.2308,
+    "premio_por_litro": 0.0418,
+    "z": 4.2027
+   },
+   {
+    "veiculo_id": "B-V11",
+    "premio": 454.931,
+    "litros": 13824.14,
+    "pct_acima": 0.2024,
+    "premio_por_litro": 0.0329,
+    "z": 3.1452
+   },
+   {
+    "veiculo_id": "B-V13",
+    "premio": 381.7,
+    "litros": 10955.2394,
+    "pct_acima": 0.2,
+    "premio_por_litro": 0.0348,
+    "z": 3.3747
+   },
+   {
+    "veiculo_id": "B-V18",
+    "premio": 313.5037,
+    "litros": 10253.25,
+    "pct_acima": 0.1695,
+    "premio_por_litro": 0.0306,
+    "z": 2.8683
+   },
+   {
+    "veiculo_id": "B-V10",
+    "premio": 257.7008,
+    "litros": 7084.17,
+    "pct_acima": 0.2237,
+    "premio_por_litro": 0.0364,
+    "z": 3.557
+   },
+   {
+    "veiculo_id": "B-V12",
+    "premio": 233.5095,
+    "litros": 9770.6796,
+    "pct_acima": 0.1475,
+    "premio_por_litro": 0.0239,
+    "z": 2.0756
+   },
+   {
+    "veiculo_id": "B-V17",
+    "premio": 91.6846,
+    "litros": 12929.49,
+    "pct_acima": 0.0385,
+    "premio_por_litro": 0.0071,
+    "z": 0.0802
+   },
+   {
+    "veiculo_id": "B-V02",
+    "premio": 82.4501,
+    "litros": 5855.9,
+    "pct_acima": 0.0923,
+    "premio_por_litro": 0.0141,
+    "z": 0.9099
+   }
+  ]
+ },
+ "preco_EMP-C": {
+  "premio_total": 135163.67012499995,
+  "veiculos_z_acima_limiar": [
+   {
+    "veiculo_id": "C-V27",
+    "premio": 17112.8598,
+    "litros": 57265.91,
+    "pct_acima": 0.5827,
+    "premio_por_litro": 0.2988,
+    "z": 8.7129
+   },
+   {
+    "veiculo_id": "C-V03",
+    "premio": 16183.5292,
+    "litros": 62884.02,
+    "pct_acima": 0.5287,
+    "premio_por_litro": 0.2574,
+    "z": 7.3563
+   },
+   {
+    "veiculo_id": "C-V09",
+    "premio": 15138.7177,
+    "litros": 56615.66,
+    "pct_acima": 0.5603,
+    "premio_por_litro": 0.2674,
+    "z": 7.6846
+   },
+   {
+    "veiculo_id": "C-V18",
+    "premio": 14412.1577,
+    "litros": 47702.88,
+    "pct_acima": 0.5417,
+    "premio_por_litro": 0.3021,
+    "z": 8.8206
+   },
+   {
+    "veiculo_id": "C-V02",
+    "premio": 13400.6521,
+    "litros": 86348.57,
+    "pct_acima": 0.5263,
+    "premio_por_litro": 0.1552,
+    "z": 4.0147
+   },
+   {
+    "veiculo_id": "C-V24",
+    "premio": 12723.4274,
+    "litros": 43871.97,
+    "pct_acima": 0.5755,
+    "premio_por_litro": 0.29,
+    "z": 8.4244
+   }
+  ],
+  "top8": [
+   {
+    "veiculo_id": "C-V27",
+    "premio": 17112.8598,
+    "litros": 57265.91,
+    "pct_acima": 0.5827,
+    "premio_por_litro": 0.2988,
+    "z": 8.7129
+   },
+   {
+    "veiculo_id": "C-V03",
+    "premio": 16183.5292,
+    "litros": 62884.02,
+    "pct_acima": 0.5287,
+    "premio_por_litro": 0.2574,
+    "z": 7.3563
+   },
+   {
+    "veiculo_id": "C-V09",
+    "premio": 15138.7177,
+    "litros": 56615.66,
+    "pct_acima": 0.5603,
+    "premio_por_litro": 0.2674,
+    "z": 7.6846
+   },
+   {
+    "veiculo_id": "C-V18",
+    "premio": 14412.1577,
+    "litros": 47702.88,
+    "pct_acima": 0.5417,
+    "premio_por_litro": 0.3021,
+    "z": 8.8206
+   },
+   {
+    "veiculo_id": "C-V02",
+    "premio": 13400.6521,
+    "litros": 86348.57,
+    "pct_acima": 0.5263,
+    "premio_por_litro": 0.1552,
+    "z": 4.0147
+   },
+   {
+    "veiculo_id": "C-V24",
+    "premio": 12723.4274,
+    "litros": 43871.97,
+    "pct_acima": 0.5755,
+    "premio_por_litro": 0.29,
+    "z": 8.4244
+   },
+   {
+    "veiculo_id": "C-V23",
+    "premio": 3908.342,
+    "litros": 46646.85,
+    "pct_acima": 0.1826,
+    "premio_por_litro": 0.0838,
+    "z": 1.6791
+   },
+   {
+    "veiculo_id": "C-V19",
+    "premio": 3526.856,
+    "litros": 61322.93,
+    "pct_acima": 0.2819,
+    "premio_por_litro": 0.0575,
+    "z": 0.8197
+   }
+  ]
+ },
+ "manutencao_EMP-B": {
+  "toco_antigos": [
+   {
+    "veiculo_id": "B-V11",
+    "ano": 2012,
+    "km": 64319.1,
+    "corretiva": 26052.06,
+    "preventiva": 8078.7,
+    "pct_corretiva": 0.7633,
+    "corretiva_por_km": 0.405
+   },
+   {
+    "veiculo_id": "B-V12",
+    "ano": 2013,
+    "km": 45980.9,
+    "corretiva": 23442.08,
+    "preventiva": 4687.23,
+    "pct_corretiva": 0.8334,
+    "corretiva_por_km": 0.5098
+   },
+   {
+    "veiculo_id": "B-V13",
+    "ano": 2012,
+    "km": 49963.1,
+    "corretiva": 8870.05,
+    "preventiva": 10606.25,
+    "pct_corretiva": 0.4554,
+    "corretiva_por_km": 0.1775
+   },
+   {
+    "veiculo_id": "B-V14",
+    "ano": 2013,
+    "km": 41846.5,
+    "corretiva": 2962.98,
+    "preventiva": 7724.7,
+    "pct_corretiva": 0.2772,
+    "corretiva_por_km": 0.0708
+   }
+  ],
+  "toco_novos_mediana_corretiva_por_km": 0.1166341154118065,
+  "toco_novos_mediana_pct_corretiva": 0.39635619266710015,
+  "excesso_corretiva_antigos": 39672.04509834611
+ },
+ "utilizacao_EMP-B": {
+  "limiar": 0.4,
+  "subutilizados": {
+   "B-V28": {
+    "km_mes": 318.8833333333333,
+    "razao_pares": 0.1506058119375552,
+    "tributos": 1582.8850000000002,
+    "seguro_rateado": 2986.431716266022,
+    "fixo_anual": 4569.316716266022
+   },
+   "B-V29": {
+    "km_mes": 359.19166666666666,
+    "razao_pares": 0.16964308555753,
+    "tributos": 1482.925,
+    "seguro_rateado": 2776.6457101457636,
+    "fixo_anual": 4259.570710145764
+   },
+   "B-V30": {
+    "km_mes": 490.80833333333334,
+    "razao_pares": 0.23180448716056526,
+    "tributos": 1803.7150000000001,
+    "seguro_rateado": 3449.931483241445,
+    "fixo_anual": 5253.646483241446
+   }
+  },
+  "mediana_pares_util": 2117.3375
+ },
+ "multas": {
+  "EMP-B": {
+   "qtd_original": 34,
+   "qtd_nic": 6,
+   "valor_nic": 2033.4299999999998,
+   "qtd_sem_desconto": 7,
+   "desconto_perdido": 206.53000000000003,
+   "por_10mil_km": 0.29091680720515367,
+   "valor_total": 6888.529999999999
+  },
+  "EMP-C": {
+   "qtd_original": 30,
+   "qtd_nic": 2,
+   "valor_nic": 520.63,
+   "qtd_sem_desconto": 1,
+   "desconto_perdido": 39.046,
+   "por_10mil_km": 0.06217245478404605,
+   "valor_total": 4188.42
+  }
+ },
+ "pedagio_EMP-B": {
+  "duplicadas_qtd": 15,
+  "duplicadas_valor": 315.49,
+  "custo_por_km": 0.16639001333939127
+ },
+ "pedagio_EMP-C": {
+  "eixo_suspenso_qtd": 176,
+  "eixo_suspenso_sobrecobranca": 30662.590000000004,
+  "vpo_qtd_viagens": 267,
+  "vpo_valor_proprio": 137933.94,
+  "custeado_terceiros": 876819.54,
+  "taxa_por_km": {
+   "CAM_TRUCK|carregado": 0.21910852038865267,
+   "CAM_TRUCK|vazio": 0.16011299511911892,
+   "CAV_SEMI|carregado": 0.4423682234838905,
+   "CAV_SEMI|vazio": 0.3298814405112036
+  },
+  "lacuna_fev_estimada": 61232.09985588587,
+  "lacuna_fev_real": 63330.21,
+  "lacuna_manual_estimada": 19503.392663312858,
+  "lacuna_manual_real": 18466.46,
+  "viagens_manual_sem_comprovante": 48,
+  "custo_por_km_proprio": 0.1609158251279509
+ },
+ "estimativa_EMP-A": {
+  "valor_real_brl": 133176.47999999998,
+  "meses": 6,
+  "niveis": {
+   "0": {
+    "descricao": "Composição da frota (8 veículos: 4 utilitários e 2 automóveis próprios, 2 automóveis locados), segmento e UF",
+    "p10": 119738.07439711863,
+    "p50": 137419.3733943352,
+    "p90": 157335.84421232698,
+    "largura_p10_p90": 37597.76981520835,
+    "min_simulado": 90634.45912858608,
+    "max_simulado": 193955.31667036947,
+    "parcela_observada": 0.0,
+    "contem_valor_real": true,
+    "componentes_p50": {
+     "combustivel": 54144.31827288107,
+     "pedagio": 1594.2224611657484,
+     "outros": 2628.74062639772,
+     "locacao": 41463.61648493996,
+     "manutencao": 13125.229720399868,
+     "multas": 833.9837054100551,
+     "tributos": 8242.281355486051,
+     "seguro": 14264.70755971051
+    }
+   },
+   "1": {
+    "descricao": "+ duas respostas: km médio mensal por veículo e gasto mensal com combustível",
+    "p10": 126191.20844488386,
+    "p50": 135424.76820375927,
+    "p90": 145064.38284340018,
+    "largura_p10_p90": 18873.17439851632,
+    "min_simulado": 110712.15311119951,
+    "max_simulado": 162650.7609295983,
+    "parcela_observada": 0.0,
+    "contem_valor_real": true,
+    "componentes_p50": {
+     "combustivel": 52800.79199766497,
+     "pedagio": 1597.6316412774663,
+     "outros": 2631.3573056467394,
+     "locacao": 41424.30364623784,
+     "manutencao": 12798.99131592037,
+     "multas": 840.4403605223707,
+     "tributos": 8239.973910744455,
+     "seguro": 14290.879550245128
+    }
+   },
+   "2": {
+    "descricao": "+ extratos de combustível e pedágio, faturas de locação e 3 meses de notas de oficina (situação atual)",
+    "p10": 134597.49962571313,
+    "p50": 139938.40986333782,
+    "p90": 145661.1641680185,
+    "largura_p10_p90": 11063.66454230537,
+    "min_simulado": 126742.01612948928,
+    "max_simulado": 159078.5132934215,
+    "parcela_observada": 0.723354939496992,
+    "contem_valor_real": false,
+    "componentes_p50": {
+     "combustivel": 55653.82,
+     "pedagio": 3340.18,
+     "outros": 831.14,
+     "locacao": 41400.0,
+     "manutencao": 15221.75373431536,
+     "multas": 835.557140343594,
+     "tributos": 8262.92783045218,
+     "seguro": 14259.734810469598
+    }
+   },
+   "3": {
+    "descricao": "+ apólice de seguro, comprovantes de IPVA/licenciamento e relação de multas (simulação do próximo passo)",
+    "p10": 130765.73937646904,
+    "p50": 133232.25802826014,
+    "p90": 136207.62895808634,
+    "largura_p10_p90": 5441.889581617303,
+    "min_simulado": 128838.73964270917,
+    "max_simulado": 138500.63795440816,
+    "parcela_observada": 0.8857873592067135,
+    "contem_valor_real": true,
+    "componentes_p50": {
+     "combustivel": 55653.82,
+     "pedagio": 3340.18,
+     "outros": 831.14,
+     "locacao": 41400.0,
+     "manutencao": 15216.808028260122,
+     "multas": 500.2,
+     "tributos": 6173.66,
+     "seguro": 10116.45
+    }
+   }
+  },
+  "proximas_perguntas": [
+   {
+    "componente": "seguro",
+    "pergunta": "Enviar a apólice de seguro (ou informar o prêmio anual)",
+    "esforco": 1,
+    "reducao_largura_brl": 3826.7087080306082,
+    "reducao_pct": 0.3387732787674242,
+    "pontuacao": 3826.7087080306082
+   },
+   {
+    "componente": "tributos",
+    "pergunta": "Enviar comprovantes de IPVA e licenciamento (ou informar os valores pagos)",
+    "esforco": 1,
+    "reducao_largura_brl": 2141.032569841598,
+    "reducao_pct": 0.1895426798781259,
+    "pontuacao": 2141.032569841598
+   },
+   {
+    "componente": "manutencao",
+    "pergunta": "Enviar as notas de oficina de out/2025, nov/2025 e mar/2026",
+    "esforco": 2,
+    "reducao_largura_brl": 1361.869548664341,
+    "reducao_pct": 0.12056444518139704,
+    "pontuacao": 680.9347743321705
+   },
+   {
+    "componente": "multas",
+    "pergunta": "Informar se houve multas no período e o valor total pago",
+    "esforco": 1,
+    "reducao_largura_brl": 139.44552045757882,
+    "reducao_pct": 0.012344920865208968,
+    "pontuacao": 139.44552045757882
+   }
+  ],
+  "declaracoes_nivel_1": {
+   "km_medio_mensal_declarado": 1810.0,
+   "combustivel_mensal_declarado": 8800.0,
+   "km_medio_mensal_real_veiculos_com_odometro": 1678.76
+  },
+  "priori": {
+   "km_mes": {
+    "LEVE_PASSEIO": [
+     800,
+     1500,
+     2800
+    ],
+    "UTIL_LEVE": [
+     900,
+     1800,
+     3200
+    ]
+   },
+   "rendimento_km_l": {
+    "LEVE_PASSEIO": [
+     9.0,
+     11.5,
+     13.5
+    ],
+    "UTIL_LEVE": [
+     7.5,
+     9.5,
+     11.5
+    ]
+   },
+   "preco_gasolina": [
+    5.8,
+    6.3,
+    6.9
+   ],
+   "manutencao_por_km": {
+    "LEVE_PASSEIO": [
+     0.08,
+     0.15,
+     0.3
+    ],
+    "UTIL_LEVE": [
+     0.1,
+     0.18,
+     0.35
+    ]
+   },
+   "pedagio_por_km_urbano": [
+    0.0,
+    0.01,
+    0.05
+   ],
+   "multas_veiculo_mes": [
+    0.0,
+    15.0,
+    60.0
+   ],
+   "valor_veiculo": {
+    "LEVE_PASSEIO": [
+     55000,
+     80000,
+     110000
+    ],
+    "UTIL_LEVE": [
+     70000,
+     100000,
+     140000
+    ]
+   },
+   "aliquota_ipva": [
+    0.01,
+    0.03,
+    0.04
+   ],
+   "licenciamento_ano": [
+    100.0,
+    160.0,
+    250.0
+   ],
+   "taxa_seguro_ano": [
+    0.03,
+    0.05,
+    0.07
+   ],
+   "locacao_mes": [
+    2500.0,
+    3400.0,
+    4500.0
+   ],
+   "outros_veiculo_mes": [
+    0.0,
+    30.0,
+    150.0
+   ]
+  }
+ },
+ "confiabilidade": {
+  "EMP-A": {
+   "dimensoes": {
+    "C_completude": 73.3,
+    "A_atualidade": 58.5,
+    "K_consistencia": 96.9,
+    "R_rastreabilidade": 97.9,
+    "X_contexto": 87.5
+   },
+   "minimo": 58.5,
+   "selo": "Baixa",
+   "dias_desde_ultimo_dado": 101,
+   "custo_observado_brl": 106125.91,
+   "custo_estimado_lacunas_brl": 38713.27,
+   "valor_pendente_ponderado_brl": 3313.84
+  },
+  "EMP-B": {
+   "dimensoes": {
+    "C_completude": 100.0,
+    "A_atualidade": 100.0,
+    "K_consistencia": 100.0,
+    "R_rastreabilidade": 99.7,
+    "X_contexto": 100.0
+   },
+   "minimo": 99.7,
+   "selo": "Alta",
+   "dias_desde_ultimo_dado": 10,
+   "custo_observado_brl": 2334087.68,
+   "custo_estimado_lacunas_brl": 0.0,
+   "valor_pendente_ponderado_brl": 0.0
+  },
+  "EMP-C": {
+   "dimensoes": {
+    "C_completude": 99.5,
+    "A_atualidade": 100.0,
+    "K_consistencia": 99.8,
+    "R_rastreabilidade": 99.9,
+    "X_contexto": 100.0
+   },
+   "minimo": 99.5,
+   "selo": "Alta",
+   "dias_desde_ultimo_dado": 10,
+   "custo_observado_brl": 16599464.33,
+   "custo_estimado_lacunas_brl": 80735.49,
+   "valor_pendente_ponderado_brl": 39536.86
+  }
+ },
+ "oportunidades": {
+  "EMP-B": {
+   "lista": [
+    {
+     "id": "OP-B1",
+     "empresa_id": "EMP-B",
+     "titulo": "Multas NIC (não indicação do condutor)",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 2033.4299999999998,
+     "captura": [
+      0.7,
+      0.9,
+      1.0
+     ],
+     "implantacao": 0.0,
+     "recorrente_anual": 0.0,
+     "confianca": "Alta",
+     "urgencia": 1.25,
+     "esforco_pessoa_semana": 0.5,
+     "viavel": true,
+     "risco": "baixo",
+     "recuperacao_pontual": 0.0,
+     "evidencias": {}
+    },
+    {
+     "id": "OP-B2",
+     "empresa_id": "EMP-B",
+     "titulo": "Multas pagas sem o desconto de 20%",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 206.53000000000003,
+     "captura": [
+      0.5,
+      0.8,
+      1.0
+     ],
+     "implantacao": 0.0,
+     "recorrente_anual": 0.0,
+     "confianca": "Alta",
+     "urgencia": 1.0,
+     "esforco_pessoa_semana": 0.25,
+     "viavel": true,
+     "risco": "baixo",
+     "recuperacao_pontual": 0.0,
+     "evidencias": {}
+    },
+    {
+     "id": "OP-B3",
+     "empresa_id": "EMP-B",
+     "titulo": "Passagens de pedágio cobradas em duplicidade",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 315.49,
+     "captura": [
+      0.5,
+      0.8,
+      1.0
+     ],
+     "implantacao": 0.0,
+     "recorrente_anual": 0.0,
+     "confianca": "Alta",
+     "urgencia": 1.25,
+     "esforco_pessoa_semana": 0.5,
+     "viavel": true,
+     "risco": "baixo",
+     "recuperacao_pontual": 315.49,
+     "evidencias": {}
+    },
+    {
+     "id": "OP-B4",
+     "empresa_id": "EMP-B",
+     "titulo": "Custos fixos de 3 utilitários subutilizados",
+     "estagio": "hipotese",
+     "bruta_anual": 14082.533909653232,
+     "captura": [
+      0.0,
+      0.3333333333333333,
+      0.6666666666666666
+     ],
+     "implantacao": 0.0,
+     "recorrente_anual": 0.0,
+     "confianca": "Baixa",
+     "urgencia": 1.0,
+     "esforco_pessoa_semana": 2.0,
+     "viavel": true,
+     "risco": "medio",
+     "recuperacao_pontual": 0.0,
+     "evidencias": {}
+    },
+    {
+     "id": "OP-B6",
+     "empresa_id": "EMP-B",
+     "titulo": "Abastecimento acima da referência de preço da própria frota",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 2954.26968,
+     "captura": [
+      0.3,
+      0.5,
+      0.7
+     ],
+     "implantacao": 2000.0,
+     "recorrente_anual": 0.0,
+     "confianca": "Alta",
+     "urgencia": 1.0,
+     "esforco_pessoa_semana": 1.0,
+     "viavel": true,
+     "risco": "baixo",
+     "recuperacao_pontual": 0.0,
+     "evidencias": {}
+    },
+    {
+     "id": "OP-B5",
+     "empresa_id": "EMP-B",
+     "titulo": "Manutenção corretiva elevada em 4 caminhões de 2012-2013",
+     "estagio": "hipotese",
+     "bruta_anual": 39672.04509834611,
+     "captura": [
+      0.2,
+      0.35,
+      0.5
+     ],
+     "implantacao": 8000.0,
+     "recorrente_anual": 14400.0,
+     "confianca": "Moderada",
+     "urgencia": 1.0,
+     "esforco_pessoa_semana": 3.0,
+     "viavel": true,
+     "risco": "baixo",
+     "recuperacao_pontual": 0.0,
+     "evidencias": {}
+    }
+   ],
+   "priorizacao": [
+    {
+     "id": "OP-B1",
+     "titulo": "Multas NIC (não indicação do condutor)",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 2033.4299999999998,
+     "liquida_conservador": 1423.4009999999998,
+     "liquida_base": 1830.087,
+     "liquida_otimista": 2033.4299999999998,
+     "implantacao": 0.0,
+     "confianca": "Alta",
+     "urgencia": 1.25,
+     "esforco": 0.5,
+     "risco": "baixo",
+     "prioridade": 4575.2175,
+     "recuperacao_pontual": 0.0,
+     "ordem": 1
+    },
+    {
+     "id": "OP-B6",
+     "titulo": "Abastecimento acima da referência de preço da própria frota",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 2954.26968,
+     "liquida_conservador": 886.280904,
+     "liquida_base": 1477.13484,
+     "liquida_otimista": 2067.9887759999997,
+     "implantacao": 2000.0,
+     "confianca": "Alta",
+     "urgencia": 1.0,
+     "esforco": 1.0,
+     "risco": "baixo",
+     "prioridade": 1477.13484,
+     "recuperacao_pontual": 0.0,
+     "ordem": 2
+    },
+    {
+     "id": "OP-B4",
+     "titulo": "Custos fixos de 3 utilitários subutilizados",
+     "estagio": "hipotese",
+     "bruta_anual": 14082.533909653232,
+     "liquida_conservador": 0.0,
+     "liquida_base": 4694.17796988441,
+     "liquida_otimista": 9388.35593976882,
+     "implantacao": 0.0,
+     "confianca": "Baixa",
+     "urgencia": 1.0,
+     "esforco": 2.0,
+     "risco": "medio",
+     "prioridade": 1173.5444924711026,
+     "recuperacao_pontual": 0.0,
+     "ordem": 3
+    },
+    {
+     "id": "OP-B2",
+     "titulo": "Multas pagas sem o desconto de 20%",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 206.53000000000003,
+     "liquida_conservador": 103.26500000000001,
+     "liquida_base": 165.22400000000005,
+     "liquida_otimista": 206.53000000000003,
+     "implantacao": 0.0,
+     "confianca": "Alta",
+     "urgencia": 1.0,
+     "esforco": 0.25,
+     "risco": "baixo",
+     "prioridade": 660.8960000000002,
+     "recuperacao_pontual": 0.0,
+     "ordem": 4
+    },
+    {
+     "id": "OP-B3",
+     "titulo": "Passagens de pedágio cobradas em duplicidade",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 315.49,
+     "liquida_conservador": 157.745,
+     "liquida_base": 252.39200000000002,
+     "liquida_otimista": 315.49,
+     "implantacao": 0.0,
+     "confianca": "Alta",
+     "urgencia": 1.25,
+     "esforco": 0.5,
+     "risco": "baixo",
+     "prioridade": 630.98,
+     "recuperacao_pontual": 315.49,
+     "ordem": 5
+    },
+    {
+     "id": "OP-B5",
+     "titulo": "Manutenção corretiva elevada em 4 caminhões de 2012-2013",
+     "estagio": "hipotese",
+     "bruta_anual": 39672.04509834611,
+     "liquida_conservador": -6465.590980330777,
+     "liquida_base": -514.7842155788621,
+     "liquida_otimista": 5436.022549173056,
+     "implantacao": 8000.0,
+     "confianca": "Moderada",
+     "urgencia": 1.0,
+     "esforco": 3.0,
+     "risco": "baixo",
+     "prioridade": -128.69605389471553,
+     "recuperacao_pontual": 0.0,
+     "ordem": 6
+    }
+   ],
+   "cenarios": {
+    "conservador": {
+     "itens": [
+      "OP-B1",
+      "OP-B2",
+      "OP-B3",
+      "OP-B6"
+     ],
+     "bruta_capturada": 2570.691904,
+     "custos_recorrentes": 12000.0,
+     "implantacao": 2000.0,
+     "economia_liquida_anual": -9429.308096,
+     "payback_meses": null,
+     "roi_12m": -0.8163791497142857,
+     "recuperacao_pontual": 315.49
+    },
+    "base": {
+     "itens": [
+      "OP-B1",
+      "OP-B2",
+      "OP-B3",
+      "OP-B6"
+     ],
+     "bruta_capturada": 3724.83784,
+     "custos_recorrentes": 12000.0,
+     "implantacao": 2000.0,
+     "economia_liquida_anual": -8275.16216,
+     "payback_meses": null,
+     "roi_12m": -0.7339401542857142,
+     "recuperacao_pontual": 315.49
+    },
+    "otimista": {
+     "itens": [
+      "OP-B1",
+      "OP-B2",
+      "OP-B3",
+      "OP-B4",
+      "OP-B6",
+      "OP-B5"
+     ],
+     "bruta_capturada": 33847.81726494188,
+     "custos_recorrentes": 26400.0,
+     "implantacao": 10000.0,
+     "economia_liquida_anual": 7447.8172649418775,
+     "payback_meses": 16.11210314797331,
+     "roi_12m": -0.07011491030379458,
+     "recuperacao_pontual": 315.49
+    }
+   },
+   "proximo_passo": {
+    "id": "OP-B1",
+    "titulo": "Multas NIC (não indicação do condutor)"
+   }
+  },
+  "EMP-C": {
+   "lista": [
+    {
+     "id": "OP-C1",
+     "empresa_id": "EMP-C",
+     "titulo": "Queda de rendimento em 3 cavalos mecânicos",
+     "estagio": "anomalia",
+     "bruta_anual": 108080.23696417995,
+     "captura": [
+      0.4,
+      0.6,
+      0.8
+     ],
+     "implantacao": 4500.0,
+     "recorrente_anual": 0.0,
+     "confianca": "Moderada",
+     "urgencia": 1.0,
+     "esforco_pessoa_semana": 1.5,
+     "viavel": true,
+     "risco": "baixo",
+     "recuperacao_pontual": 0.0,
+     "evidencias": {
+      "veiculos": [
+       "C-V07",
+       "C-V15",
+       "C-V22"
+      ],
+      "metodo": "CUSUM + LMDI"
+     }
+    },
+    {
+     "id": "OP-C2",
+     "empresa_id": "EMP-C",
+     "titulo": "Abastecimento acima da referência de preço da própria frota",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 135163.67012499995,
+     "captura": [
+      0.3,
+      0.5,
+      0.7
+     ],
+     "implantacao": 2000.0,
+     "recorrente_anual": 4800.0,
+     "confianca": "Alta",
+     "urgencia": 1.0,
+     "esforco_pessoa_semana": 2.0,
+     "viavel": true,
+     "risco": "baixo",
+     "recuperacao_pontual": 0.0,
+     "evidencias": {}
+    },
+    {
+     "id": "OP-C3",
+     "empresa_id": "EMP-C",
+     "titulo": "Cobrança de eixo suspenso em retornos vazios",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 30662.590000000004,
+     "captura": [
+      0.5,
+      0.7,
+      0.9
+     ],
+     "implantacao": 1000.0,
+     "recorrente_anual": 0.0,
+     "confianca": "Moderada",
+     "urgencia": 1.25,
+     "esforco_pessoa_semana": 1.0,
+     "viavel": true,
+     "risco": "baixo",
+     "recuperacao_pontual": 30662.590000000004,
+     "evidencias": {}
+    },
+    {
+     "id": "OP-C4",
+     "empresa_id": "EMP-C",
+     "titulo": "Viagens de lotação sem registro de Vale-Pedágio",
+     "estagio": "hipotese",
+     "bruta_anual": 137933.94,
+     "captura": [
+      0.0,
+      0.3,
+      0.6
+     ],
+     "implantacao": 0.0,
+     "recorrente_anual": 0.0,
+     "confianca": "Baixa",
+     "urgencia": 1.0,
+     "esforco_pessoa_semana": 2.0,
+     "viavel": true,
+     "risco": "medio",
+     "recuperacao_pontual": 0.0,
+     "evidencias": {}
+    },
+    {
+     "id": "OP-C5",
+     "empresa_id": "EMP-C",
+     "titulo": "Multas NIC (não indicação do condutor)",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 520.63,
+     "captura": [
+      0.7,
+      0.9,
+      1.0
+     ],
+     "implantacao": 0.0,
+     "recorrente_anual": 0.0,
+     "confianca": "Alta",
+     "urgencia": 1.25,
+     "esforco_pessoa_semana": 0.5,
+     "viavel": true,
+     "risco": "baixo",
+     "recuperacao_pontual": 0.0,
+     "evidencias": {}
+    },
+    {
+     "id": "OP-C6",
+     "empresa_id": "EMP-C",
+     "titulo": "Multas pagas sem o desconto de 20%",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 39.046,
+     "captura": [
+      0.5,
+      0.8,
+      1.0
+     ],
+     "implantacao": 0.0,
+     "recorrente_anual": 0.0,
+     "confianca": "Alta",
+     "urgencia": 1.0,
+     "esforco_pessoa_semana": 0.25,
+     "viavel": true,
+     "risco": "baixo",
+     "recuperacao_pontual": 0.0,
+     "evidencias": {}
+    }
+   ],
+   "priorizacao": [
+    {
+     "id": "OP-C1",
+     "titulo": "Queda de rendimento em 3 cavalos mecânicos",
+     "estagio": "anomalia",
+     "bruta_anual": 108080.23696417995,
+     "liquida_conservador": 43232.09478567198,
+     "liquida_base": 64848.142178507966,
+     "liquida_otimista": 86464.18957134396,
+     "implantacao": 4500.0,
+     "confianca": "Moderada",
+     "urgencia": 1.0,
+     "esforco": 1.5,
+     "risco": "baixo",
+     "prioridade": 32424.071089253983,
+     "recuperacao_pontual": 0.0,
+     "ordem": 1
+    },
+    {
+     "id": "OP-C2",
+     "titulo": "Abastecimento acima da referência de preço da própria frota",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 135163.67012499995,
+     "liquida_conservador": 35749.10103749998,
+     "liquida_base": 62781.83506249997,
+     "liquida_otimista": 89814.56908749996,
+     "implantacao": 2000.0,
+     "confianca": "Alta",
+     "urgencia": 1.0,
+     "esforco": 2.0,
+     "risco": "baixo",
+     "prioridade": 31390.917531249986,
+     "recuperacao_pontual": 0.0,
+     "ordem": 2
+    },
+    {
+     "id": "OP-C3",
+     "titulo": "Cobrança de eixo suspenso em retornos vazios",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 30662.590000000004,
+     "liquida_conservador": 15331.295000000002,
+     "liquida_base": 21463.813000000002,
+     "liquida_otimista": 27596.331000000006,
+     "implantacao": 1000.0,
+     "confianca": "Moderada",
+     "urgencia": 1.25,
+     "esforco": 1.0,
+     "risco": "baixo",
+     "prioridade": 20122.3246875,
+     "recuperacao_pontual": 30662.590000000004,
+     "ordem": 3
+    },
+    {
+     "id": "OP-C4",
+     "titulo": "Viagens de lotação sem registro de Vale-Pedágio",
+     "estagio": "hipotese",
+     "bruta_anual": 137933.94,
+     "liquida_conservador": 0.0,
+     "liquida_base": 41380.182,
+     "liquida_otimista": 82760.364,
+     "implantacao": 0.0,
+     "confianca": "Baixa",
+     "urgencia": 1.0,
+     "esforco": 2.0,
+     "risco": "medio",
+     "prioridade": 10345.0455,
+     "recuperacao_pontual": 0.0,
+     "ordem": 4
+    },
+    {
+     "id": "OP-C5",
+     "titulo": "Multas NIC (não indicação do condutor)",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 520.63,
+     "liquida_conservador": 364.441,
+     "liquida_base": 468.567,
+     "liquida_otimista": 520.63,
+     "implantacao": 0.0,
+     "confianca": "Alta",
+     "urgencia": 1.25,
+     "esforco": 0.5,
+     "risco": "baixo",
+     "prioridade": 1171.4175,
+     "recuperacao_pontual": 0.0,
+     "ordem": 5
+    },
+    {
+     "id": "OP-C6",
+     "titulo": "Multas pagas sem o desconto de 20%",
+     "estagio": "oportunidade_validada",
+     "bruta_anual": 39.046,
+     "liquida_conservador": 19.523,
+     "liquida_base": 31.236800000000002,
+     "liquida_otimista": 39.046,
+     "implantacao": 0.0,
+     "confianca": "Alta",
+     "urgencia": 1.0,
+     "esforco": 0.25,
+     "risco": "baixo",
+     "prioridade": 124.94720000000001,
+     "recuperacao_pontual": 0.0,
+     "ordem": 6
+    }
+   ],
+   "cenarios": {
+    "conservador": {
+     "itens": [
+      "OP-C2",
+      "OP-C3",
+      "OP-C5",
+      "OP-C6"
+     ],
+     "bruta_capturada": 56264.36003749999,
+     "custos_recorrentes": 34800.0,
+     "implantacao": 3000.0,
+     "economia_liquida_anual": 21464.360037499988,
+     "payback_meses": 1.6771988513566238,
+     "roi_12m": 0.48847513326719544,
+     "recuperacao_pontual": 30662.590000000004
+    },
+    "base": {
+     "itens": [
+      "OP-C1",
+      "OP-C2",
+      "OP-C3",
+      "OP-C5",
+      "OP-C6"
+     ],
+     "bruta_capturada": 154393.59404100795,
+     "custos_recorrentes": 34800.0,
+     "implantacao": 7500.0,
+     "economia_liquida_anual": 119593.59404100795,
+     "payback_meses": 0.7525486688621426,
+     "roi_12m": 2.6499667621987695,
+     "recuperacao_pontual": 30662.590000000004
+    },
+    "otimista": {
+     "itens": [
+      "OP-C1",
+      "OP-C2",
+      "OP-C3",
+      "OP-C4",
+      "OP-C5",
+      "OP-C6"
+     ],
+     "bruta_capturada": 291995.1296588439,
+     "custos_recorrentes": 34800.0,
+     "implantacao": 7500.0,
+     "economia_liquida_anual": 257195.1296588439,
+     "payback_meses": 0.34992886575799614,
+     "roi_12m": 5.902958147963213,
+     "recuperacao_pontual": 30662.590000000004
+    }
+   },
+   "proximo_passo": {
+    "id": "OP-C1",
+    "titulo": "Queda de rendimento em 3 cavalos mecânicos"
+   }
+  }
+ },
+ "combinacao_alavancas": {
+  "custo": 200000.0,
+  "reducoes": [
+   0.06,
+   0.04
+  ],
+  "soma_ingenua": 20000.0,
+  "combinada": 19520.0,
+  "dupla_contagem_evitada": 480.0
+ },
+ "sensibilidade_EMP-C_base": {
+  "referencia": {
+   "economia_liquida_anual": 119593.59404100795,
+   "implantacao": 7500.0,
+   "custos_recorrentes": 34800.0,
+   "payback_meses": 0.7525486688621426,
+   "roi_12m": 2.6499667621987695
+  },
+  "captura_-20%": {
+   "economia_liquida_anual": 88714.87523280636,
+   "implantacao": 7500.0,
+   "custos_recorrentes": 34800.0,
+   "payback_meses": 1.0144860122253592,
+   "roi_12m": 1.9199734097590155
+  },
+  "custos_x2": {
+   "economia_liquida_anual": 84793.59404100795,
+   "implantacao": 15000.0,
+   "custos_recorrentes": 69600.0,
+   "payback_meses": 2.122801870067546,
+   "roi_12m": 0.8249833810993847
+  },
+  "captura_-20%_e_custos_x2": {
+   "economia_liquida_anual": 53914.87523280636,
+   "implantacao": 15000.0,
+   "custos_recorrentes": 69600.0,
+   "payback_meses": 3.33859624496493,
+   "roi_12m": 0.45998670487950777
+  }
+ }
+}
