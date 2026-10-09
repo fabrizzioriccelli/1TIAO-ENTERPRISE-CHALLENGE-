@@ -2,7 +2,7 @@
 """Gera as páginas HTML da capa e dos wireframes CONCEITUAIS a partir dos resultados calculados.
 
 Saída: assets/fontes/*.html (editáveis). As imagens PNG em assets/ são capturas dessas páginas, feitas com um
-navegador sem interface (comando no README de assets/). Os números vêm de data/resultados/exemplos-calculados.json,
+navegador sem interface (comandos no README principal). Os números vêm de data/resultados/exemplos-calculados.json,
 portanto coincidem com a documentação. Wireframes não são interface implementada.
 
 Uso:

@@ -2,7 +2,7 @@
 """Gera os slides de apoio do vídeo da Sprint 1 (assets/fontes/slides.html), com números do JSON de resultados.
 
 O PDF docs/video/slides-apoio.pdf é a impressão desta página por um navegador sem interface (comando no
-README de assets/). Os gráficos e o diagrama de arquitetura são os mesmos arquivos SVG usados na documentação.
+README principal). Os gráficos e o diagrama de arquitetura são os mesmos arquivos SVG usados na documentação.
 
 Uso:
     python src/gerar_slides.py

@@ -11,7 +11,7 @@ Arquitetura **proposta** para as Sprints 2 a 4. Nada aqui está implantado; inte
 | RNF-03 | Extração assíncrona | OCR e IA podem levar minutos; a interface não pode travar |
 | RNF-04 | Segurança e LGPD | Criptografia, auditoria, perfis de acesso, retenção ([segurança](seguranca-lgpd.md)) |
 | RNF-05 | Custo e complexidade proporcionais a um MVP acadêmico | Poucos componentes; nada de serviço distribuído sem necessidade |
-| RNF-06 | Desempenho | Meta: diagnóstico de 100 veículos com 12 meses em até 10 segundos; a implementação de referência processa as três frotas sintéticas (21.656 despesas) em menos de 2 segundos |
+| RNF-06 | Desempenho | Meta: diagnóstico de 100 veículos com 12 meses em até 10 segundos; a implementação de referência carrega, valida e calcula IND-01 a IND-05 das três frotas sintéticas (21.656 despesas) em cerca de 0,9 s, e o script completo de exemplos, com simulações e backtest, em cerca de 4 s (medido em 9 out. 2026 no ambiente de desenvolvimento, 4 vCPU; não é teste de carga) |
 | RNF-07 | Evolução incremental | Módulos com fronteiras claras, que possam virar serviços se a escala exigir |
 | RNF-08 | Observabilidade | Logs estruturados, métricas de filas e de extração, rastreio de erros |
 
