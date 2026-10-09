@@ -16,7 +16,7 @@ K-014,"Identidade visual, wireframes e gráficos",Em revisão,S1,R5,"GF-09, GF-1
 K-015,"Roadmap, papéis e Kanban",Em revisão,S1,R1,todas,Nenhuma tarefa concluída sem evidência,docs/roadmap.md
 K-016,"Validação automática, auditoria e teste adversarial",Em revisão,S1,R4,todas,Relatório do validador sem falhas,docs/validacao.md; docs/teste-adversarial.md
 K-017,"Roteiro, storyboard e slides do vídeo",Em revisão,S1,R5,todas,Roteiro com até 5 minutos em ritmo de fala real,docs/video/
-K-018,"Preencher nome do grupo, integrantes e tutor no README",A fazer,S1,R1,-,Campos sem marcador de pendência,README.md
+K-018,"Preencher integrantes, RM e tutor no README (o grupo não adotou nome)",Em revisão,S1,R1,-,Campos sem marcador de pendência,README.md
 K-019,Decidir participação no FIAP NEXT e marcar no README,A fazer,S1,R1,-,Uma opção marcada,README.md
 K-020,Conceder acesso de leitura ao perfil fiap-tutoria,A fazer,S1,R4,-,Convite aceito; repositório continua privado,Configurações do GitHub
 K-021,"Revisão do grupo: ler, entender e aprovar cada documento",A fazer,S1,Todos,todas,Cada integrante revisa ao menos 3 documentos e registra dúvidas,Comentários ou commits do grupo

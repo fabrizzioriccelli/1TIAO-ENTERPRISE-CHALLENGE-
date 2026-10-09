@@ -77,7 +77,7 @@ Nas próximas Sprints, vamos construir a ingestão e a primeira estimativa, depo
 ## 5. Checklist de gravação e publicação
 
 **Antes de gravar**
-- [ ] Nome do grupo e integrantes preenchidos no README e no slide 1
+- [x] Integrantes preenchidos no README e no slide 1
 - [ ] Slides revisados pelo grupo; números conferidos com o anexo
 - [ ] Ensaio cronometrado abaixo de 4:45
 

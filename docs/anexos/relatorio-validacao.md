@@ -8,7 +8,7 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 |---|---|
 | OK | 36 |
 | AVISO | 1 |
-| PENDENTE | 3 |
+| PENDENTE | 2 |
 | MANUAL | 1 |
 | INFO | 1 |
 
@@ -28,7 +28,7 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 3. Gabarito | Cenários com registros marcados | **OK** | todos |
 | 3. Gabarito | Contagens de metadados.json iguais às dos CSVs | **OK** | 14 tabelas |
 | 4. Links e âncoras | Links internos e âncoras | **OK** | 229 links internos em 22 arquivos |
-| 4. Links e âncoras | Links externos | **MANUAL** | 7 endereços distintos; acesso não testado neste ambiente (rede restrita) |
+| 4. Links e âncoras | Links externos | **MANUAL** | 11 endereços distintos; acesso não testado neste ambiente (rede restrita) |
 | 5. Tabelas Markdown | Mesma quantidade de células em cada linha | **OK** | todas as tabelas |
 | 6. Mermaid | Sintaxe dos diagramas (renderização com mermaid-cli) | **OK** | 8 diagramas renderizados sem erro |
 | 7. Números citados | Valores-chave da documentação iguais aos calculados | **OK** | 11 afirmações conferidas |
@@ -45,14 +45,13 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 9. Arquivos | Arquivos duplicados (mesmo conteúdo) | **OK** | 78 arquivos |
 | 9. Arquivos | Codificação UTF-8 | **OK** | todos os textos |
 | 9. Arquivos | Sem emojis fora dos títulos do template | **OK** | nenhum |
-| 9. Arquivos | Pendências declaradas no texto | **INFO** | 24 marcações: README.md (9), docs/problema.md (6), docs/roadmap.md (2), docs/seguranca-lgpd.md (2), ENTREGA_SPRINT1_LINKS.txt (1), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1), docs/uso-de-ia.md (1) |
+| 9. Arquivos | Pendências declaradas no texto | **INFO** | 17 marcações: docs/problema.md (6), README.md (2), docs/roadmap.md (2), docs/seguranca-lgpd.md (2), ENTREGA_SPRINT1_LINKS.txt (1), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1), docs/uso-de-ia.md (1) |
 | 10. Template e entrega | Seções do README do template | **OK** | 13 seções presentes |
 | 10. Template e entrega | Observação do tutor removida | **OK** |  |
 | 10. Template e entrega | Campo FIAP NEXT presente | **OK** |  |
 | 10. Template e entrega | Decisão FIAP NEXT marcada | **PENDENTE** | depende do grupo |
-| 10. Template e entrega | Nomes do grupo, integrantes e tutor | **PENDENTE** | depende do grupo |
+| 10. Template e entrega | Nomes do grupo, integrantes e tutor | **OK** | depende do grupo |
 | 10. Template e entrega | Logo do template | **OK** |  |
 | 10. Template e entrega | Pastas do template | **OK** |  |
 | 10. Template e entrega | Arquivo de links: só repositório e vídeo | **OK** | 2 linhas |
 | 10. Template e entrega | Link do vídeo publicado | **PENDENTE** | vídeo não gravado |
-| 11. Reprodutibilidade | Massa regenerada idêntica à versionada | **OK** | 18 arquivos idênticos byte a byte |

@@ -64,7 +64,7 @@ Grupos de referência entre clientes (US-SP-03), integrações por API, referên
 
 ## 3. Equipe e responsabilidades
 
-Papéis propostos para 5 integrantes, a ajustar aos nomes reais **[Pendência]**. Com 4 integrantes, R5 se divide entre R1 (relatório e vídeo) e R4 (interface).
+Papéis propostos para os 5 integrantes (Bruna Collavite, Fabio Guntovitch, Fabrizzio Riccelli, Gabriel Tamais e Natasha Zonta). A distribuição de cada pessoa por papel é decisão do grupo **[Pendência]**.
 
 | Papel | Responsabilidades principais |
 |---|---|
@@ -93,9 +93,9 @@ Colunas: **Backlog → A fazer → Em andamento → Em revisão → Concluído**
 | Coluna | Cartões | Conteúdo |
 |---|---|---|
 | Backlog | 22 | Sprints 2 a 4 (K-101 a K-306) |
-| A fazer | 8 | Ações externas da Sprint 1: preencher grupo e integrantes, decidir FIAP NEXT, dar acesso a `fiap-tutoria`, revisão do grupo, gravar e publicar o vídeo, conferir o enunciado, entregar o .txt |
+| A fazer | 7 | Ações externas da Sprint 1: decidir FIAP NEXT, dar acesso a `fiap-tutoria`, revisão do grupo, gravar e publicar o vídeo, conferir o enunciado, entregar o .txt |
 | Em andamento | 0 | - |
-| Em revisão | 17 | Documentos e artefatos da Sprint 1, produzidos e aguardando a revisão do grupo |
+| Em revisão | 18 | Documentos e artefatos da Sprint 1 e identificação dos integrantes no README, aguardando a revisão do grupo |
 | Concluído | 0 | Nenhum cartão sem revisão do grupo |
 
 **Definição de concluído.** Um cartão só vai para "Concluído" com: (1) evidência verificável (arquivo, commit ou link); (2) critério de aceite atendido; (3) revisão de pelo menos um integrante que não o produziu. Por isso nenhum artefato desta Sprint está marcado como concluído antes da revisão do grupo.

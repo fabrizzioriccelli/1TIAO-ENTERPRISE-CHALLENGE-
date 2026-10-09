@@ -30,7 +30,7 @@ def s01():
   <div class="marca grande">{PULSO.format(w=64, h=38, cor="#2a78d6")}<span>frota <b>pulse</b></span></div>
   <h1>Inteligência de custos que transforma dados em decisões</h1>
   <p class="sub">Calculadora de Redução de Custos de Frota<br>Enterprise Challenge FIAP e Sem Parar Empresas · Sprint 1</p>
-  <p class="grupo">Grupo: <span class="pend">[nome do grupo e integrantes a preencher]</span></p>
+  <p class="grupo">Bruna Collavite · Fabio Guntovitch · Fabrizzio Riccelli · Gabriel Tamais · Natasha Zonta<br><span class="mudo">Turma 1TIAO</span></p>
   <p class="nota">Conceito acadêmico com dados sintéticos. Não é produto oficial da Sem Parar Empresas, da Corpay nem da FIAP.</p>
 </div>""", "capa")
 

@@ -16,19 +16,19 @@ Enterprise Challenge FIAP e Sem Parar Empresas · Sprint 1 · Turma 1TIAO
 
 ## Nome do grupo
 
-**[Pendência: nome do grupo a preencher]**
+Grupo sem nome definido · Turma 1TIAO
 
 ## 👨‍🎓 Integrantes: 
-- **[Pendência: nome e link do perfil do integrante 1]**
-- **[Pendência: nome e link do perfil do integrante 2]**
-- **[Pendência: nome e link do perfil do integrante 3]**
-- **[Pendência: nome e link do perfil do integrante 4]**
-- **[Pendência: nome e link do perfil do integrante 5, se houver]**
+- <a href="https://github.com/brunacollavite">Bruna Collavite</a> - RM 576285
+- <a href="https://github.com/Guntooo">Fabio Guntovitch</a> - RM 575582
+- <a href="https://github.com/fabrizzioriccelli">Fabrizzio Riccelli</a> - RM 576083
+- <a href="https://github.com/GabrielTamaisFischer">Gabriel Tamais</a> - RM 574503
+- Natasha Zonta - RM 574230
 
 ## 👩‍🏫 Professores:
 
 ### Tutor(a)
-- **[Pendência: nome e link do perfil do tutor]**
+- Sabrina Otoni
   
 ### Coordenador(a)
 - <a href="https://www.linkedin.com/in/andregodoichiovato/">André Godoi Chiovato</a>

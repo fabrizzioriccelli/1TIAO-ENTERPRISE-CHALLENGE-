@@ -38,7 +38,7 @@ Execução de 9 out. 2026, com mermaid-cli e regeneração da massa sintética. 
 
 | Verificação | Situação | Observação |
 |---|---|---|
-| Links externos | **Manual** | 7 endereços distintos; a rede do ambiente bloqueava a maioria. Abrir cada um antes da entrega |
+| Links externos | **Manual** | 11 endereços distintos (inclui os perfis do GitHub dos integrantes); a rede do ambiente bloqueava a maioria. Abrir cada um antes da entrega |
 | Referências legais e bibliográficas | **Parcial** | Conferidas por busca; nível indicado em [referências](referencias.md). Itens marcados como pendentes precisam do texto original |
 | Ortografia e clareza | **Parcial** | Revisão assistida durante a escrita; falta leitura humana completa (K-021) |
 | Visual dos wireframes, gráficos e slides | **Verificado** | Imagens geradas e inspecionadas; problemas encontrados corrigidos (ver auditoria) |
@@ -101,7 +101,7 @@ Status: **Atendido**, **Parcialmente atendido**, **Pendente** ou **Não aplicáv
 | 17 | Arquitetura modular e pelo menos cinco diagramas | Atendido | [arquitetura.md](arquitetura.md); 8 diagramas Mermaid e 7 SVG |
 | 18 | Segurança e LGPD | Parcialmente atendido | [seguranca-lgpd.md](seguranca-lgpd.md); validação jurídica pendente (AUD-19) |
 | 19 | UX e identidade visual sem emojis, gradientes ou logos alterados | Atendido | [ux-identidade-visual.md](ux-identidade-visual.md) |
-| 20 | Repositório organizado conforme o template | Parcialmente atendido | Estrutura e seções completas; nomes, tutor e FIAP NEXT dependem do grupo |
+| 20 | Repositório organizado conforme o template | Parcialmente atendido | Estrutura, seções, integrantes e tutor completos; decisão do FIAP NEXT depende do grupo |
 | 21 | Roadmap, papéis, RACI e Kanban sem itens concluídos sem evidência | Atendido | [roadmap.md](roadmap.md), [kanban.csv](anexos/kanban.csv) |
 | 22 | Roteiro, storyboard e checklist do vídeo de até 5 minutos | Atendido | [roteiro](video/roteiro.md), [slides](video/slides-apoio.pdf) |
 | 23 | Vídeo gravado e publicado | Pendente | Gravação pelo grupo (K-022, K-023) |
@@ -113,7 +113,7 @@ Status: **Atendido**, **Parcialmente atendido**, **Pendente** ou **Não aplicáv
 | 29 | Declaração de uso de IA | Atendido | [uso-de-ia.md](uso-de-ia.md); conferir o formato exigido pela FIAP |
 | 30 | Repositório privado, sem dados reais nem credenciais | Atendido | Varredura sem ocorrências; visibilidade conferida no GitHub |
 | 31 | Acesso do perfil `fiap-tutoria` | Pendente | Concessão pelo dono do repositório (K-020) |
-| 32 | Nome do grupo, integrantes e tutor | Pendente | K-018 |
+| 32 | Nome do grupo, integrantes e tutor | Atendido | Integrantes com RM e GitHub, tutora e coordenador no README; o grupo não adotou nome (K-018) |
 | 33 | Decisão sobre o FIAP NEXT | Pendente | K-019 |
 | 34 | Conferência com o enunciado oficial do portal | Pendente | K-024 |
 | 35 | Aplicação funcional | Não aplicável | Fora do escopo da Sprint 1 (especificação); prevista nas Sprints 2 a 4 |
@@ -121,4 +121,4 @@ Status: **Atendido**, **Parcialmente atendido**, **Pendente** ou **Não aplicáv
 
 ## 6. Parecer
 
-A documentação técnica da Sprint 1 está completa e passou nas verificações automáticas. O que falta não é técnico: identificação do grupo, decisão sobre o FIAP NEXT, acesso do tutor, gravação e publicação do vídeo, conferência com o enunciado oficial e, principalmente, a **revisão do grupo**. Sem essa revisão, o grupo não terá domínio do conteúdo para responder à banca, e nenhum cartão deve sair de "Em revisão".
+A documentação técnica da Sprint 1 está completa e passou nas verificações automáticas. O que falta não é técnico: decisão sobre o FIAP NEXT, acesso do tutor, gravação e publicação do vídeo, conferência com o enunciado oficial e, principalmente, a **revisão do grupo**. Sem essa revisão, o grupo não terá domínio do conteúdo para responder à banca, e nenhum cartão deve sair de "Em revisão".
