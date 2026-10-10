@@ -291,6 +291,7 @@ Abaixo encontra-se a descrição da organização da raiz do projeto e a finalid
 
 * **Repositório (privado)**: https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE- - Documentação, dados sintéticos e scripts da Sprint 1.
 * **[Vídeo de entrega no YouTube (não listado)](https://youtu.be/MD6aKeIHl-Y)**: https://youtu.be/MD6aKeIHl-Y - Narração de Bruna Collavite. Apresentação de até 5 minutos.
+  * **Kanban no Trello (privado, acesso sob solicitação)**: https://trello.com/b/ytvX15Q6/enterprise-challenge-sem-parar-sprint-1 - 47 cartões, colunas Backlog, A fazer, Em andamento, Em revisão e Concluído.
 
 ### 🧠 Decisões Técnicas
 
