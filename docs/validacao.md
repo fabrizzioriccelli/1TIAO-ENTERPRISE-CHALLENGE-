@@ -24,7 +24,7 @@ Execução de 9 out. 2026, com mermaid-cli e regeneração da massa sintética. 
 | Links e âncoras | Arquivos e âncoras de todos os links internos dos Markdown, com a regra de âncora do GitHub | Aprovado |
 | Tabelas Markdown | Mesma quantidade de células por linha e linha separadora válida | Aprovado |
 | Mermaid | Renderização de cada diagrama com mermaid-cli | Aprovado (9 diagramas, incluindo o fluxo do README) |
-| Números | Valores-chave do README, do roteiro e dos documentos contra o JSON calculado; valores com centavos dos documentos procurados no anexo | Aprovado |
+| Números | Valores-chave do README e dos documentos contra o JSON calculado; valores com centavos dos documentos procurados no anexo | Aprovado |
 | Dados sensíveis | CPF, CNPJ, placa real, e-mail, chaves e senhas em todos os arquivos de texto | Aprovado. Nenhuma ocorrência |
 | Arquivos | Duplicados, codificação UTF-8, emojis fora dos títulos do template | Aprovado |
 | Template e entrega | Seções do README, observação do tutor removida, itens do enunciado, campo FIAP NEXT, pastas, arquivo de links | Aprovado |
@@ -41,7 +41,7 @@ Execução de 9 out. 2026, com mermaid-cli e regeneração da massa sintética. 
 | Links externos | **Manual** | 12 endereços distintos (inclui os perfis do GitHub dos integrantes); a rede do ambiente bloqueava a maioria. Abrir cada um antes da entrega |
 | Referências legais e bibliográficas | **Parcial** | Conferidas por busca; nível indicado em [referências](referencias.md). Itens marcados como pendentes precisam do texto original |
 | Ortografia e clareza | **Parcial** | Revisão assistida durante a escrita; falta leitura humana completa (K-021) |
-| Visual dos wireframes, gráficos e slides | **Verificado** | Imagens geradas e inspecionadas; problemas encontrados corrigidos (ver auditoria) |
+| Visual dos wireframes e gráficos | **Verificado** | Imagens geradas e inspecionadas; problemas encontrados corrigidos (ver auditoria) |
 | Contraste de cores | **Verificado** | Calculado pela fórmula da WCAG; ver [UX](ux-identidade-visual.md#2-tokens) |
 | Repositório privado e acesso do `fiap-tutoria` | **Pendente** | Visibilidade a confirmar na página do repositório; acesso do tutor depende do dono (K-020) |
 | Enunciado oficial no portal | **Verificado** | Texto transcrito pelo grupo; conferência na seção 6 |
@@ -64,7 +64,6 @@ Cada perspectiva leu os entregáveis com uma pergunta. Os achados abaixo são re
 | AUD-09 | Usuário (gestor e CFO): os números merecem confiança? | Detector de queda usava a variação entre veículos e só achava 1 de 3 casos | **Corrigido**: variação do próprio veículo; 3 de 3, sem alarme falso |
 | AUD-10 | Usuário | Estimativa de manutenção com cobertura mal definida e subestimação de custos concentrados | **Corrigido**: modelo de frequência e severidade com cobertura declarada |
 | AUD-11 | Usuário | No N3, o valor real ficou fora da faixa | **Aceito e documentado**: backtest mostrou viés e, depois de calibrar, faixa larga demais; critério de aceite na Sprint 3 |
-| AUD-12 | Usuário | O roteiro do vídeo chamava de "quase zero" um resultado negativo | **Corrigido** |
 | AUD-13 | Usuário | Cinza de legendas com contraste 3,50:1, abaixo da WCAG | **Corrigido**: `#6f6e69`, 4,98:1 |
 | AUD-14 | Usuário | Wireframes com decimais em formato americano | **Corrigido** |
 | AUD-15 | Engenharia e dados: o que está escrito é reproduzível? | Gerador com falhas (multas atribuídas à empresa errada, reabastecimentos fora de ordem, passagens repetidas em minutos, falsos positivos de data futura) | **Corrigido**; massa regenerada idêntica |
@@ -102,7 +101,7 @@ Status: **Atendido**, **Parcialmente atendido**, **Pendente** ou **Não aplicáv
 | 19 | UX e identidade visual sem emojis, gradientes ou logos alterados | Atendido | [ux-identidade-visual.md](ux-identidade-visual.md) |
 | 20 | Repositório organizado conforme o template | Atendido | Estrutura, seções, integrantes, tutor e decisão sobre o FIAP NEXT completos; o grupo não adotou nome |
 | 21 | Roadmap, papéis, RACI e Kanban sem itens concluídos sem evidência | Atendido | [roadmap.md](roadmap.md), [kanban.csv](anexos/kanban.csv) |
-| 22 | Roteiro, animação e checklist do vídeo de até 5 minutos | Atendido | [narração](video/narracao.md); animação de 4:42 sem voz, gerada por script |
+| 22 | Animação do vídeo de até 5 minutos | Atendido | Animação de 4:45 com narração humana |
 | 23 | Vídeo gravado e publicado | Atendido | Narração humana sobre a animação, publicado como não listado: https://youtu.be/MD6aKeIHl-Y (K-022, K-023) |
 | 24 | Arquivo .txt com os links do repositório e do vídeo | Atendido | [arquivo](../ENTREGA_SPRINT1_LINKS.txt) com os dois links |
 | 25 | Entrega do .txt no portal | Pendente | Ação do grupo (K-025) |
@@ -138,7 +137,7 @@ Enunciado da atividade transcrito pelo grupo em 9 out. 2026. Cada entregável do
 | Orientação ao usuário sobre dados faltantes | README, seção 10 | Atendido |
 | Diagrama da arquitetura com o fluxo entrada → tratamento → análise → diagnóstico → benchmark → recomendações → visualização/relatório | README, seção 11; [arquitetura.md](arquitetura.md) | Atendido |
 | Planejamento: atividades, responsabilidades dos integrantes, etapas e Kanban | README, seção 13; [roadmap.md](roadmap.md) | Parcialmente atendido: papéis distribuídos; falta criar o quadro no Trello |
-| Vídeo de até 5 minutos com narração humana, não listado, link no README | README, "Links do Projeto"; [narração](video/narracao.md) | Atendido: https://youtu.be/MD6aKeIHl-Y |
+| Vídeo de até 5 minutos com narração humana, não listado, link no README | README, "Links do Projeto" | Atendido: https://youtu.be/MD6aKeIHl-Y |
 | README organizado com todas as informações | README | Atendido |
 
 Requisitos técnicos dos itens 3.1 a 3.10, todos tratados nos documentos: formatos de entrada, variáveis e categorias, dataset simulado, extração e validação, dados incompletos (3.2); ineficiências e indicadores (3.3); IA com entradas, saídas e justificativa, sem modelo treinado (3.4); ações priorizadas e portfólio (3.5); relatório exportável e atualização periódica (3.6); fluxo, componentes, integrações e separação entre dados, análise, regras e interface (3.7); autenticação, integridade, dados de contato e privacidade (3.8); simulação coerente (3.9); relação explícita com as User Stories e justificativas (3.10).

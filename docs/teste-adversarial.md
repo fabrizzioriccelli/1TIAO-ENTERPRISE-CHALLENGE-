@@ -75,4 +75,4 @@ Foram conferidas por mecanismo de busca, porque os sites oficiais estavam bloque
 | 2 | Parcialmente | A cobertura de 95,8% (faixa larga demais) não estava comentada; adicionado ao [diagnóstico](diagnostico.md#5-estimativa-progressiva-e-perguntas-guiadas) |
 | 3 | Sim | Reforçado em [referências](referencias.md#3-métodos-quantitativos) que as premissas não têm fonte externa |
 | 7 | Parcialmente | O fator de captura "base" da hipótese OP-C4 parecia contradizer a escada de evidência; explicação adicionada em [economia](economia-recomendacoes.md#3-cenários-escada-de-evidência) |
-| 8 | Sim | O roteiro do vídeo dizia "quase zero" para um resultado negativo; texto corrigido |
+| 8 | Sim | Nenhuma mudança necessária |

@@ -263,7 +263,6 @@ Cada integrante é responsável por um papel nas próximas Sprints. O vídeo foi
 | Interface e identidade visual | [docs/ux-identidade-visual.md](docs/ux-identidade-visual.md) |
 | Roadmap, papéis, Kanban e riscos | [docs/roadmap.md](docs/roadmap.md) |
 | Exemplos calculados sobre os dados simulados | [docs/anexos/exemplos-calculados.md](docs/anexos/exemplos-calculados.md) |
-| Narração e slides do vídeo | [docs/video/narracao.md](docs/video/narracao.md) |
 | Verificações e matriz de conclusão | [docs/validacao.md](docs/validacao.md) |
 | Perguntas da banca, respondidas | [docs/teste-adversarial.md](docs/teste-adversarial.md) |
 | Referências | [docs/referencias.md](docs/referencias.md) |
@@ -276,11 +275,11 @@ Abaixo encontra-se a descrição da organização da raiz do projeto e a finalid
 
 * **`data/`** Dicionário de dados (`dicionario-dados.csv`), premissas da simulação (`parametros-simulacao.csv`), massa sintética com gabarito (`sintetico/`) e resultados calculados (`resultados/`). **Nenhum dado real.**
 
-* **`docs/`** Documentação técnica e de negócio da Sprint 1, anexos (`anexos/`) e materiais do vídeo (`video/`).
+* **`docs/`** Documentação técnica e de negócio da Sprint 1, anexos (`anexos/`).
 
 * **`notebooks/`** Reservada para análises exploratórias a partir da Sprint 2. Vazia nesta entrega.
 
-* **`src/`** Scripts que geram a massa sintética, calculam os exemplos, desenham gráficos, wireframes e slides e validam a entrega. **Não é a aplicação**, que será construída a partir da Sprint 2.
+* **`src/`** Scripts que geram a massa sintética, calculam os exemplos, desenham gráficos e wireframes e validam a entrega. **Não é a aplicação**, que será construída a partir da Sprint 2.
 
 * **`ENTREGA_SPRINT1_LINKS.txt`** Links do repositório e do vídeo para a entrega no portal.
 
@@ -314,7 +313,7 @@ Abaixo encontra-se a descrição da organização da raiz do projeto e a finalid
 
 ## 🔧 Como executar o código
 
-**Pré-requisitos.** Python 3.11 ou mais recente e as bibliotecas de [`requirements.txt`](requirements.txt) (testado com Python 3.13, pandas 3.0 e NumPy 2.5). Opcionais: Node.js com `@mermaid-js/mermaid-cli`, para verificar a sintaxe dos diagramas, e um navegador Chromium, para recapturar imagens e slides.
+**Pré-requisitos.** Python 3.11 ou mais recente e as bibliotecas de [`requirements.txt`](requirements.txt) (testado com Python 3.13, pandas 3.0 e NumPy 2.5). Opcionais: Node.js com `@mermaid-js/mermaid-cli`, para verificar a sintaxe dos diagramas, e um navegador Chromium, para recapturar as imagens.
 
 ```bash
 git clone https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE-.git
@@ -327,21 +326,15 @@ python src/gerar_dados_sinteticos.py   # massa sintética e gabarito em data/sin
 python src/exemplos_calculados.py      # data/resultados/ e docs/anexos/exemplos-calculados.md
 python src/gerar_graficos.py           # gráficos SVG em assets/graficos/
 python src/gerar_visuais.py            # capa e wireframes (HTML) em assets/fontes/
-python src/gerar_slides.py             # slides do vídeo (HTML) em assets/fontes/
-python src/gerar_video.py              # animação do vídeo, narração com tempos e legendas
 python src/validar_entregaveis.py      # verificações automáticas da entrega
 ```
 
-Os scripts são determinísticos: executá-los de novo reproduz os mesmos arquivos. As imagens PNG e o PDF dos slides são capturas das páginas HTML com um Chromium sem interface, por exemplo:
+Os scripts são determinísticos: executá-los de novo reproduz os mesmos arquivos. As imagens PNG são capturas das páginas HTML com um Chromium sem interface, por exemplo:
 
 ```bash
 chromium --headless --no-sandbox --hide-scrollbars --window-size=1600,640 \
   --screenshot=assets/capa-frota-pulse.png "file://$PWD/assets/fontes/capa.html"
-chromium --headless --no-sandbox --no-pdf-header-footer \
-  --print-to-pdf=docs/video/slides-apoio.pdf "file://$PWD/assets/fontes/slides.html"
 ```
-
-O vídeo animado (sem voz) é gravado quadro a quadro com Node.js, o pacote `puppeteer` e o `ffmpeg`: `node src/gravar_video.js --saida video.mp4` (acrescente `--guia` para a versão com o texto da narração na tela).
 
 Tamanhos de janela dos wireframes: `wf-01` 1440×900, `wf-02` 1440×1180 e `wf-03` 1100×1200.
 

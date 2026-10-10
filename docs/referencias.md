@@ -75,6 +75,6 @@ Os modelos de estimativa (simulação de Monte Carlo com distribuições triangu
 |---|---|
 | Python, pandas e NumPy | Geração da massa sintética, cálculos de exemplo e gráficos SVG (escritos diretamente, sem biblioteca de gráficos) |
 | Mermaid e mermaid-cli | Diagramas em texto e verificação de sintaxe |
-| Chromium sem interface | Captura dos wireframes e impressão dos slides |
+| Chromium sem interface | Captura dos wireframes |
 | Tesseract OCR (https://github.com/tesseract-ocr/tesseract) | Alternativa de extração a avaliar na Sprint 3 |
 | FastAPI e PostgreSQL | Pilha proposta para o produto ([arquitetura](arquitetura.md)) |

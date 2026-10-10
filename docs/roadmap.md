@@ -113,4 +113,4 @@ Colunas: **Backlog → A fazer → Em andamento → Em revisão → Concluído**
 | RSK-07 | Tratamento de dados sem base legal | Baixa | Alto | Validação jurídica antes do piloto; consentimento por finalidade | R4 |
 | RSK-08 | Escopo maior que o tempo | Média | Alto | MoSCoW; *Could* só após os *Must* | R1 |
 | RSK-09 | Vazamento entre clientes | Baixa | Alto | Isolamento no banco e testes automatizados | R4 |
-| RSK-10 | Vídeo acima de 5 minutos | Média | Médio | Roteiro com contagem de palavras e ensaio cronometrado | R5 |
+| RSK-10 | Vídeo acima de 5 minutos | Média | Médio | Ensaio cronometrado antes da gravação | R5 |

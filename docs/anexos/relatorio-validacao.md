@@ -26,22 +26,22 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 3. Gabarito | Registros do gabarito existem nos dados | **OK** | 848 referências |
 | 3. Gabarito | Cenários com registros marcados | **OK** | todos |
 | 3. Gabarito | Contagens de metadados.json iguais às dos CSVs | **OK** | 14 tabelas |
-| 4. Links e âncoras | Links internos e âncoras | **OK** | 239 links internos em 21 arquivos |
+| 4. Links e âncoras | Links internos e âncoras | **OK** | 236 links internos em 20 arquivos |
 | 4. Links e âncoras | Links externos | **MANUAL** | 13 endereços distintos; acesso não testado neste ambiente (rede restrita) |
 | 5. Tabelas Markdown | Mesma quantidade de células em cada linha | **OK** | todas as tabelas |
 | 6. Mermaid | Sintaxe dos diagramas (renderização com mermaid-cli) | **OK** | 9 diagramas renderizados sem erro |
-| 7. Números citados | Valores-chave da documentação iguais aos calculados | **OK** | 11 afirmações conferidas |
+| 7. Números citados | Valores-chave da documentação iguais aos calculados | **OK** | 10 afirmações conferidas |
 | 7. Números citados | Valores monetários com centavos encontrados no anexo calculado | **OK** | todos localizados |
-| 8. Dados sensíveis | CPF formatado | **OK** | nenhuma ocorrência em 74 arquivos |
-| 8. Dados sensíveis | CNPJ formatado | **OK** | nenhuma ocorrência em 74 arquivos |
-| 8. Dados sensíveis | Placa real (antiga ou Mercosul) | **OK** | nenhuma ocorrência em 74 arquivos |
-| 8. Dados sensíveis | Chave privada | **OK** | nenhuma ocorrência em 74 arquivos |
-| 8. Dados sensíveis | Token AWS | **OK** | nenhuma ocorrência em 74 arquivos |
-| 8. Dados sensíveis | Token GitHub | **OK** | nenhuma ocorrência em 74 arquivos |
-| 8. Dados sensíveis | Chave de API genérica | **OK** | nenhuma ocorrência em 74 arquivos |
-| 8. Dados sensíveis | Senha em texto | **OK** | nenhuma ocorrência em 74 arquivos |
-| 8. Dados sensíveis | E-mail | **OK** | nenhuma ocorrência em 74 arquivos |
-| 9. Arquivos | Arquivos duplicados (mesmo conteúdo) | **OK** | 82 arquivos |
+| 8. Dados sensíveis | CPF formatado | **OK** | nenhuma ocorrência em 68 arquivos |
+| 8. Dados sensíveis | CNPJ formatado | **OK** | nenhuma ocorrência em 68 arquivos |
+| 8. Dados sensíveis | Placa real (antiga ou Mercosul) | **OK** | nenhuma ocorrência em 68 arquivos |
+| 8. Dados sensíveis | Chave privada | **OK** | nenhuma ocorrência em 68 arquivos |
+| 8. Dados sensíveis | Token AWS | **OK** | nenhuma ocorrência em 68 arquivos |
+| 8. Dados sensíveis | Token GitHub | **OK** | nenhuma ocorrência em 68 arquivos |
+| 8. Dados sensíveis | Chave de API genérica | **OK** | nenhuma ocorrência em 68 arquivos |
+| 8. Dados sensíveis | Senha em texto | **OK** | nenhuma ocorrência em 68 arquivos |
+| 8. Dados sensíveis | E-mail | **OK** | nenhuma ocorrência em 68 arquivos |
+| 9. Arquivos | Arquivos duplicados (mesmo conteúdo) | **OK** | 73 arquivos |
 | 9. Arquivos | Codificação UTF-8 | **OK** | todos os textos |
 | 9. Arquivos | Sem emojis fora dos títulos do template | **OK** | nenhum |
 | 9. Arquivos | Pendências declaradas no texto | **INFO** | 10 marcações: docs/problema.md (3), docs/roadmap.md (2), docs/seguranca-lgpd.md (2), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1) |

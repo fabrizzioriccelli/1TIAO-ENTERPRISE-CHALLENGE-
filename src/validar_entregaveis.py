@@ -352,7 +352,6 @@ def verificar_numeros() -> None:
     afirmacoes = [
         ("README.md", f"{mil(est['0']['p10'])} a {mil(est['0']['p90'])}", "faixa N0 da EMP-A"),
         ("README.md", f"cerca de R$ {round(cen_c['base']['economia_liquida_anual'] / 1000):d} mil", "cenário-base EMP-C"),
-        ("docs/video/narracao.md", "cento e dezesseis a cento e cinquenta e cinco mil", "faixa N0 falada"),
         ("docs/anexos/exemplos-calculados.md", br(ind["EMP-B"]["IND-01_custo_total_brl"]), "IND-01 EMP-B"),
         ("docs/anexos/exemplos-calculados.md", br(ind["EMP-C"]["IND-01_custo_total_brl"]), "IND-01 EMP-C"),
         ("docs/anexos/exemplos-calculados.md", br(R["valor_real_brl"] if "valor_real_brl" in R else
