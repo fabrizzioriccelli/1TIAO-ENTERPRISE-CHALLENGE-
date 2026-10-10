@@ -14,6 +14,8 @@
 
 Enterprise Challenge FIAP e Sem Parar Empresas · Sprint 1 · Turma 1TIAO
 
+**Vídeo de apresentação da Sprint 1:** [https://youtu.be/MD6aKeIHl-Y](https://youtu.be/MD6aKeIHl-Y) (YouTube, não listado, narração de Bruna Collavite)
+
 ## 👨‍🎓 Integrantes: 
 - <a href="https://github.com/brunacollavite">Bruna Collavite</a> - RM 576285
 - <a href="https://github.com/Guntooo">Fabio Guntovitch</a> - RM 575582
@@ -290,7 +292,7 @@ Abaixo encontra-se a descrição da organização da raiz do projeto e a finalid
 ### 🔗 Links do Projeto
 
 * **Repositório (privado)**: https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE- - Documentação, dados sintéticos e scripts da Sprint 1.
-* **Vídeo de entrega no YouTube (não listado)**: https://youtu.be/MD6aKeIHl-Y - Apresentação de até 5 minutos. Roteiro em [docs/video/roteiro.md](docs/video/roteiro.md).
+* **[Vídeo de entrega no YouTube (não listado)](https://youtu.be/MD6aKeIHl-Y)**: https://youtu.be/MD6aKeIHl-Y - Narração de Bruna Collavite. Apresentação de até 5 minutos. Roteiro em [docs/video/roteiro.md](docs/video/roteiro.md).
 
 ### 🧠 Decisões Técnicas
 

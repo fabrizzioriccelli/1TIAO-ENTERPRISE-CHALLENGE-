@@ -21,7 +21,7 @@ A ferramenta recebeu o briefing oficial, o template da FIAP e um roteiro de inst
 - o dicionário de dados, o gerador da massa sintética e os dados em `data/`;
 - os scripts de cálculo, gráficos, visuais, slides e validação em `src/`;
 - os diagramas, gráficos, wireframes, capa e slides em `assets/` e `docs/video/`;
-- a animação do vídeo (sem voz), gerada por script a partir do roteiro; a narração é gravada por um integrante, como exige o enunciado;
+- a animação do vídeo (sem voz), gerada por script a partir do roteiro; a narração foi gravada por Bruna Collavite, como exige o enunciado (narração humana);
 - o README e o arquivo de links da entrega.
 
 A ferramenta também fez buscas na web para conferir referências legais e bibliográficas. O nível de verificação de cada fonte está em [referências](referencias.md); várias fontes oficiais estavam bloqueadas no ambiente e foram conferidas apenas por busca.

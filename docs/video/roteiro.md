@@ -1,6 +1,6 @@
 # Vídeo da Sprint 1: roteiro, animação e narração
 
-> **Vídeo publicado:** https://youtu.be/MD6aKeIHl-Y (não listado), com narração gravada por um integrante sobre a animação abaixo.
+> **Vídeo publicado:** [https://youtu.be/MD6aKeIHl-Y](https://youtu.be/MD6aKeIHl-Y) (não listado), com narração de Bruna Collavite sobre a animação abaixo.
 >
 > **Como foi feito.** A animação foi gerada sem voz. O enunciado exige narração humana, então um integrante grava a voz por cima da animação. Duração: **4:42**, dentro do limite de 5 minutos. A animação é gerada por [`src/gerar_video.py`](../../src/gerar_video.py) e gravada por [`src/gravar_video.js`](../../src/gravar_video.js) em duas versões:
 >
@@ -93,7 +93,7 @@ Só uma pessoa narra o vídeo inteiro. Ela não precisa mexer em slides nem em t
 ## 5. Checklist de gravação e publicação
 
 **Antes de gravar**
-- [ ] Narrador definido e roteiro ensaiado com a versão guia
+- [x] Narradora: Bruna Collavite; roteiro ensaiado com a versão guia
 - [ ] Números conferidos com o [anexo de exemplos](../anexos/exemplos-calculados.md)
 
 **Gravação**
