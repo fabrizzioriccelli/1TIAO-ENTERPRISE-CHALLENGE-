@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Gera a animação do vídeo da Sprint 1, sincronizada com o texto do roteiro.
 
-O texto da narração é lido de docs/video/roteiro.md (seção 2). O tempo de cada cena e de cada frase sai da
+O texto da narração é lido de docs/video/narracao.md (tabela de cenas e frases). O tempo de cada cena e de cada frase sai da
 contagem de palavras, a 140 palavras por minuto, com uma pausa no fim de cada bloco. Os números da tela vêm de
 data/resultados/exemplos-calculados.json.
 
@@ -33,13 +33,15 @@ INTEGRANTES = ["Bruna Collavite", "Fabio Guntovitch", "Fabrizzio Riccelli", "Gab
 
 
 def blocos_do_roteiro() -> list[dict]:
-    texto = (RAIZ / "docs" / "video" / "roteiro.md").read_text(encoding="utf-8")
-    secao = texto.split("## 2. Roteiro de narração")[1].split("## 3.")[0]
+    texto = (RAIZ / "docs" / "video" / "narracao.md").read_text(encoding="utf-8")
     saida = []
-    for n, titulo, corpo in re.findall(r"\*\*\[Slide (\d+) · ([^\]]+)\]\*\*\n(.+?)(?=\n\n|\Z)", secao, re.S):
-        corpo = " ".join(corpo.split())
-        frases = [f for f in re.split(r"(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ])", corpo) if f]
-        saida.append({"n": int(n), "titulo": titulo, "frases": frases})
+    for linha in texto.splitlines():
+        cena = re.match(r"^\| \*\*[\d:]+\*\* \| \*\*Cena (\d+): (.+?)\*\* \|$", linha)
+        frase = re.match(r"^\| [\d:]+ \| (.+) \|$", linha)
+        if cena:
+            saida.append({"n": int(cena.group(1)), "titulo": cena.group(2), "frases": []})
+        elif frase and saida:
+            saida[-1]["frases"].append(frase.group(1).replace("\\|", "|"))
     return saida
 
 
@@ -639,8 +641,8 @@ def main():
     (RAIZ / "docs" / "video" / "legendas.srt").write_text("\n".join(srt), encoding="utf-8")
 
     linhas = ["# Narração do vídeo da Sprint 1", "",
-              "Arquivo gerado por [`src/gerar_video.py`](../../src/gerar_video.py) a partir do "
-              "[roteiro](roteiro.md). Para mudar o texto, edite o roteiro e gere de novo; os tempos se ajustam.", "",
+              "Texto da narração do vídeo, que também alimenta a animação. Para mudar uma frase, edite a tabela e rode "
+              "`python src/gerar_video.py`: os tempos se ajustam.", "",
               f"**Duração total: {mmss(total)}.** A fala começa em {mmss(PRE)}, depois da contagem regressiva, "
               f"no ritmo de {PPM} palavras por minuto. Cada linha mostra o instante em que a frase começa na animação.",
               "", "| Início | Frase |", "|---|---|"]

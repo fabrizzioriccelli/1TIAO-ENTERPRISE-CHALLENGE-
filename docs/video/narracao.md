@@ -1,6 +1,6 @@
 # Narração do vídeo da Sprint 1
 
-Arquivo gerado por [`src/gerar_video.py`](../../src/gerar_video.py) a partir do [roteiro](roteiro.md). Para mudar o texto, edite o roteiro e gere de novo; os tempos se ajustam.
+Texto da narração do vídeo, que também alimenta a animação. Para mudar uma frase, edite a tabela e rode `python src/gerar_video.py`: os tempos se ajustam.
 
 **Duração total: 4:44.** A fala começa em 0:03, depois da contagem regressiva, no ritmo de 140 palavras por minuto. Cada linha mostra o instante em que a frase começa na animação.
 

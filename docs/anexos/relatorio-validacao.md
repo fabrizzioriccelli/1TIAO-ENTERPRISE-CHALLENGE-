@@ -6,7 +6,7 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 
 | Status | Quantidade |
 |---|---|
-| OK | 41 |
+| OK | 42 |
 | AVISO | 1 |
 | MANUAL | 2 |
 | INFO | 2 |
@@ -26,25 +26,25 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 3. Gabarito | Registros do gabarito existem nos dados | **OK** | 848 referências |
 | 3. Gabarito | Cenários com registros marcados | **OK** | todos |
 | 3. Gabarito | Contagens de metadados.json iguais às dos CSVs | **OK** | 14 tabelas |
-| 4. Links e âncoras | Links internos e âncoras | **OK** | 264 links internos em 23 arquivos |
+| 4. Links e âncoras | Links internos e âncoras | **OK** | 239 links internos em 21 arquivos |
 | 4. Links e âncoras | Links externos | **MANUAL** | 13 endereços distintos; acesso não testado neste ambiente (rede restrita) |
 | 5. Tabelas Markdown | Mesma quantidade de células em cada linha | **OK** | todas as tabelas |
 | 6. Mermaid | Sintaxe dos diagramas (renderização com mermaid-cli) | **OK** | 9 diagramas renderizados sem erro |
 | 7. Números citados | Valores-chave da documentação iguais aos calculados | **OK** | 11 afirmações conferidas |
 | 7. Números citados | Valores monetários com centavos encontrados no anexo calculado | **OK** | todos localizados |
-| 8. Dados sensíveis | CPF formatado | **OK** | nenhuma ocorrência em 76 arquivos |
-| 8. Dados sensíveis | CNPJ formatado | **OK** | nenhuma ocorrência em 76 arquivos |
-| 8. Dados sensíveis | Placa real (antiga ou Mercosul) | **OK** | nenhuma ocorrência em 76 arquivos |
-| 8. Dados sensíveis | Chave privada | **OK** | nenhuma ocorrência em 76 arquivos |
-| 8. Dados sensíveis | Token AWS | **OK** | nenhuma ocorrência em 76 arquivos |
-| 8. Dados sensíveis | Token GitHub | **OK** | nenhuma ocorrência em 76 arquivos |
-| 8. Dados sensíveis | Chave de API genérica | **OK** | nenhuma ocorrência em 76 arquivos |
-| 8. Dados sensíveis | Senha em texto | **OK** | nenhuma ocorrência em 76 arquivos |
-| 8. Dados sensíveis | E-mail | **OK** | nenhuma ocorrência em 76 arquivos |
-| 9. Arquivos | Arquivos duplicados (mesmo conteúdo) | **OK** | 84 arquivos |
+| 8. Dados sensíveis | CPF formatado | **OK** | nenhuma ocorrência em 74 arquivos |
+| 8. Dados sensíveis | CNPJ formatado | **OK** | nenhuma ocorrência em 74 arquivos |
+| 8. Dados sensíveis | Placa real (antiga ou Mercosul) | **OK** | nenhuma ocorrência em 74 arquivos |
+| 8. Dados sensíveis | Chave privada | **OK** | nenhuma ocorrência em 74 arquivos |
+| 8. Dados sensíveis | Token AWS | **OK** | nenhuma ocorrência em 74 arquivos |
+| 8. Dados sensíveis | Token GitHub | **OK** | nenhuma ocorrência em 74 arquivos |
+| 8. Dados sensíveis | Chave de API genérica | **OK** | nenhuma ocorrência em 74 arquivos |
+| 8. Dados sensíveis | Senha em texto | **OK** | nenhuma ocorrência em 74 arquivos |
+| 8. Dados sensíveis | E-mail | **OK** | nenhuma ocorrência em 74 arquivos |
+| 9. Arquivos | Arquivos duplicados (mesmo conteúdo) | **OK** | 82 arquivos |
 | 9. Arquivos | Codificação UTF-8 | **OK** | todos os textos |
 | 9. Arquivos | Sem emojis fora dos títulos do template | **OK** | nenhum |
-| 9. Arquivos | Pendências declaradas no texto | **INFO** | 11 marcações: docs/problema.md (3), docs/roadmap.md (2), docs/seguranca-lgpd.md (2), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1), docs/uso-de-ia.md (1) |
+| 9. Arquivos | Pendências declaradas no texto | **INFO** | 10 marcações: docs/problema.md (3), docs/roadmap.md (2), docs/seguranca-lgpd.md (2), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1) |
 | 10. Template e entrega | Seção Nome do grupo | **INFO** | removida pelo grupo, que não adotou nome |
 | 10. Template e entrega | Seções do README do template | **OK** | 12 seções presentes |
 | 10. Template e entrega | README concentra os itens do enunciado (4.1) | **OK** | 13 seções |
@@ -59,3 +59,4 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 10. Template e entrega | Pastas do template | **OK** |  |
 | 10. Template e entrega | Arquivo de links: só repositório e vídeo | **OK** | 2 linhas |
 | 10. Template e entrega | Link do vídeo publicado | **MANUAL** | testar em janela anônima |
+| 11. Reprodutibilidade | Massa regenerada idêntica à versionada | **OK** | 18 arquivos idênticos byte a byte |

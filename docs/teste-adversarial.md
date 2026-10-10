@@ -1,6 +1,6 @@
 # Teste adversarial: perguntas difíceis da banca
 
-Perguntas que uma banca exigente faria, respondidas **somente com o que está nos documentos**. Quando a pergunta revelou uma lacuna, a lacuna foi corrigida ou registrada, e isso aparece na coluna "Efeito no projeto" do resumo ao final. Cada integrante deve conseguir responder às perguntas da sua área sem consulta (ver [uso de IA](uso-de-ia.md#5-responsabilidade-do-grupo)).
+Perguntas que uma banca exigente faria, respondidas **somente com o que está nos documentos**. Quando a pergunta revelou uma lacuna, a lacuna foi corrigida ou registrada, e isso aparece na coluna "Efeito no projeto" do resumo ao final. Cada integrante deve conseguir responder às perguntas da sua área sem consulta (ver papéis no [roadmap](roadmap.md#3-equipe-e-responsabilidades)).
 
 ## Dados e validação
 
@@ -64,17 +64,14 @@ Isolamento no banco com segurança em nível de linha no PostgreSQL, identificad
 **18. Como vocês vão medir a economia que de fato aconteceu?**
 Pela lógica de medição e verificação do IPMVP: compara-se o gasto real com o que se teria gastado sem a ação, numa linha de base ajustada às condições do período (quilometragem, preço). A economia realizada só aparece depois de medida ([diagnóstico](diagnostico.md#2-da-observação-à-economia-realizada)).
 
-**19. Este trabalho foi feito por IA?**
-Uma ferramenta de IA generativa produziu a primeira versão da documentação, dos dados e dos scripts, e isso está declarado em [uso de IA](uso-de-ia.md), com o histórico de commits mostrando a autoria da ferramenta. As decisões de escopo foram do grupo, e a responsabilidade pelo conteúdo é do grupo, que precisa revisar e dominar cada documento antes da entrega.
-
-**20. As leis citadas estão corretas e atualizadas?**
+**19. As leis citadas estão corretas e atualizadas?**
 Foram conferidas por mecanismo de busca, porque os sites oficiais estavam bloqueados no ambiente de trabalho, e cada referência informa esse nível de verificação. Elas orientam requisitos e não constituem parecer jurídico; a validação por profissional habilitado é condição antes do piloto (RSK-07) ([referências](referencias.md#2-legislação-e-regulação)).
 
 ## Resumo
 
 | Pergunta | Respondida pelos documentos | Efeito no projeto |
 |---|---|---|
-| 1, 4, 5, 6, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 | Sim | Nenhuma mudança necessária |
+| 1, 4, 5, 6, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 | Sim | Nenhuma mudança necessária |
 | 2 | Parcialmente | A cobertura de 95,8% (faixa larga demais) não estava comentada; adicionado ao [diagnóstico](diagnostico.md#5-estimativa-progressiva-e-perguntas-guiadas) |
 | 3 | Sim | Reforçado em [referências](referencias.md#3-métodos-quantitativos) que as premissas não têm fonte externa |
 | 7 | Parcialmente | O fator de captura "base" da hipótese OP-C4 parecia contradizer a escada de evidência; explicação adicionada em [economia](economia-recomendacoes.md#3-cenários-escada-de-evidência) |

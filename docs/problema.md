@@ -69,7 +69,7 @@ Metas propostas para validar nas próximas Sprints **[Decisão — metas a confi
 | Modelo conceitual e dicionário de dados (181 campos) | Banco de dados implantado |
 | Massa de dados sintéticos com 34 cenários e gabarito | Dados reais de clientes |
 | Scripts que recalculam todos os exemplos numéricos ([src/](../src/)) | Modelo de IA treinado ou validado |
-| Diagramas em Mermaid, wireframes conceituais e roteiro do vídeo | Interface funcional e integrações por API |
+| Diagramas em Mermaid, wireframes conceituais e vídeo | Interface funcional e integrações por API |
 
 Os scripts em `src/` não são a aplicação. Eles existem para que cada número citado na documentação possa ser reproduzido e conferido.
 

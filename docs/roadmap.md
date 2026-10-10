@@ -19,7 +19,7 @@ flowchart LR
 | Item | Conteúdo |
 |---|---|
 | Objetivo | Especificar produto, dados, métodos, arquitetura e plano, com rastreabilidade às 20 User Stories |
-| Entregáveis | Documentação em `docs/`, dicionário e massa sintética em `data/`, scripts de verificação em `src/`, diagramas, wireframes, roteiro do vídeo |
+| Entregáveis | Documentação em `docs/`, dicionário e massa sintética em `data/`, scripts de verificação em `src/`, diagramas, wireframes, vídeo |
 | Dependências | Briefing e template FIAP |
 | Critérios de aceite | Matriz de conclusão em [validação](validacao.md#5-matriz-de-critérios-de-conclusão) sem item obrigatório pendente por falha do grupo; validador sem falhas |
 | Riscos | Enunciado oficial não conferido; revisão do grupo insuficiente |

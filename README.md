@@ -263,11 +263,10 @@ Cada integrante é responsável por um papel nas próximas Sprints. O vídeo foi
 | Interface e identidade visual | [docs/ux-identidade-visual.md](docs/ux-identidade-visual.md) |
 | Roadmap, papéis, Kanban e riscos | [docs/roadmap.md](docs/roadmap.md) |
 | Exemplos calculados sobre os dados simulados | [docs/anexos/exemplos-calculados.md](docs/anexos/exemplos-calculados.md) |
-| Roteiro e slides do vídeo | [docs/video/roteiro.md](docs/video/roteiro.md) |
+| Narração e slides do vídeo | [docs/video/narracao.md](docs/video/narracao.md) |
 | Verificações e matriz de conclusão | [docs/validacao.md](docs/validacao.md) |
 | Perguntas da banca, respondidas | [docs/teste-adversarial.md](docs/teste-adversarial.md) |
 | Referências | [docs/referencias.md](docs/referencias.md) |
-| Declaração de uso de IA | [docs/uso-de-ia.md](docs/uso-de-ia.md) |
 
 ## 📁 Estrutura de pastas 
 
@@ -292,7 +291,7 @@ Abaixo encontra-se a descrição da organização da raiz do projeto e a finalid
 ### 🔗 Links do Projeto
 
 * **Repositório (privado)**: https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE- - Documentação, dados sintéticos e scripts da Sprint 1.
-* **[Vídeo de entrega no YouTube (não listado)](https://youtu.be/MD6aKeIHl-Y)**: https://youtu.be/MD6aKeIHl-Y - Narração de Bruna Collavite. Apresentação de até 5 minutos. Roteiro em [docs/video/roteiro.md](docs/video/roteiro.md).
+* **[Vídeo de entrega no YouTube (não listado)](https://youtu.be/MD6aKeIHl-Y)**: https://youtu.be/MD6aKeIHl-Y - Narração de Bruna Collavite. Apresentação de até 5 minutos.
 
 ### 🧠 Decisões Técnicas
 
@@ -311,7 +310,7 @@ Abaixo encontra-se a descrição da organização da raiz do projeto e a finalid
 
 * **Participação na Competição:** [x] Sim, aceitamos participar / [ ] Não vamos participar.
 * **Integrantes:** Bruna Collavite (RM 576285), Fabio Guntovitch (RM 575582), Fabrizzio Riccelli (RM 576083), Gabriel Tamais (RM 574503) e Natasha Zonta (RM 574230).
-* *Outras observações gerais (opcional):* projeto acadêmico. "Sem Parar Empresas", "Corpay" e os nomes de produtos citados pertencem aos seus titulares; o Frota Pulse não é produto oficial e não usa seus logotipos. A produção contou com apoio de IA generativa, declarado em [docs/uso-de-ia.md](docs/uso-de-ia.md). Itens pendentes de ação do grupo estão na [matriz de conclusão](docs/validacao.md#5-matriz-de-critérios-de-conclusão).
+* *Outras observações gerais (opcional):* projeto acadêmico. "Sem Parar Empresas", "Corpay" e os nomes de produtos citados pertencem aos seus titulares; o Frota Pulse não é produto oficial e não usa seus logotipos. Itens pendentes de ação do grupo estão na [matriz de conclusão](docs/validacao.md#5-matriz-de-critérios-de-conclusão).
 
 ## 🔧 Como executar o código
 

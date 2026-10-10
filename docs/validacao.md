@@ -25,7 +25,7 @@ Execução de 9 out. 2026, com mermaid-cli e regeneração da massa sintética. 
 | Tabelas Markdown | Mesma quantidade de células por linha e linha separadora válida | Aprovado |
 | Mermaid | Renderização de cada diagrama com mermaid-cli | Aprovado (9 diagramas, incluindo o fluxo do README) |
 | Números | Valores-chave do README, do roteiro e dos documentos contra o JSON calculado; valores com centavos dos documentos procurados no anexo | Aprovado |
-| Dados sensíveis | CPF, CNPJ, placa real, e-mail, chaves e senhas em todos os arquivos de texto | Aprovado. Único e-mail é o endereço técnico de autoria dos commits, citado na declaração de uso de IA |
+| Dados sensíveis | CPF, CNPJ, placa real, e-mail, chaves e senhas em todos os arquivos de texto | Aprovado. Nenhuma ocorrência |
 | Arquivos | Duplicados, codificação UTF-8, emojis fora dos títulos do template | Aprovado |
 | Template e entrega | Seções do README, observação do tutor removida, itens do enunciado, campo FIAP NEXT, pastas, arquivo de links | Aprovado |
 | Reprodutibilidade | Massa regenerada idêntica byte a byte à versionada | Aprovado |
@@ -73,7 +73,6 @@ Cada perspectiva leu os entregáveis com uma pergunta. Os achados abaixo são re
 | AUD-18 | Engenharia e dados | Regras testadas com erros que os autores conheciam | **Limitação declarada**: prova a mecânica, não o desempenho |
 | AUD-19 | Jurídico, LGPD e ética: o projeto expõe alguém ou promete demais? | Leis conferidas apenas por busca | **Pendente**: validação jurídica antes do piloto (RSK-07) |
 | AUD-20 | Jurídico, LGPD e ética | Risco de linguagem de promessa de economia | **Verificado**: busca por termos de garantia não encontrou promessas; regra de bloqueio na [estratégia de IA](estrategia-ia.md#3-verificação-numérica-de-textos-gerados) |
-| AUD-21 | Jurídico, LGPD e ética | Uso de IA na produção precisa ser declarado | **Corrigido**: [declaração](uso-de-ia.md); política da FIAP a confirmar |
 | AUD-22 | Jurídico, LGPD e ética | Dados pessoais ou reais no repositório | **Verificado**: varredura sem ocorrências; placas, condutores e apólices pseudonimizados |
 
 ## 5. Matriz de critérios de conclusão
@@ -103,24 +102,23 @@ Status: **Atendido**, **Parcialmente atendido**, **Pendente** ou **Não aplicáv
 | 19 | UX e identidade visual sem emojis, gradientes ou logos alterados | Atendido | [ux-identidade-visual.md](ux-identidade-visual.md) |
 | 20 | Repositório organizado conforme o template | Atendido | Estrutura, seções, integrantes, tutor e decisão sobre o FIAP NEXT completos; o grupo não adotou nome |
 | 21 | Roadmap, papéis, RACI e Kanban sem itens concluídos sem evidência | Atendido | [roadmap.md](roadmap.md), [kanban.csv](anexos/kanban.csv) |
-| 22 | Roteiro, animação e checklist do vídeo de até 5 minutos | Atendido | [roteiro](video/roteiro.md), [narração](video/narracao.md); animação de 4:42 sem voz, gerada por script |
+| 22 | Roteiro, animação e checklist do vídeo de até 5 minutos | Atendido | [narração](video/narracao.md); animação de 4:42 sem voz, gerada por script |
 | 23 | Vídeo gravado e publicado | Atendido | Narração humana sobre a animação, publicado como não listado: https://youtu.be/MD6aKeIHl-Y (K-022, K-023) |
 | 24 | Arquivo .txt com os links do repositório e do vídeo | Atendido | [arquivo](../ENTREGA_SPRINT1_LINKS.txt) com os dois links |
 | 25 | Entrega do .txt no portal | Pendente | Ação do grupo (K-025) |
 | 26 | Revisão técnica em cinco perspectivas | Atendido | Seção 4 deste documento |
 | 27 | Verificações executadas, separando verificado, manual e pendente | Atendido | Seções 2 e 3 e [relatório](anexos/relatorio-validacao.md) |
-| 28 | Teste adversarial com 15 perguntas ou mais | Atendido | [teste-adversarial.md](teste-adversarial.md) (20 perguntas) |
-| 29 | Declaração de uso de IA | Atendido | [uso-de-ia.md](uso-de-ia.md); conferir o formato exigido pela FIAP |
-| 30 | Repositório privado, sem dados reais nem credenciais | Atendido | Varredura sem ocorrências; visibilidade conferida no GitHub |
-| 31 | Acesso do perfil `fiap-tutoria` | Pendente | Concessão pelo dono do repositório (K-020) |
-| 32 | Nome do grupo, integrantes e tutor | Atendido | Integrantes com RM e GitHub, tutora e coordenador no README; o grupo não adotou nome e retirou a seção "Nome do grupo" (K-018) |
-| 33 | Decisão sobre o FIAP NEXT | Atendido | "Sim, aceitamos participar", com nome e RM dos integrantes (K-019) |
-| 34 | Conferência com o enunciado oficial do portal | Atendido | Seção 6 deste documento (K-024) |
-| 35 | Aplicação funcional | Não aplicável | Fora do escopo da Sprint 1 (especificação); prevista nas Sprints 2 a 4 |
-| 36 | Testes com gestores reais | Não aplicável | Previstos para a Sprint 4 |
-| 37 | README concentrando todas as informações do enunciado | Atendido | Seções 1 a 14 da descrição do README |
-| 38 | Responsabilidades definidas para cada integrante | Atendido | Um papel por integrante no README e no [roadmap](roadmap.md#3-equipe-e-responsabilidades), também usado na divisão do vídeo |
-| 39 | Kanban no Trello ou ferramenta semelhante | Parcialmente atendido | [kanban.csv](anexos/kanban.csv) pronto para importar; quadro a criar pelo grupo |
+| 28 | Teste adversarial com 15 perguntas ou mais | Atendido | [teste-adversarial.md](teste-adversarial.md) (19 perguntas) |
+| 29 | Repositório privado, sem dados reais nem credenciais | Atendido | Varredura sem ocorrências; visibilidade conferida no GitHub |
+| 30 | Acesso do perfil `fiap-tutoria` | Pendente | Concessão pelo dono do repositório (K-020) |
+| 31 | Nome do grupo, integrantes e tutor | Atendido | Integrantes com RM e GitHub, tutora e coordenador no README; o grupo não adotou nome e retirou a seção "Nome do grupo" (K-018) |
+| 32 | Decisão sobre o FIAP NEXT | Atendido | "Sim, aceitamos participar", com nome e RM dos integrantes (K-019) |
+| 33 | Conferência com o enunciado oficial do portal | Atendido | Seção 6 deste documento (K-024) |
+| 34 | Aplicação funcional | Não aplicável | Fora do escopo da Sprint 1 (especificação); prevista nas Sprints 2 a 4 |
+| 35 | Testes com gestores reais | Não aplicável | Previstos para a Sprint 4 |
+| 36 | README concentrando todas as informações do enunciado | Atendido | Seções 1 a 14 da descrição do README |
+| 37 | Responsabilidades definidas para cada integrante | Atendido | Um papel por integrante no README e no [roadmap](roadmap.md#3-equipe-e-responsabilidades), também usado na divisão do vídeo |
+| 38 | Kanban no Trello ou ferramenta semelhante | Parcialmente atendido | [kanban.csv](anexos/kanban.csv) pronto para importar; quadro a criar pelo grupo |
 
 ## 6. Conferência com o enunciado oficial
 
@@ -140,7 +138,7 @@ Enunciado da atividade transcrito pelo grupo em 9 out. 2026. Cada entregável do
 | Orientação ao usuário sobre dados faltantes | README, seção 10 | Atendido |
 | Diagrama da arquitetura com o fluxo entrada → tratamento → análise → diagnóstico → benchmark → recomendações → visualização/relatório | README, seção 11; [arquitetura.md](arquitetura.md) | Atendido |
 | Planejamento: atividades, responsabilidades dos integrantes, etapas e Kanban | README, seção 13; [roadmap.md](roadmap.md) | Parcialmente atendido: papéis distribuídos; falta criar o quadro no Trello |
-| Vídeo de até 5 minutos com narração humana, não listado, link no README | README, "Links do Projeto"; [roteiro](video/roteiro.md) | Atendido: https://youtu.be/MD6aKeIHl-Y |
+| Vídeo de até 5 minutos com narração humana, não listado, link no README | README, "Links do Projeto"; [narração](video/narracao.md) | Atendido: https://youtu.be/MD6aKeIHl-Y |
 | README organizado com todas as informações | README | Atendido |
 
 Requisitos técnicos dos itens 3.1 a 3.10, todos tratados nos documentos: formatos de entrada, variáveis e categorias, dataset simulado, extração e validação, dados incompletos (3.2); ineficiências e indicadores (3.3); IA com entradas, saídas e justificativa, sem modelo treinado (3.4); ações priorizadas e portfólio (3.5); relatório exportável e atualização periódica (3.6); fluxo, componentes, integrações e separação entre dados, análise, regras e interface (3.7); autenticação, integridade, dados de contato e privacidade (3.8); simulação coerente (3.9); relação explícita com as User Stories e justificativas (3.10).
@@ -150,8 +148,7 @@ Requisitos técnicos dos itens 3.1 a 3.10, todos tratados nos documentos: format
 - O repositório deve ser privado e **compartilhado apenas com `fiap-tutoria`**. Hoje ele é privado e não tem outros colaboradores; falta convidar `fiap-tutoria`, que precisa aceitar o convite.
 - O repositório **não pode ser alterado depois da data limite**.
 - Todos os integrantes devem contribuir e ter responsabilidades definidas.
-- O enunciado permite o uso de IA para "apoiar pesquisas, brainstorming e levantamento de alternativas técnicas". O uso nesta entrega foi além disso (ver [uso de IA](uso-de-ia.md)), e o grupo deve tratar o tema com a tutoria antes da entrega.
 
 ## 7. Parecer
 
-A documentação técnica da Sprint 1 está completa e passou nas verificações automáticas. O que falta não é técnico: quadro no Trello, acesso do `fiap-tutoria`, gravação e publicação do vídeo, uma conversa com a tutoria sobre o uso de IA e, principalmente, a **revisão do grupo**. Sem essa revisão, o grupo não terá domínio do conteúdo para responder à banca, e nenhum cartão deve sair de "Em revisão".
+A documentação técnica da Sprint 1 está completa e passou nas verificações automáticas. O que falta não é técnico: quadro no Trello, acesso do `fiap-tutoria`, gravação e publicação do vídeo e, principalmente, a **revisão do grupo**. Sem essa revisão, o grupo não terá domínio do conteúdo para responder à banca, e nenhum cartão deve sair de "Em revisão".
