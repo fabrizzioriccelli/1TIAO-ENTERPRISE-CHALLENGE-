@@ -230,7 +230,7 @@ Login por provedor de identidade, perfis de acesso (gestor, CFO, analista da Sem
 
 A quantidade de Sprints é uma hipótese até a confirmação do calendário oficial.
 
-Cada integrante é responsável por um papel nas próximas Sprints. O vídeo é gravado por um integrante, que narra o roteiro inteiro. A distribuição foi definida em 9 out. 2026 e pode ser revista pelo grupo.
+Cada integrante é responsável por um papel nas próximas Sprints. O vídeo foi narrado por Bruna Collavite. A distribuição foi definida em 9 out. 2026 e pode ser revista pelo grupo.
 
 **Responsabilidades dos integrantes**
 
