@@ -83,8 +83,8 @@ Os scripts em `src/` não são a aplicação. Eles existem para que cada número
 | Repositório no padrão do template, com README, `data/`, `docs/`, `notebooks/` e `src/` | [Template] | Atendido |
 | Decisão sobre participação no FIAP NEXT, campo obrigatório do README | [Template] | Atendido: o grupo aceitou participar |
 | Repositório privado, compartilhado apenas com o perfil `fiap-tutoria` | [Enunciado, 4.1] | Repositório privado; acesso de `fiap-tutoria` **[Pendência]** |
-| Vídeo de até 5 minutos, com narração humana, no YouTube como não listado, com link no README e no `.txt` | [Enunciado, 4.1] | Roteiro pronto; gravação **[Pendência]** |
-| Arquivo `.txt` com os links do repositório e do vídeo, único arquivo enviado no portal | [Enunciado, 4.1] | Preparado; link do vídeo **[Pendência]** |
+| Vídeo de até 5 minutos, com narração humana, no YouTube como não listado, com link no README e no `.txt` | [Enunciado, 4.1] | Atendido: https://youtu.be/MD6aKeIHl-Y |
+| Arquivo `.txt` com os links do repositório e do vídeo, único arquivo enviado no portal | [Enunciado, 4.1] | Preparado com os dois links; envio no portal pelo grupo |
 | Entregáveis do enunciado oficial da Sprint 1 (itens 3 e 4) | [Enunciado] | Conferidos item a item em [validação](validacao.md#6-conferência-com-o-enunciado-oficial) |
 | README concentrando todas as informações pedidas | [Enunciado, 4.1] | Atendido: seções 1 a 13 da descrição do [README](../README.md) |
 | Responsabilidades definidas para todos os integrantes | [Enunciado, 4.2] | Atendido: um papel por integrante em [roadmap](roadmap.md#3-equipe-e-responsabilidades) |

@@ -27,7 +27,7 @@ Execução de 9 out. 2026, com mermaid-cli e regeneração da massa sintética. 
 | Números | Valores-chave do README, do roteiro e dos documentos contra o JSON calculado; valores com centavos dos documentos procurados no anexo | Aprovado |
 | Dados sensíveis | CPF, CNPJ, placa real, e-mail, chaves e senhas em todos os arquivos de texto | Aprovado. Único e-mail é o endereço técnico de autoria dos commits, citado na declaração de uso de IA |
 | Arquivos | Duplicados, codificação UTF-8, emojis fora dos títulos do template | Aprovado |
-| Template e entrega | Seções do README, observação do tutor removida, itens do enunciado, campo FIAP NEXT, pastas, arquivo de links | Aprovado; vídeo como **pendente** |
+| Template e entrega | Seções do README, observação do tutor removida, itens do enunciado, campo FIAP NEXT, pastas, arquivo de links | Aprovado |
 | Reprodutibilidade | Massa regenerada idêntica byte a byte à versionada | Aprovado |
 
 **O validador também foi testado.** Em uma cópia do repositório, foram injetados seis tipos de erro: link e âncora inexistentes, tabela com célula a mais, CPF, e-mail e placa no texto, categoria inválida em uma despesa fora do gabarito, número divergente no README e emoji em um documento. **Os seis foram detectados.**
@@ -45,7 +45,7 @@ Execução de 9 out. 2026, com mermaid-cli e regeneração da massa sintética. 
 | Contraste de cores | **Verificado** | Calculado pela fórmula da WCAG; ver [UX](ux-identidade-visual.md#2-tokens) |
 | Repositório privado e acesso do `fiap-tutoria` | **Pendente** | Visibilidade a confirmar na página do repositório; acesso do tutor depende do dono (K-020) |
 | Enunciado oficial no portal | **Verificado** | Texto transcrito pelo grupo; conferência na seção 6 |
-| Vídeo | **Pendente** | Não gravado; nenhum link foi inventado |
+| Vídeo | **Manual** | Publicado como não listado (https://youtu.be/MD6aKeIHl-Y); o link foi informado pelo grupo e não pôde ser aberto neste ambiente. Testar em janela anônima |
 
 ## 4. Revisão técnica em cinco perspectivas
 
@@ -104,8 +104,8 @@ Status: **Atendido**, **Parcialmente atendido**, **Pendente** ou **Não aplicáv
 | 20 | Repositório organizado conforme o template | Atendido | Estrutura, seções, integrantes, tutor e decisão sobre o FIAP NEXT completos; o grupo não adotou nome |
 | 21 | Roadmap, papéis, RACI e Kanban sem itens concluídos sem evidência | Atendido | [roadmap.md](roadmap.md), [kanban.csv](anexos/kanban.csv) |
 | 22 | Roteiro, animação e checklist do vídeo de até 5 minutos | Atendido | [roteiro](video/roteiro.md), [narração](video/narracao.md); animação de 4:42 sem voz, gerada por script |
-| 23 | Vídeo gravado e publicado | Pendente | Falta a narração humana sobre a animação e a publicação (K-022, K-023) |
-| 24 | Arquivo .txt com os links do repositório e do vídeo | Parcialmente atendido | [arquivo](../ENTREGA_SPRINT1_LINKS.txt) com o repositório; vídeo marcado como pendente |
+| 23 | Vídeo gravado e publicado | Atendido | Narração humana sobre a animação, publicado como não listado: https://youtu.be/MD6aKeIHl-Y (K-022, K-023) |
+| 24 | Arquivo .txt com os links do repositório e do vídeo | Atendido | [arquivo](../ENTREGA_SPRINT1_LINKS.txt) com os dois links |
 | 25 | Entrega do .txt no portal | Pendente | Ação do grupo (K-025) |
 | 26 | Revisão técnica em cinco perspectivas | Atendido | Seção 4 deste documento |
 | 27 | Verificações executadas, separando verificado, manual e pendente | Atendido | Seções 2 e 3 e [relatório](anexos/relatorio-validacao.md) |
@@ -140,7 +140,7 @@ Enunciado da atividade transcrito pelo grupo em 9 out. 2026. Cada entregável do
 | Orientação ao usuário sobre dados faltantes | README, seção 10 | Atendido |
 | Diagrama da arquitetura com o fluxo entrada → tratamento → análise → diagnóstico → benchmark → recomendações → visualização/relatório | README, seção 11; [arquitetura.md](arquitetura.md) | Atendido |
 | Planejamento: atividades, responsabilidades dos integrantes, etapas e Kanban | README, seção 13; [roadmap.md](roadmap.md) | Parcialmente atendido: papéis distribuídos; falta criar o quadro no Trello |
-| Vídeo de até 5 minutos com narração humana, não listado, link no README | [Roteiro](video/roteiro.md) | Pendente: gravação pelo grupo |
+| Vídeo de até 5 minutos com narração humana, não listado, link no README | README, "Links do Projeto"; [roteiro](video/roteiro.md) | Atendido: https://youtu.be/MD6aKeIHl-Y |
 | README organizado com todas as informações | README | Atendido |
 
 Requisitos técnicos dos itens 3.1 a 3.10, todos tratados nos documentos: formatos de entrada, variáveis e categorias, dataset simulado, extração e validação, dados incompletos (3.2); ineficiências e indicadores (3.3); IA com entradas, saídas e justificativa, sem modelo treinado (3.4); ações priorizadas e portfólio (3.5); relatório exportável e atualização periódica (3.6); fluxo, componentes, integrações e separação entre dados, análise, regras e interface (3.7); autenticação, integridade, dados de contato e privacidade (3.8); simulação coerente (3.9); relação explícita com as User Stories e justificativas (3.10).

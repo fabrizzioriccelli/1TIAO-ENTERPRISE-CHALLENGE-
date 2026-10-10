@@ -6,10 +6,9 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 
 | Status | Quantidade |
 |---|---|
-| OK | 41 |
+| OK | 42 |
 | AVISO | 1 |
-| PENDENTE | 1 |
-| MANUAL | 1 |
+| MANUAL | 2 |
 | INFO | 2 |
 
 | Grupo | Verificação | Status | Detalhe |
@@ -45,7 +44,7 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 9. Arquivos | Arquivos duplicados (mesmo conteúdo) | **OK** | 84 arquivos |
 | 9. Arquivos | Codificação UTF-8 | **OK** | todos os textos |
 | 9. Arquivos | Sem emojis fora dos títulos do template | **OK** | nenhum |
-| 9. Arquivos | Pendências declaradas no texto | **INFO** | 15 marcações: docs/problema.md (5), docs/roadmap.md (2), docs/seguranca-lgpd.md (2), ENTREGA_SPRINT1_LINKS.txt (1), README.md (1), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1), docs/uso-de-ia.md (1) |
+| 9. Arquivos | Pendências declaradas no texto | **INFO** | 11 marcações: docs/problema.md (3), docs/roadmap.md (2), docs/seguranca-lgpd.md (2), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1), docs/uso-de-ia.md (1) |
 | 10. Template e entrega | Seção Nome do grupo | **INFO** | removida pelo grupo, que não adotou nome |
 | 10. Template e entrega | Seções do README do template | **OK** | 12 seções presentes |
 | 10. Template e entrega | README concentra os itens do enunciado (4.1) | **OK** | 13 seções |
@@ -59,4 +58,5 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 10. Template e entrega | Logo do template | **OK** |  |
 | 10. Template e entrega | Pastas do template | **OK** |  |
 | 10. Template e entrega | Arquivo de links: só repositório e vídeo | **OK** | 2 linhas |
-| 10. Template e entrega | Link do vídeo publicado | **PENDENTE** | vídeo não gravado |
+| 10. Template e entrega | Link do vídeo publicado | **MANUAL** | testar em janela anônima |
+| 11. Reprodutibilidade | Massa regenerada idêntica à versionada | **OK** | 18 arquivos idênticos byte a byte |

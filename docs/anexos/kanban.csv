@@ -20,8 +20,8 @@ K-018,"Preencher integrantes, RM e tutor no README (o grupo não adotou nome)",E
 K-019,Decidir participação no FIAP NEXT e marcar no README,Em revisão,S1,R1,-,Uma opção marcada,README.md
 K-020,Conceder acesso de leitura ao perfil fiap-tutoria,A fazer,S1,R4,-,Convite aceito; repositório continua privado,Configurações do GitHub
 K-021,"Revisão do grupo: ler, entender e aprovar cada documento",A fazer,S1,Todos,todas,Cada integrante revisa ao menos 3 documentos e registra dúvidas,Comentários ou commits do grupo
-K-022,Gravar o vídeo de até 5 minutos,A fazer,S1,R5,todas,Duração até 5:00; áudio claro,Arquivo do vídeo
-K-023,Publicar o vídeo no YouTube como não listado e inserir o link,A fazer,S1,R5,-,Link aberto em janela anônima; inserido no README e no .txt,README.md; ENTREGA_SPRINT1_LINKS.txt
+K-022,Gravar o vídeo de até 5 minutos,Em revisão,S1,R5,todas,Duração até 5:00; áudio claro,Arquivo do vídeo
+K-023,Publicar o vídeo no YouTube como não listado e inserir o link,Em revisão,S1,R5,-,Link aberto em janela anônima; inserido no README e no .txt,https://youtu.be/MD6aKeIHl-Y
 K-024,Conferir o enunciado oficial no portal com a matriz de conclusão,Em revisão,S1,R1,-,Divergências corrigidas ou registradas,docs/validacao.md
 K-025,Entregar o arquivo .txt no portal da FIAP,A fazer,S1,R1,-,Arquivo com os dois links verificados,Comprovante do portal
 K-101,"Repositório de código, integração contínua e contêineres",Backlog,S2,R4,-,Pipeline com testes e validação de dados,-

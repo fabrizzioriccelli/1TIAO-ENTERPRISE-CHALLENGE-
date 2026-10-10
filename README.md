@@ -290,7 +290,7 @@ Abaixo encontra-se a descrição da organização da raiz do projeto e a finalid
 ### 🔗 Links do Projeto
 
 * **Repositório (privado)**: https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE- - Documentação, dados sintéticos e scripts da Sprint 1.
-* **Vídeo de entrega no YouTube**: **[Pendência: vídeo ainda não gravado nem publicado; inserir o link "não listado" após a publicação]** - Apresentação de até 5 minutos. Roteiro em [docs/video/roteiro.md](docs/video/roteiro.md).
+* **Vídeo de entrega no YouTube (não listado)**: https://youtu.be/MD6aKeIHl-Y - Apresentação de até 5 minutos. Roteiro em [docs/video/roteiro.md](docs/video/roteiro.md).
 
 ### 🧠 Decisões Técnicas
 

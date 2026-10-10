@@ -1,6 +1,8 @@
 # Vídeo da Sprint 1: roteiro, animação e narração
 
-> **O vídeo animado está pronto, sem voz.** O enunciado exige narração humana, então um integrante grava a voz por cima da animação. Duração: **4:42**, dentro do limite de 5 minutos. A animação é gerada por [`src/gerar_video.py`](../../src/gerar_video.py) e gravada por [`src/gravar_video.js`](../../src/gravar_video.js) em duas versões:
+> **Vídeo publicado:** https://youtu.be/MD6aKeIHl-Y (não listado), com narração gravada por um integrante sobre a animação abaixo.
+>
+> **Como foi feito.** A animação foi gerada sem voz. O enunciado exige narração humana, então um integrante grava a voz por cima da animação. Duração: **4:42**, dentro do limite de 5 minutos. A animação é gerada por [`src/gerar_video.py`](../../src/gerar_video.py) e gravada por [`src/gravar_video.js`](../../src/gravar_video.js) em duas versões:
 >
 > - **Versão final** (`frota-pulse-sprint1-video.mp4`): sem texto na tela; é a que vai para o YouTube depois de receber a voz.
 > - **Versão guia** (`frota-pulse-sprint1-guia-narracao.mp4`): igual, mas com a frase a ser falada no rodapé e uma contagem regressiva no início; serve para o narrador acompanhar o ritmo.
