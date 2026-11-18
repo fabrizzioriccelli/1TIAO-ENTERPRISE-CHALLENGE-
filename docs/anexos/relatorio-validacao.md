@@ -6,8 +6,9 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 
 | Status | Quantidade |
 |---|---|
-| OK | 40 |
-| AVISO | 2 |
+| OK | 45 |
+| AVISO | 1 |
+| PENDENTE | 2 |
 | MANUAL | 2 |
 | INFO | 2 |
 
@@ -26,36 +27,42 @@ Status: **OK** passou; **FALHA** precisa de correção; **AVISO** revisar; **PEN
 | 3. Gabarito | Registros do gabarito existem nos dados | **OK** | 848 referências |
 | 3. Gabarito | Cenários com registros marcados | **OK** | todos |
 | 3. Gabarito | Contagens de metadados.json iguais às dos CSVs | **OK** | 14 tabelas |
-| 4. Links e âncoras | Links internos e âncoras | **OK** | 236 links internos em 23 arquivos |
-| 4. Links e âncoras | Links externos | **MANUAL** | 14 endereços distintos; acesso não testado neste ambiente (rede restrita) |
+| 4. Links e âncoras | Links internos e âncoras | **OK** | 283 links internos em 30 arquivos |
+| 4. Links e âncoras | Links externos | **MANUAL** | 16 endereços distintos; acesso não testado neste ambiente (rede restrita) |
 | 5. Tabelas Markdown | Mesma quantidade de células em cada linha | **OK** | todas as tabelas |
-| 6. Mermaid | Sintaxe dos diagramas | **AVISO** | 9 diagramas; mermaid-cli não encontrado, use --mmdc para verificar |
+| 6. Mermaid | Sintaxe dos diagramas (renderização com mermaid-cli) | **OK** | 9 diagramas renderizados sem erro |
 | 7. Números citados | Valores-chave da documentação iguais aos calculados | **OK** | 10 afirmações conferidas |
 | 7. Números citados | Valores monetários com centavos encontrados no anexo calculado | **OK** | todos localizados |
-| 8. Dados sensíveis | CPF formatado | **OK** | nenhuma ocorrência em 132 arquivos |
-| 8. Dados sensíveis | CNPJ formatado | **OK** | nenhuma ocorrência em 132 arquivos |
-| 8. Dados sensíveis | Placa real (antiga ou Mercosul) | **OK** | nenhuma ocorrência em 132 arquivos |
-| 8. Dados sensíveis | Chave privada | **OK** | nenhuma ocorrência em 132 arquivos |
-| 8. Dados sensíveis | Token AWS | **OK** | nenhuma ocorrência em 132 arquivos |
-| 8. Dados sensíveis | Token GitHub | **OK** | nenhuma ocorrência em 132 arquivos |
-| 8. Dados sensíveis | Chave de API genérica | **OK** | nenhuma ocorrência em 132 arquivos |
-| 8. Dados sensíveis | Senha em texto | **OK** | nenhuma ocorrência em 132 arquivos |
-| 8. Dados sensíveis | E-mail | **OK** | nenhuma ocorrência em 132 arquivos |
-| 9. Arquivos | Arquivos duplicados (mesmo conteúdo) | **OK** | 155 arquivos |
+| 8. Dados sensíveis | CPF formatado | **OK** | nenhuma ocorrência em 145 arquivos |
+| 8. Dados sensíveis | CNPJ formatado | **OK** | nenhuma ocorrência em 145 arquivos |
+| 8. Dados sensíveis | Placa real (antiga ou Mercosul) | **OK** | nenhuma ocorrência em 145 arquivos |
+| 8. Dados sensíveis | Chave privada | **OK** | nenhuma ocorrência em 145 arquivos |
+| 8. Dados sensíveis | Token AWS | **OK** | nenhuma ocorrência em 145 arquivos |
+| 8. Dados sensíveis | Token GitHub | **OK** | nenhuma ocorrência em 145 arquivos |
+| 8. Dados sensíveis | Chave de API genérica | **OK** | nenhuma ocorrência em 145 arquivos |
+| 8. Dados sensíveis | Senha em texto | **OK** | nenhuma ocorrência em 145 arquivos |
+| 8. Dados sensíveis | E-mail | **OK** | nenhuma ocorrência em 145 arquivos |
+| 9. Arquivos | Arquivos duplicados (mesmo conteúdo) | **OK** | 171 arquivos |
 | 9. Arquivos | Codificação UTF-8 | **OK** | todos os textos |
 | 9. Arquivos | Sem emojis fora dos títulos do template | **OK** | nenhum |
-| 9. Arquivos | Pendências declaradas no texto | **INFO** | 10 marcações: docs/problema.md (3), docs/roadmap.md (2), docs/seguranca-lgpd.md (2), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1) |
+| 9. Arquivos | Pendências declaradas no texto | **INFO** | 11 marcações: docs/problema.md (3), docs/roadmap.md (2), docs/seguranca-lgpd.md (2), ENTREGA_SPRINT2_LINKS.txt (1), docs/arquitetura.md (1), docs/economia-recomendacoes.md (1), docs/user-stories.md (1) |
 | 10. Template e entrega | Seção Nome do grupo | **INFO** | removida pelo grupo, que não adotou nome |
-| 10. Template e entrega | Seções do README do template | **OK** | 12 seções presentes |
-| 10. Template e entrega | README concentra os itens do enunciado (4.1) | **OK** | 13 seções |
-| 10. Template e entrega | README explica cada User Story selecionada | **OK** | 20 de 20 User Stories na tabela |
-| 10. Template e entrega | Diagrama do fluxo do enunciado no README, na ordem pedida | **OK** | Entrada de dados → Tratamento e organização → Análise dos custos → Diagnóstico → Benchmark → Recomendações → Visualização e relatório |
-| 10. Template e entrega | Responsabilidades por integrante | **OK** | depende do grupo |
+| 10. Template e entrega | Título do template 1TIAO | **OK** |  |
+| 10. Template e entrega | Seções do README do template | **OK** | 15 seções presentes |
+| 10. Template e entrega | Descrição com até 600 palavras | **OK** | 445 palavras |
+| 10. Template e entrega | Licença do template 2026 | **OK** |  |
 | 10. Template e entrega | Observação do tutor removida | **OK** |  |
 | 10. Template e entrega | Campo FIAP NEXT presente | **OK** |  |
 | 10. Template e entrega | Decisão FIAP NEXT marcada | **OK** | depende do grupo |
-| 10. Template e entrega | Integrantes e tutor | **OK** |  |
+| 10. Template e entrega | Integrantes com RM | **OK** | 5 integrantes |
 | 10. Template e entrega | Logo do template | **OK** |  |
 | 10. Template e entrega | Pastas do template | **OK** |  |
-| 10. Template e entrega | Arquivo de links: só repositório e vídeo | **OK** | 2 linhas |
-| 10. Template e entrega | Link do vídeo publicado | **MANUAL** | testar em janela anônima |
+| 10. Template e entrega | Link do Wokwi no README | **PENDENTE** | depende do grupo salvar o projeto no wokwi.com |
+| 10. Template e entrega | README da Sprint 1 preservado com os itens do enunciado | **OK** | 13 seções em docs/sprint1/README-sprint1.md |
+| 10. Template e entrega | README da Sprint 1 explica cada User Story | **OK** | 20 de 20 User Stories na tabela |
+| 10. Template e entrega | ENTREGA_SPRINT1_LINKS.txt: só repositório e vídeo | **OK** | 2 linhas |
+| 10. Template e entrega | ENTREGA_SPRINT1_LINKS.txt: link do vídeo | **MANUAL** | testar em janela anônima |
+| 10. Template e entrega | ENTREGA_SPRINT2_LINKS.txt: só repositório e vídeo | **OK** | 2 linhas |
+| 10. Template e entrega | ENTREGA_SPRINT2_LINKS.txt: link do vídeo | **PENDENTE** | vídeo não publicado |
+| 12. Sprint 2 | Saídas do pipeline presentes | **OK** | 7 arquivos |
+| 12. Sprint 2 | Números da Sprint 2 iguais às saídas do pipeline | **OK** | 6 afirmações conferidas |

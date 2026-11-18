@@ -88,7 +88,7 @@
   "idade_anos": 0.011
  },
  "experimento_1": {
-  "alvo": "regra mensal completa: pior gap de custo por km ou de consumo acima de 15% (experimento 1)",
+  "alvo": "regra mensal completa: pior gap de custo por km ou de consumo acima de 15%",
   "linha_de_base_teste": 0.728,
   "arvore_decisao": {
    "treino": {

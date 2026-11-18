@@ -34,32 +34,32 @@ Eficiente: 44, Atenção: 20, Sem referência: 8, Ineficiente: 6.
 
 | Veículo | Grupo | Nível | Pior gap % | Justificativa |
 |---|---|---|---|---|
-| B-V28 | Leve mista (utilitário) | Ineficiente | 121,9 | custo por km +121.9% vs. mediana do grupo; consumo 0.9% melhor que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km |
-| B-V29 | Leve mista (utilitário) | Ineficiente | 112,2 | custo por km +112.2% vs. mediana do grupo; consumo +1.1% pior que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km |
-| B-V30 | Leve mista (utilitário) | Ineficiente | 79,4 | custo por km +79.4% vs. mediana do grupo; consumo +0.7% pior que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km |
-| B-V02 | Média mista (VUC) | Ineficiente | 18,7 | custo por km +18.7% vs. mediana do grupo; consumo +10.0% pior que a mediana; categoria com maior gap: manutenção |
-| C-V30 | Pesada rodoviária (truck) | Ineficiente | 15,7 | custo por km +15.7% vs. mediana do grupo; consumo +12.7% pior que a mediana; categoria com maior gap: combustível |
-| B-V01 | Média mista (VUC) | Ineficiente | 15,5 | custo por km +15.5% vs. mediana do grupo; consumo 3.8% melhor que a mediana; categoria com maior gap: manutenção |
-| C-V38 | Pesada rodoviária (truck) | Atenção | 13,6 | custo por km +13.6% vs. mediana do grupo; consumo +12.2% pior que a mediana; categoria com maior gap: combustível |
-| C-V33 | Pesada rodoviária (truck) | Atenção | 13,6 | custo por km +8.4% vs. mediana do grupo; consumo +13.6% pior que a mediana; categoria com maior gap: combustível |
-| B-V19 | Média mista (caminhão toco) | Atenção | 12,7 | custo por km -0.8% vs. mediana do grupo; consumo +12.7% pior que a mediana; categoria com maior gap: combustível |
-| C-V10 | Pesada rodoviária (cavalo mecânico) | Atenção | 12,6 | custo por km +12.6% vs. mediana do grupo; consumo +8.1% pior que a mediana; categoria com maior gap: manutenção |
-| C-V32 | Pesada rodoviária (truck) | Atenção | 10,7 | custo por km +8.1% vs. mediana do grupo; consumo +10.7% pior que a mediana; categoria com maior gap: combustível |
-| B-V06 | Média mista (VUC) | Atenção | 10,3 | custo por km -0.2% vs. mediana do grupo; consumo +10.3% pior que a mediana; categoria com maior gap: combustível |
-| B-V05 | Média mista (VUC) | Atenção | 10,1 | custo por km +10.1% vs. mediana do grupo; consumo +9.5% pior que a mediana; categoria com maior gap: combustível |
-| C-V07 | Pesada rodoviária (cavalo mecânico) | Atenção | 9,8 | custo por km +4.5% vs. mediana do grupo; consumo +9.8% pior que a mediana; categoria com maior gap: combustível |
-| B-V11 | Média mista (caminhão toco) | Atenção | 8,8 | custo por km +8.8% vs. mediana do grupo; consumo 1.5% melhor que a mediana; categoria com maior gap: manutenção |
-| B-V15 | Média mista (caminhão toco) | Atenção | 8,1 | custo por km -0.7% vs. mediana do grupo; consumo +8.1% pior que a mediana; categoria com maior gap: combustível |
-| C-V22 | Pesada rodoviária (cavalo mecânico) | Atenção | 8,0 | custo por km +1.4% vs. mediana do grupo; consumo +8.0% pior que a mediana; categoria com maior gap: combustível |
-| B-V21 | Média mista (caminhão toco) | Atenção | 7,3 | custo por km +7.3% vs. mediana do grupo; consumo 8.4% melhor que a mediana; categoria com maior gap: manutenção |
-| B-V12 | Média mista (caminhão toco) | Atenção | 7,1 | custo por km +7.1% vs. mediana do grupo; consumo 2.7% melhor que a mediana; categoria com maior gap: manutenção |
-| C-V03 | Pesada rodoviária (cavalo mecânico) | Atenção | 7,1 | custo por km +5.4% vs. mediana do grupo; consumo +7.1% pior que a mediana; categoria com maior gap: combustível |
-| C-V19 | Pesada rodoviária (cavalo mecânico) | Atenção | 7,0 | custo por km +4.4% vs. mediana do grupo; consumo +7.0% pior que a mediana; categoria com maior gap: combustível |
-| C-V05 | Pesada rodoviária (cavalo mecânico) | Atenção | 5,9 | custo por km +1.8% vs. mediana do grupo; consumo +5.9% pior que a mediana; categoria com maior gap: combustível |
-| C-V02 | Pesada rodoviária (cavalo mecânico) | Atenção | 5,4 | custo por km +4.3% vs. mediana do grupo; consumo +5.4% pior que a mediana; categoria com maior gap: combustível |
-| C-V21 | Pesada rodoviária (cavalo mecânico) | Atenção | 5,4 | custo por km +4.1% vs. mediana do grupo; consumo +5.4% pior que a mediana; categoria com maior gap: combustível |
-| B-V17 | Média mista (caminhão toco) | Atenção | 5,2 | custo por km +2.0% vs. mediana do grupo; consumo +5.2% pior que a mediana; categoria com maior gap: combustível |
-| C-V09 | Pesada rodoviária (cavalo mecânico) | Atenção | 5,1 | custo por km +3.4% vs. mediana do grupo; consumo +5.1% pior que a mediana; categoria com maior gap: combustível |
+| B-V28 | Leve mista (utilitário) | Ineficiente | 121,9 | custo por km +121,9% em relação à mediana do grupo; consumo 0,9% melhor que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km |
+| B-V29 | Leve mista (utilitário) | Ineficiente | 112,2 | custo por km +112,2% em relação à mediana do grupo; consumo 1,1% pior que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km |
+| B-V30 | Leve mista (utilitário) | Ineficiente | 79,4 | custo por km +79,4% em relação à mediana do grupo; consumo 0,7% pior que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km |
+| B-V02 | Média mista (VUC) | Ineficiente | 18,7 | custo por km +18,7% em relação à mediana do grupo; consumo 10,0% pior que a mediana; categoria com maior gap: manutenção |
+| C-V30 | Pesada rodoviária (truck) | Ineficiente | 15,7 | custo por km +15,7% em relação à mediana do grupo; consumo 12,7% pior que a mediana; categoria com maior gap: combustível |
+| B-V01 | Média mista (VUC) | Ineficiente | 15,5 | custo por km +15,5% em relação à mediana do grupo; consumo 3,8% melhor que a mediana; categoria com maior gap: manutenção |
+| C-V38 | Pesada rodoviária (truck) | Atenção | 13,6 | custo por km +13,6% em relação à mediana do grupo; consumo 12,2% pior que a mediana; categoria com maior gap: combustível |
+| C-V33 | Pesada rodoviária (truck) | Atenção | 13,6 | custo por km +8,4% em relação à mediana do grupo; consumo 13,6% pior que a mediana; categoria com maior gap: combustível |
+| B-V19 | Média mista (caminhão toco) | Atenção | 12,7 | custo por km -0,8% em relação à mediana do grupo; consumo 12,7% pior que a mediana; categoria com maior gap: combustível |
+| C-V10 | Pesada rodoviária (cavalo mecânico) | Atenção | 12,6 | custo por km +12,6% em relação à mediana do grupo; consumo 8,1% pior que a mediana; categoria com maior gap: manutenção |
+| C-V32 | Pesada rodoviária (truck) | Atenção | 10,7 | custo por km +8,1% em relação à mediana do grupo; consumo 10,7% pior que a mediana; categoria com maior gap: combustível |
+| B-V06 | Média mista (VUC) | Atenção | 10,3 | custo por km -0,2% em relação à mediana do grupo; consumo 10,3% pior que a mediana; categoria com maior gap: combustível |
+| B-V05 | Média mista (VUC) | Atenção | 10,1 | custo por km +10,1% em relação à mediana do grupo; consumo 9,5% pior que a mediana; categoria com maior gap: combustível |
+| C-V07 | Pesada rodoviária (cavalo mecânico) | Atenção | 9,8 | custo por km +4,5% em relação à mediana do grupo; consumo 9,8% pior que a mediana; categoria com maior gap: combustível |
+| B-V11 | Média mista (caminhão toco) | Atenção | 8,8 | custo por km +8,8% em relação à mediana do grupo; consumo 1,5% melhor que a mediana; categoria com maior gap: manutenção |
+| B-V15 | Média mista (caminhão toco) | Atenção | 8,1 | custo por km -0,7% em relação à mediana do grupo; consumo 8,1% pior que a mediana; categoria com maior gap: combustível |
+| C-V22 | Pesada rodoviária (cavalo mecânico) | Atenção | 8,0 | custo por km +1,4% em relação à mediana do grupo; consumo 8,0% pior que a mediana; categoria com maior gap: combustível |
+| B-V21 | Média mista (caminhão toco) | Atenção | 7,3 | custo por km +7,3% em relação à mediana do grupo; consumo 8,4% melhor que a mediana; categoria com maior gap: manutenção |
+| B-V12 | Média mista (caminhão toco) | Atenção | 7,1 | custo por km +7,1% em relação à mediana do grupo; consumo 2,7% melhor que a mediana; categoria com maior gap: manutenção |
+| C-V03 | Pesada rodoviária (cavalo mecânico) | Atenção | 7,1 | custo por km +5,4% em relação à mediana do grupo; consumo 7,1% pior que a mediana; categoria com maior gap: combustível |
+| C-V19 | Pesada rodoviária (cavalo mecânico) | Atenção | 7,0 | custo por km +4,4% em relação à mediana do grupo; consumo 7,0% pior que a mediana; categoria com maior gap: combustível |
+| C-V05 | Pesada rodoviária (cavalo mecânico) | Atenção | 5,9 | custo por km +1,8% em relação à mediana do grupo; consumo 5,9% pior que a mediana; categoria com maior gap: combustível |
+| C-V02 | Pesada rodoviária (cavalo mecânico) | Atenção | 5,4 | custo por km +4,3% em relação à mediana do grupo; consumo 5,4% pior que a mediana; categoria com maior gap: combustível |
+| C-V21 | Pesada rodoviária (cavalo mecânico) | Atenção | 5,4 | custo por km +4,1% em relação à mediana do grupo; consumo 5,4% pior que a mediana; categoria com maior gap: combustível |
+| B-V17 | Média mista (caminhão toco) | Atenção | 5,2 | custo por km +2,0% em relação à mediana do grupo; consumo 5,2% pior que a mediana; categoria com maior gap: combustível |
+| C-V09 | Pesada rodoviária (cavalo mecânico) | Atenção | 5,1 | custo por km +3,4% em relação à mediana do grupo; consumo 5,1% pior que a mediana; categoria com maior gap: combustível |
 
 ## 5. Modelo supervisionado
 
@@ -73,7 +73,7 @@ Alvo: consumo do mês mais de 5% pior que a mediana do grupo (alvo adotado). 835
 
 Matriz de confusão da árvore (teste): verdadeiros negativos 159, falsos positivos 25, falsos negativos 18, verdadeiros positivos 48.
 
-**Experimento 1 (descartado):** alvo = regra mensal completa: pior gap de custo por km ou de consumo acima de 15% (experimento 1). Acurácia da árvore no teste 44,0% contra linha de base 72,8%: a telemetria não antecipa custos de manutenção, pedágio e custo fixo.
+**Experimento 1 (descartado):** alvo = regra mensal completa: pior gap de custo por km ou de consumo acima de 15%. Acurácia da árvore no teste 44,0% contra linha de base 72,8%: a telemetria não antecipa custos de manutenção, pedágio e custo fixo.
 
 Regras aprendidas pela árvore:
 
@@ -111,7 +111,7 @@ Concordância: 18 de 21 veículos (86%).
 | B-V05 | Atenção | Condução ineficiente | 12 | 10 | 10 | Concordam: desvio com componente de condução; investigar hábitos de direção e consumo |
 | B-V08 | Eficiente | Condução dentro do padrão | 10 | 1 | 2 | Concordam: dentro da referência nas duas leituras |
 | B-V09 | Eficiente | Condução dentro do padrão | 12 | 0 | 2 | Concordam: dentro da referência nas duas leituras |
-| B-V12 | Atenção | Condução dentro do padrão | 12 | 0 | 0 | Divergem: as regras apontam desvio, mas a telemetria não mostra condução ruim; causa provável: custo de manutencao |
+| B-V12 | Atenção | Condução dentro do padrão | 12 | 0 | 0 | Divergem: as regras apontam desvio, mas a telemetria não mostra condução ruim; causa provável: custo de manutenção |
 | B-V14 | Eficiente | Condução dentro do padrão | 12 | 2 | 4 | Concordam: dentro da referência nas duas leituras |
 | B-V15 | Atenção | Condução ineficiente | 12 | 11 | 8 | Concordam: desvio com componente de condução; investigar hábitos de direção e consumo |
 | B-V20 | Eficiente | Condução dentro do padrão | 12 | 0 | 1 | Concordam: dentro da referência nas duas leituras |
@@ -123,7 +123,7 @@ Concordância: 18 de 21 veículos (86%).
 | C-V12 | Eficiente | Condução dentro do padrão | 12 | 0 | 0 | Concordam: dentro da referência nas duas leituras |
 | C-V14 | Eficiente | Condução dentro do padrão | 12 | 0 | 5 | Concordam: dentro da referência nas duas leituras |
 | C-V17 | Eficiente | Condução dentro do padrão | 12 | 0 | 2 | Concordam: dentro da referência nas duas leituras |
-| C-V21 | Atenção | Condução dentro do padrão | 12 | 5 | 4 | Divergem: as regras apontam desvio, mas a telemetria não mostra condução ruim; causa provável: custo de combustivel |
+| C-V21 | Atenção | Condução dentro do padrão | 12 | 5 | 4 | Divergem: as regras apontam desvio, mas a telemetria não mostra condução ruim; causa provável: custo de combustível |
 | C-V25 | Eficiente | Condução dentro do padrão | 12 | 1 | 2 | Concordam: dentro da referência nas duas leituras |
 | C-V30 | Ineficiente | Condução ineficiente | 12 | 11 | 7 | Concordam: desvio com componente de condução; investigar hábitos de direção e consumo |
 | C-V31 | Eficiente | Condução dentro do padrão | 12 | 0 | 1 | Concordam: dentro da referência nas duas leituras |

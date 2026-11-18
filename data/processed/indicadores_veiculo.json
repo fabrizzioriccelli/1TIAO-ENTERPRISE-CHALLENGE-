@@ -123,7 +123,7 @@
   "gap_custo_km_pct":15.5374,
   "gap_km_l_pct":-3.818,
   "nivel_regras":"Ineficiente",
-  "justificativa":"custo por km +15.5% vs. mediana do grupo; consumo 3.8% melhor que a mediana; categoria com maior gap: manutenção"
+  "justificativa":"custo por km +15,5% em relação à mediana do grupo; consumo 3,8% melhor que a mediana; categoria com maior gap: manutenção"
  },
  {
   "veiculo_id":"B-V02",
@@ -137,7 +137,7 @@
   "gap_custo_km_pct":18.7474,
   "gap_km_l_pct":9.9517,
   "nivel_regras":"Ineficiente",
-  "justificativa":"custo por km +18.7% vs. mediana do grupo; consumo +10.0% pior que a mediana; categoria com maior gap: manutenção"
+  "justificativa":"custo por km +18,7% em relação à mediana do grupo; consumo 10,0% pior que a mediana; categoria com maior gap: manutenção"
  },
  {
   "veiculo_id":"B-V03",
@@ -151,7 +151,7 @@
   "gap_custo_km_pct":-6.6768,
   "gap_km_l_pct":-2.7549,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -6.7% vs. mediana do grupo; consumo 2.8% melhor que a mediana"
+  "justificativa":"custo por km -6,7% em relação à mediana do grupo; consumo 2,8% melhor que a mediana"
  },
  {
   "veiculo_id":"B-V04",
@@ -165,7 +165,7 @@
   "gap_custo_km_pct":-3.5111,
   "gap_km_l_pct":-5.7401,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -3.5% vs. mediana do grupo; consumo 5.7% melhor que a mediana"
+  "justificativa":"custo por km -3,5% em relação à mediana do grupo; consumo 5,7% melhor que a mediana"
  },
  {
   "veiculo_id":"B-V05",
@@ -179,7 +179,7 @@
   "gap_custo_km_pct":10.1485,
   "gap_km_l_pct":9.5485,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +10.1% vs. mediana do grupo; consumo +9.5% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +10,1% em relação à mediana do grupo; consumo 9,5% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"B-V06",
@@ -193,7 +193,7 @@
   "gap_custo_km_pct":-0.2402,
   "gap_km_l_pct":10.289,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km -0.2% vs. mediana do grupo; consumo +10.3% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km -0,2% em relação à mediana do grupo; consumo 10,3% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"B-V07",
@@ -207,7 +207,7 @@
   "gap_custo_km_pct":0.2402,
   "gap_km_l_pct":2.7549,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +0.2% vs. mediana do grupo; consumo +2.8% pior que a mediana"
+  "justificativa":"custo por km +0,2% em relação à mediana do grupo; consumo 2,8% pior que a mediana"
  },
  {
   "veiculo_id":"B-V08",
@@ -221,7 +221,7 @@
   "gap_custo_km_pct":-10.9517,
   "gap_km_l_pct":3.045,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -11.0% vs. mediana do grupo; consumo +3.0% pior que a mediana"
+  "justificativa":"custo por km -11,0% em relação à mediana do grupo; consumo 3,0% pior que a mediana"
  },
  {
   "veiculo_id":"B-V09",
@@ -235,7 +235,7 @@
   "gap_custo_km_pct":4.3341,
   "gap_km_l_pct":-4.2017,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +4.3% vs. mediana do grupo; consumo 4.2% melhor que a mediana"
+  "justificativa":"custo por km +4,3% em relação à mediana do grupo; consumo 4,2% melhor que a mediana"
  },
  {
   "veiculo_id":"B-V10",
@@ -249,7 +249,7 @@
   "gap_custo_km_pct":-8.0676,
   "gap_km_l_pct":-4.7769,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -8.1% vs. mediana do grupo; consumo 4.8% melhor que a mediana"
+  "justificativa":"custo por km -8,1% em relação à mediana do grupo; consumo 4,8% melhor que a mediana"
  },
  {
   "veiculo_id":"B-V11",
@@ -263,7 +263,7 @@
   "gap_custo_km_pct":8.8269,
   "gap_km_l_pct":-1.5346,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +8.8% vs. mediana do grupo; consumo 1.5% melhor que a mediana; categoria com maior gap: manutenção"
+  "justificativa":"custo por km +8,8% em relação à mediana do grupo; consumo 1,5% melhor que a mediana; categoria com maior gap: manutenção"
  },
  {
   "veiculo_id":"B-V12",
@@ -277,7 +277,7 @@
   "gap_custo_km_pct":7.1141,
   "gap_km_l_pct":-2.6986,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +7.1% vs. mediana do grupo; consumo 2.7% melhor que a mediana; categoria com maior gap: manutenção"
+  "justificativa":"custo por km +7,1% em relação à mediana do grupo; consumo 2,7% melhor que a mediana; categoria com maior gap: manutenção"
  },
  {
   "veiculo_id":"B-V13",
@@ -291,7 +291,7 @@
   "gap_custo_km_pct":4.4215,
   "gap_km_l_pct":0.4733,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +4.4% vs. mediana do grupo; consumo +0.5% pior que a mediana"
+  "justificativa":"custo por km +4,4% em relação à mediana do grupo; consumo 0,5% pior que a mediana"
  },
  {
   "veiculo_id":"B-V14",
@@ -305,7 +305,7 @@
   "gap_custo_km_pct":-3.892,
   "gap_km_l_pct":1.2337,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -3.9% vs. mediana do grupo; consumo +1.2% pior que a mediana"
+  "justificativa":"custo por km -3,9% em relação à mediana do grupo; consumo 1,2% pior que a mediana"
  },
  {
   "veiculo_id":"B-V15",
@@ -319,7 +319,7 @@
   "gap_custo_km_pct":-0.686,
   "gap_km_l_pct":8.1046,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km -0.7% vs. mediana do grupo; consumo +8.1% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km -0,7% em relação à mediana do grupo; consumo 8,1% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"B-V16",
@@ -333,7 +333,7 @@
   "gap_custo_km_pct":-7.8364,
   "gap_km_l_pct":-0.4733,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -7.8% vs. mediana do grupo; consumo 0.5% melhor que a mediana"
+  "justificativa":"custo por km -7,8% em relação à mediana do grupo; consumo 0,5% melhor que a mediana"
  },
  {
   "veiculo_id":"B-V17",
@@ -347,7 +347,7 @@
   "gap_custo_km_pct":2.036,
   "gap_km_l_pct":5.2045,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +2.0% vs. mediana do grupo; consumo +5.2% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +2,0% em relação à mediana do grupo; consumo 5,2% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"B-V18",
@@ -361,7 +361,7 @@
   "gap_custo_km_pct":0.5292,
   "gap_km_l_pct":-7.9349,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +0.5% vs. mediana do grupo; consumo 7.9% melhor que a mediana"
+  "justificativa":"custo por km +0,5% em relação à mediana do grupo; consumo 7,9% melhor que a mediana"
  },
  {
   "veiculo_id":"B-V19",
@@ -375,7 +375,7 @@
   "gap_custo_km_pct":-0.8169,
   "gap_km_l_pct":12.6598,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km -0.8% vs. mediana do grupo; consumo +12.7% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km -0,8% em relação à mediana do grupo; consumo 12,7% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"B-V20",
@@ -389,7 +389,7 @@
   "gap_custo_km_pct":-8.4794,
   "gap_km_l_pct":-5.6959,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -8.5% vs. mediana do grupo; consumo 5.7% melhor que a mediana"
+  "justificativa":"custo por km -8,5% em relação à mediana do grupo; consumo 5,7% melhor que a mediana"
  },
  {
   "veiculo_id":"B-V21",
@@ -403,7 +403,7 @@
   "gap_custo_km_pct":7.2957,
   "gap_km_l_pct":-8.4109,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +7.3% vs. mediana do grupo; consumo 8.4% melhor que a mediana; categoria com maior gap: manutenção"
+  "justificativa":"custo por km +7,3% em relação à mediana do grupo; consumo 8,4% melhor que a mediana; categoria com maior gap: manutenção"
  },
  {
   "veiculo_id":"B-V22",
@@ -417,7 +417,7 @@
   "gap_custo_km_pct":-0.5292,
   "gap_km_l_pct":3.4998,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -0.5% vs. mediana do grupo; consumo +3.5% pior que a mediana"
+  "justificativa":"custo por km -0,5% em relação à mediana do grupo; consumo 3,5% pior que a mediana"
  },
  {
   "veiculo_id":"B-V23",
@@ -431,7 +431,7 @@
   "gap_custo_km_pct":-5.3571,
   "gap_km_l_pct":-1.34,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -5.4% vs. mediana do grupo; consumo 1.3% melhor que a mediana"
+  "justificativa":"custo por km -5,4% em relação à mediana do grupo; consumo 1,3% melhor que a mediana"
  },
  {
   "veiculo_id":"B-V24",
@@ -445,7 +445,7 @@
   "gap_custo_km_pct":-11.7814,
   "gap_km_l_pct":-0.6628,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -11.8% vs. mediana do grupo; consumo 0.7% melhor que a mediana"
+  "justificativa":"custo por km -11,8% em relação à mediana do grupo; consumo 0,7% melhor que a mediana"
  },
  {
   "veiculo_id":"B-V25",
@@ -459,7 +459,7 @@
   "gap_custo_km_pct":-0.8509,
   "gap_km_l_pct":-2.6664,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -0.9% vs. mediana do grupo; consumo 2.7% melhor que a mediana"
+  "justificativa":"custo por km -0,9% em relação à mediana do grupo; consumo 2,7% melhor que a mediana"
  },
  {
   "veiculo_id":"B-V26",
@@ -473,7 +473,7 @@
   "gap_custo_km_pct":0.8509,
   "gap_km_l_pct":2.3948,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +0.9% vs. mediana do grupo; consumo +2.4% pior que a mediana"
+  "justificativa":"custo por km +0,9% em relação à mediana do grupo; consumo 2,4% pior que a mediana"
  },
  {
   "veiculo_id":"B-V27",
@@ -487,7 +487,7 @@
   "gap_custo_km_pct":-4.0749,
   "gap_km_l_pct":4.851,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -4.1% vs. mediana do grupo; consumo +4.9% pior que a mediana"
+  "justificativa":"custo por km -4,1% em relação à mediana do grupo; consumo 4,9% pior que a mediana"
  },
  {
   "veiculo_id":"B-V28",
@@ -501,7 +501,7 @@
   "gap_custo_km_pct":121.8954,
   "gap_km_l_pct":-0.8759,
   "nivel_regras":"Ineficiente",
-  "justificativa":"custo por km +121.9% vs. mediana do grupo; consumo 0.9% melhor que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km"
+  "justificativa":"custo por km +121,9% em relação à mediana do grupo; consumo 0,9% melhor que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km"
  },
  {
   "veiculo_id":"B-V29",
@@ -515,7 +515,7 @@
   "gap_custo_km_pct":112.2239,
   "gap_km_l_pct":1.0875,
   "nivel_regras":"Ineficiente",
-  "justificativa":"custo por km +112.2% vs. mediana do grupo; consumo +1.1% pior que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km"
+  "justificativa":"custo por km +112,2% em relação à mediana do grupo; consumo 1,1% pior que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km"
  },
  {
   "veiculo_id":"B-V30",
@@ -529,7 +529,7 @@
   "gap_custo_km_pct":79.3665,
   "gap_km_l_pct":0.6628,
   "nivel_regras":"Ineficiente",
-  "justificativa":"custo por km +79.4% vs. mediana do grupo; consumo +0.7% pior que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km"
+  "justificativa":"custo por km +79,4% em relação à mediana do grupo; consumo 0,7% pior que a mediana; categoria com maior gap: outros; baixa utilização: km abaixo de 25% da mediana do grupo, o custo fixo pesa em poucos km"
  },
  {
   "veiculo_id":"C-V01",
@@ -543,7 +543,7 @@
   "gap_custo_km_pct":-11.5912,
   "gap_km_l_pct":-18.9477,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -11.6% vs. mediana do grupo; consumo 18.9% melhor que a mediana"
+  "justificativa":"custo por km -11,6% em relação à mediana do grupo; consumo 18,9% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V02",
@@ -557,7 +557,7 @@
   "gap_custo_km_pct":4.316,
   "gap_km_l_pct":5.4364,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +4.3% vs. mediana do grupo; consumo +5.4% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +4,3% em relação à mediana do grupo; consumo 5,4% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V03",
@@ -571,7 +571,7 @@
   "gap_custo_km_pct":5.4396,
   "gap_km_l_pct":7.1002,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +5.4% vs. mediana do grupo; consumo +7.1% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +5,4% em relação à mediana do grupo; consumo 7,1% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V04",
@@ -585,7 +585,7 @@
   "gap_custo_km_pct":-10.7345,
   "gap_km_l_pct":-3.5869,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -10.7% vs. mediana do grupo; consumo 3.6% melhor que a mediana"
+  "justificativa":"custo por km -10,7% em relação à mediana do grupo; consumo 3,6% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V05",
@@ -599,7 +599,7 @@
   "gap_custo_km_pct":1.8259,
   "gap_km_l_pct":5.9097,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +1.8% vs. mediana do grupo; consumo +5.9% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +1,8% em relação à mediana do grupo; consumo 5,9% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V06",
@@ -613,7 +613,7 @@
   "gap_custo_km_pct":-11.8906,
   "gap_km_l_pct":-7.6762,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -11.9% vs. mediana do grupo; consumo 7.7% melhor que a mediana"
+  "justificativa":"custo por km -11,9% em relação à mediana do grupo; consumo 7,7% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V07",
@@ -627,7 +627,7 @@
   "gap_custo_km_pct":4.5012,
   "gap_km_l_pct":9.8331,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +4.5% vs. mediana do grupo; consumo +9.8% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +4,5% em relação à mediana do grupo; consumo 9,8% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V08",
@@ -641,7 +641,7 @@
   "gap_custo_km_pct":-0.1563,
   "gap_km_l_pct":-1.4763,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -0.2% vs. mediana do grupo; consumo 1.5% melhor que a mediana"
+  "justificativa":"custo por km -0,2% em relação à mediana do grupo; consumo 1,5% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V09",
@@ -655,7 +655,7 @@
   "gap_custo_km_pct":3.3626,
   "gap_km_l_pct":5.0889,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +3.4% vs. mediana do grupo; consumo +5.1% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +3,4% em relação à mediana do grupo; consumo 5,1% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V10",
@@ -669,7 +669,7 @@
   "gap_custo_km_pct":12.5611,
   "gap_km_l_pct":8.0985,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +12.6% vs. mediana do grupo; consumo +8.1% pior que a mediana; categoria com maior gap: manutenção"
+  "justificativa":"custo por km +12,6% em relação à mediana do grupo; consumo 8,1% pior que a mediana; categoria com maior gap: manutenção"
  },
  {
   "veiculo_id":"C-V11",
@@ -683,7 +683,7 @@
   "gap_custo_km_pct":-0.4811,
   "gap_km_l_pct":-3.0025,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -0.5% vs. mediana do grupo; consumo 3.0% melhor que a mediana"
+  "justificativa":"custo por km -0,5% em relação à mediana do grupo; consumo 3,0% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V12",
@@ -697,7 +697,7 @@
   "gap_custo_km_pct":-7.4895,
   "gap_km_l_pct":-7.5786,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -7.5% vs. mediana do grupo; consumo 7.6% melhor que a mediana"
+  "justificativa":"custo por km -7,5% em relação à mediana do grupo; consumo 7,6% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V13",
@@ -711,7 +711,7 @@
   "gap_custo_km_pct":0.0538,
   "gap_km_l_pct":-0.5439,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +0.1% vs. mediana do grupo; consumo 0.5% melhor que a mediana"
+  "justificativa":"custo por km +0,1% em relação à mediana do grupo; consumo 0,5% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V14",
@@ -725,7 +725,7 @@
   "gap_custo_km_pct":-4.4649,
   "gap_km_l_pct":-8.7793,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -4.5% vs. mediana do grupo; consumo 8.8% melhor que a mediana"
+  "justificativa":"custo por km -4,5% em relação à mediana do grupo; consumo 8,8% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V15",
@@ -739,7 +739,7 @@
   "gap_custo_km_pct":3.7049,
   "gap_km_l_pct":0.4449,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +3.7% vs. mediana do grupo; consumo +0.4% pior que a mediana"
+  "justificativa":"custo por km +3,7% em relação à mediana do grupo; consumo 0,4% pior que a mediana"
  },
  {
   "veiculo_id":"C-V16",
@@ -753,7 +753,7 @@
   "gap_custo_km_pct":-0.0538,
   "gap_km_l_pct":3.9004,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -0.1% vs. mediana do grupo; consumo +3.9% pior que a mediana"
+  "justificativa":"custo por km -0,1% em relação à mediana do grupo; consumo 3,9% pior que a mediana"
  },
  {
   "veiculo_id":"C-V17",
@@ -767,7 +767,7 @@
   "gap_custo_km_pct":0.5244,
   "gap_km_l_pct":-13.6719,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +0.5% vs. mediana do grupo; consumo 13.7% melhor que a mediana"
+  "justificativa":"custo por km +0,5% em relação à mediana do grupo; consumo 13,7% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V18",
@@ -781,7 +781,7 @@
   "gap_custo_km_pct":4.3816,
   "gap_km_l_pct":1.818,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +4.4% vs. mediana do grupo; consumo +1.8% pior que a mediana"
+  "justificativa":"custo por km +4,4% em relação à mediana do grupo; consumo 1,8% pior que a mediana"
  },
  {
   "veiculo_id":"C-V19",
@@ -795,7 +795,7 @@
   "gap_custo_km_pct":4.3509,
   "gap_km_l_pct":6.9743,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +4.4% vs. mediana do grupo; consumo +7.0% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +4,4% em relação à mediana do grupo; consumo 7,0% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V20",
@@ -809,7 +809,7 @@
   "gap_custo_km_pct":0.5577,
   "gap_km_l_pct":1.9842,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +0.6% vs. mediana do grupo; consumo +2.0% pior que a mediana"
+  "justificativa":"custo por km +0,6% em relação à mediana do grupo; consumo 2,0% pior que a mediana"
  },
  {
   "veiculo_id":"C-V21",
@@ -823,7 +823,7 @@
   "gap_custo_km_pct":4.1251,
   "gap_km_l_pct":5.4306,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +4.1% vs. mediana do grupo; consumo +5.4% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +4,1% em relação à mediana do grupo; consumo 5,4% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V22",
@@ -837,7 +837,7 @@
   "gap_custo_km_pct":1.4354,
   "gap_km_l_pct":7.9693,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +1.4% vs. mediana do grupo; consumo +8.0% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +1,4% em relação à mediana do grupo; consumo 8,0% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V23",
@@ -851,7 +851,7 @@
   "gap_custo_km_pct":-4.4857,
   "gap_km_l_pct":-13.2384,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -4.5% vs. mediana do grupo; consumo 13.2% melhor que a mediana"
+  "justificativa":"custo por km -4,5% em relação à mediana do grupo; consumo 13,2% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V24",
@@ -865,7 +865,7 @@
   "gap_custo_km_pct":-0.6906,
   "gap_km_l_pct":-11.239,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -0.7% vs. mediana do grupo; consumo 11.2% melhor que a mediana"
+  "justificativa":"custo por km -0,7% em relação à mediana do grupo; consumo 11,2% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V25",
@@ -879,7 +879,7 @@
   "gap_custo_km_pct":-3.9462,
   "gap_km_l_pct":-0.4449,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -3.9% vs. mediana do grupo; consumo 0.4% melhor que a mediana"
+  "justificativa":"custo por km -3,9% em relação à mediana do grupo; consumo 0,4% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V26",
@@ -893,7 +893,7 @@
   "gap_custo_km_pct":-5.6377,
   "gap_km_l_pct":-16.3968,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -5.6% vs. mediana do grupo; consumo 16.4% melhor que a mediana"
+  "justificativa":"custo por km -5,6% em relação à mediana do grupo; consumo 16,4% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V27",
@@ -907,7 +907,7 @@
   "gap_custo_km_pct":-2.9395,
   "gap_km_l_pct":-5.8671,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -2.9% vs. mediana do grupo; consumo 5.9% melhor que a mediana"
+  "justificativa":"custo por km -2,9% em relação à mediana do grupo; consumo 5,9% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V28",
@@ -921,7 +921,7 @@
   "gap_custo_km_pct":-0.4826,
   "gap_km_l_pct":0.645,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -0.5% vs. mediana do grupo; consumo +0.6% pior que a mediana"
+  "justificativa":"custo por km -0,5% em relação à mediana do grupo; consumo 0,6% pior que a mediana"
  },
  {
   "veiculo_id":"C-V29",
@@ -935,7 +935,7 @@
   "gap_custo_km_pct":-2.4098,
   "gap_km_l_pct":2.6536,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -2.4% vs. mediana do grupo; consumo +2.7% pior que a mediana"
+  "justificativa":"custo por km -2,4% em relação à mediana do grupo; consumo 2,7% pior que a mediana"
  },
  {
   "veiculo_id":"C-V30",
@@ -949,7 +949,7 @@
   "gap_custo_km_pct":15.6772,
   "gap_km_l_pct":12.7219,
   "nivel_regras":"Ineficiente",
-  "justificativa":"custo por km +15.7% vs. mediana do grupo; consumo +12.7% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +15,7% em relação à mediana do grupo; consumo 12,7% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V31",
@@ -963,7 +963,7 @@
   "gap_custo_km_pct":-2.5723,
   "gap_km_l_pct":-0.9889,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -2.6% vs. mediana do grupo; consumo 1.0% melhor que a mediana"
+  "justificativa":"custo por km -2,6% em relação à mediana do grupo; consumo 1,0% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V32",
@@ -977,7 +977,7 @@
   "gap_custo_km_pct":8.1458,
   "gap_km_l_pct":10.7479,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +8.1% vs. mediana do grupo; consumo +10.7% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +8,1% em relação à mediana do grupo; consumo 10,7% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V33",
@@ -991,7 +991,7 @@
   "gap_custo_km_pct":8.3833,
   "gap_km_l_pct":13.5779,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +8.4% vs. mediana do grupo; consumo +13.6% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +8,4% em relação à mediana do grupo; consumo 13,6% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V34",
@@ -1005,7 +1005,7 @@
   "gap_custo_km_pct":-7.0487,
   "gap_km_l_pct":-4.8132,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -7.0% vs. mediana do grupo; consumo 4.8% melhor que a mediana"
+  "justificativa":"custo por km -7,0% em relação à mediana do grupo; consumo 4,8% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V35",
@@ -1019,7 +1019,7 @@
   "gap_custo_km_pct":-2.4759,
   "gap_km_l_pct":-6.3603,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -2.5% vs. mediana do grupo; consumo 6.4% melhor que a mediana"
+  "justificativa":"custo por km -2,5% em relação à mediana do grupo; consumo 6,4% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V36",
@@ -1033,7 +1033,7 @@
   "gap_custo_km_pct":2.4098,
   "gap_km_l_pct":0.9889,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +2.4% vs. mediana do grupo; consumo +1.0% pior que a mediana"
+  "justificativa":"custo por km +2,4% em relação à mediana do grupo; consumo 1,0% pior que a mediana"
  },
  {
   "veiculo_id":"C-V37",
@@ -1047,7 +1047,7 @@
   "gap_custo_km_pct":-3.9404,
   "gap_km_l_pct":-4.4491,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -3.9% vs. mediana do grupo; consumo 4.4% melhor que a mediana"
+  "justificativa":"custo por km -3,9% em relação à mediana do grupo; consumo 4,4% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V38",
@@ -1061,7 +1061,7 @@
   "gap_custo_km_pct":13.6065,
   "gap_km_l_pct":12.1981,
   "nivel_regras":"Atenção",
-  "justificativa":"custo por km +13.6% vs. mediana do grupo; consumo +12.2% pior que a mediana; categoria com maior gap: combustível"
+  "justificativa":"custo por km +13,6% em relação à mediana do grupo; consumo 12,2% pior que a mediana; categoria com maior gap: combustível"
  },
  {
   "veiculo_id":"C-V39",
@@ -1075,7 +1075,7 @@
   "gap_custo_km_pct":2.4663,
   "gap_km_l_pct":-5.9774,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km +2.5% vs. mediana do grupo; consumo 6.0% melhor que a mediana"
+  "justificativa":"custo por km +2,5% em relação à mediana do grupo; consumo 6,0% melhor que a mediana"
  },
  {
   "veiculo_id":"C-V40",
@@ -1089,6 +1089,6 @@
   "gap_custo_km_pct":-8.0172,
   "gap_km_l_pct":-4.7727,
   "nivel_regras":"Eficiente",
-  "justificativa":"custo por km -8.0% vs. mediana do grupo; consumo 4.8% melhor que a mediana"
+  "justificativa":"custo por km -8,0% em relação à mediana do grupo; consumo 4,8% melhor que a mediana"
  }
 ]

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verificações automáticas da entrega da Sprint 1.
+"""Verificações automáticas da documentação e da entrega (Sprints 1 e 2).
 
 Confere dados, documentação e conformidade com o template, e grava o relatório em
 docs/anexos/relatorio-validacao.md. Sai com código 1 se houver alguma FALHA.
@@ -14,7 +14,7 @@ Grupos de verificação:
   7. Números citados na documentação contra os resultados calculados
   8. Dados sensíveis, segredos e e-mails
   9. Arquivos duplicados, codificação e emojis fora do README
- 10. Conformidade com o template FIAP e com o arquivo de links
+ 10. Conformidade com o template FIAP e com os arquivos de links das Sprints 1 e 2
  11. Reprodutibilidade da massa sintética (opcional, --reproduzir)
 
 Uso:
@@ -37,6 +37,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[1]
+README_S1 = "docs/sprint1/README-sprint1.md"  # README entregue na Sprint 1, preservado
 DADOS = RAIZ / "data" / "sintetico"
 IGNORAR = {".git", "node_modules", ".venv", "__pycache__", ".ipynb_checkpoints"}
 COLUNAS_DICIONARIO = ["tabela", "campo", "descricao", "tipo", "unidade", "obrigatorio", "regra_validacao",
@@ -350,8 +351,8 @@ def verificar_numeros() -> None:
     ind = R["indicadores"]
     mil = lambda v: f"R$ {round(v / 1000):d} mil"  # noqa: E731
     afirmacoes = [
-        ("README.md", f"{mil(est['0']['p10'])} a {mil(est['0']['p90'])}", "faixa N0 da EMP-A"),
-        ("README.md", f"cerca de R$ {round(cen_c['base']['economia_liquida_anual'] / 1000):d} mil", "cenário-base EMP-C"),
+        (README_S1, f"{mil(est['0']['p10'])} a {mil(est['0']['p90'])}", "faixa N0 da EMP-A"),
+        (README_S1, f"cerca de R$ {round(cen_c['base']['economia_liquida_anual'] / 1000):d} mil", "cenário-base EMP-C"),
         ("docs/anexos/exemplos-calculados.md", br(ind["EMP-B"]["IND-01_custo_total_brl"]), "IND-01 EMP-B"),
         ("docs/anexos/exemplos-calculados.md", br(ind["EMP-C"]["IND-01_custo_total_brl"]), "IND-01 EMP-C"),
         ("docs/anexos/exemplos-calculados.md", br(R["valor_real_brl"] if "valor_real_brl" in R else
@@ -376,8 +377,9 @@ def verificar_numeros() -> None:
     numeros_anexo = set(re.findall(r"\d{1,3}(?:\.\d{3})*,\d{2}", anexo))
     soltos = []
     for md in arquivos(".md"):
-        if "anexos" in md.parts or md.name in ("referencias.md", "validacao.md", "teste-adversarial.md"):
-            continue
+        if ("anexos" in md.parts or "sprint2" in md.parts or "outputs" in md.parts or md.name == "README.md"
+                or md.name in ("referencias.md", "validacao.md", "teste-adversarial.md")):
+            continue  # a Sprint 2 é conferida contra as saídas do pipeline em verificar_sprint2()
         for _, linha in sem_codigo(md.read_text(encoding="utf-8")):
             for n in re.findall(r"R\$ ?(\d{1,3}(?:\.\d{3})+,\d{2})", linha):
                 if n == "1.234,56":  # exemplo de formatação em ux-identidade-visual.md
@@ -445,7 +447,7 @@ def verificar_arquivos() -> None:
         except UnicodeDecodeError:
             invalidos.append(rel(p))
     registrar(g, "Codificação UTF-8", "FALHA" if invalidos else "OK", ", ".join(invalidos) or "todos os textos")
-    com_emoji = [rel(p) for p in arquivos(".md", ".html", ".svg") if p.name != "README.md"
+    com_emoji = [rel(p) for p in arquivos(".md", ".html", ".svg") if not p.name.startswith("README")
                  and EMOJI.search(p.read_text(encoding="utf-8"))]
     registrar(g, "Sem emojis fora dos títulos do template", "FALHA" if com_emoji else "OK",
               ", ".join(com_emoji) or "nenhum")
@@ -462,57 +464,102 @@ def verificar_arquivos() -> None:
 
 # ---------------------------------------------------------------- 10. template e entrega
 
+def verificar_links_txt(g: str, nome: str) -> None:
+    txt = RAIZ / nome
+    if not txt.exists():
+        registrar(g, f"{nome}", "FALHA", "inexistente")
+        return
+    linhas = [x for x in txt.read_text(encoding="utf-8").splitlines() if x.strip()]
+    repo_ok = any("https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE-" in x for x in linhas)
+    video = [x for x in linhas if x.lower().startswith("vídeo")]
+    video_ok = bool(video) and (("youtube.com/" in video[0] or "youtu.be/" in video[0]) or "PENDENTE" in video[0])
+    registrar(g, f"{nome}: só repositório e vídeo", "OK" if repo_ok and video_ok and len(linhas) == 2
+              else "FALHA", f"{len(linhas)} linhas")
+    registrar(g, f"{nome}: link do vídeo", "PENDENTE" if video and "PENDENTE" in video[0] else "MANUAL",
+              "vídeo não publicado" if video and "PENDENTE" in video[0] else "testar em janela anônima")
+
+
 def verificar_template() -> None:
     g = "10. Template e entrega"
     readme = (RAIZ / "README.md").read_text(encoding="utf-8")
     # "Nome do grupo" é opcional: o grupo não adotou nome e removeu a seção do README
     registrar(g, "Seção Nome do grupo", "INFO", "presente" if "## Nome do grupo" in readme
               else "removida pelo grupo, que não adotou nome")
+    registrar(g, "Título do template 1TIAO", "OK" if re.search(r"^# ENTERPRISE CHALLENGE - \S", readme, re.M)
+              else "FALHA")
     secoes = ["## 👨‍🎓 Integrantes", "## 👩‍🏫 Professores", "### Tutor(a)", "### Coordenador(a)",
-              "## 📜 Descrição", "## 📁 Estrutura de pastas", "## 📎 Links e Observações", "### 🔗 Links do Projeto",
-              "### 🧠 Decisões Técnicas", "### 📢 Observações Gerais", "## 🔧 Como executar o código", "## 📋 Licença"]
+              "## 📜 Descrição", "## 📁 Estrutura de pastas", "## 📎 Links e Observações", "### Listagem de Links",
+              "### Explicação de decisões técnicas", "### Observações Gerais", "### Detalhamento da ideia",
+              "### Avanços e ajustes", "## 🔧 Como executar o código", "## 🗃 Histórico de lançamentos",
+              "## 📋 Licença"]
     faltam = [s for s in secoes if s not in readme]
     registrar(g, "Seções do README do template", "FALHA" if faltam else "OK",
               f"faltam: {faltam}" if faltam else f"{len(secoes)} seções presentes")
+    descricao = readme.split("## 📜 Descrição")[1].split("## 📁")[0]
+    palavras = len(re.findall(r"\w+", re.sub(r"\]\([^)]*\)", "]", descricao)))
+    registrar(g, "Descrição com até 600 palavras", "OK" if palavras <= 600 else "FALHA", f"{palavras} palavras")
+    registrar(g, "Licença do template 2026", "OK" if "SabrinaOtoni/TEMPLATE-FIAP-GRAD-ON-IA" in readme else "FALHA")
+    registrar(g, "Observação do tutor removida", "FALHA" if "OBSERVAÇÃO DO TUTOR" in readme else "OK")
+    registrar(g, "Campo FIAP NEXT presente", "OK" if "Participação na Competição" in readme else "FALHA")
+    marcado = re.search(r"\[[xX]\] (Sim, aceitamos|Não vamos)", readme)
+    registrar(g, "Decisão FIAP NEXT marcada", "OK" if marcado else "PENDENTE", "depende do grupo")
+    rms = re.findall(r"RM \d{6}", readme.split("## 👩‍🏫")[0])
+    registrar(g, "Integrantes com RM", "OK" if len(rms) == 5 else "FALHA", f"{len(rms)} integrantes")
+    registrar(g, "Logo do template", "OK" if (RAIZ / "assets" / "logo-fiap.png").exists() else "FALHA")
+    pastas = [p for p in ("data", "docs", "src") if not (RAIZ / p).is_dir()]
+    registrar(g, "Pastas do template", "FALHA" if pastas else "OK", f"faltam {pastas}" if pastas else "")
+    registrar(g, "Link do Wokwi no README", "OK" if "wokwi.com/projects/" in readme else "PENDENTE",
+              "depende do grupo salvar o projeto no wokwi.com")
+
+    # README da Sprint 1, preservado em docs/sprint1
+    s1 = (RAIZ / README_S1).read_text(encoding="utf-8")
     itens_enunciado = ["O problema e o entendimento do desafio", "Usuários e necessidades", "Solução proposta",
                        "User Stories selecionadas", "Estruturação dos dados", "Estratégia de entrada de dados",
                        "Diagnóstico dos custos", "Recomendações e plano de ação", "Tratamento de dados incompletos",
                        "Orientação ao usuário", "Arquitetura da solução", "Segurança e dados do cliente",
                        "Planejamento das próximas etapas"]
-    faltam = [i for i in itens_enunciado if not re.search(r"^### \d+\. " + re.escape(i), readme, re.M)]
-    registrar(g, "README concentra os itens do enunciado (4.1)", "FALHA" if faltam else "OK",
-              f"faltam: {faltam}" if faltam else f"{len(itens_enunciado)} seções")
-    ids_us = set(re.findall(r"^\| (US-(?:GF|CF|SP)-\d{2}) \|", readme, re.M))
-    registrar(g, "README explica cada User Story selecionada", "OK" if len(ids_us) == 20 else "FALHA",
+    faltam = [i for i in itens_enunciado if not re.search(r"^### \d+\. " + re.escape(i), s1, re.M)]
+    registrar(g, "README da Sprint 1 preservado com os itens do enunciado", "FALHA" if faltam else "OK",
+              f"faltam: {faltam}" if faltam else f"{len(itens_enunciado)} seções em {README_S1}")
+    ids_us = set(re.findall(r"^\| (US-(?:GF|CF|SP)-\d{2}) \|", s1, re.M))
+    registrar(g, "README da Sprint 1 explica cada User Story", "OK" if len(ids_us) == 20 else "FALHA",
               f"{len(ids_us)} de 20 User Stories na tabela")
-    fluxo = re.search(r"```mermaid\n(.*?)```", readme, re.S)
-    etapas = ["Entrada de dados", "Tratamento e organização", "Análise dos custos", "Diagnóstico", "Benchmark",
-              "Recomendações", "Visualização e relatório"]
-    ordem = [fluxo.group(1).find(e) for e in etapas] if fluxo else []
-    registrar(g, "Diagrama do fluxo do enunciado no README, na ordem pedida",
-              "OK" if ordem and -1 not in ordem and ordem == sorted(ordem) else "FALHA", " → ".join(etapas))
-    registrar(g, "Responsabilidades por integrante", "PENDENTE" if "[Pendência: definir]" in readme else "OK",
-              "depende do grupo")
-    registrar(g, "Observação do tutor removida", "FALHA" if "OBSERVAÇÃO DO TUTOR" in readme else "OK")
-    registrar(g, "Campo FIAP NEXT presente", "OK" if "Participação na Competição" in readme else "FALHA")
-    marcado = re.search(r"\[[xX]\] (Sim, aceitamos|Não vamos)", readme)
-    registrar(g, "Decisão FIAP NEXT marcada", "OK" if marcado else "PENDENTE", "depende do grupo")
-    registrar(g, "Integrantes e tutor", "PENDENTE" if "[Pendência: nome" in readme else "OK")
-    registrar(g, "Logo do template", "OK" if (RAIZ / "assets" / "logo-fiap.png").exists() else "FALHA")
-    pastas = [p for p in ("assets", "data", "docs", "notebooks", "src") if not (RAIZ / p).is_dir()]
-    registrar(g, "Pastas do template", "FALHA" if pastas else "OK", f"faltam {pastas}" if pastas else "")
-    txt = RAIZ / "ENTREGA_SPRINT1_LINKS.txt"
-    if not txt.exists():
-        registrar(g, "Arquivo de links da entrega", "FALHA", "inexistente")
-    else:
-        linhas = [x for x in txt.read_text(encoding="utf-8").splitlines() if x.strip()]
-        repo_ok = any("https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE-" in x for x in linhas)
-        video = [x for x in linhas if x.lower().startswith("vídeo")]
-        video_ok = bool(video) and (("youtube.com/" in video[0] or "youtu.be/" in video[0]) or "PENDENTE" in video[0])
-        registrar(g, "Arquivo de links: só repositório e vídeo", "OK" if repo_ok and video_ok and len(linhas) == 2
-                  else "FALHA", f"{len(linhas)} linhas")
-        registrar(g, "Link do vídeo publicado", "PENDENTE" if video and "PENDENTE" in video[0] else "MANUAL",
-                  "vídeo não gravado" if video and "PENDENTE" in video[0] else "testar em janela anônima")
+    verificar_links_txt(g, "ENTREGA_SPRINT1_LINKS.txt")
+    verificar_links_txt(g, "ENTREGA_SPRINT2_LINKS.txt")
+
+
+def verificar_sprint2() -> None:
+    """Números citados no README e em docs/sprint2 contra as saídas gravadas pelo pipeline."""
+    g = "12. Sprint 2"
+    saidas = RAIZ / "outputs"
+    obrig = ["reports/relatorio_qualidade.csv", "reports/indicadores_e_diagnostico_veiculo.csv",
+             "reports/benchmark_grupos.csv", "reports/comparacao_regras_ml.csv", "predictions/metricas_modelo.json",
+             "predictions/previsoes_veiculo_mes.csv", "reports/resultados_sprint2.md"]
+    faltam = [o for o in obrig if not (saidas / o).exists()]
+    registrar(g, "Saídas do pipeline presentes", "FALHA" if faltam else "OK",
+              f"faltam: {faltam}" if faltam else f"{len(obrig)} arquivos")
+    if faltam:
+        return
+    m = json.loads((saidas / "predictions" / "metricas_modelo.json").read_text(encoding="utf-8"))
+    teste = m["comparacao_modelos"]["arvore_decisao"]["teste"]
+    qualidade = ler_csv(saidas / "reports" / "relatorio_qualidade.csv")
+    niveis = Counter(r["nivel_regras"] for r in ler_csv(saidas / "reports" / "indicadores_e_diagnostico_veiculo.csv"))
+    comp = ler_csv(saidas / "reports" / "comparacao_regras_ml.csv")
+    concordam = sum(r["concordam"] in ("True", "1", "true") for r in comp)
+    pct = lambda v: br(v * 100, 1) + "%"  # noqa: E731
+    afirmacoes = [
+        ("README.md", f"{br(len(qualidade), 0)} ocorrências", "ocorrências de qualidade"),
+        ("README.md", f"{niveis['Eficiente']} veículos eficientes, {niveis['Atenção']} em atenção, "
+                      f"{niveis['Ineficiente']} ineficientes e {niveis['Sem referência']} sem referência", "níveis"),
+        ("README.md", f"Acurácia {pct(teste['acuracia'])} (linha de base {pct(m['linha_de_base_teste'])})", "acurácia"),
+        ("README.md", f"recall {pct(teste['recall_ineficiente'])}", "recall"),
+        ("README.md", f"concordam em {concordam} de {len(comp)} veículos", "regras x modelo"),
+        ("docs/sprint2/machine-learning.md", pct(teste["acuracia"]), "acurácia no documento do modelo"),
+    ]
+    sem_bater = [f"{n}: '{t}' não encontrado em {a}" for a, t, n in afirmacoes
+                 if t not in (RAIZ / a).read_text(encoding="utf-8")]
+    registrar(g, "Números da Sprint 2 iguais às saídas do pipeline", "FALHA" if sem_bater else "OK",
+              "; ".join(sem_bater) if sem_bater else f"{len(afirmacoes)} afirmações conferidas")
 
 
 # ---------------------------------------------------------------- 11. reprodutibilidade
@@ -565,6 +612,7 @@ def main() -> int:
     verificar_sensiveis()
     verificar_arquivos()
     verificar_template()
+    verificar_sprint2()
     if a.reproduzir:
         verificar_reproducao()
     relatorio(a.relatorio)

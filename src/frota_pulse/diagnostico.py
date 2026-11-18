@@ -49,6 +49,10 @@ def classificar(v: pd.DataFrame) -> pd.DataFrame:
     return d
 
 
+def _pct(v: float, sinal: bool = True) -> str:
+    return (f"{v:+.1f}" if sinal else f"{v:.1f}").replace(".", ",") + "%"
+
+
 def _justificar(r) -> str:
     if r.nivel_regras == "Sem referência":
         if r.meses_com_km == 0:
@@ -56,12 +60,12 @@ def _justificar(r) -> str:
         return "Grupo com menos de 5 veículos comparáveis: a mediana não é uma referência estável"
     partes = []
     if pd.notna(r.gap_custo_km_pct):
-        partes.append(f"custo por km {r.gap_custo_km_pct:+.1f}% vs. mediana do grupo")
+        partes.append(f"custo por km {_pct(r.gap_custo_km_pct)} em relação à mediana do grupo")
     else:
         partes.append("custo total não comparável (veículo locado)")
     if pd.notna(r.gap_km_l_pct):
-        partes.append(f"consumo {r.gap_km_l_pct:+.1f}% pior que a mediana" if r.gap_km_l_pct > 0
-                      else f"consumo {-r.gap_km_l_pct:.1f}% melhor que a mediana")
+        partes.append(f"consumo {_pct(r.gap_km_l_pct, False)} pior que a mediana" if r.gap_km_l_pct > 0
+                      else f"consumo {_pct(-r.gap_km_l_pct, False)} melhor que a mediana")
     if r.nivel_regras != "Eficiente" and isinstance(r.categoria_maior_gap, str):
         partes.append(f"categoria com maior gap: {NOME_CATEGORIA[r.categoria_maior_gap].lower()}")
     if r.baixa_utilizacao:

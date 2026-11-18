@@ -33,14 +33,14 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier, export_text
 
-from .config import FRACAO_TESTE, LIMITE_ATENCAO, LIMITE_INEFICIENTE, SEMENTE
+from .config import FRACAO_TESTE, LIMITE_ATENCAO, LIMITE_INEFICIENTE, NOME_CATEGORIA, SEMENTE
 
 ATRIBUTOS_TELEMETRIA = ["pct_rpm_acima_verde", "pct_marcha_lenta", "pct_excesso_velocidade", "velocidade_media_kmh",
                         "alertas_temperatura", "temperatura_max_c"]
 ATRIBUTOS_CADASTRO = ["idade_anos"]
 ALVOS = {
     "consumo": "consumo do mês mais de 5% pior que a mediana do grupo (alvo adotado)",
-    "regras_custo_total": "regra mensal completa: pior gap de custo por km ou de consumo acima de 15% (experimento 1)",
+    "regras_custo_total": "regra mensal completa: pior gap de custo por km ou de consumo acima de 15%",
 }
 PROIBIDOS = ["custo", "litros", "km_l", "preco", "gap", "nivel", "pior"]  # nunca entram como atributo
 
@@ -174,7 +174,8 @@ def _interpretar(r) -> str:
         return "Concordam: dentro da referência nas duas leituras"
     if regra_ruim and not ml_ruim:
         causa = "baixa utilização (custo fixo em poucos km)" if r.baixa_utilizacao else (
-            f"custo de {str(r.categoria_maior_gap).lower()}" if isinstance(r.categoria_maior_gap, str) else "custo")
+            f"custo de {NOME_CATEGORIA[r.categoria_maior_gap].lower()}" if isinstance(r.categoria_maior_gap, str)
+            else "custo")
         return f"Divergem: as regras apontam desvio, mas a telemetria não mostra condução ruim; causa provável: {causa}"
     return ("Divergem: a telemetria sugere condução ruim, mas custo e consumo do período ficaram dentro da faixa; "
             "acompanhar")

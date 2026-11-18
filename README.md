@@ -10,11 +10,7 @@
 
 <br>
 
-# Frota Pulse: Calculadora de Redução de Custos de Frota
-
-Enterprise Challenge FIAP e Sem Parar Empresas · Sprint 1 · Turma 1TIAO
-
-**Vídeo de apresentação da Sprint 1:** [https://youtu.be/MD6aKeIHl-Y](https://youtu.be/MD6aKeIHl-Y) (YouTube, não listado, narração de Bruna Collavite)
+# ENTERPRISE CHALLENGE - SEM PARAR EMPRESAS
 
 ## 👨‍🎓 Integrantes: 
 - <a href="https://github.com/brunacollavite">Bruna Collavite</a> - RM 576285
@@ -24,297 +20,220 @@ Enterprise Challenge FIAP e Sem Parar Empresas · Sprint 1 · Turma 1TIAO
 - <a href="https://github.com/natashazont">Natasha Zonta</a> - RM 574230
 
 ## 👩‍🏫 Professores:
-
-### Tutor(a)
+### Tutor(a) 
 - Sabrina Otoni
-  
 ### Coordenador(a)
 - <a href="https://www.linkedin.com/in/andregodoichiovato/">André Godoi Chiovato</a>
 
+
 ## 📜 Descrição
 
-![Capa conceitual do Frota Pulse](assets/capa-frota-pulse.png)
-
-Este README reúne todos os itens pedidos na Sprint 1. Cada seção traz o essencial e indica o documento com o detalhamento. A Sprint 1 é de planejamento: **não há aplicação implementada**. Os números citados vêm de dados **simulados** de três frotas fictícias.
+**Desafio.** A Sem Parar Empresas pediu uma ferramenta que mostre ao gestor de frota onde ele está perdendo dinheiro. Combustível, manutenção, pedágio, multas e impostos chegam em arquivos e sistemas diferentes; o gestor sabe quanto gastou, mas não sabe se está caro nem o que atacar primeiro.
 
-### 1. O problema e o entendimento do desafio
-
-Nas palavras do briefing da Sem Parar Empresas: "O gestor sabe quanto gastou — mas não onde está perdendo." Combustível, manutenção, pedágio, multas e impostos chegam em planilhas, sistemas, PDFs, fotos, prints e extratos diferentes. Mesmo com os dados em mãos, o gestor não enxerga o custo total da operação, não sabe quais custos atacar primeiro, não tem referência para saber se está caro e não consegue transformar a análise em ações com valor em reais.
-
-Organizamos o problema em cinco partes:
-
-| Código | Problema | Consequência para o gestor |
-|---|---|---|
-| P1 | Dados fragmentados em fontes e formatos diferentes | Consolidação manual, demorada e sujeita a erro |
-| P2 | Custo absoluto não mede eficiência | Sem R$/km ou km/L, frotas e veículos não são comparáveis |
-| P3 | Custo alto nem sempre é desperdício | Um veículo que roda mais custa mais sem ser ineficiente |
-| P4 | Diagnóstico sem ação | Achado sem próximo passo e sem valor em R$ não muda a gestão |
-| P5 | Dados incompletos no primeiro uso | O gestor raramente tem todos os documentos à mão |
-
-Detalhamento, objetivos, escopo e premissas: [docs/problema.md](docs/problema.md).
-
-### 2. Usuários e necessidades
-
-| Perfil | Quem é | O que precisa |
-|---|---|---|
-| **Gestor de frota** | Responsável pela operação diária dos veículos | Enviar os documentos como estão, ver o custo consolidado, saber onde está perdendo e o que fazer primeiro |
-| **CFO e liderança** | Decide orçamento e investimentos | Relatório curto com custo total, oportunidades em R$, payback e grau de confiança dos números |
-| **Sem Parar Empresas** | Dona da ferramenta | Gerar valor no primeiro uso, recorrência, leads qualificados com autorização e benchmarks melhores com o tempo |
+**Solução.** O Frota Pulse (nome provisório) consolida os custos da frota, calcula indicadores comparáveis, compara cada veículo com veículos equivalentes e aponta onde está o desvio. Na Sprint 1, o grupo especificou o problema, os dados, a arquitetura e o plano ([README da Sprint 1](docs/sprint1/README-sprint1.md)).
 
-As personas são **hipotéticas**, construídas a partir do briefing; não houve entrevistas. O roteiro de entrevista para validá-las está em [docs/personas.md](docs/personas.md).
+**Objetivo da Sprint 2: inteligência e diagnóstico.** Transformar a especificação em um fluxo que funciona de ponta a ponta, em Python e localmente:
 
-### 3. Solução proposta
+1. **Ingestão e normalização** de 12 arquivos em CSV, TXT e JSON, que imitam sistemas diferentes (cartão-combustível, tag de pedágio, oficinas, ERP, telemática), com colunas, datas e unidades padronizadas e seis categorias de custo.
+2. **Qualidade:** 17 regras encontram duplicidades, valores negativos, campos vazios, veículos fora do cadastro, datas inválidas, unidades incompatíveis e leituras incoerentes. Nada é apagado: cada problema vira uma linha de relatório com arquivo, linha, tratamento e justificativa.
+3. **Integração** de cadastro, custos, quilometragem e telemetria por veículo e mês.
+4. **Telemetria com ESP32 no Wokwi:** velocidade, rotação, temperatura e nível de combustível, como entradas virtuais (potenciômetros), com alertas em LED, buzzer e Monitor Serial. O mesmo firmware, compilado no computador, gera 52.020 leituras para o pipeline.
+5. **Benchmark estatístico** em grupos de mesmo porte, operação e categoria, com a mediana como referência, e **gap de eficiência** com a direção correta de cada indicador.
+6. **Diagnóstico por regras** (Eficiente, Atenção, Ineficiente) com limites justificados pela distribuição dos dados.
+7. **Modelo supervisionado** (árvore de decisão) que antecipa, pela telemetria, os meses de consumo acima da referência, comparado com as regras.
 
-O **Frota Pulse** (nome provisório, sem relação com marcas oficiais) é uma calculadora web que recebe os documentos da frota, consolida os custos, aponta as ineficiências com evidência e entrega um plano de ação com economia estimada em reais. Ela funciona com poucos dados desde o primeiro uso e fica mais precisa a cada informação enviada.
-
-| Capacidade | O que faz |
-|---|---|
-| **Entender** | Recebe planilhas, PDFs, fotos, prints, textos e extratos; extrai, padroniza, valida e guarda a origem de cada valor |
-| **Diagnosticar** | Consolida o custo total, calcula indicadores normalizados (R$/km, km/L, custo por veículo) e detecta desvios |
-| **Comparar** | Compara com o histórico da própria frota, com veículos equivalentes e com referências externas, só quando a comparação é justa |
-| **Otimizar** | Recomenda ações, estima a economia líquida em três cenários, prioriza e indica o próximo passo |
-| **Acompanhar** | Recebe atualizações mensais, mostra a evolução e mede a economia que de fato aconteceu |
+**Resultados, sobre dados simulados de três frotas fictícias (78 veículos):** 75.413 registros lidos, 452 ocorrências de qualidade, custo total consolidado de R$ 18,99 milhões; 44 veículos eficientes, 20 em atenção, 6 ineficientes e 8 sem referência; o modelo acertou 82,8% dos veículo-mês de teste, contra 73,6% de quem sempre prevê "dentro da referência", e concordou com as regras em 18 de 21 veículos. As divergências mostram onde o problema não é a condução: baixa utilização ou manutenção.
 
-**Benefícios.** O gestor ganha uma visão consolidada sem montar planilhas e sabe o que atacar primeiro. O CFO recebe números com premissas visíveis e grau de confiança. A Sem Parar Empresas ganha recorrência de uso, oportunidades comerciais autorizadas pelo cliente e referências que melhoram com o uso.
+**Fora do escopo desta Sprint:** economia em reais, recomendações e leitura de PDF e imagem, previstas para a Sprint 3.
 
-**Diferencial.** Dizer quanto se pode confiar em cada número: toda estimativa aparece como faixa provável, com a parte que vem de documento e um selo de confiança. Detalhamento e diferenciais avaliados: [docs/solucao.md](docs/solucao.md).
+**Importante:** todos os dados são simulados. Não há dados de clientes da Sem Parar Empresas, e os resultados demonstram o método, não descrevem frotas reais.
 
-### 4. User Stories selecionadas
+**Vídeo da Sprint 2:** pendente de gravação e publicação (o link será incluído aqui e no arquivo de entrega).
 
-O grupo pretende atender **as 20 User Stories** fornecidas pela Sem Parar Empresas. A prioridade segue o método MoSCoW: 14 *Must*, 4 *Should* e 2 *Could*. A matriz completa, com critério de aceite, dependências e Sprint prevista, está em [docs/user-stories.md](docs/user-stories.md).
-
-| User Story | Necessidade | Como a solução responde | Prioridade |
-|---|---|---|---|
-| US-GF-01 | Enviar dados em qualquer formato | Ingestão de planilha, PDF, imagem, print, texto e extrato, com extração automática e revisão só do que tiver baixa confiança | Must |
-| US-GF-02 | Ver o custo total consolidado | Soma por competência, sem duplicidades, com cada valor ligado à sua origem | Must |
-| US-GF-03 | Saber onde estão as ineficiências | Indicadores normalizados, detecção de desvios e separação entre volume, consumo e preço | Must |
-| US-GF-04 | Comparar com benchmark | Hierarquia de referências e regras de quando não comparar | Must |
-| US-GF-05 | Recomendações por nível de ineficiência | Catálogo de 14 recomendações ligadas a cada tipo de achado | Must |
-| US-GF-06 | Ver a economia potencial em R$ | Economia bruta e líquida por ação, em três cenários | Must |
-| US-GF-07 | Saber o próximo passo | Priorização por valor, confiança, urgência e esforço, com uma ação em destaque | Must |
-| US-GF-08 | Atualizar os dados periodicamente | Envio mensal, comparação entre períodos e medição da economia realizada | Should |
-| US-GF-09 | Ter sempre uma estimativa | Estimativa progressiva em faixa, que estreita a cada informação | Must |
-| US-GF-10 | Receber perguntas sobre o que informar | Sugestão da próxima informação que mais reduz a incerteza por esforço | Must |
-| US-CF-01 | Relatório executivo | Relatório de uma página, exportável em PDF | Must |
-| US-CF-02 | Economia potencial em R$ | Cenários com payback, ROI e análise de sensibilidade | Must |
-| US-CF-03 | Visão consolidada sem análise manual | Indicadores com definição fixa e painel consolidado | Must |
-| US-CF-04 | Principais oportunidades de redução | Lista priorizada de oportunidades com valor e confiança | Must |
-| US-SP-01 | Recomendações conectadas às soluções da empresa | Associação contextual da ação à solução do portfólio, sem promessa de economia | Should |
-| US-SP-02 | Identificar clientes com oportunidades | Painel interno com oportunidades de clientes que autorizaram contato | Could |
-| US-SP-03 | Melhorar benchmarks com o uso | Grupos de referência entre clientes, anônimos e com tamanho mínimo | Could |
-| US-SP-04 | Valor no primeiro uso | Primeira estimativa com três perguntas | Must |
-| US-SP-05 | Retorno periódico do gestor | Lembretes, novos achados e economia realizada a cada atualização | Should |
-| US-SP-06 | Ter as informações do cliente como lead | Cadastro de contato sempre registrado; uso comercial só com autorização do cliente, conforme a LGPD | Should |
 
-### 5. Estruturação dos dados
+## 📁 Estrutura de pastas
 
-O centro do modelo é a **despesa**: todo valor tem categoria, mês de competência, veículo (quando houver) e a **origem** (arquivo e linha de onde veio). Cada valor também tem um **status**: observado, corrigido, imputado, estimado ou não disponível. O dicionário descreve **181 campos** com tipo, unidade, obrigatoriedade, regra de validação, origem, sensibilidade, exemplo e o que fazer quando faltar: [data/dicionario-dados.csv](data/dicionario-dados.csv).
+Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
-| Categoria de custo | Dados necessários |
-|---|---|
-| Combustível | Data, veículo, litros, preço por litro, tipo de combustível, odômetro, posto |
-| Manutenção | Data, veículo, tipo (preventiva, corretiva, pneus, sinistro), sistema, valor, oficina |
-| Pedágio | Data e hora, veículo, concessionária, praça, eixos cobrados, meio de pagamento, viagem |
-| Multas | Data, veículo, gravidade, valor, prazo de indicação do condutor, situação |
-| Impostos | IPVA, licenciamento e taxas, com o período a que se referem |
-| Seguro e outros | Apólice, cobertura, período; locação, lavagem, estacionamento |
-| Contexto | Categoria do veículo, quilometragem mensal, modalidade de operação, UF |
+- <b>docs</b>: documentação. `docs/sprint2/` traz a auditoria da Sprint 1, a metodologia, a arquitetura, o modelo, a telemetria, os testes, o Kanban, imagens e evidências; `docs/sprint1/` guarda o README da Sprint 1; os demais arquivos são a especificação da Sprint 1.
 
-**Exemplo de dados simulados** (tabela `despesas`, frota fictícia EMP-B):
+- <b>src</b>: código. `src/frota_pulse/` é o pipeline (um módulo por etapa); `src/executar_pipeline.py` executa tudo; `src/esp32/` tem o firmware, o projeto Wokwi e a compilação nativa; `src/simulacao/` gera as fontes brutas e a telemetria; os scripts da raiz de `src/` são da Sprint 1.
 
-| despesa_id | veiculo_id | categoria_custo | subcategoria | data_evento | competência | valor_brl | status_valor |
-|---|---|---|---|---|---|---|---|
-| DSP-B-000001 | B-V01 | COMBUSTIVEL | diesel_s10 | 2025-07-02 | 2025-07 | 540,41 | OBSERVADO |
-| DSP-B-000006 | B-V01 | PEDAGIO | passagem_tag | 2025-07-23 | 2025-07 | 23,22 | OBSERVADO |
-| DSP-B-000025 | B-V02 | MANUTENCAO | revisao_completa | 2025-07-24 | 2025-07 | 4.844,80 | OBSERVADO |
-| DSP-B-000920 | B-V30 | MULTA | infracao_transito | 2025-07-24 | 2025-07 | 156,18 | OBSERVADO |
-| DSP-B-010538 | B-V01 | TRIBUTO | ipva | 2025-01-15 | 2025-01 a 2025-12 | 1.177,28 | OBSERVADO |
+- <b>data</b>: `raw/` são os arquivos de entrada, nunca alterados; `telemetria/` é o CSV do ESP32; `processed/` são as bases tratadas, a quarentena e a base consolidada; `sintetico/` é a massa da Sprint 1, origem de tudo; `dicionario-dados-sprint2.csv` descreve os campos.
 
-**Significado das principais variáveis:** `categoria_custo` é a categoria usada nos indicadores; `competencia` é o período a que o custo pertence, que pode ser diferente da data de pagamento (o IPVA pago em janeiro é distribuído pelos 12 meses); `status_valor` diz se o valor veio de documento ou foi estimado; `origem_id` liga o valor ao arquivo de onde ele saiu.
+- <b>outputs</b>: resultados gerados pelo pipeline: `reports/` (qualidade, indicadores, benchmark, rankings, diagnóstico, comparação), `predictions/` (previsões e métricas do modelo) e `charts/` (gráficos).
 
-**Massa simulada.** Três frotas fictícias (8, 30 e 40 veículos), 21.656 despesas e 34 situações planejadas, como arquivo enviado duas vezes, odômetro errado, cobrança duplicada de pedágio e custos altos que são justificáveis. Um gabarito registra cada situação para testar as regras. Nenhum dado é real. Detalhamento: [docs/modelagem-dados.md](docs/modelagem-dados.md).
+- <b>notebooks</b>: `sprint2_demonstracao.ipynb`, que executa as etapas uma a uma e mostra os resultados.
 
-### 6. Estratégia de entrada de dados
+- <b>tests</b>: 36 testes automatizados (pytest).
 
-| Formato | Como vira dado utilizável |
-|---|---|
-| Planilhas (CSV, XLSX) | Leitura estruturada, com mapeamento de colunas confirmado pelo usuário na primeira vez |
-| Extratos (tag de pedágio, cartão de combustível) | Leitores específicos por emissor |
-| PDF com texto (faturas, apólices, notas) | Extração de texto e tabelas |
-| PDF escaneado, imagens e prints | Reconhecimento de texto (OCR) e extração orientada por esquema, com confiança por campo |
-| Texto livre (mensagem, e-mail) | Regras para encontrar valor, data, veículo e categoria |
-| Nota fiscal eletrônica (XML) | Leitura estruturada; o código ANP do produto identifica o combustível |
+- <b>assets</b>: logo, capa, diagramas, gráficos e wireframes da Sprint 1.
 
-Depois da extração, os dados passam por **padronização** (datas, valores, placas, categorias), **validação** (13 regras, como data futura, valor negativo, abastecimento acima do tanque e cobrança duplicada), **reconciliação** entre fontes e **revisão humana** do que tiver confiança abaixo de 0,80. Valores duvidosos ficam em quarentena e não entram nos totais até serem confirmados. Detalhamento: [docs/ingestao-qualidade.md](docs/ingestao-qualidade.md).
+- <b>README.md</b>: guia e explicação geral do projeto.
 
-### 7. Diagnóstico dos custos
-
-1. **Consolidação:** soma dos custos por mês de competência, sem duplicidades, separando o custo próprio do custo pago por terceiros.
-2. **Indicadores:** 12 indicadores com definição, fórmula e unidade fixas, como custo total, custo por veículo·mês, custo por km, participação de cada categoria, rendimento em km/L e preço pago em relação à referência.
-3. **Desvios:** comparação robusta com veículos equivalentes e detecção de mudança persistente ao longo do tempo (método CUSUM).
-4. **Separação de causas:** o custo de combustível é dividido em quilometragem, consumo e preço, para não confundir volume com desperdício.
-5. **Evidência:** cada achado é classificado em observação, anomalia, hipótese ou oportunidade validada, e o diagnóstico recebe um selo de confiança.
-6. **Prioridade:** o gestor vê primeiro as despesas com maior economia líquida, maior confiança e menor esforço.
-
-Detalhamento: [docs/diagnostico.md](docs/diagnostico.md) e [docs/benchmarks.md](docs/benchmarks.md).
-
-### 8. Recomendações e plano de ação
-
-Cada tipo de achado tem uma recomendação de ação, com responsável sugerido e indicador de acompanhamento. A economia é calculada em três cenários (conservador, base e otimista), que diferem pelo nível de evidência, já descontando o custo de executar cada ação. As ações são ordenadas por prioridade e o produto destaca **um próximo passo**.
-
-| Exemplo de achado | Ação recomendada | Solução do portfólio, quando fizer sentido |
-|---|---|---|
-| Multa por não indicação do condutor no prazo | Rotina de indicação do condutor em até 30 dias | Gestor de Multas |
-| Preço de combustível acima da referência da frota | Política de abastecimento e rede preferencial | Multiabastece |
-| Cobrança de eixo suspenso em retorno vazio | Declarar eixos e contestar cobranças indevidas | Tag Sem Parar |
-| Viagem de carga sem registro de Vale-Pedágio | Verificar contratos com embarcadores | Vale-Pedágio |
-| Manutenção corretiva elevada | Plano de manutenção preventiva | Gestão de Manutenção |
-
-A solução do portfólio aparece como apoio à ação, com o aviso de que não há garantia de economia, e nenhum percentual de redução é atribuído aos produtos. Na frota fictícia maior, o cenário-base indica cerca de R$ 120 mil por ano de economia líquida; na frota média, o resultado é negativo, e a ferramenta mostra isso em vez de inventar economia. Detalhamento: [docs/economia-recomendacoes.md](docs/economia-recomendacoes.md).
-
-### 9. Tratamento de dados incompletos
-
-A ferramenta sempre devolve uma **estimativa em faixa** (valor provável mínimo e máximo), que estreita conforme o usuário fornece mais informações:
-
-| Nível | O que o usuário informou | Faixa do custo de 6 meses (frota fictícia de 8 veículos) |
-|---|---|---|
-| N0 | Composição da frota, segmento e UF (3 perguntas) | R$ 116 mil a R$ 155 mil |
-| N1 | + km médio e gasto mensal com combustível | R$ 121 mil a R$ 145 mil |
-| N2 | + extratos, faturas de locação e algumas notas de oficina | R$ 128 mil a R$ 141 mil |
-| N3 | + apólice, IPVA e multas | R$ 124 mil a R$ 132 mil |
-
-As lacunas aparecem como **estimadas**, nunca como zero. No nível N3, o valor real ficou fora da faixa; o caso é mostrado de propósito, e a calibração foi testada em 280 simulações.
-
-![Estimativa progressiva](assets/graficos/estimativa-progressiva.svg)
-
-### 10. Orientação ao usuário
-
-A cada etapa, a ferramenta calcula **qual informação reduz mais a incerteza em relação ao esforço** de obtê-la e faz essa pergunta primeiro, em linguagem simples. Exemplo na frota fictícia: "Enviar a apólice de seguro reduz a incerteza da sua estimativa em cerca de R$ 3 mil". O diagnóstico também mostra o que falta para cada comparação ("faltam 2 veículos para comparar com o grupo") e o selo de confiança indica qual dimensão está fraca (dados desatualizados, lacunas, inconsistências). Telas conceituais: [docs/ux-identidade-visual.md](docs/ux-identidade-visual.md).
-
-![Wireframe da primeira estimativa](assets/wireframes/wf-01-primeira-estimativa.png)
-
-### 11. Arquitetura da solução
-
-```mermaid
-flowchart LR
-    A["Entrada de dados<br/>planilhas, PDFs, imagens,<br/>prints, textos, extratos"] --> B["Tratamento e organização<br/>extração, padronização,<br/>validação, reconciliação"]
-    B --> C["Análise dos custos<br/>consolidação por competência<br/>e indicadores"]
-    C --> D["Diagnóstico<br/>desvios, causas,<br/>evidência e confiança"]
-    D --> E["Benchmark<br/>histórico, pares e<br/>referências externas"]
-    E --> F["Recomendações<br/>ações, economia em R$,<br/>prioridade e próximo passo"]
-    F --> G["Visualização e relatório<br/>painel do gestor, relatório<br/>do CFO em PDF"]
-    G -. "atualização mensal" .-> A
-```
-
-| Camada | Módulos | Tecnologia proposta |
-|---|---|---|
-| Interface | Telas do gestor, do CFO e da Sem Parar Empresas; fila de revisão | Aplicação web |
-| Regras de negócio | Cálculo, estimativa, benchmark, diagnóstico, recomendações, relatórios, acompanhamento | Python com FastAPI, em monólito modular |
-| Dados | Ingestão, extração, qualidade, consentimento e auditoria | PostgreSQL com isolamento por cliente; arquivos em armazenamento de objetos cifrado |
-| Serviços externos (propostos) | OCR e IA para leitura de documentos, referências de preço da ANP | Adaptadores substituíveis |
-
-A IA é usada onde há ganho claro: leitura de documentos, classificação de despesas, detecção de padrões e explicação em linguagem natural. **Os cálculos financeiros são determinísticos**, e todo número de um texto gerado é conferido contra o cálculo. Não há modelo treinado nesta Sprint. Diagramas completos e decisões: [docs/arquitetura.md](docs/arquitetura.md) e [docs/estrategia-ia.md](docs/estrategia-ia.md).
-
-### 12. Segurança e dados do cliente
-
-Login por provedor de identidade, perfis de acesso (gestor, CFO, analista da Sem Parar Empresas), isolamento total entre clientes no banco, dados cifrados e registro de auditoria de acessos e exportações. A integridade vem da origem guardada em cada valor, do hash de cada arquivo recebido e do histórico de correções. Os **dados de contato** do cliente ficam registrados para o relacionamento de serviço; o uso para contato comercial e o uso anônimo em benchmarks dependem de duas autorizações separadas, opcionais e revogáveis, conforme a LGPD. Placas, condutores e apólices são pseudonimizados na base de análise. Detalhamento: [docs/seguranca-lgpd.md](docs/seguranca-lgpd.md).
-
-### 13. Planejamento das próximas etapas
-
-| Sprint | Foco | Principais entregas |
-|---|---|---|
-| Sprint 1 | Especificação (esta entrega) | Documentação, dados simulados, arquitetura e plano |
-| Sprint 2 | Fundação de dados e primeira estimativa | Banco de dados, envio de planilhas e extratos, regras de qualidade, indicadores básicos, estimativa com perguntas guiadas, login |
-| Sprint 3 | Diagnóstico, benchmark e recomendações | Leitura de PDF e imagem, detecção de desvios, benchmarks, recomendações e cenários de economia |
-| Sprint 4 | Protótipo funcional e validação | Relatório em PDF, atualização mensal, painel da Sem Parar Empresas, testes de segurança e testes com gestores |
-
-A quantidade de Sprints é uma hipótese até a confirmação do calendário oficial.
-
-Cada integrante é responsável por um papel nas próximas Sprints. O vídeo foi narrado por Bruna Collavite. A distribuição foi definida em 9 out. 2026 e pode ser revista pelo grupo.
-
-**Responsabilidades dos integrantes**
-
-| Papel | Responsabilidades | Integrante |
-|---|---|---|
-| Produto e documentação | User Stories, priorização, catálogo de recomendações, critérios de aceite, entregas no portal | Fabrizzio Riccelli |
-| Engenharia de dados | Ingestão, regras de qualidade, modelo de dados, dados simulados | Gabriel Tamais |
-| Ciência de dados | Indicadores, estimativa, desvios, benchmarks, economia e cenários | Natasha Zonta |
-| Arquitetura e segurança | Backend, banco de dados, autenticação, LGPD, infraestrutura | Fabio Guntovitch |
-| UX, interface e comunicação | Telas, relatório executivo, testes de usabilidade, vídeo | Bruna Collavite |
-
-**Kanban.** Colunas Backlog, A fazer, Em andamento, Em revisão e Concluído, com 47 cartões. A lista com critério de aceite e evidência de cada cartão está em [docs/anexos/kanban.csv](docs/anexos/kanban.csv), pronta para importar no Trello. Plano completo, riscos e matriz de responsabilidades: [docs/roadmap.md](docs/roadmap.md).
-
-### 14. Documentação detalhada
-
-| Tema | Documento |
-|---|---|
-| Problema, objetivos, escopo e premissas | [docs/problema.md](docs/problema.md) |
-| Personas e roteiro de entrevista | [docs/personas.md](docs/personas.md) |
-| Matriz das 20 User Stories | [docs/user-stories.md](docs/user-stories.md) |
-| Solução, funcionalidades e diferenciais | [docs/solucao.md](docs/solucao.md) |
-| Modelo de dados e massa simulada | [docs/modelagem-dados.md](docs/modelagem-dados.md) |
-| Entrada e qualidade dos dados | [docs/ingestao-qualidade.md](docs/ingestao-qualidade.md) |
-| Indicadores, estimativa e confiança | [docs/diagnostico.md](docs/diagnostico.md) |
-| Benchmarks | [docs/benchmarks.md](docs/benchmarks.md) |
-| Economia, cenários e recomendações | [docs/economia-recomendacoes.md](docs/economia-recomendacoes.md) |
-| Uso de IA por componente | [docs/estrategia-ia.md](docs/estrategia-ia.md) |
-| Arquitetura e diagramas | [docs/arquitetura.md](docs/arquitetura.md) |
-| Segurança e LGPD | [docs/seguranca-lgpd.md](docs/seguranca-lgpd.md) |
-| Interface e identidade visual | [docs/ux-identidade-visual.md](docs/ux-identidade-visual.md) |
-| Roadmap, papéis, Kanban e riscos | [docs/roadmap.md](docs/roadmap.md) |
-| Exemplos calculados sobre os dados simulados | [docs/anexos/exemplos-calculados.md](docs/anexos/exemplos-calculados.md) |
-| Verificações e matriz de conclusão | [docs/validacao.md](docs/validacao.md) |
-| Perguntas da banca, respondidas | [docs/teste-adversarial.md](docs/teste-adversarial.md) |
-| Referências | [docs/referencias.md](docs/referencias.md) |
-
-## 📁 Estrutura de pastas 
-
-Abaixo encontra-se a descrição da organização da raiz do projeto e a finalidade de cada diretório e arquivo:
-
-* **`assets/`** Capa, logo da FIAP do template, diagramas (`diagramas/`, SVG gerado do Mermaid), gráficos (`graficos/`), wireframes conceituais (`wireframes/`) e as fontes HTML e CSS editáveis (`fontes/`).
-
-* **`data/`** Dicionário de dados (`dicionario-dados.csv`), premissas da simulação (`parametros-simulacao.csv`), massa sintética com gabarito (`sintetico/`) e resultados calculados (`resultados/`). **Nenhum dado real.**
-
-* **`docs/`** Documentação técnica e de negócio da Sprint 1, anexos (`anexos/`).
-
-* **`notebooks/`** Reservada para análises exploratórias a partir da Sprint 2. Vazia nesta entrega.
-
-* **`src/`** Scripts que geram a massa sintética, calculam os exemplos, desenham gráficos e wireframes e validam a entrega. **Não é a aplicação**, que será construída a partir da Sprint 2.
-
-* **`ENTREGA_SPRINT1_LINKS.txt`** Links do repositório e do vídeo para a entrega no portal.
-
-* **`README.md`** Este arquivo. Funciona como o guia principal de introdução, configuração e contextualização do projeto.
 
 ## 📎 Links e Observações
 
-### 🔗 Links do Projeto
+### Listagem de Links
 
-* **Repositório (privado)**: https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE- - Documentação, dados sintéticos e scripts da Sprint 1.
-* **[Vídeo de entrega no YouTube (não listado)](https://youtu.be/MD6aKeIHl-Y)**: https://youtu.be/MD6aKeIHl-Y - Narração de Bruna Collavite. Apresentação de até 5 minutos.
-* **Kanban no Trello (privado, acesso sob solicitação)**: https://trello.com/b/ytvX15Q6/enterprise-challenge-sem-parar-sprint-1 - 47 cartões, colunas Backlog, A fazer, Em andamento, Em revisão e Concluído.
+| Item | Link |
+|---|---|
+| Repositório (privado) | https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE- |
+| Vídeo da Sprint 2 | Pendente: ainda não gravado nem publicado |
+| Projeto no Wokwi | Pendente: o projeto deve ser salvo no wokwi.com com os arquivos de `src/esp32/` ([passo a passo](docs/sprint2/telemetria-esp32.md#5-como-simular-no-wokwi)) |
+| Kanban da Sprint 2 (Trello, privado) | https://trello.com/b/fGYNJgyW/enterprise-challenge-sem-parar-sprint-2 (cópia em [docs/sprint2/kanban-sprint2.csv](docs/sprint2/kanban-sprint2.csv)) |
+| Vídeo da Sprint 1 (YouTube, não listado) | https://youtu.be/MD6aKeIHl-Y (narração de Bruna Collavite) |
+| Kanban da Sprint 1 (Trello, privado) | https://trello.com/b/ytvX15Q6/enterprise-challenge-sem-parar-sprint-1 |
 
-### 🧠 Decisões Técnicas
+### Explicação de decisões técnicas
 
-> - **Monólito modular em Python (FastAPI) com PostgreSQL** e isolamento por cliente com segurança em nível de linha. Um processo separado lê documentos. Evita a complexidade de microsserviços em um produto de 8 meses com equipe pequena ([arquitetura](docs/arquitetura.md)).
-> - **Cálculos financeiros determinísticos e versionados.** A IA lê documentos, classifica e explica, mas não calcula valores; todo número de um texto gerado é conferido contra o cálculo ([estratégia de IA](docs/estrategia-ia.md)).
-> - **Nenhum valor sem origem.** Cada valor guarda arquivo, linha e status (observado, corrigido, imputado, estimado ou não disponível) ([modelagem](docs/modelagem-dados.md)).
-> - **Estimativa como faixa, nunca como número único**, com perguntas guiadas pelo valor da informação e calibração por backtest ([diagnóstico](docs/diagnostico.md)).
-> - **Custo alto não é desperdício.** O custo de combustível é decomposto em atividade, consumo e preço (LMDI), e quedas de rendimento são detectadas com CUSUM ([benchmarks](docs/benchmarks.md)).
-> - **Economia líquida em três cenários** que diferem pelo nível de evidência, sem dupla contagem e sem percentuais atribuídos à Sem Parar Empresas ([economia](docs/economia-recomendacoes.md)).
-> - **Uso comercial de dados só com base legal e preferência registrada** (LGPD), inclusive na User Story que pede tratar clientes como leads ([segurança e LGPD](docs/seguranca-lgpd.md)).
-> - **Dados sintéticos com gabarito** para testar regras e métodos antes de ter dados reais, com as limitações declaradas.
+- **Pipeline local em Python, sem banco nem nuvem.** A Sprint pede inteligência e diagnóstico; infraestrutura agora só adicionaria pontos de falha. As etapas leem e gravam arquivos e seguem a arquitetura da Sprint 1, que recebe o banco e a interface depois ([arquitetura](docs/sprint2/arquitetura.md)).
+- **Leitura como texto e nenhum registro apagado.** O valor original fica ao lado do tratado, e todo registro guarda arquivo e linha de origem.
+- **Comparar só o comparável.** Grupos por porte, operação e categoria; mínimo de 5 veículos; veículos locados fora do custo total, porque a mensalidade embute manutenção e seguro.
+- **Mediana como referência**, porque um veículo fora do padrão desloca a média.
+- **Gap positivo sempre significa pior.** No consumo (km/L), em que maior é melhor, a fórmula é invertida.
+- **Custo total alto não basta para ser ineficiente.** O diagnóstico usa custo por km e consumo, nunca o custo absoluto.
+- **O modelo prevê o que a telemetria consegue ver.** O primeiro alvo (a regra completa de custo) foi descartado porque a telemetria não antecipa faturas de manutenção; o alvo adotado é o consumo do mês ([modelo](docs/sprint2/machine-learning.md)).
+- **Separação treino e teste por veículo**, para que o modelo seja avaliado em veículos que nunca viu.
+- **Entradas virtuais declaradas.** Os potenciômetros do Wokwi representam sinais que, num veículo real, viriam do barramento do motor; não há sensor físico simulado.
 
-### 📢 Observações Gerais
+### Observações Gerais
 
 *Indique obrigatoriamente no campo abaixo a decisão da equipe quanto à participação no festival FIAP NEXT:*
 
 * **Participação na Competição:** [x] Sim, aceitamos participar / [ ] Não vamos participar.
 * **Integrantes:** Bruna Collavite (RM 576285), Fabio Guntovitch (RM 575582), Fabrizzio Riccelli (RM 576083), Gabriel Tamais (RM 574503) e Natasha Zonta (RM 574230).
-* *Outras observações gerais (opcional):* projeto acadêmico. "Sem Parar Empresas", "Corpay" e os nomes de produtos citados pertencem aos seus titulares; o Frota Pulse não é produto oficial e não usa seus logotipos. Itens pendentes de ação do grupo estão na [matriz de conclusão](docs/validacao.md#5-matriz-de-critérios-de-conclusão).
+* Projeto acadêmico. "Sem Parar Empresas" e os nomes de produtos citados pertencem aos seus titulares; o Frota Pulse não é produto oficial.
+
+### Detalhamento da ideia
+
+#### Arquitetura e tecnologias
+
+![Arquitetura da Sprint 2](docs/sprint2/imagens/arquitetura-sprint2.png)
+
+Arquivos de entrada → ingestão → normalização → qualidade → integração → indicadores → benchmark → gap → diagnóstico por regras → modelo → resultados. Cada etapa é um módulo de `src/frota_pulse/`; responsabilidades e entradas e saídas em [docs/sprint2/arquitetura.md](docs/sprint2/arquitetura.md).
+
+| Tecnologia | Uso |
+|---|---|
+| Python 3.13, pandas 3.0, NumPy 2.5 | Leitura, transformação e cálculo |
+| scikit-learn 1.9 | Árvore de decisão, regressão logística e floresta aleatória (comparação) |
+| matplotlib 3.11 | Gráficos |
+| pytest 9.1 | Testes automatizados |
+| C++ (Arduino) para ESP32 e Wokwi | Firmware de telemetria; compilado com g++ para gerar o CSV |
+
+#### Arquivos de entrada e dicionário de dados
+
+| Arquivo em `data/raw/` | Formato | Origem simulada |
+|---|---|---|
+| `cadastro/cadastro_frota.csv` | CSV | Cadastro da frota: identificador comum `codigo_veiculo`, porte, operação, categoria |
+| `combustivel/abastecimentos_cartao*.csv` | CSV com ponto e vírgula | Extrato do cartão-combustível e um reenvio do mesmo extrato |
+| `combustivel/notas_fiscais_combustivel.json` | JSON | NF-e das mesmas compras |
+| `pedagio/extrato_tag_EMP-*.txt` | TXT com cabeçalho e rodapé | Extrato da tag de pedágio |
+| `manutencao/ordens_servico.json` | JSON aninhado | Ordens de serviço com itens |
+| `multas/notificacoes_multas.json` | JSON | Notificações de multa |
+| `financeiro/lancamentos_erp.csv` | CSV | ERP: IPVA, seguro, locação e outros, com competência mm/aaaa |
+| `operacao/quilometragem_telematica.json` | JSON | Quilometragem mensal, em metros |
+| `../telemetria/telemetria_esp32.csv` | CSV | Monitor Serial do ESP32 |
+
+O dicionário ([data/dicionario-dados-sprint2.csv](data/dicionario-dados-sprint2.csv)) descreve 103 campos: entrada, telemetria e base consolidada, com tipo, unidade, obrigatoriedade, exemplo e tratamento quando ausente.
+
+#### Normalização e regras de qualidade
+
+Colunas renomeadas para um esquema único; "R$ 1.234,56" e "1234.56" viram o mesmo número; datas convertidas de forma estrita ("31/02/2026" vira ausente, não março); metros convertidos em km; competência em AAAA-MM; categoria do ERP lida do texto da conta. As 17 regras (Q00 a Q16) e suas justificativas estão em [docs/sprint2/metodologia.md](docs/sprint2/metodologia.md#4-regras-de-qualidade). Resultado: 452 ocorrências, das quais 203 duplicidades excluídas, 193 alertas, 23 em quarentena, 20 imputações, 12 correções e 1 linha rejeitada. As 21 inconsistências injetadas pelo grupo ([gabarito](data/raw/gabarito_inconsistencias_sprint2.csv)) são todas encontradas.
+
+![Ocorrências de qualidade](outputs/charts/01_qualidade_ocorrencias.png)
+
+#### Indicadores, benchmark e gap
+
+| Indicador | Fórmula | Melhor quando |
+|---|---|---|
+| Custo por km | custo dos meses com km ÷ km desses meses | menor |
+| Consumo | km ÷ litros | maior |
+| Preço médio | custo de combustível ÷ litros | menor |
+| Participação da categoria | custo da categoria ÷ custo total × 100 | - |
+
+Gap percentual: (veículo − referência) ÷ referência × 100 quando menor é melhor, e (referência − veículo) ÷ referência × 100 no consumo. Exemplo: um truck com 3,07 km/L num grupo de mediana 3,56 km/L tem gap de +13,6% (pior). Para cada grupo, o pipeline publica média, mediana, quartis, mínimo e máximo ([benchmark_grupos.csv](outputs/reports/benchmark_grupos.csv)) e os rankings de veículos e de categorias. Nos 5 grupos com referência válida (de 7), os gaps entre veículos têm mediana de 4,3% (custo) e 4,8% (consumo) e percentil 90 de 12,7% e 9,8%.
+
+![Custo por km por grupo](outputs/charts/02_custo_km_por_grupo.png)
+
+#### Diagnóstico por regras
+
+| Nível | Condição sobre o pior gap (custo por km ou consumo) |
+|---|---|
+| Eficiente | até 5%: dentro da variação típica entre veículos parecidos |
+| Atenção | de 5% a 15% |
+| Ineficiente | acima de 15%: fora do que ocorre com 9 em cada 10 veículos do grupo |
+| Sem referência | grupo com menos de 5 comparáveis ou veículo sem km |
+
+Os três veículos mais caros por km (B-V28, B-V29 e B-V30, de 79% a 122% acima da mediana) rodam menos de 25% da quilometragem do grupo, e a justificativa registra "baixa utilização". O veículo de maior custo total (C-V02, R$ 752 mil) está em Atenção, não em Ineficiente, porque roda 195 mil km.
+
+![Ranking de gaps](outputs/charts/03_ranking_gaps.png)
+
+#### Modelo supervisionado
+
+| Elemento | Definição |
+|---|---|
+| Unidade | Veículo-mês: 835 linhas de 70 veículos |
+| Rótulo | 1 se o consumo do mês ficou mais de 5% pior que a mediana do grupo no mesmo mês (26% dos casos) |
+| Atributos | Telemetria do mês (% de rotação acima da faixa verde, % em marcha lenta, % com excesso de velocidade, velocidade média, alertas e máxima de temperatura), idade e grupo |
+| Separação | 30% dos veículos de cada grupo para teste, com semente fixa; nenhum veículo nos dois lados |
+| Resultado no teste | Acurácia 82,8% (linha de base 73,6%), recall 72,7%, precisão 65,8% |
+
+A marcha lenta responde por 63% da importância, seguida da rotação alta (20%). Regras e modelo concordam em 18 de 21 veículos; B-V29, B-V12 e C-V21 divergem porque o desvio vem de baixa utilização, manutenção ou consumo sem sinal de condução fora do padrão. Exemplos de acerto e erro, a árvore completa e o experimento descartado estão em [docs/sprint2/machine-learning.md](docs/sprint2/machine-learning.md).
+
+![Modelo](outputs/charts/07_modelo_arvore.png)
+
+#### Telemetria com ESP32
+
+Circuito: três potenciômetros e um deslizante (velocidade, rotação, temperatura, combustível), botões de modo e de veículo, LEDs verde, amarelo e vermelho e buzzer. Limites por porte: rotação de 4.500, 2.600 e 2.300 RPM; velocidade de 60 km/h urbano e 90 ou 110 km/h em rodovia; temperatura de 105 °C; combustível de 15%. Leituras do lote: 45.692 normais, 5.259 em atenção e 1.069 críticas. Detalhes, justificativas e o [exemplo do Monitor Serial](docs/sprint2/evidencias/monitor_serial_demo.txt) em [docs/sprint2/telemetria-esp32.md](docs/sprint2/telemetria-esp32.md).
+
+![Circuito](docs/sprint2/imagens/circuito-esp32.png)
+
+*Diagrama gerado a partir de `src/esp32/wokwi/diagram.json`; não é captura do Wokwi. As capturas da simulação no Wokwi estão pendentes.*
+
+#### Exemplo de entrada e saída
+
+Entrada (linha do extrato do cartão, `data/raw/combustivel/abastecimentos_cartao.csv`, linha 3754):
+
+```
+DSP-A-000201;COMPRA;22/12/2025 06:24;A-V04;GASOLINA COMUM;34,27;620,3;21258,00
+```
+
+Saída no relatório de qualidade: regra Q07, `CORRIGIDO`, "preço e valor exportados em centavos; divididos por 100", resultando em R$ 6,203/L e R$ 212,58 (34,27 L × R$ 6,203). Saída do diagnóstico (`outputs/reports/indicadores_e_diagnostico_veiculo.csv`):
+
+| Veículo | Grupo | km | Custo por km | Consumo | Gap custo | Gap consumo | Nível |
+|---|---|---|---|---|---|---|---|
+| B-V23 | Leve mista (utilitário) | 29.815 | R$ 1,33 | 9,46 km/L | −5,4% | −1,3% | Eficiente |
+| C-V33 | Pesada rodoviária (truck) | 84.255 | R$ 2,75 | 3,07 km/L | +8,4% | +13,6% | Atenção |
+| B-V28 | Leve mista (utilitário) | 3.827 | R$ 3,13 | 9,42 km/L | +121,9% | −0,9% | Ineficiente (baixa utilização) |
+
+Todos os resultados estão em [outputs/reports/resultados_sprint2.md](outputs/reports/resultados_sprint2.md), gerado pelo pipeline.
+
+#### Limitações
+
+- Dados simulados pelo grupo; as regras de qualidade foram escritas conhecendo os problemas injetados.
+- Grupos de 8 a 28 veículos; a EMP-A não tem referência válida. Limites de 5% e 15% iguais para todos os grupos.
+- A relação entre telemetria e consumo foi construída na simulação: o modelo mostra que o fluxo funciona, não que esses sinais preveem consumo em frotas reais com essa precisão. Teste com 21 veículos, sem validação cruzada.
+- O firmware foi validado por compilação nativa e testes; a compilação para o ESP32 e a execução no Wokwi não puderam ser feitas neste ambiente ([testes](docs/sprint2/testes.md#4-o-que-não-foi-possível-testar-aqui)).
+
+### Avanços e ajustes
+
+| Na Sprint 1 | Na Sprint 2 |
+|---|---|
+| Especificação, sem código da aplicação | Pipeline executável de ponta a ponta em cerca de 6 segundos |
+| Massa simulada em tabelas já limpas | 12 arquivos em CSV, TXT e JSON com formatos diferentes e 21 inconsistências novas |
+| 13 regras de qualidade descritas | 17 regras implementadas e testadas, com relatório por ocorrência |
+| Sem telemetria | Firmware do ESP32 com alertas, projeto Wokwi e 52.020 leituras |
+| Benchmark e indicadores descritos | Grupos, estatísticas, gaps com direção, rankings e gráficos calculados |
+| "Não há modelo treinado nesta Sprint" | Árvore de decisão treinada, avaliada e comparada com as regras |
+| Validador da documentação, sem testes de código | 36 testes automatizados e conferências manuais ([testes](docs/sprint2/testes.md)) |
+
+Ajustes em relação ao que a Sprint 1 previa ([auditoria](docs/sprint2/auditoria-sprint1.md)): os grupos de benchmark passaram a separar automóvel de utilitário, porque juntos eram injustos (11,5 contra 8,8 km/L); o banco de dados, o login e a estimativa com perguntas guiadas, previstos para a Sprint 2 no roadmap original, ficaram para depois, porque o enunciado desta Sprint pede inteligência e diagnóstico; o custo total calculado a partir dos arquivos brutos difere do da Sprint 1 em −0,06% (EMP-B) e −0,16% (EMP-C), pelos registros em quarentena.
+
 
 ## 🔧 Como executar o código
 
-**Pré-requisitos.** Python 3.11 ou mais recente e as bibliotecas de [`requirements.txt`](requirements.txt) (testado com Python 3.13, pandas 3.0 e NumPy 2.5). Opcionais: Node.js com `@mermaid-js/mermaid-cli`, para verificar a sintaxe dos diagramas, e um navegador Chromium, para recapturar as imagens.
+**Pré-requisitos:** Python 3.11 ou mais recente (testado com 3.13) e as bibliotecas de [requirements.txt](requirements.txt). Para regenerar a telemetria, um compilador C++ (g++). Para o ESP32, uma conta no [Wokwi](https://wokwi.com).
 
 ```bash
 git clone https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE-.git
@@ -323,24 +242,35 @@ python -m venv .venv
 source .venv/bin/activate          # no Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-python src/gerar_dados_sinteticos.py   # massa sintética e gabarito em data/sintetico/ (semente fixa)
-python src/exemplos_calculados.py      # data/resultados/ e docs/anexos/exemplos-calculados.md
-python src/gerar_graficos.py           # gráficos SVG em assets/graficos/
-python src/gerar_visuais.py            # capa e wireframes (HTML) em assets/fontes/
-python src/validar_entregaveis.py      # verificações automáticas da entrega
+python src/executar_pipeline.py    # executa todas as etapas e grava data/processed e outputs
+python -m pytest                   # 36 testes
 ```
 
-Os scripts são determinísticos: executá-los de novo reproduz os mesmos arquivos. As imagens PNG são capturas das páginas HTML com um Chromium sem interface, por exemplo:
+Os arquivos de entrada já estão no repositório. Para gerá-los de novo a partir da massa da Sprint 1 (semente fixa, mesmo resultado):
 
 ```bash
-chromium --headless --no-sandbox --hide-scrollbars --window-size=1600,640 \
-  --screenshot=assets/capa-frota-pulse.png "file://$PWD/assets/fontes/capa.html"
+python src/gerar_dados_sinteticos.py               # massa da Sprint 1 em data/sintetico/
+python src/simulacao/gerar_perfis_telemetria.py    # perfis de condução por veículo-mês
+python src/simulacao/gerar_telemetria.py           # compila o firmware com g++ e gera data/telemetria/
+python src/simulacao/gerar_fontes_brutas.py        # arquivos de data/raw/ e o gabarito
+python src/executar_pipeline.py
 ```
 
-Tamanhos de janela dos wireframes: `wf-01` 1440×900, `wf-02` 1440×1180 e `wf-03` 1100×1200.
+**Notebook:** abra `notebooks/sprint2_demonstracao.ipynb` no Jupyter ou no VS Code e execute as células em ordem.
+
+**ESP32 no Wokwi:** crie um projeto ESP32 (Arduino), substitua `diagram.json` pelo de `src/esp32/wokwi/`, cole o `telemetria_frota.ino` e adicione `limites.h`, `perfil.h` e `perfis_demo.h` de `src/esp32/firmware/telemetria_frota/`. Gire os potenciômetros para provocar os alertas e use os botões para trocar de modo e de veículo ([instruções completas](docs/sprint2/telemetria-esp32.md#5-como-simular-no-wokwi)).
+
+
+## 🗃 Histórico de lançamentos
+
+* 0.2.0 - 18/11/2026
+    * Sprint 2: ingestão de CSV, TXT e JSON, regras de qualidade, integração, telemetria com ESP32, benchmark, gaps, diagnóstico por regras, modelo supervisionado e testes.
+* 0.1.0 - 09/10/2026
+    * Sprint 1: especificação do problema, dados simulados, arquitetura, User Stories e plano.
 
 ---
 
+
 ## 📋 Licença
 
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/fiap-tutoria/FIAP-PORTFOLIO-AI">TEMPLATE - FIAP PORTFÓLIO AI</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://fiap.com.br">FIAP</a> está licenciado sobre <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/SabrinaOtoni/TEMPLATE-FIAP-GRAD-ON-IA">MODELO GIT FIAP</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://fiap.com.br">FIAP</a> está licenciado sobre <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
