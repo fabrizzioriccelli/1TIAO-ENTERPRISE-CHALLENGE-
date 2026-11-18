@@ -47,7 +47,7 @@ Comando: `python -m pytest -v` (36 testes em `tests/`). Resultado da última exe
 
 ## 2. Conferências manuais
 
-**Correção de unidade (regra Q07).** Linha do extrato: `DSP-A-000201;COMPRA;22/12/2025 06:24;A-V04;GASOLINA COMUM;34,27;620,3;21258,00`. Preço de R$ 620,30 por litro está fora da faixa da gasolina (R$ 4,00 a R$ 9,50). Dividindo por 100: R$ 6,203 por litro e valor de R$ 212,58. Conferência: 34,27 L × R$ 6,203 = R$ 212,58. O pipeline registrou exatamente essa correção, guardando os valores originais.
+**Correção de unidade (regra Q07).** Linha do extrato: `DSP-A-000201;COMPRA;22/12/2025 06:24;A-V04;GASOLINA COMUM;34,27;620,3;21258,00;;POSTO-A004;N`. Preço de R$ 620,30 por litro está fora da faixa da gasolina (R$ 4,00 a R$ 9,50). Dividindo por 100: R$ 6,203 por litro e valor de R$ 212,58. Conferência: 34,27 L × R$ 6,203 = R$ 212,58. O pipeline registrou exatamente essa correção, guardando os valores originais.
 
 **Custo por km e consumo (B-V23, leve mista).** Custo dos meses com km: R$ 39.800,17; km: 29.814,7. Custo por km = 39.800,17 ÷ 29.814,7 = R$ 1,335/km. Consumo = 29.814,7 km ÷ 3.151,55 L = 9,46 km/L.
 

@@ -196,7 +196,7 @@ Circuito: três potenciômetros e um deslizante (velocidade, rotação, temperat
 Entrada (linha do extrato do cartão, `data/raw/combustivel/abastecimentos_cartao.csv`, linha 3754):
 
 ```
-DSP-A-000201;COMPRA;22/12/2025 06:24;A-V04;GASOLINA COMUM;34,27;620,3;21258,00
+DSP-A-000201;COMPRA;22/12/2025 06:24;A-V04;GASOLINA COMUM;34,27;620,3;21258,00;;POSTO-A004;N
 ```
 
 Saída no relatório de qualidade: regra Q07, `CORRIGIDO`, "preço e valor exportados em centavos; divididos por 100", resultando em R$ 6,203/L e R$ 212,58 (34,27 L × R$ 6,203). Saída do diagnóstico (`outputs/reports/indicadores_e_diagnostico_veiculo.csv`):
@@ -215,6 +215,8 @@ Todos os resultados estão em [outputs/reports/resultados_sprint2.md](outputs/re
 - Grupos de 8 a 28 veículos; a EMP-A não tem referência válida. Limites de 5% e 15% iguais para todos os grupos.
 - A relação entre telemetria e consumo foi construída na simulação: o modelo mostra que o fluxo funciona, não que esses sinais preveem consumo em frotas reais com essa precisão. Teste com 21 veículos, sem validação cruzada.
 - O firmware foi validado por compilação nativa e testes; a compilação para o ESP32 e a execução no Wokwi não puderam ser feitas neste ambiente ([testes](docs/sprint2/testes.md#4-o-que-não-foi-possível-testar-aqui)).
+
+Situação de cada item pedido na Sprint 2, com evidência: [docs/sprint2/checklist-entrega.md](docs/sprint2/checklist-entrega.md).
 
 ### Avanços e ajustes
 
