@@ -12,6 +12,8 @@
 
 # Frota Pulse: Calculadora de Redução de Custos de Frota
 
+<p align="center"><b>Português</b> · <a href="README.en.md">English</a></p>
+
 Enterprise Challenge FIAP e Sem Parar Empresas · Sprint 1 · Turma 1TIAO
 
 **Vídeo de apresentação da Sprint 1:** [https://youtu.be/MD6aKeIHl-Y](https://youtu.be/MD6aKeIHl-Y) (YouTube, não listado, narração de Bruna Collavite)
