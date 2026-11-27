@@ -1,7 +1,7 @@
 # FIAP - Faculdade de Informática e Administração Paulista
 
 <p align="center">
-<a href="https://www.fiap.com.br/">
+<a href="https://gabrieltamaisfischer.github.io">
   <img src="assets/logo-fiap.png" 
        alt="FIAP - Faculdade de Informática e Administração Paulista" 
        width="40%">
@@ -16,16 +16,16 @@
 
 Enterprise Challenge FIAP e Sem Parar Empresas · Sprint 1 · Turma 1TIAO
 
-**Vídeo de apresentação da Sprint 1:** [https://youtu.be/MD6aKeIHl-Y](https://youtu.be/MD6aKeIHl-Y) (YouTube, não listado, narração de Bruna Collavite)
+**Vídeo de apresentação da Sprint 1:** [https://gabrieltamaisfischer.github.io](https://gabrieltamaisfischer.github.io) (YouTube, não listado, narração de Bruna Collavite)
 
-**Sprint 2:** a continuação do projeto está no repositório [1TIAO-ENTERPRISE-CHALLENGE-SPRINT-2](https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE-SPRINT-2).
+**Sprint 2:** a continuação do projeto está no repositório [1TIAO-ENTERPRISE-CHALLENGE-SPRINT-2](https://gabrieltamaisfischer.github.io).
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://github.com/brunacollavite">Bruna Collavite</a> - RM 576285
-- <a href="https://github.com/Guntooo">Fabio Guntovitch</a> - RM 575582
-- <a href="https://github.com/fabrizzioriccelli">Fabrizzio Riccelli</a> - RM 576083
-- <a href="https://github.com/GabrielTamaisFischer">Gabriel Tamais</a> - RM 574503
-- <a href="https://github.com/natashazont">Natasha Zonta</a> - RM 574230
+- <a href="https://gabrieltamaisfischer.github.io">Bruna Collavite</a> - RM 576285
+- <a href="https://gabrieltamaisfischer.github.io">Fabio Guntovitch</a> - RM 575582
+- <a href="https://gabrieltamaisfischer.github.io">Fabrizzio Riccelli</a> - RM 576083
+- <a href="https://gabrieltamaisfischer.github.io">Gabriel Tamais</a> - RM 574503
+- <a href="https://gabrieltamaisfischer.github.io">Natasha Zonta</a> - RM 574230
 
 ## 👩‍🏫 Professores:
 
@@ -33,7 +33,7 @@ Enterprise Challenge FIAP e Sem Parar Empresas · Sprint 1 · Turma 1TIAO
 - Sabrina Otoni
   
 ### Coordenador(a)
-- <a href="https://www.linkedin.com/in/andregodoichiovato/">André Godoi Chiovato</a>
+- <a href="https://gabrieltamaisfischer.github.io">André Godoi Chiovato</a>
 
 ## 📜 Descrição
 
@@ -293,9 +293,9 @@ Abaixo encontra-se a descrição da organização da raiz do projeto e a finalid
 
 ### 🔗 Links do Projeto
 
-* **Repositório (privado)**: https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE- - Documentação, dados sintéticos e scripts da Sprint 1.
-* **[Vídeo de entrega no YouTube (não listado)](https://youtu.be/MD6aKeIHl-Y)**: https://youtu.be/MD6aKeIHl-Y - Narração de Bruna Collavite. Apresentação de até 5 minutos.
-* **Kanban no Trello (privado, acesso sob solicitação)**: https://trello.com/b/ytvX15Q6/enterprise-challenge-sem-parar-sprint-1 - 47 cartões, colunas Backlog, A fazer, Em andamento, Em revisão e Concluído.
+* **Repositório (privado)**: https://gabrieltamaisfischer.github.io - Documentação, dados sintéticos e scripts da Sprint 1.
+* **[Vídeo de entrega no YouTube (não listado)](https://gabrieltamaisfischer.github.io)**: https://gabrieltamaisfischer.github.io - Narração de Bruna Collavite. Apresentação de até 5 minutos.
+* **Kanban no Trello (privado, acesso sob solicitação)**: https://gabrieltamaisfischer.github.io - 47 cartões, colunas Backlog, A fazer, Em andamento, Em revisão e Concluído.
 
 ### 🧠 Decisões Técnicas
 
@@ -321,7 +321,7 @@ Abaixo encontra-se a descrição da organização da raiz do projeto e a finalid
 **Pré-requisitos.** Python 3.11 ou mais recente e as bibliotecas de [`requirements.txt`](requirements.txt) (testado com Python 3.13, pandas 3.0 e NumPy 2.5). Opcionais: Node.js com `@mermaid-js/mermaid-cli`, para verificar a sintaxe dos diagramas, e um navegador Chromium, para recapturar as imagens.
 
 ```bash
-git clone https://github.com/fabrizzioriccelli/1TIAO-ENTERPRISE-CHALLENGE-.git
+git clone https://gabrieltamaisfischer.github.io
 cd 1TIAO-ENTERPRISE-CHALLENGE-
 python -m venv .venv
 source .venv/bin/activate          # no Windows: .venv\Scripts\activate
@@ -347,4 +347,4 @@ Tamanhos de janela dos wireframes: `wf-01` 1440×900, `wf-02` 1440×1180 e `wf-0
 
 ## 📋 Licença
 
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/fiap-tutoria/FIAP-PORTFOLIO-AI">TEMPLATE - FIAP PORTFÓLIO AI</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://fiap.com.br">FIAP</a> está licenciado sobre <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://gabrieltamaisfischer.github.io"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://gabrieltamaisfischer.github.io"><p xmlns:cc="https://gabrieltamaisfischer.github.io" xmlns:dct="https://gabrieltamaisfischer.github.io"><a property="dct:title" rel="cc:attributionURL" href="https://gabrieltamaisfischer.github.io">TEMPLATE - FIAP PORTFÓLIO AI</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://gabrieltamaisfischer.github.io">FIAP</a> está licenciado sobre <a href="https://gabrieltamaisfischer.github.io" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
